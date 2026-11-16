@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "siteId": "syntonia-179a800f9fbf",
   "name": "Syntonia",
-  "version": "v0.1.0",
+  "version": "v0.1.1",
   "kind": "prepublication-site",
   "source": {
     "pipeline": "studio-pipeline-v2",
@@ -160,6 +160,7 @@
   },
   "publish": {
     "basePath": "/syntonia-site",
-    "pagesUrl": "https://appacc77-dotcom.github.io/syntonia-site/"
+    "pagesUrl": "https://appacc77-dotcom.github.io/syntonia-site/",
+    "status": "published"
   }
 }
