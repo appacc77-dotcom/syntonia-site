@@ -82,6 +82,26 @@
       "status": "reference",
       "note": ""
     },
+    "/library/book-chapter-intro.html": {
+      "file": "library/book-chapter-intro.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/library/book-chapter-story.html": {
+      "file": "library/book-chapter-story.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/library/book-chapter-technique.html": {
+      "file": "library/book-chapter-technique.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/library/book-chapter.html": {
+      "file": "library/book-chapter.html",
+      "status": "reference",
+      "note": ""
+    },
     "/login.html": {
       "file": "login.html",
       "status": "reference",
