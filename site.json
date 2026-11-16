@@ -157,5 +157,9 @@
     "prompts": "prompts/",
     "versions": "VERSIONS.md",
     "changelog": "CHANGELOG.md"
+  },
+  "publish": {
+    "basePath": "/syntonia-site",
+    "pagesUrl": "https://appacc77-dotcom.github.io/syntonia-site/"
   }
 }

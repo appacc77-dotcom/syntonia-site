@@ -23,6 +23,7 @@ m1-export → m2-layout → site/dist ──export──▶ этот репоз�
 
 ```bash
 node scripts/serve.mjs          # http://127.0.0.1:4300
+node scripts/patch-base.mjs     # Pages project base /syntonia-site
 node scripts/prepare-pages.mjs  # .pages/ — только рабочая версия для Pages
 ```
 
