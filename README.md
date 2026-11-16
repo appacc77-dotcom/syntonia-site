@@ -26,6 +26,10 @@ node scripts/serve.mjs          # http://127.0.0.1:4300
 node scripts/prepare-pages.mjs  # .pages/ — только рабочая версия для Pages
 ```
 
+## Публикация
+
+Pages публикуется из ветки `gh-pages` (содержимое `.pages/`). Рабочая ветка `main` содержит reference и исходную рабочую копию.
+
 ## Цикл по странице
 
 1. `prompts/01-inspect-page.md` — сравнить reference и рабочую страницу, получить список правок.
