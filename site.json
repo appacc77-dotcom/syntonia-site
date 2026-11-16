@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "siteId": "syntonia-179a800f9fbf",
+  "name": "Syntonia",
+  "version": "v0.1.0",
+  "kind": "prepublication-site",
+  "source": {
+    "pipeline": "studio-pipeline-v2",
+    "figSha": "179a800f9fbfe89e22f89ac422d7b3ee7c326c904d254f7664beb1847b4a05b5",
+    "packId": "179a800f9fbf-907ef0790ce7-darwin-arm64",
+    "m2Build": "site/dist",
+    "exportedAt": "2026-11-16T17:28:43Z"
+  },
+  "reference": {
+    "id": "ref-20261116T172809Z",
+    "path": "reference/ref-20261116T172809Z/site",
+    "frozen": true,
+    "note": "Byte-identical copy of m2 site/dist; never edited"
+  },
+  "working": {
+    "root": ".",
+    "note": "Working copy: pages and assets here are edited; reference/ is immutable"
+  },
+  "pages": {
+    "/account-history.html": {
+      "file": "account-history.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/account-practices.html": {
+      "file": "account-practices.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/account-profile.html": {
+      "file": "account-profile.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/booking.html": {
+      "file": "booking.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/checkout-confirm.html": {
+      "file": "checkout-confirm.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/fixtures.html": {
+      "file": "fixtures.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/": {
+      "file": "index.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/legal-consent.html": {
+      "file": "legal-consent.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/legal-privacy.html": {
+      "file": "legal-privacy.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/legal-refund.html": {
+      "file": "legal-refund.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/legal-terms.html": {
+      "file": "legal-terms.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/library.html": {
+      "file": "library.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/login.html": {
+      "file": "login.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/masters.html": {
+      "file": "masters.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/method.html": {
+      "file": "method.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/not-found.html": {
+      "file": "not-found.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/practice-detail.html": {
+      "file": "practice-detail.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/practice.html": {
+      "file": "practice.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/quiz.html": {
+      "file": "quiz.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/structure.html": {
+      "file": "structure.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/thanks-booking.html": {
+      "file": "thanks-booking.html",
+      "status": "reference",
+      "note": ""
+    },
+    "/thanks-purchase.html": {
+      "file": "thanks-purchase.html",
+      "status": "reference",
+      "note": ""
+    }
+  },
+  "workflow": {
+    "prompts": "prompts/",
+    "versions": "VERSIONS.md",
+    "changelog": "CHANGELOG.md"
+  }
+}
