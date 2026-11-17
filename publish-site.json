@@ -21,16 +21,16 @@
       "capture": "dc2f76aeffc081d9dd6c7d285c0607d20df758d75be0da911cbf57a529c49e8f"
     }
   },
-  "treeHash": "b4e5bf98a8406c3c6eecd85c06bb8610c53589d1b53657def7cc3731a127e801",
+  "treeHash": "f80e225dd255bbc1ac48df574e9bd4461e4df986dcb1f7a8b160c5c47400fd32",
   "pages": 24,
   "assets": {
     "count": 145,
-    "bytes": 27987355
+    "bytes": 97843571
   },
   "size": {
     "mainJsBytes": 1103401,
     "mainJsGzip": 178044,
-    "totalBytes": 30779452,
+    "totalBytes": 100635668,
     "ok": true
   },
   "publication": {
@@ -49,7 +49,7 @@
         "passed": 24,
         "failed": 0,
         "maxOver24": 0,
-        "maxMean": 0.48
+        "maxMean": 0.07
       },
       "thresholds": {
         "over24": 2,
@@ -68,10 +68,10 @@
     "size": {
       "ok": true,
       "budgets": {
-        "totalBytes": 62914560,
+        "totalBytes": 134217728,
         "mainJsGzip": 307200
       }
     }
   },
-  "generatedAt": "2026-11-17T17:52:11.391Z"
+  "generatedAt": "2026-11-17T18:35:34.749Z"
 }

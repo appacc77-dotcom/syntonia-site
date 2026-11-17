@@ -16,3 +16,7 @@
 ## v0.3.0 — image quality
 - WebP q95, сохранение ICC, smartSubsample/alphaQuality.
 - Publish ~29.4 МБ; pixel 24/24, mean 0.48, over24 0.
+
+## v0.4.0 — lossless images
+- WebP lossless + ICC; publish 96.0 МБ.
+- Pixel 24/24, mean 0.07, over24 0; hydration 24/24.
