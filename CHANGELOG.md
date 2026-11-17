@@ -20,3 +20,7 @@
 ## v0.4.0 — lossless images
 - WebP lossless + ICC; publish 96.0 МБ.
 - Pixel 24/24, mean 0.07, over24 0; hydration 24/24.
+
+## v0.5.0 — near-lossless images
+- WebP near-lossless 80 + ICC; publish 75.3 МБ.
+- Pixel 24/24, mean 0.17, over24 0; hydration 24/24.

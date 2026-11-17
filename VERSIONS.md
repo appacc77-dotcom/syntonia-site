@@ -7,3 +7,4 @@
 | v0.2.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-2607d3a4 | m3 optimized publish (14.9 MB) | published |
 | v0.3.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-2607d3a4 | WebP q95 + ICC, 29.4 MB | published |
 | v0.4.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-2607d3a4 | WebP lossless + ICC, 96 MB | published |
+| v0.5.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-2607d3a4 | WebP near-lossless 80, 75.3 MB | published |
