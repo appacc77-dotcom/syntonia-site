@@ -5,7 +5,7 @@ import { join, resolve } from 'node:path'
 const root = resolve(process.cwd())
 const out = join(root, '.pages')
 rmSync(out, { recursive: true, force: true }); mkdirSync(out, { recursive: true })
-const skip = new Set(['.git','.github','.pages','reference','prompts','scripts','node_modules','site.json','VERSIONS.md','CHANGELOG.md','README.md','.gitignore','.nojekyll'])
+const skip = new Set(['.git','.github','.pages','reference','prompts','scripts','node_modules','site.json','publish-site.json','VERSIONS.md','CHANGELOG.md','README.md','.gitignore','.nojekyll'])
 for (const name of readdirSync(root)) {
   if (skip.has(name)) continue
   const path = join(root, name)

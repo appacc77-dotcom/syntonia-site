@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "siteId": "syntonia-179a800f9fbf",
   "name": "Syntonia",
-  "version": "v0.1.1",
+  "version": "v0.2.0",
   "kind": "prepublication-site",
   "source": {
     "pipeline": "studio-pipeline-v2",
@@ -24,133 +24,99 @@
   "pages": {
     "/account-history.html": {
       "file": "account-history.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/account-practices.html": {
       "file": "account-practices.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/account-profile.html": {
       "file": "account-profile.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/booking.html": {
       "file": "booking.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/checkout-confirm.html": {
       "file": "checkout-confirm.html",
-      "status": "reference",
-      "note": ""
-    },
-    "/fixtures.html": {
-      "file": "fixtures.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/": {
       "file": "index.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/legal-consent.html": {
       "file": "legal-consent.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/legal-privacy.html": {
       "file": "legal-privacy.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/legal-refund.html": {
       "file": "legal-refund.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/legal-terms.html": {
       "file": "legal-terms.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/library.html": {
       "file": "library.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/library/book-chapter-intro.html": {
       "file": "library/book-chapter-intro.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/library/book-chapter-story.html": {
       "file": "library/book-chapter-story.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/library/book-chapter-technique.html": {
       "file": "library/book-chapter-technique.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/library/book-chapter.html": {
       "file": "library/book-chapter.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/login.html": {
       "file": "login.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/masters.html": {
       "file": "masters.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/method.html": {
       "file": "method.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/not-found.html": {
       "file": "not-found.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/practice-detail.html": {
       "file": "practice-detail.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/practice.html": {
       "file": "practice.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/quiz.html": {
       "file": "quiz.html",
-      "status": "reference",
-      "note": ""
-    },
-    "/structure.html": {
-      "file": "structure.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/thanks-booking.html": {
       "file": "thanks-booking.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     },
     "/thanks-purchase.html": {
       "file": "thanks-purchase.html",
-      "status": "reference",
-      "note": ""
+      "status": "published"
     }
   },
   "workflow": {
@@ -161,6 +127,9 @@
   "publish": {
     "basePath": "/syntonia-site",
     "pagesUrl": "https://appacc77-dotcom.github.io/syntonia-site/",
-    "status": "published"
+    "status": "published",
+    "publishId": "ref-179a800f9fbf-2607d3a4",
+    "referenceId": "ref-179a800f9fbf-2607d3a4",
+    "files": 24
   }
 }

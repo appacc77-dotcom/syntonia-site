@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "kind": "publish-site/v1",
+  "publishId": "ref-179a800f9fbf-2607d3a4",
+  "siteId": "syntonia-179a800f9fbf",
+  "referenceId": "ref-179a800f9fbf-2607d3a4",
+  "version": "v0.2.0",
+  "source": {
+    "path": "modules/m2-layout/outbox/179a800f9fbf-907ef0790ce7-darwin-arm64/handoff.json",
+    "packId": "179a800f9fbf-907ef0790ce7-darwin-arm64",
+    "figSha": "179a800f9fbfe89e22f89ac422d7b3ee7c326c904d254f7664beb1847b4a05b5",
+    "sha256": "b86cc86e69198035fd501784835c1ebfb74ab87fcb35ac8d6fac30ce6e5b4897"
+  },
+  "reference": {
+    "path": "artifacts/publish-reference/ref-179a800f9fbf-2607d3a4/site",
+    "treeHash": "2607d3a496cb1e3f4ca6cc472e8565b82bd9c5e02cfeabdf9714c5189e8f9ccf",
+    "immutable": true,
+    "screens": {
+      "path": "artifacts/publish-reference/ref-179a800f9fbf-2607d3a4/screens",
+      "routes": 24,
+      "capture": "dc2f76aeffc081d9dd6c7d285c0607d20df758d75be0da911cbf57a529c49e8f"
+    }
+  },
+  "treeHash": "cec5ed2ffed594892be272022d19d57ae999f0660af2b328cf9c64f7f06814f3",
+  "pages": 24,
+  "assets": {
+    "count": 145,
+    "bytes": 12106933
+  },
+  "size": {
+    "mainJsBytes": 1103401,
+    "mainJsGzip": 178044,
+    "totalBytes": 14899030,
+    "ok": true
+  },
+  "publication": {
+    "profile": "staging",
+    "basePath": "/syntonia-site",
+    "siteUrl": "https://appacc77-dotcom.github.io/syntonia-site",
+    "pagesUrl": "https://appacc77-dotcom.github.io/syntonia-site/",
+    "robots": "noindex, nofollow",
+    "status": "packaged"
+  },
+  "checks": {
+    "pixel": {
+      "ok": true,
+      "summary": {
+        "total": 24,
+        "passed": 24,
+        "failed": 0,
+        "maxOver24": 0,
+        "maxMean": 0.84
+      },
+      "thresholds": {
+        "over24": 2,
+        "mean": 5
+      },
+      "report": "artifacts/metrics/publish-pixel.json"
+    },
+    "hydration": {
+      "ok": true,
+      "report": "artifacts/metrics/publish-hydration.json"
+    },
+    "assets": {
+      "ok": true,
+      "report": "artifacts/metrics/publish-assets.json"
+    },
+    "size": {
+      "ok": true,
+      "budgets": {
+        "totalBytes": 62914560,
+        "mainJsGzip": 307200
+      }
+    }
+  },
+  "generatedAt": "2026-11-17T17:20:22.626Z"
+}
