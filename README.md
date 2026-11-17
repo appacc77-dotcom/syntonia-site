@@ -41,3 +41,10 @@ Pages публикуется из ветки `gh-pages` (содержимое `.
 
 Новый выход из m2 — `prompts/04-sync-m2.md`: новая папка reference, рабочая копия не
 перезаписывается автоматически.
+
+## Stage 3
+
+- Baseline: [docs/STAGE3-BASELINE.md](docs/STAGE3-BASELINE.md)
+- Инвентарь: [docs/STAGE3-INVENTORY.md](docs/STAGE3-INVENTORY.md)
+- Журнал: [docs/INTERACTIONS.md](docs/INTERACTIONS.md)
+- Промт: [prompts/06-interactive-rebuild.md](prompts/06-interactive-rebuild.md)

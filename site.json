@@ -132,5 +132,41 @@
     "referenceId": "ref-179a800f9fbf-2607d3a4",
     "files": 259,
     "bytes": 78941682
+  },
+  "stage3": {
+    "baseline": "stage3-baseline",
+    "baselineVersion": "v0.5.0",
+    "statusDictionary": [
+      "baseline",
+      "rework",
+      "accepted",
+      "blocked"
+    ],
+    "statuses": {
+      "/account-history.html": "baseline",
+      "/account-practices.html": "baseline",
+      "/account-profile.html": "baseline",
+      "/booking.html": "baseline",
+      "/checkout-confirm.html": "baseline",
+      "/": "baseline",
+      "/legal-consent.html": "baseline",
+      "/legal-privacy.html": "baseline",
+      "/legal-refund.html": "baseline",
+      "/legal-terms.html": "baseline",
+      "/library.html": "baseline",
+      "/library/book-chapter-intro.html": "baseline",
+      "/library/book-chapter-story.html": "baseline",
+      "/library/book-chapter-technique.html": "baseline",
+      "/library/book-chapter.html": "baseline",
+      "/login.html": "baseline",
+      "/masters.html": "baseline",
+      "/method.html": "baseline",
+      "/not-found.html": "baseline",
+      "/practice-detail.html": "baseline",
+      "/practice.html": "baseline",
+      "/quiz.html": "baseline",
+      "/thanks-booking.html": "baseline",
+      "/thanks-purchase.html": "baseline"
+    }
   }
 }
