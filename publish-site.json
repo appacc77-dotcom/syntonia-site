@@ -1,36 +1,36 @@
 {
   "schemaVersion": 1,
   "kind": "publish-site/v1",
-  "publishId": "ref-179a800f9fbf-2607d3a4",
+  "publishId": "ref-179a800f9fbf-c3f3d40c",
   "siteId": "syntonia-179a800f9fbf",
-  "referenceId": "ref-179a800f9fbf-2607d3a4",
+  "referenceId": "ref-179a800f9fbf-c3f3d40c",
   "version": "v0.2.0",
   "source": {
     "path": "modules/m2-layout/outbox/179a800f9fbf-907ef0790ce7-darwin-arm64/handoff.json",
     "packId": "179a800f9fbf-907ef0790ce7-darwin-arm64",
     "figSha": "179a800f9fbfe89e22f89ac422d7b3ee7c326c904d254f7664beb1847b4a05b5",
-    "sha256": "b86cc86e69198035fd501784835c1ebfb74ab87fcb35ac8d6fac30ce6e5b4897"
+    "sha256": "4f88d971f0fda12eeefb4363b5ab2e4470e6c8eb80ee10c2c8b13e45f0a2dffe"
   },
   "reference": {
-    "path": "artifacts/publish-reference/ref-179a800f9fbf-2607d3a4/site",
-    "treeHash": "2607d3a496cb1e3f4ca6cc472e8565b82bd9c5e02cfeabdf9714c5189e8f9ccf",
+    "path": "artifacts/publish-reference/ref-179a800f9fbf-c3f3d40c/site",
+    "treeHash": "c3f3d40cf71db180f04b3d7ca318c768dd483434417b79759c07d21e093dfb11",
     "immutable": true,
     "screens": {
-      "path": "artifacts/publish-reference/ref-179a800f9fbf-2607d3a4/screens",
+      "path": "artifacts/publish-reference/ref-179a800f9fbf-c3f3d40c/screens",
       "routes": 24,
-      "capture": "dc2f76aeffc081d9dd6c7d285c0607d20df758d75be0da911cbf57a529c49e8f"
+      "capture": "8912629d47c41997188020b1b38325689033e629a3cf070591277af4f7a7afd5"
     }
   },
-  "treeHash": "ff0499e8af83b53952632c8eaf9c6f0fef33c3f7b019d80360774b89ec484a3a",
+  "treeHash": "22b642ac728adb10b444ef25cd1d92f6397644fcbe50e46405770069aaeb5205",
   "pages": 24,
   "assets": {
     "count": 145,
-    "bytes": 76149585
+    "bytes": 76154261
   },
   "size": {
-    "mainJsBytes": 1103401,
-    "mainJsGzip": 178044,
-    "totalBytes": 78941682,
+    "mainJsBytes": 1105999,
+    "mainJsGzip": 180116,
+    "totalBytes": 78952647,
     "ok": true
   },
   "publication": {
@@ -49,7 +49,7 @@
         "passed": 24,
         "failed": 0,
         "maxOver24": 0,
-        "maxMean": 0.17
+        "maxMean": 0.18
       },
       "thresholds": {
         "over24": 2,
@@ -73,5 +73,5 @@
       }
     }
   },
-  "generatedAt": "2026-11-17T18:48:19.271Z"
+  "generatedAt": "2026-11-17T22:12:21.216Z"
 }

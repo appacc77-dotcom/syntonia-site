@@ -24,3 +24,8 @@
 ## v0.5.0 — near-lossless images
 - WebP near-lossless 80 + ICC; publish 75.3 МБ.
 - Pixel 24/24, mean 0.17, over24 0; hydration 24/24.
+
+## v0.6.0 — m3 React interactions
+- FAQ accordion, format chooser, quiz option selection.
+- Active nav, CTA links, reveal/reduced-motion.
+- Full pixel 24/24, hydration 24/24; publish 75.3 МБ.
