@@ -167,6 +167,18 @@
       "/quiz.html": "baseline",
       "/thanks-booking.html": "baseline",
       "/thanks-purchase.html": "baseline"
+    },
+    "components": {
+      "nav": "done",
+      "anchors": "todo",
+      "accordion": "todo",
+      "slider": "todo",
+      "chooser": "todo",
+      "modal": "todo",
+      "media": "todo",
+      "quiz": "todo",
+      "forms": "todo",
+      "mobile": "blocked"
     }
   }
 }

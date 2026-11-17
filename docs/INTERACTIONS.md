@@ -16,3 +16,4 @@ Append-only: новые записи добавляются снизу; стар
 | ID | Дата | Указка | Что сделано | Файлы/зоны | Тип | Проверка | Статус |
 |---|---|---|---|---|---|---|---|
 | D-001 | 2026-11-17 | Stage 3 kickoff | Зафиксирован baseline v0.5.0, адаптирован промт 06, создан журнал и каркас `assets/interactive` | docs, prompts/06, assets/interactive | новое поведение | baseline tag + docs | done |
+| D-002 | 2026-11-17 | S3.1 навигация | Header/footer labels стали role=link с клавиатурой, aria-current и корректным base path `/syntonia-site/`; 24/24 страниц без ошибок | assets/interactive/nav.js, assets/interactive.css, 24 HTML | новое поведение | Playwright 24/24 + click → quiz | done |
