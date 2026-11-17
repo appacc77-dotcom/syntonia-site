@@ -12,3 +12,7 @@
 ## v0.2.0 — optimized publication
 - Рабочая копия заменена на SSG-пакет m3 из reference ref-179a800f9fbf-2607d3a4.
 - 24 страницы, 259 файлов, ~14.9 МБ; WebP, dedupe, без QA-страниц.
+
+## v0.3.0 — image quality
+- WebP q95, сохранение ICC, smartSubsample/alphaQuality.
+- Publish ~29.4 МБ; pixel 24/24, mean 0.48, over24 0.
