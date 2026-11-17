@@ -307,4 +307,3 @@ Baseline Stage 3 — тег `stage3-baseline` (v0.5.0). После измене�
 
 | ID | Дата | Указка | Что сделано | Файлы/зоны | Тип | Проверка | Статус |
 |----|------|--------|-------------|-----------|-----|----------|--------|
-| D-002 | 2026-11-17 | S3.1 | навигация/футер: role=link, keyboard, aria-current, base path; 24/24 | assets/interactive/nav.js, assets/interactive.css | новое поведение | Playwright 24/24 | done |
