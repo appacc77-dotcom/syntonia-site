@@ -9,3 +9,4 @@
 | v0.4.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-2607d3a4 | WebP lossless + ICC, 96 MB | published |
 | v0.5.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-2607d3a4 | WebP near-lossless 80, 75.3 MB | published |
 | v0.6.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-c3f3d40c | m3 React: FAQ, formats, quiz, motion; 75.3 MB | published |
+| v0.7.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-c4c30e65 | voices/formats/links/footer; 75.3 MB | published |

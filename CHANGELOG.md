@@ -29,3 +29,8 @@
 - FAQ accordion, format chooser, quiz option selection.
 - Active nav, CTA links, reveal/reduced-motion.
 - Full pixel 24/24, hydration 24/24; publish 75.3 МБ.
+
+## v0.7.0 — voices, formats, links
+- 12-отзывный слайдер с тенями, стрелками и точками.
+- Форматы: выбранная карточка раскрывается, данные из Figma.
+- CTA-ссылки и светлый footer.
