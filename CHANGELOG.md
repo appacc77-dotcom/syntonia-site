@@ -42,3 +42,9 @@
 - 24 страницы, 145 ассетов, publish 75.3 МБ; publish-pixel 24/24 (maxMean 0.17), publish-hydration 24/24,
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
+
+## v0.9.0 — production indexing
+- Публикационный профиль `production`: `robots: index, follow`, `robots.txt` с `Allow: /` и `Sitemap:`.
+- Canonical/OG/sitemap пересобраны на `https://appacc77-dotcom.github.io/syntonia-site`; QA-страницы по-прежнему вне публикации.
+- Контент/дизайн не менялись: pixel 24/24 (maxMean 0.17), hydration 24/24; 24 страницы, 145 ассетов, 75.3 МБ.
+- Источник: pipeline v1.4.1 (`studio-pipeline-v2`), reference `31a2eb65` (не менялся).

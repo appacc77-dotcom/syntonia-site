@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "siteId": "syntonia-179a800f9fbf",
   "name": "Syntonia",
-  "version": "v0.8.0",
+  "version": "v0.9.0",
   "kind": "prepublication-site",
   "source": {
     "pipeline": "studio-pipeline-v2",
     "figSha": "179a800f9fbfe89e22f89ac422d7b3ee7c326c904d254f7664beb1847b4a05b5",
     "packId": "179a800f9fbf-907ef0790ce7-darwin-arm64",
     "m2Build": "site/dist",
-    "exportedAt": "2026-11-18T18:11:22.261Z"
+    "exportedAt": "2026-11-18T19:01:51.383Z"
   },
   "reference": {
     "id": "ref-179a800f9fbf-31a2eb65",
@@ -126,13 +126,13 @@
     "changelog": "CHANGELOG.md"
   },
   "publish": {
+    "profile": "production",
     "basePath": "/syntonia-site",
+    "siteUrl": "https://appacc77-dotcom.github.io/syntonia-site",
     "pagesUrl": "https://appacc77-dotcom.github.io/syntonia-site/",
-    "status": "published",
-    "publishId": "ref-179a800f9fbf-2607d3a4",
-    "referenceId": "ref-179a800f9fbf-2607d3a4",
-    "files": 260,
-    "bytes": 78959292
+    "robots": "index, follow",
+    "publishedVersion": "v0.9.0",
+    "publishedAt": "2026-11-18T19:01:51.383Z"
   },
   "stage3": {
     "state": "published",

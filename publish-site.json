@@ -4,7 +4,7 @@
   "publishId": "ref-179a800f9fbf-31a2eb65",
   "siteId": "syntonia-179a800f9fbf",
   "referenceId": "ref-179a800f9fbf-31a2eb65",
-  "version": "v0.8.0",
+  "version": "v0.9.0",
   "source": {
     "path": "modules/m2-layout/outbox/179a800f9fbf-907ef0790ce7-darwin-arm64/handoff.json",
     "packId": "179a800f9fbf-907ef0790ce7-darwin-arm64",
@@ -21,7 +21,7 @@
       "capture": "e9a86445f3df11fe6fc739d4358bad86069f129c4329585b0910f0905fa25c17"
     }
   },
-  "treeHash": "036346ca9741de4c9d51d09408652fa2e5f9e93d8465da37a8ce890dd710f8f9",
+  "treeHash": "2a2fdafef234bd49ef419c258d2b6330c2ba1c75964f418255e444e228dbc55c",
   "pages": 24,
   "assets": {
     "count": 145,
@@ -30,15 +30,15 @@
   "size": {
     "mainJsBytes": 1100139,
     "mainJsGzip": 184358,
-    "totalBytes": 78961154,
+    "totalBytes": 78961121,
     "ok": true
   },
   "publication": {
-    "profile": "staging",
+    "profile": "production",
     "basePath": "/syntonia-site",
     "siteUrl": "https://appacc77-dotcom.github.io/syntonia-site",
     "pagesUrl": "https://appacc77-dotcom.github.io/syntonia-site/",
-    "robots": "noindex, nofollow",
+    "robots": "index, follow",
     "status": "packaged"
   },
   "checks": {
@@ -78,5 +78,5 @@
       }
     }
   },
-  "generatedAt": "2026-11-18T17:39:27.733Z"
+  "generatedAt": "2026-11-18T18:58:45.212Z"
 }
