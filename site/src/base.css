@@ -18,8 +18,42 @@ body {
   width: 100%;
 }
 
-/* Ссылки внутри сгенерированной разметки не должны получать браузерный синий по умолчанию. */
-a {
-  color: inherit;
+/* Ссылки: цвет и подчёркивание задают классы утилит (text-*, no-underline).
+   Глобальное unlayered-правило a{color:inherit} перебивало бы @layer utilities Tailwind,
+   поэтому здесь его нет — базовое поведение даёт preflight. */
+
+/* --- Семантика и доступность (см. site/scripts/apply-site-patches.mjs) --- */
+/* h1..h6 вместо <p>: Tailwind-preflight уже гасит margin и наследует размер/насыщенность,
+   а размеры/цвета берутся из тех же утилит, что были у <p>. Свои правила для тегов не нужны
+   (unlayered-правила перебили бы @layer utilities Tailwind). */
+
+/* Ссылка «к содержанию»: видна только при клавиатурном фокусе. */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  padding: 10px 16px;
+  border-radius: 4px;
+  background: #3a3323;
+  color: #fff;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
   text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* Видимый фокус для клавиатурной навигации. */
+a:focus-visible,
+button:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid var(--color-accent, #5a5a36);
+  outline-offset: 2px;
 }

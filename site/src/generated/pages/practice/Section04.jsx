@@ -1,5 +1,8 @@
+import { isCurrent, useHref, useRoute } from '../../../interactive/links.jsx'
 // practice-pay as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section04() {
+  const href = useHref()
+  const route = useRoute()
   return (
     <div className="relative min-h-[2000.98px] w-full flex flex-row justify-center items-start bg-bg-practice" data-node="5173">
       <div className="flex-1 min-h-[2000.98px] w-full max-w-[1280px] flex flex-col gap-space-3xl pt-space-4xl items-start relative [overflow:hidden]" data-node="5174">
@@ -33,7 +36,7 @@ export function Section04() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5195">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5196">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5196" data-m3-link href={href('/checkout-confirm.html')} aria-current={isCurrent(route, '/checkout-confirm.html') ? 'page' : undefined}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5197">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5198">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5199">
@@ -41,7 +44,7 @@ export function Section04() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5201"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5202">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5203">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5204">
@@ -80,7 +83,7 @@ export function Section04() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5225">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5226">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5226" data-m3-link href={href('/checkout-confirm.html')} aria-current={isCurrent(route, '/checkout-confirm.html') ? 'page' : undefined}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5227">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5228">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5229">
@@ -88,7 +91,7 @@ export function Section04() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5231"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5232">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5233">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5234">
@@ -129,7 +132,7 @@ export function Section04() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5256">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5257">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5257" data-m3-link href={href('/checkout-confirm.html')} aria-current={isCurrent(route, '/checkout-confirm.html') ? 'page' : undefined}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5258">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5259">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5260">
@@ -137,7 +140,7 @@ export function Section04() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5262"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5263">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5264">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5265">
@@ -176,7 +179,7 @@ export function Section04() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5286">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5287">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5287" data-m3-link href={href('/checkout-confirm.html')} aria-current={isCurrent(route, '/checkout-confirm.html') ? 'page' : undefined}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5288">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5289">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5290">
@@ -184,7 +187,7 @@ export function Section04() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5292"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5293">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5294">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5295">
@@ -225,7 +228,7 @@ export function Section04() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5317">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5318">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5318" data-m3-link href={href('/checkout-confirm.html')} aria-current={isCurrent(route, '/checkout-confirm.html') ? 'page' : undefined}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5319">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5320">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5321">
@@ -233,7 +236,7 @@ export function Section04() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5323"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5324">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5325">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5326">
@@ -272,7 +275,7 @@ export function Section04() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5347">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5348">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5348" data-m3-link href={href('/checkout-confirm.html')} aria-current={isCurrent(route, '/checkout-confirm.html') ? 'page' : undefined}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5349">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5350">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5351">
@@ -280,7 +283,7 @@ export function Section04() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5353"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5354">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5355">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5356">

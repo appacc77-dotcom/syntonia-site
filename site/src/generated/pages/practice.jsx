@@ -10,7 +10,7 @@ import { Section08 } from './practice/Section08.jsx'
 
 export function PracticePage() {
   return (
-    <div className="relative min-h-[9290.52px] w-full flex flex-col items-start bg-[#FFFFFF]" data-node="5008" style={{ height: '9290.5205078125px' }}>
+    <main id="main" className="relative min-h-[9290.52px] w-full flex flex-col items-start bg-[#FFFFFF]" data-node="5008" style={{ height: '9290.5205078125px' }}>
       <Section01 />
       <Section02 />
       <Section03 />
@@ -19,6 +19,6 @@ export function PracticePage() {
       <Section06 />
       <Section07 />
       <Section08 />
-    </div>
+    </main>
   )
 }

@@ -49,6 +49,7 @@ export default function App({ route }) {
   const PageComponent = ROUTES[resolved] || ROUTES['/not-found.html']
   return (
     <RouteContext.Provider value={resolved}>
+      <a className="skip-link" href="#main">Перейти к содержанию</a>
       <PageReveal>
         <Suspense fallback={null}>
           <PageComponent />

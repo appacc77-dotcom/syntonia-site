@@ -36,7 +36,7 @@ export function Section01() {
         <div className="min-h-[13362px] w-full max-w-[680px] flex flex-col gap-space-2xl items-start relative" data-node="9956">
           <div className="self-stretch min-h-[192px] w-full max-w-[680px] flex flex-col gap-space-m items-start relative" data-node="9957">
             <p className="self-stretch w-full max-w-[680px] text-accent font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="9958">правовая информация</p>
-            <p className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="9959">Условия использования и продажи Syntonia</p>
+            <h1 className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="9959">Условия использования и продажи Syntonia</h1>
             <p className="self-stretch w-full max-w-[680px] text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="9960">Дата вступления в силу: [ДАТА ПУБЛИКАЦИИ] · Редакция: [НОМЕР РЕДАКЦИИ]</p>
           </div>
           <div className="self-stretch min-h-[13122px] w-full max-w-[680px] flex flex-col gap-space-xl items-start relative" data-node="9961">

@@ -5,7 +5,7 @@ export function Section03() {
       <div className="self-stretch mx-auto min-h-[4944.08px] w-full max-w-[680px] flex flex-col gap-space-l items-start relative [overflow:hidden]" data-node="4911">
         <div className="min-h-[88px] w-full max-w-[680px] flex flex-col gap-2 items-start relative" data-node="4912">
           <p className="self-stretch w-full max-w-[680px] text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="4913">код 1</p>
-          <p className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="4914">История Анны</p>
+          <h1 className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="4914">История Анны</h1>
         </div>
         <div className="self-stretch min-h-[3856px] w-full max-w-[680px] flex flex-col gap-space-m items-start relative [overflow:hidden]" data-node="4916">
           <p className="self-stretch w-full max-w-[680px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="4917">Однажды ко мне на сессию пришла Анна — молодая женщина, сдержанная, аккуратная, с усталыми глазами. Под её внешним спокойствием скрывалась тихая опустошённость. Она обратилась за помощью, когда поняла, что одна уже не справляется.</p>

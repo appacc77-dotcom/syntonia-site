@@ -5,7 +5,7 @@ export function Section14() {
   const href = useHref()
   const route = useRoute()
   return (
-    <div className="relative w-full min-h-[361px] flex flex-col pt-16 pb-6 justify-center items-center [background:linear-gradient(0deg,_rgba(58,_51,_35,_0.85),_rgba(58,_51,_35,_0.85)),_url(/assets/img-8bc9d6245a.jpg)_-0.3px_0.17px_/_2777.54px_1090.94px] shadow-[inset_0_1px_0_0_var(--color-thread,_#C9BEA4)]" data-node="1325">
+    <footer className="relative w-full min-h-[361px] flex flex-col pt-16 pb-6 justify-center items-center [background:linear-gradient(0deg,_rgba(58,_51,_35,_0.85),_rgba(58,_51,_35,_0.85)),_url(/assets/img-8bc9d6245a.jpg)_-0.3px_0.17px_/_2777.54px_1090.94px] shadow-[inset_0_1px_0_0_var(--color-thread,_#C9BEA4)]" data-node="1325">
       <div className="self-stretch mx-auto min-h-[273px] w-full max-w-[1280px] flex flex-col gap-space-m px-space-3xl items-start relative" data-node="1326">
         <div className="w-[713px] min-h-[220px] flex flex-row gap-24 pb-4 items-start relative" data-node="1327">
           <div className="w-69 min-h-[111px] flex flex-col gap-space-xl items-start relative" data-node="1328">
@@ -47,6 +47,6 @@ export function Section14() {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

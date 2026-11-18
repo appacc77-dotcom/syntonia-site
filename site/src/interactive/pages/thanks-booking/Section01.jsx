@@ -1,5 +1,8 @@
+import { isCurrent, useHref, useRoute } from '../../links.jsx'
 // thanks-booking-section as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section01() {
+  const href = useHref()
+  const route = useRoute()
   return (
     <div className="relative min-h-[963px] w-full flex flex-col pt-40 pr-space-l pb-24 pl-space-l justify-center items-center [overflow:hidden]" data-node="9565">
       <div className="min-h-[707px] w-full max-w-[640px] flex flex-col gap-space-xl items-center relative" data-node="9566">
@@ -39,7 +42,7 @@ export function Section01() {
           </div>
         </div>
         <div className="self-stretch min-h-[61px] w-full max-w-[640px] flex flex-row gap-space-l justify-center items-center relative" data-node="9592">
-          <div className="w-[171px] min-h-[61px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="9593">
+          <a className="w-[171px] min-h-[61px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="9593" data-m3-link href={href('/')} aria-current={isCurrent(route, '/') ? 'page' : undefined}>
             <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="9594">На главную</p>
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="9595">
               <div className="w-[11.88px] h-[9.65px] relative" data-node="9596">
@@ -47,7 +50,7 @@ export function Section01() {
                 <div className="absolute left-[6.97px] top-0 w-[4.91px] h-[9.65px] rounded-[0.71px] border-[3px] border-text-on-image" data-node="9598"></div>
               </div>
             </div>
-          </div>
+          </a>
           <div className="w-[154.86px] min-h-[29px] flex flex-row gap-space-s justify-center items-center shadow-[inset_0_-1px_0_0_var(--color-accent,_#5A5A36)] relative" data-node="9599">
             <a className="block no-underline text-accent font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em] flex flex-col justify-end" data-node="9600" data-m3-link href="booking.html">Задать вопрос</a>
             <div className="w-full max-w-[18.86px] min-h-[18.86px] flex flex-row gap-[1.93px] justify-end items-center relative" data-node="9601">

@@ -7,7 +7,7 @@ import { Section05 } from './masters/Section05.jsx'
 
 export function MastersPage() {
   return (
-    <div className="relative min-h-[3886.46px] w-full flex flex-col items-start" data-node="2692" style={{ height: '3886.46435546875px' }}>
+    <main id="main" className="relative min-h-[3886.46px] w-full flex flex-col items-start" data-node="2692" style={{ height: '3886.46435546875px' }}>
       <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: '1424px' }}>
         <Section05 />
       </div>
@@ -15,6 +15,6 @@ export function MastersPage() {
       <Section02 />
       <Section03 />
       <Section04 />
-    </div>
+    </main>
   )
 }

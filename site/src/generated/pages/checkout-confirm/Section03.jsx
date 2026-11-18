@@ -3,7 +3,7 @@ export function Section03() {
   return (
     <div className="relative min-h-[672px] w-full flex flex-col gap-space-l py-space-2xl px-space-xl items-start rounded-(--radius-l) bg-bg-page [overflow:hidden]" data-node="10641">
       <div className="self-stretch min-h-[67px] w-full max-w-[456px] flex flex-col gap-space-s items-start relative [overflow:hidden]" data-node="10642">
-        <p className="self-stretch w-full max-w-[456px] text-text-heading font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="10643">Оформление покупки</p>
+        <h1 className="self-stretch w-full max-w-[456px] text-text-heading font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="10643">Оформление покупки</h1>
         <p className="self-stretch w-full max-w-[456px] text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="10644">Проверьте заказ перед оплатой.</p>
       </div>
       <div className="self-stretch min-h-[236px] w-full max-w-[456px] flex flex-col gap-space-m p-space-l items-start rounded-m bg-bg-surface relative [overflow:hidden]" data-node="10645">

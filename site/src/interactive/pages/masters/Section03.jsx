@@ -1,5 +1,8 @@
+import { isCurrent, useHref, useRoute } from '../../links.jsx'
 // masters-more as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section03() {
+  const href = useHref()
+  const route = useRoute()
   return (
     <div className="relative min-h-[620px] w-full flex flex-row py-space-4xl px-6 justify-center items-start bg-[linear-gradient(246.63deg,_rgba(201,_190,_164,_1)_-13.55%,_rgba(203,_192,_167,_1)_-6.45%,_rgba(206,_195,_171,_1)_0.65%,_rgba(208,_198,_175,_1)_7.74%,_rgba(211,_201,_179,_1)_14.84%,_rgba(214,_204,_183,_1)_21.93%,_rgba(217,_207,_187,_1)_29.03%,_rgba(219,_211,_191,_1)_36.13%,_rgba(222,_214,_195,_1)_43.22%,_rgba(225,_217,_199,_1)_50.32%,_rgba(228,_220,_203,_1)_57.41%,_rgba(230,_223,_207,_1)_64.51%,_rgba(233,_226,_211,_1)_71.6%,_rgba(236,_229,_215,_1)_78.7%,_rgba(239,_232,_219,_1)_85.8%,_rgba(241,_235,_223,_1)_92.89%,_rgba(244,_238,_227,_1)_99.99%)] [overflow:hidden]" data-node="2819">
       <div className="flex-1 w-full max-w-[1280px] min-h-[428px] flex flex-row gap-space-xl items-start relative" data-node="2820">
@@ -9,7 +12,7 @@ export function Section03() {
         </div>
         <div className="flex-1 self-stretch w-full max-w-[296px] min-h-[428px] flex flex-col gap-space-m pb-space-m items-start rounded-m bg-bg-page relative [overflow:hidden]" data-node="2824">
           <div className="self-stretch w-full max-w-[296px] min-h-[236px] flex flex-row justify-center items-start rounded-[var(--radius-m,_12px)_var(--radius-m,_12px)_0px_0px] [background:url(/assets/img-0d49458ee5.jpg)_-176.28px_0px_/_566.55px_236px] [overflow:hidden]" data-node="2825"></div>
-          <div className="flex-1 self-stretch w-full max-w-[296px] min-h-[160px] flex flex-col gap-space-m px-space-m items-start relative" data-node="2826">
+          <a className="flex-1 self-stretch w-full max-w-[296px] min-h-[160px] flex flex-col gap-space-m px-space-m items-start relative" data-node="2826" data-m3-link href={href('/quiz.html')} aria-current={isCurrent(route, '/quiz.html') ? 'page' : undefined}>
             <p className="self-stretch w-full max-w-[264px] text-text-primary font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="2827">Понять, с чего начать</p>
             <p className="flex-1 self-stretch w-full max-w-[264px] h-20 text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px]" data-node="2828">Короткая диагностика поможет увидеть, какое состояние сейчас сильнее всего влияет на ваши реакции, выборы и внутренний маршрут.</p>
             <div className="w-[151px] min-h-[20px] flex flex-row gap-1 justify-center items-center relative" data-node="2829">
@@ -21,12 +24,12 @@ export function Section03() {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
           <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#8A8560]"></div>
         </div>
         <div className="flex-1 self-stretch w-full max-w-[296px] min-h-[428px] flex flex-col gap-space-m pb-space-m items-start rounded-m bg-bg-page relative [overflow:hidden]" data-node="2835">
           <div className="self-stretch w-full max-w-[296px] min-h-[236px] flex flex-row justify-center items-start rounded-[var(--radius-m,_12px)_var(--radius-m,_12px)_0px_0px] [background:url(/assets/img-3d23575247.jpg)_center_/_cover] [overflow:hidden]" data-node="2836"></div>
-          <div className="flex-1 self-stretch w-full max-w-[296px] min-h-[160px] flex flex-col gap-space-m px-space-m items-start relative" data-node="2837">
+          <a className="flex-1 self-stretch w-full max-w-[296px] min-h-[160px] flex flex-col gap-space-m px-space-m items-start relative" data-node="2837" data-m3-link href={href('/method.html')} aria-current={isCurrent(route, '/method.html') ? 'page' : undefined}>
             <p className="self-stretch w-full max-w-[264px] text-text-primary font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="2838">Узнать о методе</p>
             <p className="flex-1 self-stretch w-full max-w-[264px] h-20 text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px]" data-node="2839">Если вам важно понять, как работает Syntonia: почему разговор сам по себе не всегда меняет сценарий и что значит идти к источнику состояния.</p>
             <div className="w-[117px] min-h-[20px] flex flex-row gap-1 justify-center items-center relative" data-node="2840">
@@ -38,7 +41,7 @@ export function Section03() {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
           <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#8A8560]"></div>
         </div>
         <div className="flex-1 self-stretch w-full max-w-[296px] min-h-[428px] flex flex-col gap-space-m pb-space-m items-start rounded-m bg-bg-page relative [overflow:hidden]" data-node="2846">

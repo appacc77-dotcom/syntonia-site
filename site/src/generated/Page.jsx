@@ -19,7 +19,7 @@ import { Section15 } from './sections/Section15.jsx'
 
 export function Page() {
   return (
-    <div className="relative min-h-[10548px] w-full flex flex-col items-start bg-[#FFFFFF] [overflow:hidden]" data-node="951">
+    <main id="main" className="relative min-h-[10548px] w-full flex flex-col items-start bg-[#FFFFFF] [overflow:hidden]" data-node="951">
       <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: '1424px' }}>
         <Section15 />
       </div>
@@ -37,6 +37,6 @@ export function Page() {
       <Section12 />
       <Section13 />
       <Section14 />
-    </div>
+    </main>
   )
 }

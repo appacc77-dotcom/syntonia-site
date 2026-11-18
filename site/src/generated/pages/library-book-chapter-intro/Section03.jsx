@@ -5,7 +5,7 @@ export function Section03() {
       <div className="self-stretch mx-auto min-h-[2664px] w-full max-w-[680px] flex flex-col gap-space-l items-start relative [overflow:hidden]" data-node="4516">
         <div className="min-h-[148px] w-full max-w-[680px] flex flex-col gap-2 items-start relative" data-node="4517">
           <p className="self-stretch w-full max-w-[680px] text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="4518">введение</p>
-          <p className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="4519">Коды построения реальности</p>
+          <h1 className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="4519">Коды построения реальности</h1>
         </div>
         <div className="self-stretch min-h-[2492px] w-full max-w-[680px] flex flex-col gap-space-m items-start relative [overflow:hidden]" data-node="4521">
           <p className="self-stretch w-full max-w-[680px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="4522">За внешним разнообразием судеб всегда проступает закономерность.</p>

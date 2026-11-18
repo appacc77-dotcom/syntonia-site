@@ -7,7 +7,7 @@ import { Section05 } from './library-book-chapter/Section05.jsx'
 
 export function LibraryBookChapterPage() {
   return (
-    <div className="relative min-h-[1930px] w-full flex flex-col items-start bg-bg-reader" data-node="4258">
+    <main id="main" className="relative min-h-[1930px] w-full flex flex-col items-start bg-bg-reader" data-node="4258">
       <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: '1424px' }}>
         <Section01 />
       </div>
@@ -15,6 +15,6 @@ export function LibraryBookChapterPage() {
       <Section03 />
       <Section04 />
       <Section05 />
-    </div>
+    </main>
   )
 }

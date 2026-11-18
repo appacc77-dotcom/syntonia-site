@@ -6,7 +6,7 @@ import { FAQ_ITEMS } from '../../interactive/content/faq.js'
 export function Section13() {
   const href = useHref()
   return (
-    <div className="relative w-full min-h-[807px] flex flex-col py-space-5xl px-6 items-center [background:url(/assets/filt-b0fb60371c-0371c61-4d7e86b1.png)_center_/_cover] [overflow:hidden]" data-node="1273">
+    <div id="faq" className="relative w-full min-h-[807px] flex flex-col py-space-5xl px-6 items-center [background:url(/assets/filt-b0fb60371c-0371c61-4d7e86b1.png)_center_/_cover] [overflow:hidden]" data-node="1273">
       <div className="self-stretch mx-auto min-h-[511px] w-full max-w-[1280px] flex flex-row gap-space-2xl items-start relative" data-node="1274">
         <div className="self-stretch w-full max-w-[397px] min-h-[511px] flex flex-col gap-16 items-start relative" data-node="1275">
           <div className="self-stretch min-h-[402px] w-full max-w-[397px] flex flex-col gap-12 items-start relative" data-node="1276">

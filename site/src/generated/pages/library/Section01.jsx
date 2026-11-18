@@ -3,7 +3,7 @@ export function Section01() {
   return (
     <div className="relative w-full min-h-[820px] flex flex-row p-space-4xl items-end [background:linear-gradient(0deg,_rgba(0,_0,_0,_0.12),_rgba(0,_0,_0,_0.12)),_url(/assets/img-8cc5b040d7.png)_center_/_cover] [overflow:hidden]" data-node="3200">
       <div className="w-[538px] min-h-[305px] flex flex-col gap-8 justify-end items-start relative" data-node="3201">
-        <p className="self-stretch w-full max-w-[538px] text-text-on-image font-['Literata'] text-[64px] font-light leading-[64px]" data-node="3202">Библиотека Syntonia</p>
+        <h1 className="self-stretch w-full max-w-[538px] text-text-on-image font-['Literata'] text-[64px] font-light leading-[64px]" data-node="3202">Библиотека Syntonia</h1>
         <p className="w-full max-w-[538px] text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="3203">Ответьте на несколько вопросов, чтобы лучше понять своё текущее состояние и то, что стоит за ним.</p>
         <div className="w-[440px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) bg-accent-muted relative" data-node="3204">
           <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="3205">Увидеть, из чего строится ваша реальность</p>

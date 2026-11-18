@@ -1,5 +1,8 @@
+import { isCurrent, useHref, useRoute } from '../../../interactive/links.jsx'
 // chapter-bar as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section02() {
+  const href = useHref()
+  const route = useRoute()
   return (
     <div className="relative min-h-[192px] w-full flex flex-row pt-32 pr-6 pl-6 justify-center items-center" data-node="4619">
       <div className="flex-1 min-h-[64px] w-full max-w-[1280px] flex flex-col gap-6 items-start relative" data-node="4620">
@@ -11,7 +14,7 @@ export function Section02() {
                 <div className="absolute left-[6.97px] top-0 w-[4.91px] h-[9.65px] rounded-[0.71px] border-[3px] border-accent" data-node="4626"></div>
               </div>
             </div>
-            <p className="text-accent font-['Golos_Text'] text-[14px] font-normal leading-[19px] [white-space:nowrap]" data-node="4627">Вернуться к книге</p>
+            <a className="text-accent font-['Golos_Text'] text-[14px] font-normal leading-[19px] [white-space:nowrap]" data-node="4627" data-m3-link href={href('/library.html')} aria-current={isCurrent(route, '/library.html') ? 'page' : undefined}>Вернуться к книге</a>
           </div>
           <div className="min-h-[37px] w-full max-w-[280px] flex flex-row gap-6 p-[9px] items-center rounded-[4px] bg-bg-reader [outline:1px_solid_var(--color-thread,_#C9BEA4)] [outline-offset:-1px] relative" data-node="4628" style={{ position: 'relative', left: '-48.5px', top: '0px',  boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '280px' }}>
             <p className="flex-1 w-full max-w-[224px] text-accent font-['Golos_Text'] text-[14px] font-normal leading-[19px] [white-space:nowrap] [overflow:hidden] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1]" data-node="4629" style={{ boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '224px' }}>Техника для самостоятельной работы с кодом Боли</p>

@@ -47,7 +47,7 @@ export function QuizWizard() {
     <div className="w-[640px] min-h-[618.5px] flex flex-col gap-6 items-center relative [overflow:hidden]" data-node="5952">
       <div className="w-[640px] min-h-[618.5px] flex flex-col gap-4 items-center relative" data-node="5953">
         <div className="w-72 min-h-[69px] flex flex-col gap-2 items-center relative" data-node="5954">
-          <p className="text-accent font-['Golos_Text'] text-[24px] font-normal leading-[41px] [white-space:nowrap] uppercase" data-node="5955">Тест состояния</p>
+          <h1 className="text-accent font-['Golos_Text'] text-[24px] font-normal leading-[41px] [white-space:nowrap] uppercase" data-node="5955">Тест состояния</h1>
           <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] text-center" data-node="5956">Отвечай так, как чувствуешь именно сейчас.</p>
         </div>
         <div className="w-[492.19px] min-h-[20px] flex flex-row gap-6 justify-center items-center relative" data-node="5957">

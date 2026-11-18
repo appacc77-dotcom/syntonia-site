@@ -8,7 +8,7 @@ import { Section06 } from './library/Section06.jsx'
 
 export function LibraryPage() {
   return (
-    <div className="relative min-h-[3188px] w-full flex flex-col items-start" data-node="3199">
+    <main id="main" className="relative min-h-[3188px] w-full flex flex-col items-start" data-node="3199">
       <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: '1424px' }}>
         <Section06 />
       </div>
@@ -17,6 +17,6 @@ export function LibraryPage() {
       <Section03 />
       <Section04 />
       <Section05 />
-    </div>
+    </main>
   )
 }

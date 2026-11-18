@@ -5,7 +5,7 @@ export function Section03() {
       <div className="self-stretch mx-auto min-h-[1110px] w-full max-w-[680px] flex flex-col gap-space-l items-start relative [overflow:hidden]" data-node="4356">
         <div className="min-h-[88px] w-full max-w-[680px] flex flex-col gap-2 items-start relative" data-node="4357">
           <p className="self-stretch w-full max-w-[680px] text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="4358">код 1</p>
-          <p className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="4359">Боль</p>
+          <h1 className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="4359">Боль</h1>
         </div>
         <div className="self-stretch min-h-[998px] w-full max-w-[680px] flex flex-col gap-space-m items-start relative [overflow:hidden]" data-node="4361">
           <p className="self-stretch w-full max-w-[680px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="4362">Людям свойственно испытывать боль, она естественная часть жизни. Боль сопровождает болезни, моменты потерь, разрывов, когда что-то значимое уходит или меняется. Мы привыкли думать о боли как о симптоме, который необходимо заглушить, победить в себе.</p>

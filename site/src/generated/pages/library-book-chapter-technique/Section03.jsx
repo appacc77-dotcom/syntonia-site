@@ -5,7 +5,7 @@ export function Section03() {
       <div className="self-stretch mx-auto min-h-[4572.08px] w-full max-w-[680px] flex flex-col gap-space-l items-start relative [overflow:hidden]" data-node="4687">
         <div className="min-h-[208px] w-full max-w-[680px] flex flex-col gap-2 items-start relative" data-node="4688">
           <p className="self-stretch w-full max-w-[680px] text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="4689">код 1</p>
-          <p className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="4690">Техника для самостоятельной работы с кодом Боли</p>
+          <h1 className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="4690">Техника для самостоятельной работы с кодом Боли</h1>
         </div>
         <div className="self-stretch min-h-[3836px] w-full max-w-[680px] flex flex-col gap-space-xl items-start relative [overflow:hidden]" data-node="4692">
           <div className="self-stretch min-h-[424px] w-full max-w-[680px] flex flex-col gap-space-m items-start relative" data-node="4693">

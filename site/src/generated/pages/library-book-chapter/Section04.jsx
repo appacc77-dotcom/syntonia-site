@@ -1,9 +1,12 @@
+import { isCurrent, useHref, useRoute } from '../../../interactive/links.jsx'
 // chapter-nav as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section04() {
+  const href = useHref()
+  const route = useRoute()
   return (
     <div className="relative min-h-[139px] w-full flex flex-col pr-space-l pb-space-4xl pl-space-l items-center" data-node="4368">
       <div className="self-stretch mx-auto min-h-[43px] w-full max-w-[1280px] flex flex-row gap-space-l items-start relative" data-node="4369">
-        <div className="flex-1 min-h-[43px] w-full max-w-[628px] flex flex-col gap-space-xs items-start relative" data-node="4370">
+        <a className="flex-1 min-h-[43px] w-full max-w-[628px] flex flex-col gap-space-xs items-start relative" data-node="4370" data-m3-link href={href('/library/book-chapter-intro.html')} aria-current={isCurrent(route, '/library/book-chapter-intro.html') ? 'page' : undefined}>
           <p className="text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="4371">назад</p>
           <div className="w-57 min-h-[19px] flex flex-row gap-space-s items-center relative" data-node="4372">
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="4373">
@@ -14,8 +17,8 @@ export function Section04() {
             </div>
             <p className="text-accent font-['Golos_Text'] text-[14px] font-normal leading-[19px] [white-space:nowrap]" data-node="4377">Коды построения реальности</p>
           </div>
-        </div>
-        <div className="flex-1 min-h-[43px] w-full max-w-[628px] flex flex-col gap-space-xs items-end relative" data-node="4378">
+        </a>
+        <a className="flex-1 min-h-[43px] w-full max-w-[628px] flex flex-col gap-space-xs items-end relative" data-node="4378" data-m3-link href={href('/library/book-chapter-technique.html')} aria-current={isCurrent(route, '/library/book-chapter-technique.html') ? 'page' : undefined}>
           <p className="text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] text-right uppercase" data-node="4379">далее</p>
           <div className="w-95 min-h-[19px] flex flex-row gap-space-s items-center relative" data-node="4380">
             <p className="text-accent font-['Golos_Text'] text-[14px] font-normal leading-[19px] [white-space:nowrap] text-right" data-node="4381">Техника для самостоятельной работы с кодом Боли</p>
@@ -26,7 +29,7 @@ export function Section04() {
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );
