@@ -5,7 +5,7 @@ export function Section01() {
   const route = useRoute()
   return (
     <header className="relative min-h-[92px] w-full flex flex-row justify-center items-center rounded-[16px] [overflow:hidden]" data-node="4419">
-      <div className="flex-1 min-h-[92px] w-full flex flex-row gap-[10px] py-space-m px-space-xl justify-between items-center bg-bg-header backdrop-blur-[5px] relative" data-node="4420">
+      <div className="flex-1 min-h-[92px] w-full flex flex-row gap-0 py-space-m px-space-xl justify-between items-center bg-bg-header backdrop-blur-[5px] relative" data-node="4420">
         <div className="flex-1 min-h-[34px] w-full max-w-[596.17px] flex flex-row gap-space-l items-center relative" data-node="4421" style={{ boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '596.17px' }}>
           <div className="w-[119px] min-h-[34px] flex flex-row gap-space-xs items-center relative" data-node="4422">
             <a className="text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="4423" data-m3-link href={href('/')} aria-current={isCurrent(route, '/') ? 'page' : undefined}>О проекте</a>
@@ -19,11 +19,11 @@ export function Section01() {
           <a className="text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="4428" data-m3-link href={href('/quiz.html')} aria-current={isCurrent(route, '/quiz.html') ? 'page' : undefined}>Понять себя</a>
           <a className="text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="4429" data-m3-link href={href('/practice.html')} aria-current={isCurrent(route, '/practice.html') ? 'page' : undefined}>Пространство практики</a>
         </div>
-        <div className="w-[167.66px] h-15 relative" data-node="4430" style={{ position: 'relative', left: '-9.98px', top: '0px' }}>
-          <div className="absolute left-0 top-0 w-[167.83px] h-15 bg-[linear-gradient(70.33deg,_rgba(184,_134,_11,_1)_0%,_rgba(192,_144,_28,_1)_6.25%,_rgba(200,_155,_45,_1)_12.5%,_rgba(208,_165,_62,_1)_18.75%,_rgba(216,_175,_79,_1)_25%,_rgba(223,_186,_96,_1)_31.25%,_rgba(231,_196,_113,_1)_37.5%,_rgba(237,_209,_135,_1)_43.75%,_rgba(243,_222,_158,_1)_50%,_rgba(246,_230,_173,_1)_56.25%,_rgba(242,_221,_156,_1)_62.5%,_rgba(238,_211,_139,_1)_68.75%,_rgba(234,_202,_122,_1)_75%,_rgba(229,_194,_105,_1)_81.25%,_rgba(223,_188,_89,_1)_87.5%,_rgba(218,_181,_72,_1)_93.75%,_rgba(212,_175,_55,_1)_100%)]" data-node="4431" style={{ position: 'relative', left: '-19.93px', top: '0px' }}></div>
+        <div className="w-[167.66px] h-15 relative" data-node="4430">
+          <div className="absolute left-0 top-0 w-[167.83px] h-15 bg-[linear-gradient(70.33deg,_rgba(184,_134,_11,_1)_0%,_rgba(192,_144,_28,_1)_6.25%,_rgba(200,_155,_45,_1)_12.5%,_rgba(208,_165,_62,_1)_18.75%,_rgba(216,_175,_79,_1)_25%,_rgba(223,_186,_96,_1)_31.25%,_rgba(231,_196,_113,_1)_37.5%,_rgba(237,_209,_135,_1)_43.75%,_rgba(243,_222,_158,_1)_50%,_rgba(246,_230,_173,_1)_56.25%,_rgba(242,_221,_156,_1)_62.5%,_rgba(238,_211,_139,_1)_68.75%,_rgba(234,_202,_122,_1)_75%,_rgba(229,_194,_105,_1)_81.25%,_rgba(223,_188,_89,_1)_87.5%,_rgba(218,_181,_72,_1)_93.75%,_rgba(212,_175,_55,_1)_100%)]" data-node="4431"></div>
         </div>
-        <div className="flex-1 min-h-[45px] w-full max-w-[596.17px] flex flex-row gap-space-m justify-end items-center relative" data-node="4432" style={{ position: 'relative', left: '-19.98px', top: '0px',  boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '596.17px' }}>
-          <div className="w-67 min-h-[45px] flex flex-row gap-space-s items-center relative" data-node="4433" style={{ position: 'relative', left: '-19.97px', top: '0px' }}>
+        <div className="flex-1 min-h-[45px] w-full max-w-[596.17px] flex flex-row gap-space-m justify-end items-center relative" data-node="4432" style={{  boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '596.17px' }}>
+          <div className="w-67 min-h-[45px] flex flex-row gap-space-s items-center relative" data-node="4433">
             <div className="w-[215px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="4434">
               <a className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em] uppercase" data-node="4435" data-m3-link href={href('/booking.html')} aria-current={isCurrent(route, '/booking.html') ? 'page' : undefined}>ЛИЧНАЯ ВСТРЕЧА</a>
               <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="4436">

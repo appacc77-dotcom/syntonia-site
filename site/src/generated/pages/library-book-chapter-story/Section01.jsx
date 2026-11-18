@@ -5,7 +5,7 @@ export function Section01() {
   const route = useRoute()
   return (
     <header className="relative min-h-[92px] w-full flex flex-row justify-center items-center rounded-[16px] [overflow:hidden]" data-node="4814">
-      <div className="flex-1 min-h-[92px] w-full flex flex-row gap-[10px] py-space-m px-space-xl justify-between items-center bg-bg-header backdrop-blur-[5px] relative" data-node="4815">
+      <div className="flex-1 min-h-[92px] w-full flex flex-row gap-0 py-space-m px-space-xl justify-between items-center bg-bg-header backdrop-blur-[5px] relative" data-node="4815">
         <div className="flex-1 min-h-[34px] w-full max-w-[596.17px] flex flex-row gap-space-l items-center relative" data-node="4816">
           <div className="w-[119px] min-h-[34px] flex flex-row gap-space-xs items-center relative" data-node="4817">
             <a className="text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="4818" data-m3-link href={href('/')} aria-current={isCurrent(route, '/') ? 'page' : undefined}>О проекте</a>

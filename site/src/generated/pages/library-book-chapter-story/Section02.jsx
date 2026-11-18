@@ -3,7 +3,7 @@ export function Section02() {
   return (
     <div className="relative min-h-[192px] w-full flex flex-row pt-32 pr-6 pl-6 justify-center items-center" data-node="4843">
       <div className="flex-1 min-h-[64px] w-full max-w-[1280px] flex flex-col gap-6 items-start relative" data-node="4844">
-        <div className="self-stretch min-h-[37px] w-full max-w-[1280px] flex flex-row gap-[430px] justify-between items-center relative" data-node="4845">
+        <div className="self-stretch min-h-[37px] w-full max-w-[1280px] flex flex-row gap-0 justify-between items-center relative" data-node="4845">
           <div className="w-[159px] min-h-[19px] flex flex-row gap-2 items-center relative" data-node="4846">
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="4847">
               <div className="w-[11.88px] h-[9.65px] rotate-[-180deg] origin-top-left relative" data-node="4848">

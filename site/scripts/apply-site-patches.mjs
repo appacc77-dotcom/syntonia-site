@@ -191,6 +191,55 @@ function linkTextNode(text, nodeId, href) {
   return { text: next, changed: 1 }
 }
 
+
+/** Шапка: у header-inner в кодогене оказался gap-[10px], хотя в Figma эффективный gap = 0
+ *  (596.17 + 167.66 + 596.17 = 1360 ровно влезает в контейнер 1424 − 2×32). Из-за лишних
+ *  20 px флекс сжимал nav и header-actions на 10 px каждый. Патч: gap-[10px] → gap-0. */
+function fixHeaderGap(text) {
+  let changed = 0
+  const out = text.replace(/(<div[^>]*className="[^"]*min-h-\[92px\][^"]*justify-between[^"]*")/g, (all) => {
+    if (!/\bgap-\[10px\]/.test(all)) return all
+    changed += 1
+    return all.replace(/\bgap-\[10px\]/, 'gap-0')
+  })
+  return { text: out, changed }
+}
+
+
+/** Кодоген-хак: в flex-ряду с justify-between вместо точных отступов ставился огромный
+ *  фиксированный gap (напр. gap-[430px]). Он не влезает в контейнер → flex сжимает детей:
+ *  иконки вообще схлопываются в 0, кнопки теряют ширину. В таких рядах gap не нужен —
+ *  распределение делает justify-between. Патч: gap-[Npx] (N ≥ 100) → gap-0. */
+function fixHugeGaps(text) {
+  let changed = 0
+  const out = text.replace(/className="([^"]*)"/g, (all, cls) => {
+    if (!/justify-between/.test(cls)) return all
+    const next = cls.replace(/\bgap-\[(\d{2,})px\]/g, (m, n) => (Number(n) >= 100 ? 'gap-0' : m))
+    if (next === cls) return all
+    changed += 1
+    return `className="${next}"`
+  })
+  return { text: out, changed }
+}
+
+/** Компенсации кодогена под тот же gap: на floating-шапке (book-chapter*) элементы сдвинуты
+ *  inline-стилем `left: -Npx` ровно на величину зазоров. После gap-0 они лишние → убираем. */
+function dropGapCompensations(text) {
+  let changed = 0
+  let out = text
+  // вариант 1: стиль состоял только из компенсации — удаляем атрибут целиком
+  out = out.replace(/ style=\{\{ position: 'relative', left: '-[0-9.]+px', top: '0px' \}\}/g, () => {
+    changed += 1
+    return ''
+  })
+  // вариант 2: компенсация — префикс в наборе других стилей
+  out = out.replace(/(style=\{\{ )position: 'relative', left: '-[0-9.]+px', top: '0px', /g, (all, head) => {
+    changed += 1
+    return head
+  })
+  return { text: out, changed }
+}
+
 // ---------- обход файлов
 const walk = (dir) => {
   const out = []
@@ -233,6 +282,18 @@ for (const file of files) {
     else stat.footerFiles += 1
     write(file, text)
   }
+  if (isHeader) {
+    const t = read(file)
+    const gap = fixHeaderGap(t)
+    let next = gap.text
+    const comp = dropGapCompensations(next)
+    next = comp.text
+    if (gap.changed || comp.changed) {
+      write(file, next)
+      stat.gapFixes = (stat.gapFixes || 0) + gap.changed
+      stat.compFixes = (stat.compFixes || 0) + comp.changed
+    }
+  }
   // ориентиры ставим в любом случае (даже если ссылки уже были — как у главной)
   {
     let t = read(file)
@@ -258,6 +319,17 @@ for (const [route, moduleFile] of routeModule) {
     stat.hiddenH1 += 1
   }
   write(moduleFile, text)
+}
+
+// ---------- огромные gap-хаки в flex-рядах.
+// ВАЖНО: хак gap-[430px] ломает только страницы story (там ряд из трёх блоков распределяется
+// justify-between); на book-chapter/intro/technique тот же ряд из двух блоков этим gap'ом
+// позиционируется корректно — поэтому фикс скоупим на story.
+for (const file of files) {
+  if (!file.includes('library-book-chapter-story/')) continue
+  const t = read(file)
+  const huge = fixHugeGaps(t)
+  if (huge.changed) { write(file, huge.text); stat.hugeGaps = (stat.hugeGaps || 0) + huge.changed }
 }
 
 // ---------- h1 из макета: <p data-node="N"> → <h1 data-node="N">
@@ -328,4 +400,5 @@ for (const file of files) {
 }
 
 console.log(`patches: links=${stat.links} (шапок ${stat.headerFiles}, подвалов ${stat.footerFiles}), ` +
-  `landmarks=${stat.landmarks}, h1=${stat.h1}, скрытых h1=${stat.hiddenH1}, якоря=${stat.anchors}`)
+  `landmarks=${stat.landmarks}, h1=${stat.h1}, скрытых h1=${stat.hiddenH1}, якоря=${stat.anchors}, ` +
+  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, hugе-gap=${stat.hugeGaps || 0}`)
