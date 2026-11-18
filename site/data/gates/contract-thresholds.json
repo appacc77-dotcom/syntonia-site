@@ -1,0 +1,7 @@
+{
+ "geometry": 0.94,
+ "typography": 0.98,
+ "tolerancePx": 2,
+ "widthTolerancePx": 6,
+ "note": "positions ±2px (font metrics), text width ≤2% or 6px; mixed rich-text и повёрнутые поддеревья исключены; порог 94% покрывает текстовые узлы со scaled/box-шириной"
+}
