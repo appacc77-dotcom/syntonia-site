@@ -43,6 +43,23 @@
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
 
+## v0.10.4 — иконки: восстановлены 483 SVG-слепка, vector-extra для стрелок
+- **Восстановлены 431 отсутствовавших** snapshot-SVG иконок (`assets/snap-*.svg`) — в репозитории
+  лежало только 52 из 483, из-за чего часть иконок в CSS-override не отрисовывалась.
+- Экспортированы из Figma 20 базовых глифов (arrow-quiet, radio, burger, play, nav-icon, quote-mark,
+  slider-arrow, watch, gift, accordeon, cancel, time-logo, player-time, player-play, play-button,
+  faq-icon, arrow, logo) + повернутые/белые варианты: `site/public/icons/vec/`.
+- Новый генератор `scripts/build-icon-overrides.mjs`: `site/data/icon-overrides.json` → override-правила
+  `src/generated/vector-extra.css` для узлов, которым в codegen-слепке не хватило SVG
+  (аппроксимация div+border выглядит «толще»). Сейчас включены 89 узлов arrow-quiet (акцент/90°),
+  где экспорт проверен по golden: настоящий тонкий органический контур вместо «жирной» аппроксимации.
+- Проверка по golden: contract 24/24 PASS (0 нарушений), golden 24/24 PASS;
+  home mean 2.53/0.64 % (принятый baseline 2.80/0.80 %), masters 1.66/0.58 % (2.18/0.84 %),
+  legal-privacy 2.09/0.79 % (3.00/1.17 %), practice 2.80/1.16 % (2.83/1.19 %).
+- Диагностика для остальных 20 глифов: у части инстансов поворот/цвет берутся из инстанса,
+  поэтому автоматическая подстановка одного глифа даёт ложные варианты — включаем только после
+  сверки с golden по каждому узлу (следующий шаг M4b).
+
 ## v0.10.3 — качество ассетов: фото авторов lossless/original, −19.5 МБ мусора
 - Фото и обложки: JPG-оригиналы Figma отдаются байт-в-байт (`asset-map` identity: hero home,
   founder-баннер, автор-фото, обложки masters), PNG-портреты авторов перекодированы в **lossless WebP**

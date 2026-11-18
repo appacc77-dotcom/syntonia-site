@@ -331,6 +331,7 @@ function applyBoxFixes(text) {
   return { text: next, changed }
 }
 
+
 // ---------- обход файлов
 const walk = (dir) => {
   const out = []

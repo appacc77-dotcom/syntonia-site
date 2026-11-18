@@ -4,6 +4,7 @@ import './fonts.css'
 import './generated/theme.css'
 import './generated/font-metrics.css'
 import './generated/vector-assets.css'
+import './generated/vector-extra.css'
 import './base.css'
 import './interactive/styles/motion.css'
 
