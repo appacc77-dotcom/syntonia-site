@@ -43,6 +43,21 @@
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
 
+## v0.10.0 — навигация, семантика, гольден-ворота
+- Сайт стал source-репозиторием: `site/` (React + Vite + Tailwind + SSG), сборка `npm run deploy`
+  раскладывает результат в корень; ассеты публикации не пересобираются (`site/asset-map.json`).
+  Сборка воспроизводит live v0.9.0 один-в-один: 24/24 маршрута, 0 пиксельной разницы.
+- Навигация: шапка/подвал — настоящие ссылки на всех страницах, перелинковка по аффордансам макета
+  (masters → quiz/method, библиотека → главы, TOC и «назад/далее», practice «Пройти тест»/«Купить»,
+  thanks-* и 404, кредит основателя → masters). Достижимо 16/24 страниц (было 9/24).
+- Семантика: `h1` на каждой странице, `header/nav/main/footer`, skip-link, focus-visible.
+- Исправлен дефект публикации: ссылки шапки/подвала рендерились тёмными на тёмном
+  (unlayered `a{color:inherit}` перебивал `@layer utilities`).
+- Ворота: `npm run golden` — пиксельная сверка с эталоном m2 (`M2_GOLDEN`, 140 гольденов);
+  `scripts/apply-site-patches.mjs` — идемпотентные патчи React-исходников.
+- Известные отклонения от макета (в работе): quiz +28 px, checkout-confirm +200 px по высоте;
+  проглочены абзацные разрывы (masters) и mixed-font rich text (practice, «Практика» — Great Vibes).
+
 ## v0.9.0 — production indexing
 - Публикационный профиль `production`: `robots: index, follow`, `robots.txt` с `Allow: /` и `Sitemap:`.
 - Canonical/OG/sitemap пересобраны на `https://appacc77-dotcom.github.io/syntonia-site`; QA-страницы по-прежнему вне публикации.
