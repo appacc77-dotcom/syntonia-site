@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://appacc77-dotcom.github.io/syntonia-site/sitemap.xml
