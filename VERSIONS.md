@@ -10,3 +10,4 @@
 | v0.5.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-2607d3a4 | WebP near-lossless 80, 75.3 MB | published |
 | v0.6.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-c3f3d40c | m3 React: FAQ, formats, quiz, motion; 75.3 MB | published |
 | v0.7.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-c4c30e65 | voices/formats/links/footer; 75.3 MB | published |
+| v0.8.0 | syntonia-179a800f9fbf | ref-179a800f9fbf-31a2eb65 | m3 publish: интерактив Стадии 3 (mount-слой m2, 13 override), 75.3 MB | published |

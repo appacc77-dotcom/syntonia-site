@@ -34,3 +34,11 @@
 - 12-отзывный слайдер с тенями, стрелками и точками.
 - Форматы: выбранная карточка раскрывается, данные из Figma.
 - CTA-ссылки и светлый footer.
+
+## v0.8.0 — interactive Stage 3 in m2
+- Публикация переведена на m3 publish-pack нового reference `ref-179a800f9fbf-31a2eb65`
+  (интерактив построен в m2 через mount-слой, ADR-0017; 13 override: formats/voices/FAQ/quiz + CTA/навигация).
+- Интерактивные компоненты больше не форкаются в репозитории сайта: сборка m2 отдаёт готовый SSG-комплект.
+- 24 страницы, 145 ассетов, publish 75.3 МБ; publish-pixel 24/24 (maxMean 0.17), publish-hydration 24/24,
+  staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
+- Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.

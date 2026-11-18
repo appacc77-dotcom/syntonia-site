@@ -1,36 +1,36 @@
 {
   "schemaVersion": 1,
   "kind": "publish-site/v1",
-  "publishId": "ref-179a800f9fbf-c4c30e65",
+  "publishId": "ref-179a800f9fbf-31a2eb65",
   "siteId": "syntonia-179a800f9fbf",
-  "referenceId": "ref-179a800f9fbf-c4c30e65",
-  "version": "v0.2.0",
+  "referenceId": "ref-179a800f9fbf-31a2eb65",
+  "version": "v0.8.0",
   "source": {
     "path": "modules/m2-layout/outbox/179a800f9fbf-907ef0790ce7-darwin-arm64/handoff.json",
     "packId": "179a800f9fbf-907ef0790ce7-darwin-arm64",
     "figSha": "179a800f9fbfe89e22f89ac422d7b3ee7c326c904d254f7664beb1847b4a05b5",
-    "sha256": "340260e20386ecd90f09a40af5087feef1ba4231ec6facaa09b3403d692de37e"
+    "sha256": "6da8ae8b138ce4ef1faba8b9808b920a44bea19fe49d7f2578a21abde71d79fc"
   },
   "reference": {
-    "path": "artifacts/publish-reference/ref-179a800f9fbf-c4c30e65/site",
-    "treeHash": "c4c30e65b1e1fb64a36c98d4bc719c9647bb5ac397795eda00e66748a342dd5b",
+    "path": "artifacts/publish-reference/ref-179a800f9fbf-31a2eb65/site",
+    "treeHash": "31a2eb65404d814191bdf27766b5170ca6c2a11c40130eb16d27ee93ee6b7ab9",
     "immutable": true,
     "screens": {
-      "path": "artifacts/publish-reference/ref-179a800f9fbf-c4c30e65/screens",
+      "path": "artifacts/publish-reference/ref-179a800f9fbf-31a2eb65/screens",
       "routes": 24,
-      "capture": "e13bd6c724a7fabbb4376f89f2266e8d8c146b02337c661143cfd5a3ab84a7d2"
+      "capture": "e9a86445f3df11fe6fc739d4358bad86069f129c4329585b0910f0905fa25c17"
     }
   },
-  "treeHash": "fe5ed02ad9a43a3e9544f35e7ab048d235743abf22fb49d801fce355da2c4a24",
+  "treeHash": "036346ca9741de4c9d51d09408652fa2e5f9e93d8465da37a8ce890dd710f8f9",
   "pages": 24,
   "assets": {
     "count": 145,
-    "bytes": 76148700
+    "bytes": 76150947
   },
   "size": {
-    "mainJsBytes": 1097912,
-    "mainJsGzip": 181992,
-    "totalBytes": 78959292,
+    "mainJsBytes": 1100139,
+    "mainJsGzip": 184358,
+    "totalBytes": 78961154,
     "ok": true
   },
   "publication": {
@@ -42,6 +42,10 @@
     "status": "packaged"
   },
   "checks": {
+    "reference": {
+      "ok": true,
+      "report": "artifacts/metrics/reference-pixel.json"
+    },
     "pixel": {
       "ok": true,
       "summary": {
@@ -55,6 +59,7 @@
         "over24": 2,
         "mean": 5
       },
+      "cached": false,
       "report": "artifacts/metrics/publish-pixel.json"
     },
     "hydration": {
@@ -73,5 +78,5 @@
       }
     }
   },
-  "generatedAt": "2026-11-17T22:43:47.896Z"
+  "generatedAt": "2026-11-18T17:39:27.733Z"
 }

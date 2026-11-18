@@ -2,19 +2,20 @@
   "schemaVersion": 1,
   "siteId": "syntonia-179a800f9fbf",
   "name": "Syntonia",
-  "version": "v0.7.0",
+  "version": "v0.8.0",
   "kind": "prepublication-site",
   "source": {
     "pipeline": "studio-pipeline-v2",
     "figSha": "179a800f9fbfe89e22f89ac422d7b3ee7c326c904d254f7664beb1847b4a05b5",
     "packId": "179a800f9fbf-907ef0790ce7-darwin-arm64",
     "m2Build": "site/dist",
-    "exportedAt": "2026-11-16T17:28:43Z"
+    "exportedAt": "2026-11-18T18:11:22.261Z"
   },
   "reference": {
-    "id": "ref-20261116T172809Z",
-    "path": "reference/ref-20261116T172809Z/site",
+    "id": "ref-179a800f9fbf-31a2eb65",
+    "path": "reference/ref-179a800f9fbf-31a2eb65/site",
     "frozen": true,
+    "treeHash": "31a2eb65404d814191bdf27766b5170ca6c2a11c40130eb16d27ee93ee6b7ab9",
     "note": "Byte-identical copy of m2 site/dist; never edited"
   },
   "working": {
@@ -134,20 +135,8 @@
     "bytes": 78959292
   },
   "stage3": {
-    "interactive": [
-      "faq",
-      "formats",
-      "voices",
-      "quiz-option",
-      "motion"
-    ],
-    "behavior": {
-      "faq": "verified",
-      "formats": "implemented",
-      "voices": "implemented",
-      "quiz": "partial",
-      "forms": "demo",
-      "modals": "blocked"
-    }
+    "state": "published",
+    "source": "m2 mount-layer (ADR-0017)",
+    "publishedVersion": "v0.8.0"
   }
 }
