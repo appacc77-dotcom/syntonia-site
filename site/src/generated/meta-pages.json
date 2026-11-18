@@ -1,0 +1,956 @@
+{
+ "pages": [
+  {
+   "route": {
+    "route": "/masters.html",
+    "page": "Masters",
+    "frame": "main"
+   },
+   "slug": "masters",
+   "component": "MastersPage",
+   "page": "Masters",
+   "frame": "main",
+   "frameId": 2692,
+   "sections": [
+    {
+     "name": "founder-hero",
+     "component": "Section01",
+     "id": 2693,
+     "nodes": 66,
+     "bytes": 11200
+    },
+    {
+     "name": "masters-team",
+     "component": "Section02",
+     "id": 2763,
+     "nodes": 56,
+     "bytes": 12548
+    },
+    {
+     "name": "masters-more",
+     "component": "Section03",
+     "id": 2819,
+     "nodes": 38,
+     "bytes": 8188
+    },
+    {
+     "name": "footer",
+     "component": "Section04",
+     "id": 2857,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section05",
+     "id": 2889,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/library.html",
+    "page": "Library",
+    "frame": "main"
+   },
+   "slug": "library",
+   "component": "LibraryPage",
+   "page": "Library",
+   "frame": "main",
+   "frameId": 3199,
+   "sections": [
+    {
+     "name": "library-hero",
+     "component": "Section01",
+     "id": 3200,
+     "nodes": 10,
+     "bytes": 1905
+    },
+    {
+     "name": "library-book",
+     "component": "Section02",
+     "id": 3210,
+     "nodes": 15,
+     "bytes": 2997
+    },
+    {
+     "name": "library-journal",
+     "component": "Section03",
+     "id": 3225,
+     "nodes": 18,
+     "bytes": 3471
+    },
+    {
+     "name": "library-issues",
+     "component": "Section04",
+     "id": 3243,
+     "nodes": 59,
+     "bytes": 12885
+    },
+    {
+     "name": "footer",
+     "component": "Section05",
+     "id": 3306,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section06",
+     "id": 3338,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/library/book-chapter.html",
+    "page": "Library",
+    "frame": "book-chapter"
+   },
+   "slug": "library-book-chapter",
+   "component": "LibraryBookChapterPage",
+   "page": "Library",
+   "frame": "book-chapter",
+   "frameId": 4258,
+   "sections": [
+    {
+     "name": "header",
+     "component": "Section01",
+     "id": 4259,
+     "nodes": 29,
+     "bytes": 5554
+    },
+    {
+     "name": "chapter-bar",
+     "component": "Section02",
+     "id": 4288,
+     "nodes": 67,
+     "bytes": 15798
+    },
+    {
+     "name": "chapter-content",
+     "component": "Section03",
+     "id": 4355,
+     "nodes": 12,
+     "bytes": 3492
+    },
+    {
+     "name": "chapter-nav",
+     "component": "Section04",
+     "id": 4368,
+     "nodes": 18,
+     "bytes": 2857
+    },
+    {
+     "name": "footer",
+     "component": "Section05",
+     "id": 4386,
+     "nodes": 32,
+     "bytes": 5691
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/library/book-chapter-intro.html",
+    "page": "Library",
+    "frame": "book-chapter-intro"
+   },
+   "slug": "library-book-chapter-intro",
+   "component": "LibraryBookChapterIntroPage",
+   "page": "Library",
+   "frame": "book-chapter-intro",
+   "frameId": 4418,
+   "sections": [
+    {
+     "name": "header",
+     "component": "Section01",
+     "id": 4419,
+     "nodes": 29,
+     "bytes": 5554
+    },
+    {
+     "name": "chapter-bar",
+     "component": "Section02",
+     "id": 4448,
+     "nodes": 24,
+     "bytes": 4414
+    },
+    {
+     "name": "chapter-content",
+     "component": "Section03",
+     "id": 4515,
+     "nodes": 23,
+     "bytes": 6727
+    },
+    {
+     "name": "chapter-nav",
+     "component": "Section04",
+     "id": 4539,
+     "nodes": 18,
+     "bytes": 2812
+    },
+    {
+     "name": "footer",
+     "component": "Section05",
+     "id": 4557,
+     "nodes": 32,
+     "bytes": 5691
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/library/book-chapter-technique.html",
+    "page": "Library",
+    "frame": "book-chapter-technique"
+   },
+   "slug": "library-book-chapter-technique",
+   "component": "LibraryBookChapterTechniquePage",
+   "page": "Library",
+   "frame": "book-chapter-technique",
+   "frameId": 4589,
+   "sections": [
+    {
+     "name": "header",
+     "component": "Section01",
+     "id": 4590,
+     "nodes": 29,
+     "bytes": 5544
+    },
+    {
+     "name": "chapter-bar",
+     "component": "Section02",
+     "id": 4619,
+     "nodes": 24,
+     "bytes": 4435
+    },
+    {
+     "name": "chapter-content",
+     "component": "Section03",
+     "id": 4686,
+     "nodes": 76,
+     "bytes": 17715
+    },
+    {
+     "name": "chapter-nav",
+     "component": "Section04",
+     "id": 4763,
+     "nodes": 18,
+     "bytes": 2812
+    },
+    {
+     "name": "footer",
+     "component": "Section05",
+     "id": 4781,
+     "nodes": 32,
+     "bytes": 5691
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/library/book-chapter-story.html",
+    "page": "Library",
+    "frame": "book-chapter-story"
+   },
+   "slug": "library-book-chapter-story",
+   "component": "LibraryBookChapterStoryPage",
+   "page": "Library",
+   "frame": "book-chapter-story",
+   "frameId": 4813,
+   "sections": [
+    {
+     "name": "header",
+     "component": "Section01",
+     "id": 4814,
+     "nodes": 29,
+     "bytes": 5111
+    },
+    {
+     "name": "chapter-bar",
+     "component": "Section02",
+     "id": 4843,
+     "nodes": 24,
+     "bytes": 3898
+    },
+    {
+     "name": "chapter-content",
+     "component": "Section03",
+     "id": 4910,
+     "nodes": 46,
+     "bytes": 13196
+    },
+    {
+     "name": "chapter-nav",
+     "component": "Section04",
+     "id": 4957,
+     "nodes": 18,
+     "bytes": 2846
+    },
+    {
+     "name": "footer",
+     "component": "Section05",
+     "id": 4975,
+     "nodes": 32,
+     "bytes": 5691
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/practice.html",
+    "page": "Practice",
+    "frame": "practice-page"
+   },
+   "slug": "practice",
+   "component": "PracticePage",
+   "page": "Practice",
+   "frame": "practice-page",
+   "frameId": 5008,
+   "sections": [
+    {
+     "name": "hero",
+     "component": "Section01",
+     "id": 5009,
+     "nodes": 33,
+     "bytes": 5990
+    },
+    {
+     "name": "practice-free",
+     "component": "Section02",
+     "id": 5042,
+     "nodes": 112,
+     "bytes": 21270
+    },
+    {
+     "name": "quiz",
+     "component": "Section03",
+     "id": 5154,
+     "nodes": 19,
+     "bytes": 3487
+    },
+    {
+     "name": "practice-pay",
+     "component": "Section04",
+     "id": 5173,
+     "nodes": 219,
+     "bytes": 42052
+    },
+    {
+     "name": "kody-practice-pay",
+     "component": "Section05",
+     "id": 5422,
+     "nodes": 219,
+     "bytes": 41871
+    },
+    {
+     "name": "practice-package",
+     "component": "Section06",
+     "id": 5671,
+     "nodes": 119,
+     "bytes": 20861
+    },
+    {
+     "name": "info-section",
+     "component": "Section07",
+     "id": 5790,
+     "nodes": 35,
+     "bytes": 6445
+    },
+    {
+     "name": "footer",
+     "component": "Section08",
+     "id": 5825,
+     "nodes": 32,
+     "bytes": 5691
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/quiz.html",
+    "page": "Quiz",
+    "frame": "quiz-q1"
+   },
+   "slug": "quiz",
+   "component": "QuizPage",
+   "page": "Quiz",
+   "frame": "quiz-q1",
+   "frameId": 5950,
+   "sections": [
+    {
+     "name": "quiz-section",
+     "component": "Section01",
+     "id": 5951,
+     "nodes": 73,
+     "bytes": 14070
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 6025,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 6057,
+     "nodes": 29,
+     "bytes": 5111
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/booking.html",
+    "page": "Booking",
+    "frame": "main"
+   },
+   "slug": "booking",
+   "component": "BookingPage",
+   "page": "Booking",
+   "frame": "main",
+   "frameId": 8230,
+   "sections": [
+    {
+     "name": "booking-hero",
+     "component": "Section01",
+     "id": 8231,
+     "nodes": 5,
+     "bytes": 1121
+    },
+    {
+     "name": "booking-formats",
+     "component": "Section02",
+     "id": 8236,
+     "nodes": 131,
+     "bytes": 23202
+    },
+    {
+     "name": "footer",
+     "component": "Section03",
+     "id": 8381,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section04",
+     "id": 8413,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/method.html",
+    "page": "Method",
+    "frame": "main"
+   },
+   "slug": "method",
+   "component": "MethodPage",
+   "page": "Method",
+   "frame": "main",
+   "frameId": 9023,
+   "sections": [
+    {
+     "name": "method-hero",
+     "component": "Section01",
+     "id": 9024,
+     "nodes": 4,
+     "bytes": 1009
+    },
+    {
+     "name": "method-about",
+     "component": "Section02",
+     "id": 9028,
+     "nodes": 18,
+     "bytes": 4253
+    },
+    {
+     "name": "method-cta",
+     "component": "Section03",
+     "id": 9046,
+     "nodes": 10,
+     "bytes": 2146
+    },
+    {
+     "name": "footer",
+     "component": "Section04",
+     "id": 9060,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section05",
+     "id": 9092,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/login.html",
+    "page": "Technical",
+    "frame": "login"
+   },
+   "slug": "login",
+   "component": "LoginPage",
+   "page": "Technical",
+   "frame": "login",
+   "frameId": 9123,
+   "sections": [
+    {
+     "name": "login-section",
+     "component": "Section01",
+     "id": 9124,
+     "nodes": 1,
+     "bytes": 291
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 9125,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 9157,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/account-practices.html",
+    "page": "Technical",
+    "frame": "account-practices"
+   },
+   "slug": "account-practices",
+   "component": "AccountPracticesPage",
+   "page": "Technical",
+   "frame": "account-practices",
+   "frameId": 9186,
+   "sections": [
+    {
+     "name": "account-practices-section",
+     "component": "Section01",
+     "id": 9187,
+     "nodes": 1,
+     "bytes": 303
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 9188,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 9220,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/account-history.html",
+    "page": "Technical",
+    "frame": "account-history"
+   },
+   "slug": "account-history",
+   "component": "AccountHistoryPage",
+   "page": "Technical",
+   "frame": "account-history",
+   "frameId": 9312,
+   "sections": [
+    {
+     "name": "account-history-section",
+     "component": "Section01",
+     "id": 9313,
+     "nodes": 1,
+     "bytes": 301
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 9314,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 9346,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/account-profile.html",
+    "page": "Technical",
+    "frame": "account-profile"
+   },
+   "slug": "account-profile",
+   "component": "AccountProfilePage",
+   "page": "Technical",
+   "frame": "account-profile",
+   "frameId": 9375,
+   "sections": [
+    {
+     "name": "account-profile-section",
+     "component": "Section01",
+     "id": 9376,
+     "nodes": 1,
+     "bytes": 301
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 9377,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 9409,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/practice-detail.html",
+    "page": "Technical",
+    "frame": "practice-detail"
+   },
+   "slug": "practice-detail",
+   "component": "PracticeDetailPage",
+   "page": "Technical",
+   "frame": "practice-detail",
+   "frameId": 9438,
+   "sections": [
+    {
+     "name": "practice-detail-section",
+     "component": "Section01",
+     "id": 9439,
+     "nodes": 1,
+     "bytes": 301
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 9440,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 9472,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/thanks-booking.html",
+    "page": "Technical",
+    "frame": "thanks-booking"
+   },
+   "slug": "thanks-booking",
+   "component": "ThanksBookingPage",
+   "page": "Technical",
+   "frame": "thanks-booking",
+   "frameId": 9564,
+   "sections": [
+    {
+     "name": "thanks-booking-section",
+     "component": "Section01",
+     "id": 9565,
+     "nodes": 41,
+     "bytes": 7481
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 9606,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 9638,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/thanks-purchase.html",
+    "page": "Technical",
+    "frame": "thanks-purchase"
+   },
+   "slug": "thanks-purchase",
+   "component": "ThanksPurchasePage",
+   "page": "Technical",
+   "frame": "thanks-purchase",
+   "frameId": 9756,
+   "sections": [
+    {
+     "name": "thanks-purchase-section",
+     "component": "Section01",
+     "id": 9757,
+     "nodes": 27,
+     "bytes": 4997
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 9784,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 9816,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/not-found.html",
+    "page": "Technical",
+    "frame": "not-found"
+   },
+   "slug": "not-found",
+   "component": "NotFoundPage",
+   "page": "Technical",
+   "frame": "not-found",
+   "frameId": 9845,
+   "sections": [
+    {
+     "name": "not-found-section",
+     "component": "Section01",
+     "id": 9846,
+     "nodes": 21,
+     "bytes": 3621
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 9867,
+     "nodes": 32,
+     "bytes": 5691
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 9899,
+     "nodes": 29,
+     "bytes": 5117
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/legal-terms.html",
+    "page": "Technical",
+    "frame": "legal-terms"
+   },
+   "slug": "legal-terms",
+   "component": "LegalTermsPage",
+   "page": "Technical",
+   "frame": "legal-terms",
+   "frameId": 9928,
+   "sections": [
+    {
+     "name": "legal-section",
+     "component": "Section01",
+     "id": 9929,
+     "nodes": 123,
+     "bytes": 39731
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 10052,
+     "nodes": 32,
+     "bytes": 5723
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 10084,
+     "nodes": 29,
+     "bytes": 5146
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/legal-privacy.html",
+    "page": "Technical",
+    "frame": "legal-privacy"
+   },
+   "slug": "legal-privacy",
+   "component": "LegalPrivacyPage",
+   "page": "Technical",
+   "frame": "legal-privacy",
+   "frameId": 10113,
+   "sections": [
+    {
+     "name": "legal-section",
+     "component": "Section01",
+     "id": 10114,
+     "nodes": 114,
+     "bytes": 37839
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 10228,
+     "nodes": 32,
+     "bytes": 5723
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 10260,
+     "nodes": 29,
+     "bytes": 5146
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/legal-refund.html",
+    "page": "Technical",
+    "frame": "legal-refund"
+   },
+   "slug": "legal-refund",
+   "component": "LegalRefundPage",
+   "page": "Technical",
+   "frame": "legal-refund",
+   "frameId": 10289,
+   "sections": [
+    {
+     "name": "legal-section",
+     "component": "Section01",
+     "id": 10290,
+     "nodes": 109,
+     "bytes": 31585
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 10399,
+     "nodes": 32,
+     "bytes": 5723
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 10431,
+     "nodes": 29,
+     "bytes": 5146
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/legal-consent.html",
+    "page": "Technical",
+    "frame": "legal-consent"
+   },
+   "slug": "legal-consent",
+   "component": "LegalConsentPage",
+   "page": "Technical",
+   "frame": "legal-consent",
+   "frameId": 10460,
+   "sections": [
+    {
+     "name": "legal-section",
+     "component": "Section01",
+     "id": 10461,
+     "nodes": 88,
+     "bytes": 25340
+    },
+    {
+     "name": "footer",
+     "component": "Section02",
+     "id": 10549,
+     "nodes": 32,
+     "bytes": 5723
+    },
+    {
+     "name": "header",
+     "component": "Section03",
+     "id": 10581,
+     "nodes": 29,
+     "bytes": 5146
+    }
+   ]
+  },
+  {
+   "route": {
+    "route": "/checkout-confirm.html",
+    "page": "Technical",
+    "frame": "checkout-confirm"
+   },
+   "slug": "checkout-confirm",
+   "component": "CheckoutConfirmPage",
+   "page": "Technical",
+   "frame": "checkout-confirm",
+   "frameId": 10610,
+   "sections": [
+    {
+     "name": "header",
+     "component": "Section01",
+     "id": 10611,
+     "nodes": 29,
+     "bytes": 5146
+    },
+    {
+     "name": "modal-overlay",
+     "component": "Section02",
+     "id": 10640,
+     "nodes": 1,
+     "bytes": 229
+    },
+    {
+     "name": "checkout-modal",
+     "component": "Section03",
+     "id": 10641,
+     "nodes": 27,
+     "bytes": 5473
+    }
+   ]
+  }
+ ]
+}

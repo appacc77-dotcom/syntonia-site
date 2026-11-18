@@ -1,0 +1,232 @@
+{
+  "source": {
+    "page": "Home",
+    "frame": "main",
+    "frameId": 951,
+    "sections": 15
+  },
+  "figcraft": {
+    "format": "figcraft",
+    "version": 1
+  },
+  "code": {
+    "language": "tailwind",
+    "sections": [
+      {
+        "name": "hero",
+        "component": "Section01",
+        "id": 952,
+        "nodes": 14,
+        "images": 1,
+        "bytes": 2341
+      },
+      {
+        "name": "banner-founder",
+        "component": "Section02",
+        "id": 966,
+        "nodes": 5,
+        "images": 1,
+        "bytes": 1018
+      },
+      {
+        "name": "pain",
+        "component": "Section03",
+        "id": 971,
+        "nodes": 34,
+        "images": 2,
+        "bytes": 5870
+      },
+      {
+        "name": "method",
+        "component": "Section04",
+        "id": 1005,
+        "nodes": 16,
+        "images": 0,
+        "bytes": 3392
+      },
+      {
+        "name": "quiz",
+        "component": "Section05",
+        "id": 1021,
+        "nodes": 17,
+        "images": 1,
+        "bytes": 3104
+      },
+      {
+        "name": "about-founder",
+        "component": "Section06",
+        "id": 1038,
+        "nodes": 21,
+        "images": 1,
+        "bytes": 3673
+      },
+      {
+        "name": "process",
+        "component": "Section07",
+        "id": 1059,
+        "nodes": 25,
+        "images": 3,
+        "bytes": 4609
+      },
+      {
+        "name": "entry",
+        "component": "Section08",
+        "id": 1084,
+        "nodes": 23,
+        "images": 2,
+        "bytes": 4803
+      },
+      {
+        "name": "formats",
+        "component": "Section09",
+        "id": 1107,
+        "nodes": 77,
+        "images": 3,
+        "bytes": 14228
+      },
+      {
+        "name": "voices",
+        "component": "Section10",
+        "id": 1184,
+        "nodes": 70,
+        "images": 1,
+        "bytes": 11541
+      },
+      {
+        "name": "library",
+        "component": "Section11",
+        "id": 1254,
+        "nodes": 18,
+        "images": 1,
+        "bytes": 3056
+      },
+      {
+        "name": "air-photo",
+        "component": "Section12",
+        "id": 1272,
+        "nodes": 1,
+        "images": 1,
+        "bytes": 313
+      },
+      {
+        "name": "faq",
+        "component": "Section13",
+        "id": 1273,
+        "nodes": 52,
+        "images": 2,
+        "bytes": 9598
+      },
+      {
+        "name": "footer",
+        "component": "Section14",
+        "id": 1325,
+        "nodes": 32,
+        "images": 1,
+        "bytes": 5691
+      },
+      {
+        "name": "header",
+        "component": "Section15",
+        "id": 1357,
+        "nodes": 29,
+        "images": 1,
+        "bytes": 5117
+      }
+    ],
+    "bytes": 155761,
+    "lines": 1412
+  },
+  "theme": {
+    "format": "tailwind",
+    "bytes": 1707
+  },
+  "images": {
+    "references": 21,
+    "files": 17,
+    "sourceEntries": 66
+  },
+  "fonts": [
+    "Golos Text",
+    "Great Vibes",
+    "Hurricane",
+    "Literata",
+    "Lora"
+  ],
+  "snapshot": {
+    "dir": "artifacts/exports/179a800f9fbf-907ef0790ce7-darwin-arm64/reference/snapshot/179a800f9fbf",
+    "assets": 59,
+    "vectorCss": 36
+  },
+  "assets": [
+    {
+      "url": "/assets/img-815aa456cd.jpg",
+      "hash": "815aa456cd4ed4fddac9de0425344487d2f03ee2cf1093e086234b0ac024e9ec"
+    },
+    {
+      "url": "/assets/img-d8dfd795ce.jpg",
+      "hash": "d8dfd795ce8708bde075e290ae499b5cf4d4fc1c77c3bce2af7c735b8bfe73d5"
+    },
+    {
+      "url": "/assets/filt-eb7bed48ea-d48eace-6121d2fa.png",
+      "hash": "eb7bed48eacee2dc79210cb4440c415f75ac5758cd77fd56462bc5183b4a1781",
+      "filtered": true
+    },
+    {
+      "url": "/assets/img-dcecf0bcc4.png",
+      "hash": "dcecf0bcc44d2812685f7ce4d062e368935682af5a7ba4aecca3378f7ec2561c"
+    },
+    {
+      "url": "/assets/img-0d49458ee5.jpg",
+      "hash": "0d49458ee54a0e6a7a59828dc5ce2e099ae26382189b7d81992bfc986fdb45e9"
+    },
+    {
+      "url": "/assets/img-962882f8c4.png",
+      "hash": "962882f8c496d1b65394655810f7ea066d299ffe6310b873199ad082ad873d14"
+    },
+    {
+      "url": "/assets/img-0177d675c6.png",
+      "hash": "0177d675c61ce74c9d2fa4b1c21871e35cec6f96287bb3a53756c852d51e1e34"
+    },
+    {
+      "url": "/assets/img-6e4d019ee5.png",
+      "hash": "6e4d019ee5f64fa3e33e10215d1c731061455a35dc81fe2c319f33b60d339697"
+    },
+    {
+      "url": "/assets/img-0655cb58d1.png",
+      "hash": "0655cb58d1d82a9a7f7cb0558b62ac8384ffad4138030adcae9a105f6f634a28"
+    },
+    {
+      "url": "/assets/img-acb8703354.jpg",
+      "hash": "acb87033541a9982f3467e1421aadc6e2a43a73c839aeed494e2ff04cae15239"
+    },
+    {
+      "url": "/assets/img-8abb88a1df.png",
+      "hash": "8abb88a1dfebd16c20b8cb9e6966f60874697d5bc487cf18d7599390a23cabb8"
+    },
+    {
+      "url": "/assets/img-ccc7781894.png",
+      "hash": "ccc77818941e90120018ee43ae42ab4ea3d7e0643b036387fb98ad19de9af9ce"
+    },
+    {
+      "url": "/assets/img-acf48f09f2.png",
+      "hash": "acf48f09f288caea46681972403a3388abeb6cc2b6d2df6542342bd5ecb192da"
+    },
+    {
+      "url": "/assets/img-2ccc5d8c32.png",
+      "hash": "2ccc5d8c32cee61bf3788095a92cd47360ec4b2cb339ab9ebab931a898d1f97a"
+    },
+    {
+      "url": "/assets/img-5ea791f73f.jpg",
+      "hash": "5ea791f73f86b729ac801a9c70f4aa61c949fbc9ea9e6a24d08ce71c14434da2"
+    },
+    {
+      "url": "/assets/filt-b0fb60371c-0371c61-4d7e86b1.png",
+      "hash": "b0fb60371c619b137d696a5d0768b1c66f1634ea9a63d1ce83494fab721ff513",
+      "filtered": true
+    },
+    {
+      "url": "/assets/img-8bc9d6245a.jpg",
+      "hash": "8bc9d6245a53bd52b3f6858ee90dcb549bba808ca73eda7dcfdd5b7cb6957449"
+    }
+  ]
+}

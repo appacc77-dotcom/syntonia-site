@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate",
+  "changeId": "179a800f9fbf-278a6aa996aa",
+  "note": "Маршруты нового scope; accepted project/routes.json не меняется до S6.",
+  "routes": [
+    {
+      "route": "/",
+      "page": "Home",
+      "frame": "main"
+    },
+    {
+      "route": "/masters.html",
+      "page": "Masters",
+      "frame": "main"
+    },
+    {
+      "route": "/library.html",
+      "page": "Library",
+      "frame": "main"
+    },
+    {
+      "route": "/library/book-chapter.html",
+      "page": "Library",
+      "frame": "book-chapter"
+    },
+    {
+      "route": "/library/book-chapter-intro.html",
+      "page": "Library",
+      "frame": "book-chapter-intro"
+    },
+    {
+      "route": "/library/book-chapter-technique.html",
+      "page": "Library",
+      "frame": "book-chapter-technique"
+    },
+    {
+      "route": "/library/book-chapter-story.html",
+      "page": "Library",
+      "frame": "book-chapter-story"
+    },
+    {
+      "route": "/practice.html",
+      "page": "Practice",
+      "frame": "practice-page"
+    },
+    {
+      "route": "/quiz.html",
+      "page": "Quiz",
+      "frame": "quiz-q1"
+    },
+    {
+      "route": "/booking.html",
+      "page": "Booking",
+      "frame": "main"
+    },
+    {
+      "route": "/method.html",
+      "page": "Method",
+      "frame": "main"
+    },
+    {
+      "route": "/login.html",
+      "page": "Technical",
+      "frame": "login"
+    },
+    {
+      "route": "/account-practices.html",
+      "page": "Technical",
+      "frame": "account-practices"
+    },
+    {
+      "route": "/account-history.html",
+      "page": "Technical",
+      "frame": "account-history"
+    },
+    {
+      "route": "/account-profile.html",
+      "page": "Technical",
+      "frame": "account-profile"
+    },
+    {
+      "route": "/practice-detail.html",
+      "page": "Technical",
+      "frame": "practice-detail"
+    },
+    {
+      "route": "/thanks-booking.html",
+      "page": "Technical",
+      "frame": "thanks-booking"
+    },
+    {
+      "route": "/thanks-purchase.html",
+      "page": "Technical",
+      "frame": "thanks-purchase"
+    },
+    {
+      "route": "/not-found.html",
+      "page": "Technical",
+      "frame": "not-found"
+    },
+    {
+      "route": "/legal-terms.html",
+      "page": "Technical",
+      "frame": "legal-terms"
+    },
+    {
+      "route": "/legal-privacy.html",
+      "page": "Technical",
+      "frame": "legal-privacy"
+    },
+    {
+      "route": "/legal-refund.html",
+      "page": "Technical",
+      "frame": "legal-refund"
+    },
+    {
+      "route": "/legal-consent.html",
+      "page": "Technical",
+      "frame": "legal-consent"
+    },
+    {
+      "route": "/checkout-confirm.html",
+      "page": "Technical",
+      "frame": "checkout-confirm"
+    }
+  ],
+  "scales": {
+    "route": 2,
+    "state": 1,
+    "designSystem": 1
+  }
+}

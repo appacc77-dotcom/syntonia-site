@@ -1,0 +1,25 @@
+/* Базовые правила страницы: FigCraft-кодоген рассчитан на страницу шириной с макет (1440).
+   Всё остальное — Tailwind-утилиты из сгенерированного Main.jsx и @theme из theme.css. */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Ссылки внутри сгенерированной разметки не должны получать браузерный синий по умолчанию. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
