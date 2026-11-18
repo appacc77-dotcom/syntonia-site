@@ -240,6 +240,97 @@ function dropGapCompensations(text) {
   return { text: out, changed }
 }
 
+
+// ---------- rich text: списки и абзацные интервалы (карта из Figma: data/rich-text.json)
+const RICH = existsSync(join(SITE, 'data/rich-text.json')) ? JSON.parse(read(join(SITE, 'data/rich-text.json'))) : []
+const jsxStr = (value) => `{${JSON.stringify(value)}}`
+
+/** Элемент <p ... data-node="N">...</p> → {start, contentStart, contentEnd, end, attrs, openEnd}. */
+function findTextElement(text, nodeId) {
+  const openRe = new RegExp(`<p((?:[^>"]|"[^"]*")*data-node="${nodeId}"(?:[^>"]|"[^"]*")*)>`)
+  const m = openRe.exec(text)
+  if (!m) return null
+  const contentStart = m.index + m[0].length
+  const contentEnd = text.indexOf('</p>', contentStart)
+  if (contentEnd < 0) return null
+  if (text.slice(contentStart, contentEnd).includes('<ul')) return null // уже преобразовано
+  return { openStart: m.index, attrs: m[1], contentStart, contentEnd }
+}
+
+/** Bullet-список из Figma TEXT-узла: висчий отступ + «•» (геометрия из golden). */
+function renderList(items, entry) {
+  const fontSize = entry.fontSize || 16
+  const bulletLeft = Math.round(fontSize * 0.63 * 10) / 10
+  const textIndent = Math.round(fontSize * 1.58 * 10) / 10
+  const li = items.map((item) => {
+    const parts = String(item).split(/\n|\u2028/).map((line) => jsxStr(line))
+    // Переносы Figma — жёсткие: каждую строку держим нераспадающейся, иначе шрифтовые метрики
+    // добавляют лишний перенос и пункт вырастает. Длинные однострочные пункты Figma тоже не
+    // переносит (expectedLines === 1).
+    const hardLines = parts.length > 1 || entry.expectedLines === 1
+    const body = hardLines
+      ? parts.map((line) => `<span style={{ whiteSpace: 'nowrap' }}>${line}</span>`).join('<br />')
+      : parts.join('<br />')
+    return `<li style={{ position: 'relative', paddingLeft: '${textIndent}px' }}><span style={{ position: 'absolute', left: '${bulletLeft}px' }}>•</span>${body}</li>`
+  }).join('')
+  return `<ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>${li}</ul>`
+}
+
+function renderParagraphs(items, spacing) {
+  return items.map((item, index) => {
+    const margin = index === 0 ? 0 : spacing
+    // мягкие переносы Figma (U+2028 / \n) внутри абзаца → <br/>
+    const parts = String(item).split(/\n|\u2028/).map((line) => jsxStr(line))
+    return `<p style={{ margin: 0, marginTop: '${margin}px' }}>${parts.join('<br />')}</p>`
+  }).join('')
+}
+
+/** Применить rich-text карту к файлу. Идемпотентно (уже преобразованное пропускаем). */
+function applyRichText(text, fileName) {
+  let next = text
+  let changed = 0
+  for (const entry of RICH) {
+    const found = findTextElement(next, entry.node)
+    if (!found) continue
+    const width = entry.width ? `width: '${entry.width}px', ` : ''
+    const inner = entry.kind === 'list'
+      ? renderList(entry.items, entry)
+      : renderParagraphs(entry.items, entry.paragraphSpacing)
+    const replacement = `<div${found.attrs} style={{ ${width}boxSizing: 'border-box' }}>${inner}</div>`
+    next = next.slice(0, found.openStart) + replacement + next.slice(found.contentEnd + 4)
+    changed += 1
+    stat.richText = (stat.richText || 0) + 1
+  }
+  return { text: next, changed }
+}
+
+
+// ---------- фикс-боксы текста (Figma textAutoResize=NONE): напр. script-нумерация bio 01..05,
+// у которой бокс 20 px при line-height 32 px — иначе head вырастает на 3–12 px и каскадит дальше.
+const BOX_FIXES = existsSync(join(SITE, 'data/box-fixes.json')) ? JSON.parse(read(join(SITE, 'data/box-fixes.json'))) : []
+
+function applyBoxFixes(text) {
+  let next = text
+  let changed = 0
+  for (const fix of BOX_FIXES) {
+    const openRe = new RegExp(`<(p|div|span)((?:[^>"]|"[^"]*")*data-node="${fix.node}"(?:[^>"]|"[^"]*")*)>`)
+    const m = openRe.exec(next)
+    if (!m) continue
+    if (/style=\{\{/.test(m[2])) {
+      // уже есть inline-стиль — дополняем шириной/высотой, если их нет
+      const tag = m[0]
+      const patched = tag.replace(/style=\{\{/, `style={{ width: '${fix.width}px', height: '${fix.height}px', `)
+      next = next.slice(0, m.index) + patched + next.slice(m.index + tag.length)
+    } else {
+      const tag = m[0].replace(/^(<(?:p|div|span))/, `$1 style={{ width: '${fix.width}px', height: '${fix.height}px' }}`)
+      next = next.slice(0, m.index) + tag + next.slice(m.index + m[0].length)
+    }
+    changed += 1
+    stat.boxFixes = (stat.boxFixes || 0) + 1
+  }
+  return { text: next, changed }
+}
+
 // ---------- обход файлов
 const walk = (dir) => {
   const out = []
@@ -332,6 +423,30 @@ for (const file of files) {
   if (huge.changed) { write(file, huge.text); stat.hugeGaps = (stat.hugeGaps || 0) + huge.changed }
 }
 
+// ---------- фикс-боксы текста
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const boxed = applyBoxFixes(t)
+  if (boxed.changed) write(file, boxed.text)
+}
+
+// ---------- фикс-боксы текста (Figma textAutoResize=NONE)
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const boxed = applyBoxFixes(t)
+  if (boxed.changed) write(file, boxed.text)
+}
+
+// ---------- rich text: списки и абзацные интервалы
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const rich = applyRichText(t, file)
+  if (rich.changed) write(file, rich.text)
+}
+
 // ---------- h1 из макета: <p data-node="N"> → <h1 data-node="N">
 const nodeIndex = new Map()
 for (const file of files) {
@@ -401,4 +516,4 @@ for (const file of files) {
 
 console.log(`patches: links=${stat.links} (шапок ${stat.headerFiles}, подвалов ${stat.footerFiles}), ` +
   `landmarks=${stat.landmarks}, h1=${stat.h1}, скрытых h1=${stat.hiddenH1}, якоря=${stat.anchors}, ` +
-  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, hugе-gap=${stat.hugeGaps || 0}`)
+  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}`)

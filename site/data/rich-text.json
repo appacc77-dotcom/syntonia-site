@@ -1,0 +1,1073 @@
+[
+ {
+  "node": "399",
+  "page": "Design system",
+  "width": 452,
+  "height": 156,
+  "fontSize": 14,
+  "lineHeightPx": 20.3,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Меня всегда интересовала глубина человеческой природы: как в одной личности переплетаются сила и уязвимость, осознанность и запутанность, желание жить и при этом разрушать себя.",
+   "Почему человек может искренне хотеть перемен, стараться, искать, пробовать — и всё равно снова упираться в ту же невозможность что-то изменить."
+  ]
+ },
+ {
+  "node": "747",
+  "page": "Design system",
+  "width": 607.5,
+  "height": 178,
+  "fontSize": 20,
+  "lineHeightPx": 27.0,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Точка входа — первая встреча, когда важно не начинать сразу с глубокой работы, а спокойно разобраться, что происходит сейчас и куда лучше двигаться дальше.",
+   "За короткое время мы обозначаем основной запрос, смотрим на текущее состояние и определяем, какой следующий шаг может быть наиболее точным."
+  ]
+ },
+ {
+  "node": "750",
+  "page": "Design system",
+  "width": 607.5,
+  "height": 102,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1,
+   1,
+   1
+  ],
+  "expectedLines": 3,
+  "items": [
+   "проясняем запрос и то, что сейчас действительно важно;",
+   "определяем основное направление работы;",
+   "смотрим, какой формат может подойти дальше."
+  ]
+ },
+ {
+  "node": "2723",
+  "page": "Masters",
+  "width": 452,
+  "height": 156,
+  "fontSize": 14,
+  "lineHeightPx": 20.3,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Меня всегда интересовала глубина человеческой природы: как в одной личности переплетаются сила и уязвимость, осознанность и запутанность, желание жить и при этом разрушать себя.",
+   "Почему человек может искренне хотеть перемен, стараться, искать, пробовать — и всё равно снова упираться в ту же невозможность что-то изменить."
+  ]
+ },
+ {
+  "node": "2823",
+  "page": "Masters",
+  "width": 296,
+  "height": 272,
+  "fontSize": 17,
+  "lineHeightPx": 22.95,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Если вы пока не знаете, с чего начать, не обязательно сразу выбирать мастера.",
+   "Можно сначала понять метод, пройти диагностику состояния или познакомиться с текстами Syntonia глубже."
+  ]
+ },
+ {
+  "node": "2956",
+  "page": "Masters",
+  "width": 452,
+  "height": 136,
+  "fontSize": 14,
+  "lineHeightPx": 20.3,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Я пришла в эту работу не просто из интереса.",
+   "Я всегда видела человека глубже его внешней истории, глубже слов и действий. Игнорировать это в себе не имело смысла, и я пошла учиться. Так я стала психологом. А позже, практикуя, я всё яснее понимала: именно то, что я вижу на уровне внутренних причин, часто и оказывается самым важным."
+  ]
+ },
+ {
+  "node": "3034",
+  "page": "Masters",
+  "width": 452,
+  "height": 212,
+  "fontSize": 14,
+  "lineHeightPx": 20.3,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Я знаю, как часто за сильным, собранным, разумным человеком живёт уставшая внутренняя часть, которая слишком долго несла то, что уже невозможно нести.",
+   "И как часто за внешне разными трудностями стоит одна и та же настоящая внутренняя причина. Моя работа никогда не была для меня просто профессией.",
+   "Это способ идти вместе с человеком туда, где становится ясно, что на самом деле с ним происходит, почему это повторяется и где начинается выход."
+  ]
+ },
+ {
+  "node": "3112",
+  "page": "Masters",
+  "width": 452,
+  "height": 156,
+  "fontSize": 14,
+  "lineHeightPx": 20.3,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Я не смотрю на человека как на набор проблем. Мне важно видеть в нём основание. Ту глубину, которая часто остаётся нетронутой под слоями напряжения, вины, страха, защиты или внутренней пустоты.",
+   "Именно это люди чаще всего чувствуют рядом со мной: желанную ясность и точное внимание к тому, что в них действительно главное."
+  ]
+ },
+ {
+  "node": "3190",
+  "page": "Masters",
+  "width": 452,
+  "height": 152,
+  "fontSize": 14,
+  "lineHeightPx": 20.3,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Для меня это работа о возвращении человека к себе. К возможности жить не только из прошлого опыта, но и из чего-то более живого, свободного и настоящего.",
+   "Поэтому я и создала Syntonia. Как пространство, в котором можно идти.",
+   "Точно. Бережно. По-настоящему."
+  ]
+ },
+ {
+  "node": "3432",
+  "page": "Library",
+  "width": 296,
+  "height": 272,
+  "fontSize": 17,
+  "lineHeightPx": 22.95,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Если вы пока не знаете, с чего начать, не обязательно сразу выбирать мастера.",
+   "Можно сначала понять метод, пройти диагностику состояния или познакомиться с текстами Syntonia глубже."
+  ]
+ },
+ {
+  "node": "3670",
+  "page": "Library",
+  "width": 296,
+  "height": 272,
+  "fontSize": 17,
+  "lineHeightPx": 22.95,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Если вы пока не знаете, с чего начать, не обязательно сразу выбирать мастера.",
+   "Можно сначала понять метод, пройти диагностику состояния или познакомиться с текстами Syntonia глубже."
+  ]
+ },
+ {
+  "node": "3919",
+  "page": "Library",
+  "width": 296,
+  "height": 272,
+  "fontSize": 17,
+  "lineHeightPx": 22.95,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Прочитанное — только начало. Главное остаётся после. ",
+   "Можно пойти дальше вместе: встреча с мастером, практика или короткая диагностика."
+  ]
+ },
+ {
+  "node": "4163",
+  "page": "Library",
+  "width": 296,
+  "height": 272,
+  "fontSize": 17,
+  "lineHeightPx": 22.95,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Прочитанное — только начало. Главное остаётся после. ",
+   "Можно пойти дальше вместе: встреча с мастером, практика или короткая диагностика."
+  ]
+ },
+ {
+  "node": "5694",
+  "page": "Practice",
+  "width": 161,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Код Тепла. Активация"
+  ]
+ },
+ {
+  "node": "5695",
+  "page": "Practice",
+  "width": 218,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Код Боли. Возвращение к себе"
+  ]
+ },
+ {
+  "node": "5696",
+  "page": "Practice",
+  "width": 256,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Код Страха. Право двигаться вперёд"
+  ]
+ },
+ {
+  "node": "5697",
+  "page": "Practice",
+  "width": 199,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Код Гнева. Сила без борьбы"
+  ]
+ },
+ {
+  "node": "5698",
+  "page": "Practice",
+  "width": 216,
+  "height": 40,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Код Негодования. \nПерестать спорить с прошлым"
+  ]
+ },
+ {
+  "node": "5699",
+  "page": "Practice",
+  "width": 212,
+  "height": 40,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Код Гордыни. \nВыход из внутреннего холода"
+  ]
+ },
+ {
+  "node": "5700",
+  "page": "Practice",
+  "width": 163,
+  "height": 40,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Код Растерянности. \nВозвращение ясности"
+  ]
+ },
+ {
+  "node": "5729",
+  "page": "Practice",
+  "width": 227,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Жизнь на разрыве. Найти выход"
+  ]
+ },
+ {
+  "node": "5730",
+  "page": "Practice",
+  "width": 317,
+  "height": 40,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Разрешить себе больше. Деньги, реализация, \nмасштаб"
+  ]
+ },
+ {
+  "node": "5731",
+  "page": "Practice",
+  "width": 320,
+  "height": 40,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Возвращение близости. Внутренние преграды\nв отношениях"
+  ]
+ },
+ {
+  "node": "5732",
+  "page": "Practice",
+  "width": 332,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Держаться — это работа. Стоять — это состояние"
+  ]
+ },
+ {
+  "node": "5733",
+  "page": "Practice",
+  "width": 310,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Тело не молчит. Услышать внутренний смысл"
+  ]
+ },
+ {
+  "node": "5734",
+  "page": "Practice",
+  "width": 213,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Связь с Высшим проявлением"
+  ]
+ },
+ {
+  "node": "5735",
+  "page": "Practice",
+  "width": 154,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Вернуться к радости"
+  ]
+ },
+ {
+  "node": "5764",
+  "page": "Practice",
+  "width": 230,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Войти в своё желаемое будущее"
+  ]
+ },
+ {
+  "node": "5765",
+  "page": "Practice",
+  "width": 161,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Код Тепла. Активация"
+  ]
+ },
+ {
+  "node": "5766",
+  "page": "Practice",
+  "width": 218,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Код Боли. Возвращение к себе"
+  ]
+ },
+ {
+  "node": "5767",
+  "page": "Practice",
+  "width": 256,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Код Страха. Право двигаться вперёд"
+  ]
+ },
+ {
+  "node": "5768",
+  "page": "Practice",
+  "width": 199,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Код Гнева. Сила без борьбы"
+  ]
+ },
+ {
+  "node": "5769",
+  "page": "Practice",
+  "width": 216,
+  "height": 40,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Код Негодования. \nПерестать спорить с прошлым"
+  ]
+ },
+ {
+  "node": "5770",
+  "page": "Practice",
+  "width": 212,
+  "height": 40,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Код Гордыни. \nВыход из внутреннего холода"
+  ]
+ },
+ {
+  "node": "5771",
+  "page": "Practice",
+  "width": 163,
+  "height": 40,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Код Растерянности. \nВозвращение ясности"
+  ]
+ },
+ {
+  "node": "5772",
+  "page": "Practice",
+  "width": 227,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Жизнь на разрыве. Найти выход"
+  ]
+ },
+ {
+  "node": "5773",
+  "page": "Practice",
+  "width": 317,
+  "height": 40,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Разрешить себе больше. Деньги, реализация, \nмасштаб"
+  ]
+ },
+ {
+  "node": "5774",
+  "page": "Practice",
+  "width": 320,
+  "height": 40,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Возвращение близости. Внутренние преграды\nв отношениях"
+  ]
+ },
+ {
+  "node": "5775",
+  "page": "Practice",
+  "width": 332,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Держаться — это работа. Стоять — это состояние"
+  ]
+ },
+ {
+  "node": "5776",
+  "page": "Practice",
+  "width": 310,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Тело не молчит. Услышать внутренний смысл"
+  ]
+ },
+ {
+  "node": "5777",
+  "page": "Practice",
+  "width": 213,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Связь с Высшим проявлением"
+  ]
+ },
+ {
+  "node": "5778",
+  "page": "Practice",
+  "width": 154,
+  "height": 20,
+  "fontSize": 13,
+  "lineHeightPx": 19.5,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Вернуться к радости"
+  ]
+ },
+ {
+  "node": "5808",
+  "page": "Practice",
+  "width": 1163,
+  "height": 68,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Перед началом оцени своё состояние по шкале 0–10. Если напряжение выше 6/10 — отложи практику или сделай \nеё с поддержкой."
+  ]
+ },
+ {
+  "node": "5809",
+  "page": "Practice",
+  "width": 683,
+  "height": 34,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Поставь мягкий таймер на 10–15 минут, держи рядом воду и плед."
+  ]
+ },
+ {
+  "node": "5810",
+  "page": "Practice",
+  "width": 779,
+  "height": 34,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Сообщи близкому, что ты в практике, или договорись о «якоре поддержки»"
+  ]
+ },
+ {
+  "node": "5811",
+  "page": "Practice",
+  "width": 1084,
+  "height": 34,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 1,
+  "items": [
+   "Если в процессе становится хуже — остановись, открой глаза, сделай три длинных выдоха и сделай паузу."
+  ]
+ },
+ {
+  "node": "5812",
+  "page": "Practice",
+  "width": 1110,
+  "height": 68,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1
+  ],
+  "expectedLines": 2,
+  "items": [
+   "Если у тебя есть диагнозы, влияющие на психику, выраженная тревога/депрессия, частые флэшбэки или ты \nпринимаешь психотропные препараты — выполняй практики только с поддержкой специалиста."
+  ]
+ },
+ {
+  "node": "8332",
+  "page": "Booking",
+  "width": 607.5,
+  "height": 178,
+  "fontSize": 20,
+  "lineHeightPx": 27.0,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Точка входа — первая встреча, когда важно не начинать сразу с глубокой работы, а спокойно разобраться, что происходит сейчас и куда лучше двигаться дальше.",
+   "За короткое время мы обозначаем основной запрос, смотрим на текущее состояние и определяем, какой следующий шаг может быть наиболее точным."
+  ]
+ },
+ {
+  "node": "8335",
+  "page": "Booking",
+  "width": 607.5,
+  "height": 102,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1,
+   1,
+   1
+  ],
+  "expectedLines": 3,
+  "items": [
+   "проясняем запрос и то, что сейчас действительно важно;",
+   "определяем основное направление работы;",
+   "смотрим, какой формат может подойти дальше."
+  ]
+ },
+ {
+  "node": "8538",
+  "page": "Booking",
+  "width": 607.5,
+  "height": 205,
+  "fontSize": 20,
+  "lineHeightPx": 27.0,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Мастер-сессия — полноценная индивидуальная встреча для работы с конкретным запросом, состоянием или повторяющейся ситуацией.",
+   "В центре внимания не только то, что происходит внешне, но и внутреннее основание реакции: состояние, привычный сценарий и причины, которые могут поддерживать его глубже уровня обычного понимания."
+  ]
+ },
+ {
+  "node": "8541",
+  "page": "Booking",
+  "width": 607.5,
+  "height": 170,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "expectedLines": 5,
+  "items": [
+   "исследуем один ключевой запрос;",
+   "идём от проявления к внутренней причине;",
+   "работаем с тем, что поддерживает привычную реакцию;",
+   "формируем более ясную внутреннюю точку для дальнейшего движения."
+  ]
+ },
+ {
+  "node": "8683",
+  "page": "Booking",
+  "width": 607.5,
+  "height": 205,
+  "fontSize": 20,
+  "lineHeightPx": 27.0,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Три встречи дают возможность не ограничиваться одной точкой работы, а увидеть запрос в развитии: начать с основной причины, продолжить работу с тем, что раскрывается дальше, и закрепить изменения.",
+   "Этот формат подходит, когда одной встречи недостаточно и важна последовательность, но пока не требуется длительное сопровождение."
+  ]
+ },
+ {
+  "node": "8686",
+  "page": "Booking",
+  "width": 607.5,
+  "height": 136,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "expectedLines": 4,
+  "items": [
+   "3 индивидуальные мастер-сессии по 2 часа;",
+   "последовательная работа с одним направлением;",
+   "возможность идти глубже по мере раскрытия запроса;",
+   "закрепление того, что меняется между встречами."
+  ]
+ },
+ {
+  "node": "8828",
+  "page": "Booking",
+  "width": 607.5,
+  "height": 205,
+  "fontSize": 20,
+  "lineHeightPx": 27.0,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Пять встреч создают пространство для более глубокой и последовательной работы, когда запрос затрагивает не одну ситуацию, а связан с устойчивыми внутренними сценариями или несколькими областями жизни.",
+   "Здесь появляется возможность не спешить, возвращаться к тому, что проявляется между встречами, и постепенно работать с более глубокими слоями запроса."
+  ]
+ },
+ {
+  "node": "8831",
+  "page": "Booking",
+  "width": 607.5,
+  "height": 204,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "expectedLines": 6,
+  "items": [
+   "5 индивидуальных мастер-сессий по 2 часа;",
+   "системная работа с основным запросом;",
+   "исследование связанных состояний и повторяющихся сценариев;",
+   "время на интеграцию изменений между встречами;",
+   "постепенное углубление работы по мере необходимости."
+  ]
+ },
+ {
+  "node": "8973",
+  "page": "Booking",
+  "width": 607.5,
+  "height": 232,
+  "fontSize": 20,
+  "lineHeightPx": 27.0,
+  "textAlign": "LEFT",
+  "kind": "paragraphs",
+  "paragraphSpacing": 16,
+  "items": [
+   "Сопровождение — более компактный формат для тех случаев, когда глубокая основная работа уже началась и важно сохранить контакт с процессом, разобрать то, что проявилось в жизни, или скорректировать дальнейшее движение.",
+   "Это не новая работа «с нуля», а пространство для продолжения, уточнения и интеграции происходящих изменений."
+  ]
+ },
+ {
+  "node": "8976",
+  "page": "Booking",
+  "width": 607.5,
+  "height": 170,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "expectedLines": 5,
+  "items": [
+   "разбираем то, что проявилось после предыдущей работы;",
+   "уточняем текущее состояние и новые вопросы;",
+   "поддерживаем интеграцию изменений в повседневной жизни;",
+   "определяем следующий шаг."
+  ]
+ },
+ {
+  "node": "10186",
+  "page": "Technical",
+  "width": 680,
+  "height": 952,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "expectedLines": 28,
+  "items": [
+   "Webflow, Inc. (США) и его провайдеры: размещение и работа сайта, доставка страниц, обработка форм — в пределах включенных функций.",
+   "Outseta, Inc. (США) и его провайдеры: авторизация, кабинет, права доступа, учет клиентов и email — в пределах фактической конфигурации.",
+   "Stripe, Inc. и участники платежной инфраструктуры: платежи, противодействие мошенничеству, возвраты, выполнение установленных для них обязанностей. Для части этих целей Stripe действует самостоятельно по своей политике конфиденциальности.",
+   "Выбранный мастер: контакт и сведения, необходимые для согласованной встречи. Мастера работают от имени Syntonia как [СОТРУДНИКИ / НЕЗАВИСИМЫЕ ПОДРЯДЧИКИ] и обязаны соблюдать конфиденциальность.",
+   "[ФАКТИЧЕСКИЕ СЕРВИСЫ EMAIL, ВИДЕОСВЯЗИ, ХРАНЕНИЯ АУДИО (НАПРИМЕР BUNNY) И ПОДДЕРЖКИ — НАЗВАНИЕ, СТРАНА, ФУНКЦИЯ]: обеспечение соответствующей функции. Если вы выбираете общение через Telegram или иной мессенджер, передача сообщений также регулируется правилами этого сервиса.",
+   "[ПОДКЛЮЧЕННЫЕ СЕРВИСЫ АНАЛИТИКИ И РЕКЛАМЫ]: только в соответствии с вашим выбором и применимым законодательством.",
+   "Бухгалтеры, юристы, аудиторы и уполномоченные государственные органы: когда это необходимо для учета, соблюдения закона, ответа на законный запрос или защиты прав."
+  ]
+ },
+ {
+  "node": "10211",
+  "page": "Technical",
+  "width": 680,
+  "height": 748,
+  "fontSize": 20,
+  "lineHeightPx": 34.0,
+  "textAlign": "LEFT",
+  "kind": "list",
+  "listType": "UNORDERED",
+  "levels": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "expectedLines": 22,
+  "items": [
+   "Аккаунт и доступы: на период обслуживания аккаунта; после его закрытия — [СРОК И ОБОСНОВАНИЕ ДЛЯ ОСТАТОЧНЫХ ДАННЫХ]. Срок доступа к купленной практике 12 месяцев не является сроком хранения всех данных.",
+   "Заказы, платежи и бухгалтерские документы: [СРОК ПО НАЛОГОВЫМ ОБЯЗАННОСТЯМ — УТОЧНИТЬ У БУХГАЛТЕРА; ДЛЯ ФЕДЕРАЛЬНЫХ НАЛОГОВЫХ ЗАПИСЕЙ ОБЫЧНО НЕ МЕНЕЕ 3–7 ЛЕТ].",
+   "Обращения и организационная переписка: [СРОК ПОСЛЕ ЗАКРЫТИЯ ОБРАЩЕНИЯ ИЛИ ОКОНЧАНИЯ УСЛУГИ].",
+   "Ответы квиза, результат и теги состояния: [ОТДЕЛЬНЫЙ КОРОТКИЙ СРОК ДЛЯ КАЖДОЙ КАТЕГОРИИ].",
+   "Содержание встреч и рабочие заметки: [СОЗДАЮТСЯ ЛИ ОНИ, КЕМ, ГДЕ И КОГДА УДАЛЯЮТСЯ]. Записи, если отдельно согласованы, имеют собственный срок.",
+   "Данные рассылки: до отписки или прекращения рассылки. Минимальная запись об отписке сохраняется, чтобы не отправлять рекламу повторно.",
+   "Журналы безопасности, доказательства согласий и резервные копии: [РАЗДЕЛЬНЫЕ СРОКИ И ЦИКЛ ОЧИСТКИ РЕЗЕРВНЫХ КОПИЙ]. При восстановлении резервной копии повторно выполняются ранее полученные запросы об удалении."
+  ]
+ }
+]

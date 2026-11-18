@@ -1,17 +1,25 @@
 import { useId, useState } from 'react'
 import { useReducedMotion } from '../hooks/useReducedMotion.js'
+import { useHref } from '../links.jsx'
 
 const QUESTION = "flex-1 w-full max-w-[766px] text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] text-left"
 const ANSWER = "self-stretch w-full max-w-[787px] text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[34px]"
 const ITEM = 'self-stretch w-full max-w-[835px] flex flex-col gap-0 py-4 px-space-l items-start rounded-m relative [overflow:hidden]'
 
+// Стрелка — настоящий SVG-вектор из Figma (arrow-quiet), повёрнутый как в макете:
+// закрытый пункт — вниз (90°), открытый — вверх (−90°). Раньше здесь была аппроксимация
+// двумя div с border, из-за которой на 21 px иконка выглядела «квадратом».
 function Arrow({ open }) {
+  const href = useHref()
   return (
-    <span className="w-full max-w-[21px] min-h-[21px] flex flex-row gap-[2.14px] justify-center items-center relative shrink-0" aria-hidden="true">
-      <span className={`w-[17.82px] h-[14.47px] origin-top-left relative ${open ? 'rotate-[-90deg]' : 'rotate-[90deg]'}`}>
-        <span className="absolute left-0 top-[5.01px] w-[8.31px] h-[4.44px] border-[2.25px] border-accent" />
-        <span className="absolute left-[10.45px] top-0 w-[7.37px] h-[14.47px] rounded-[1.07px] border-[4.5px] border-accent" />
-      </span>
+    <span className="w-full max-w-[21px] min-h-[21px] flex flex-row justify-center items-center relative shrink-0" aria-hidden="true">
+      <img
+        src={href('/icons/arrow-right.svg')}
+        alt=""
+        width={14.47}
+        height={14.47}
+        className={`w-[14.47px] h-[14.47px] ${open ? 'rotate-[-90deg]' : 'rotate-[90deg]'} transition-transform`}
+      />
     </span>
   )
 }
@@ -33,7 +41,7 @@ export function Accordion({ items }) {
           aria-expanded={open}
           aria-controls={panelId}
           onClick={() => setOpenIndex(open ? -1 : index)}
-          className="self-stretch min-h-[39px] w-full flex flex-row gap-6 justify-between items-center text-left cursor-pointer"
+          className="self-stretch min-h-[39px] w-full flex flex-row gap-0 justify-between items-center text-left cursor-pointer"
         >
           <span className={QUESTION}>{item.question}</span>
           <Arrow open={open} />

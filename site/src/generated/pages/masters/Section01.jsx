@@ -41,9 +41,9 @@ export function Section01() {
                   <div className="w-[3px] h-6 bg-accent-muted" data-node="2720"></div>
                   <p className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2721">Видеть глубже</p>
                 </div>
-                <p className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right flex flex-col justify-center [text-box:trim-both_cap_alphabetic]" data-node="2722">01</p>
+                <p style={{ width: '21px', height: '20px',  width: '21px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right flex flex-col justify-center [text-box:trim-both_cap_alphabetic]" data-node="2722">01</p>
               </div>
-              <p className="self-stretch w-full max-w-[452px] text-text-on-image font-['Golos_Text'] text-[14px] font-normal leading-[20px]" data-node="2723" style={{ boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '452px' }}>Меня всегда интересовала глубина человеческой природы: как в одной личности переплетаются сила и уязвимость, осознанность и запутанность, желание жить и при этом разрушать себя.<br />Почему человек может искренне хотеть перемен, стараться, искать, пробовать — и всё равно снова упираться в ту же невозможность что-то изменить.</p>
+              <div className="self-stretch w-full max-w-[452px] text-text-on-image font-['Golos_Text'] text-[14px] font-normal leading-[20px]" data-node="2723" style={{ boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '452px' }} style={{ width: '452px', boxSizing: 'border-box' }}><p style={{ margin: 0, marginTop: '0px' }}>{"Меня всегда интересовала глубина человеческой природы: как в одной личности переплетаются сила и уязвимость, осознанность и запутанность, желание жить и при этом разрушать себя."}</p><p style={{ margin: 0, marginTop: '16px' }}>{"Почему человек может искренне хотеть перемен, стараться, искать, пробовать — и всё равно снова упираться в ту же невозможность что-то изменить."}</p></div>
               <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2724"></div>
             </div>
             <div className="min-h-[46px] w-full max-w-[452px] flex flex-col gap-4 items-start relative" data-node="2725">
@@ -52,7 +52,7 @@ export function Section01() {
                   <div className="w-[3px] h-6 bg-accent-muted" data-node="2728"></div>
                   <p className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2729">Путь в профессию</p>
                 </div>
-                <p className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2730">02</p>
+                <p style={{ width: '23px', height: '20px',  width: '23px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2730">02</p>
               </div>
               <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2732"></div>
             </div>
@@ -62,7 +62,7 @@ export function Section01() {
                   <div className="w-[3px] h-6 bg-accent-muted" data-node="2736"></div>
                   <p className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2737">Суть моего взгляда</p>
                 </div>
-                <p className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2738">03</p>
+                <p style={{ width: '23px', height: '20px',  width: '23px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2738">03</p>
               </div>
               <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2740"></div>
             </div>
@@ -72,7 +72,7 @@ export function Section01() {
                   <div className="w-[3px] h-6 bg-accent-muted" data-node="2744"></div>
                   <p className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2745">Ясность рядом</p>
                 </div>
-                <p className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2746">04</p>
+                <p style={{ width: '24px', height: '20px',  width: '24px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2746">04</p>
               </div>
               <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2748"></div>
             </div>
@@ -82,7 +82,7 @@ export function Section01() {
                   <div className="w-[3px] h-6 bg-accent-muted" data-node="2752"></div>
                   <p className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2753">Пространство Syntonia</p>
                 </div>
-                <p className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2754">05</p>
+                <p style={{ width: '23px', height: '20px',  width: '23px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2754">05</p>
               </div>
               <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2756"></div>
             </div>

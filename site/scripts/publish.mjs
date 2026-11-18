@@ -73,6 +73,15 @@ const write = (absPath, content) => {
   writeFileSync(absPath, content)
 }
 
+const walk = (dir) => {
+  const out = []
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, entry.name)
+    entry.isDirectory() ? out.push(...walk(p)) : out.push(p)
+  }
+  return out
+}
+
 // ---------- 1. HTML страниц
 for (const route of routes) {
   const file = route === '/' ? 'index.html' : route.replace(/^\//, '')
@@ -117,17 +126,21 @@ for (const name of newBundles) {
   write(join(OUT, 'assets', name), text)
 }
 
+// ---------- 3b. Иконки из public/icons (Figma-экспорт SVG)
+const distIcons = join(DIST, 'icons')
+let copiedIcons = 0
+if (existsSync(distIcons)) {
+  for (const abs of walk(distIcons)) {
+    const rel = relative(DIST, abs)
+    const dst = join(OUT, rel)
+    const same = existsSync(dst) && statSync(dst).size === statSync(abs).size && readFileSync(dst).equals(readFileSync(abs))
+    if (!same) { write(dst, readFileSync(abs)); copiedIcons += 1 }
+  }
+}
+
 // ---------- 4. Шрифты (копируем, только если отличаются)
 const distFonts = join(DIST, 'fonts')
 let copiedFonts = 0
-const walk = (dir) => {
-  const out = []
-  for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    const p = join(dir, entry.name)
-    entry.isDirectory() ? out.push(...walk(p)) : out.push(p)
-  }
-  return out
-}
 if (existsSync(distFonts)) {
   for (const abs of walk(distFonts)) {
     const rel = relative(DIST, abs)
@@ -206,4 +219,5 @@ if (portability.length) {
 console.log(`publish: ${DRY ? 'DRY ' : ''}OK — ${routes.length} страниц + 404, бандлы: ${newBundles.join(', ')}`)
 if (removed.length) console.log(`publish: удалены старые бандлы: ${removed.join(', ')}`)
 if (copiedFonts) console.log(`publish: обновлены шрифты: ${copiedFonts} файлов`)
+if (copiedIcons) console.log(`publish: обновлены иконки: ${copiedIcons} файлов`)
 console.log(`publish: файлов записано: ${written.length}, целевой каталог: ${OUT}`)
