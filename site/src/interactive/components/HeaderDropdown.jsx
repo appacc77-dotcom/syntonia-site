@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { hrefFor, useRoute } from '../links.jsx'
+import { MENU_HEAD, MENU_LINK, MENU_SURFACE } from './headerMenuStyles.js'
 
 // Пункты выпадашки «О проекте» — как в прошлой версии сайта (принцип оттуда),
 // оформление — из нашей дизайн-системы (токены bg-header / text-on-image / line-on-dark).
@@ -88,15 +89,14 @@ export function HeaderDropdown({ nodes = [] }) {
               role="menu"
               aria-label="О проекте"
               style={{ position: 'fixed', left: rect.left, top: rect.top }}
-              className="dropdown-rise z-[100] min-w-[200px] p-2 m-0 list-none rounded-(--radius-m) bg-bg-header backdrop-blur-[10px]"
+              className={`dropdown-rise z-[100] min-w-[220px] m-0 list-none ${MENU_SURFACE}`}
             >
+              <li key="menu-head" role="none" className="px-2 pb-1">
+                <p className={MENU_HEAD}>о проекте</p>
+              </li>
               {MENU_ITEMS.map((item) => (
                 <li key={item.href} role="none">
-                  <a
-                    role="menuitem"
-                    href={hrefFor(route, item.href)}
-                    className="block py-1 px-2 rounded-[2px] text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap] no-underline hover:bg-line-on-dark"
-                  >
+                  <a role="menuitem" href={hrefFor(route, item.href)} className={MENU_LINK}>
                     {item.label}
                   </a>
                 </li>

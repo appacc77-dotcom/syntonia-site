@@ -1,5 +1,6 @@
 import { isCurrent, useHref, useRoute } from '../../../interactive/links.jsx'
 import { HeaderDropdown } from '../../../interactive/components/HeaderDropdown.jsx'
+import { HeaderBurgerMenu } from '../../../interactive/components/HeaderBurgerMenu.jsx'
 // header as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section03() {
   const href = useHref()
@@ -33,11 +34,7 @@ export function Section03() {
               </div>
             </div>
           </div>
-          <div className="w-[38px] min-h-[25px] flex flex-col gap-2 justify-center items-center relative" data-node="6082">
-            <div className="w-[38px] h-[3px] rounded-(--radius-s) bg-text-on-image" data-node="6083"></div>
-            <div className="w-[38px] h-[3px] rounded-(--radius-s) bg-text-on-image" data-node="6084"></div>
-            <div className="w-[38px] h-[3px] rounded-(--radius-s) bg-text-on-image" data-node="6085"></div>
-          </div>
+          <HeaderBurgerMenu nodes={['6082', '6083', '6084', '6085']} />
         </div>
       </div>
       <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_0.5px_#8A8560]"></div>
