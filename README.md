@@ -36,6 +36,11 @@ npm run deploy         # build (vite + SSG + ворота) + publish в коре
 Публикация проверяет, что все ссылки на ассеты существуют, и что в опубликованных файлах нет
 корневых URL (кроме `404.html`, где пути абсолютные `/syntonia-site/...`).
 
+Форма заявки на `/booking.html` — настоящие `input`/`textarea` с валидацией и honeypot.
+Канал доставки задаётся в `site/data/form-config.json`: `endpoint` (POST JSON:
+Formspree/Getform, Telegram-бот через Worker, Apps Script или свой сервис) либо, пока канал
+не выбран, `fallbackEmail` — форма открывает почтовый клиент с готовым письмом.
+
 ## Приёмка против эталона m2 (golden reference + Figma)
 
 Гейты воспроизводят методику конвейера m2 и сверяются с immutable-эталоном
@@ -46,13 +51,21 @@ cd site
 M2_REFERENCE=/abs/path/artifacts/reference/179a800f9fbf npm run gate            # все три ворот
 M2_REFERENCE=… npm run gate:golden      # golden 24/24: 1440@2x, pixelmatch Δ>24 ≤2 %, mean ≤5/255
 M2_REFERENCE=… npm run gate:contract    # contract 24/24: DOM-геометрия/типографика против live-nodes
+M2_REFERENCE=… npm run gate:a11y        # a11y 24/24: aria-hidden/вложенный интерактив/alt/заголовки
 M2_REFERENCE=… node scripts/gates/fixtures.mjs   # fixtures 116/116: 54 состояния + 62 DS-компонента
 M2_REFERENCE=… node scripts/gates/live.mjs       # live-приёмка опубликованного GitHub Pages
 ```
 
-Текущее состояние (v0.11.0): golden 24/24 (Δh = 0; home mean 2.53/255 против baseline 2.80),
-contract 24/24 — **0 нарушений** геометрии/типографики, fixtures 116/116
-(state mean 1.4 %, design-system 1.47 %), live-приёмка 24/24 PASS без ошибок страницы.
+Текущее состояние (v0.11.7): golden 24/24 (Δh = 0; home mean **2.44/255** против baseline 2.80,
+legal-refund 1.26, library 1.13), contract 24/24 — **0 нарушений** геометрии/типографики,
+a11y 24/24 — **0 нарушений**, fixtures 116/116 (state mean 1.4 %, design-system 1.47 %),
+live-приёмка 24/24 PASS без ошибок страницы.
+
+Патч-слой (`site/scripts/apply-site-patches.mjs`) идемпотентно правит сгенерированную из Figma
+разметку: ссылки/aria-current, ориентиры/landmarks, h1, h2/h3 и порядок заголовков, rich-text
+(списки, абзацы, mixed-font), переносы строк, точечные геометрические фиксы
+(`data/geometry-fixes.json`), семантику изображений, иконные оверрайды, форму booking.
+Правила и измеренные отклонения — `docs/ACCEPTANCE.md`.
 
 `src/generated/fixtures/**` и `FixturesPage.jsx` — эталонные QA-компоненты для fixtures-ворот:
 из патч-слоя исключены, в публикуемую сборку не попадают (lazy-чанк только для `/fixtures.html`).
