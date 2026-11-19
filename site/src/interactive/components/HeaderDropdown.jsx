@@ -62,7 +62,7 @@ export function HeaderDropdown({ nodes = [] }) {
   }, [open])
 
   return (
-    <div className="w-[119px] min-h-[34px] flex flex-row gap-space-xs items-center relative" data-node={wrap}>
+    <div className="site-header-link w-[119px] min-h-[34px] flex flex-row gap-space-xs items-center relative" data-node={wrap}>
       <button
         ref={buttonRef}
         type="button"

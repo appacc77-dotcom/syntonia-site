@@ -8,7 +8,7 @@ import { Section05 } from './library-book-chapter-intro/Section05.jsx'
 export function LibraryBookChapterIntroPage() {
   return (
     <main id="main" className="relative min-h-[3484px] w-full flex flex-col items-start bg-bg-reader" data-node="4418">
-      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: '1424px' }}>
+      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: 'calc(100% - 16px)' }}>
         <Section01 />
       </div>
       <Section02 />

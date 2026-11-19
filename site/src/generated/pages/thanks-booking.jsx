@@ -6,7 +6,7 @@ import { Section03 } from './thanks-booking/Section03.jsx'
 export function ThanksBookingPage() {
   return (
     <main id="main" className="relative min-h-[1324px] w-full flex flex-col items-start bg-bg-page" data-node="9564">
-      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: '1424px' }}>
+      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: 'calc(100% - 16px)' }}>
         <Section03 />
       </div>
       <Section01 />

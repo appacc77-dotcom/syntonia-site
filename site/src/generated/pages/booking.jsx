@@ -7,7 +7,7 @@ import { Section04 } from './booking/Section04.jsx'
 export function BookingPage() {
   return (
     <main id="main" className="relative min-h-[2416px] w-full flex flex-col items-start bg-[#FFFFFF] [overflow:hidden]" data-node="8230">
-      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: '1424px' }}>
+      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: 'calc(100% - 16px)' }}>
         <Section04 />
       </div>
       <Section01 />

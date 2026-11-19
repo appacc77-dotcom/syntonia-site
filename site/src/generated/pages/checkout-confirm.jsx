@@ -6,7 +6,7 @@ import { Section03 } from './checkout-confirm/Section03.jsx'
 export function CheckoutConfirmPage() {
   return (
     <main id="main" className="relative w-[1440px] h-[1000px] bg-bg-page [overflow:hidden]" data-node="10610">
-      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: '1424px' }}>
+      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: 'calc(100% - 16px)' }}>
         <Section01 />
       </div>
       <div style={{ position: 'absolute', left: '0px', top: '0px', width: '1440px', }}>

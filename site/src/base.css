@@ -114,3 +114,83 @@ button:focus-visible,
     background-size: cover;
   }
 }
+
+/* --- Адаптив шапки: растягивается/сжимается под ширину экрана --- */
+/* На 1440 (эталон) ничего не меняется: правила ниже включаются только вне этой ширины. */
+
+/* широкие экраны: шапка уже растянута (calc(100% - 16px)), контенту даём разойтись */
+@media (min-width: 1440px) {
+  .site-header-nav,
+  .site-header-actions {
+    max-width: none;
+  }
+}
+
+/* уже 1440: ужимаем отступы и промежутки */
+@media (max-width: 1439px) {
+  .site-header-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 12px;
+  }
+  .site-header-nav {
+    gap: 16px;
+  }
+  .site-header-actions {
+    gap: 12px;
+  }
+}
+
+/* узкие ноутбуки: текстовые пункты навигации прячем — всё есть в бургере */
+@media (max-width: 1080px) {
+  .site-header .site-header-link {
+    display: none !important;
+  }
+  .site-header-nav {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+  }
+  .site-header-actions {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+  }
+}
+
+/* планшеты: шапка ниже, логотип компактнее */
+@media (max-width: 1024px) {
+  .site-header,
+  .site-header-inner {
+    min-height: 76px;
+  }
+  .site-header-logo {
+    width: 144px;
+    height: 51px;
+  }
+  .site-header-logo > div {
+    width: 144px !important;
+    height: 51px !important;
+  }
+  .site-header-cta {
+    width: auto;
+    min-width: 180px;
+  }
+}
+
+/* телефоны: оставляем логотип + бургер */
+@media (max-width: 860px) {
+  .site-header .site-header-cta {
+    display: none !important;
+  }
+}
+@media (max-width: 640px) {
+  .site-header .site-header-person {
+    display: none !important;
+  }
+  .site-header-inner {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

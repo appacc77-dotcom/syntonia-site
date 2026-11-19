@@ -117,7 +117,7 @@ export function HeaderBurgerMenu({ nodes = [] }) {
       aria-haspopup="true"
       aria-expanded={open}
       onClick={() => setOpen((value) => !value)}
-      className="p-0 m-0 bg-transparent border-0 w-[38px] min-h-[25px] flex flex-col gap-2 justify-center items-center relative cursor-pointer"
+      className="site-header-burger p-0 m-0 bg-transparent border-0 w-[38px] min-h-[25px] flex flex-col gap-2 justify-center items-center relative cursor-pointer"
       data-node={wrap}
     >
       <span

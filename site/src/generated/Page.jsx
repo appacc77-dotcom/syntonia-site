@@ -20,7 +20,7 @@ import { Section15 } from './sections/Section15.jsx'
 export function Page() {
   return (
     <main id="main" className="relative min-h-[10548px] w-full flex flex-col items-start bg-[#FFFFFF] [overflow:hidden]" data-node="951">
-      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: '1424px' }}>
+      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: 'calc(100% - 16px)' }}>
         <Section15 />
       </div>
       <Section01 />

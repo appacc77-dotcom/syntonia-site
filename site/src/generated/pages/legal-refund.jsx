@@ -6,7 +6,7 @@ import { Section03 } from './legal-refund/Section03.jsx'
 export function LegalRefundPage() {
   return (
     <main id="main" className="relative min-h-[10201px] w-full flex flex-col items-start bg-bg-page" data-node="10289">
-      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: '1424px' }}>
+      <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: 'calc(100% - 16px)' }}>
         <Section03 />
       </div>
       <Section01 />
