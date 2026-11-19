@@ -41,6 +41,43 @@ npm run deploy         # build (vite + SSG + ворота) + publish в коре
 Formspree/Getform, Telegram-бот через Worker, Apps Script или свой сервис) либо, пока канал
 не выбран, `fallbackEmail` — форма открывает почтовый клиент с готовым письмом.
 
+
+## Быстрая проверка при правках (не гонять всё)
+
+Полный прогон ворот идёт ~4 минуты (параллельно), но при правке одного элемента/страницы есть
+более быстрые режимы:
+
+```bash
+cd site
+
+# 1) один элемент: сравнить его область с golden и получить side-by-side картинку (~5–9 с)
+npm run probe -- --route / --node 964
+#    несколько узлов:  --node 964,2708,2793    произвольная область: --box x,y,w,h
+#    дев-сервер:       --url http://127.0.0.1:5173
+#    baseline-режим:   --baseline .gates/probe/base.json  (PASS = не хуже сохранённого замера)
+
+# 2) одна страница: golden + contract только для неё (~17 с; home — ~35 с из-за высоты)
+npm run gate --silent -- --only golden,contract --route /masters.html --fast
+
+# 3) только затронутые правками страницы (git: site/src/generated|interactive)
+npm run gate:changed            # = --changed --fast --only golden,contract
+
+# 4) несколько конкретных страниц
+npm run gate --silent -- --only golden,contract --routes /,/masters.html --fast
+
+# 5) полный набор (перед публикацией): golden+contract+a11y+fixtures, параллельно
+npm run gate --silent -- --jobs 4
+```
+
+Как это устроено: `--jobs N` — параллельные воркеры по маршрутам (по умолчанию 4);
+`--changed` сопоставляет изменённые файлы `src/generated/pages/<slug>` с маршрутами и гоняет только
+их (изменения в `sections/`, `interactive/` или общих CSS затрагивают все страницы — тогда все);
+`--fast` не пишет build-PNG на диск и сокращает паузу ожидания; `probe` снимает только область
+узла (клип), сверяет её с golden-кропом и сохраняет сравнение в `.gates/probe/`.
+
+Оракул остаётся прежним: golden-эталон m2. Быстрые режимы проверяют то же самое, просто на меньшем
+объёме — перед публикацией всё равно один раз запускается полный `npm run gate`.
+
 ## Приёмка против эталона m2 (golden reference + Figma)
 
 Гейты воспроизводят методику конвейера m2 и сверяются с immutable-эталоном

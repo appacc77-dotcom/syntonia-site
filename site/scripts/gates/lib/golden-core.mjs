@@ -6,6 +6,18 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import pixelmatch from 'pixelmatch'
 import { PNG } from 'pngjs'
+import sharp from 'sharp'
+
+/** Быстрое нативное декодирование PNG в RGBA (libvips вместо JS-pngjs) — ускоряет скриншоты. */
+async function decodeRgba(buffer) {
+  const { data, info } = await sharp(buffer).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+  return { data, width: info.width, height: info.height }
+}
+
+/** Нативное кодирование RGBA в PNG (для артефактов golden-сборки). */
+async function encodePng({ data, width, height }) {
+  return sharp(data, { raw: { width, height, channels: 4 } }).png({ compressionLevel: 6 }).toBuffer()
+}
 
 export const STAGE_THRESHOLDS = {
   'home-1': { over24: 15, mean: 15 },
@@ -18,7 +30,12 @@ export const STAGE_THRESHOLDS = {
  * Снять и сравнить golden для уже открытой страницы.
  * @returns {Promise<object>} metrics (как в metrics/golden.json)
  */
-export async function captureGolden(page, { goldenPath, route, name, width = 1440, scale = 2, stage = 'final', errors = [], root, buildDir, diffDir }) {
+const PROFILE = process.env.GATE_PROFILE === '1'
+const t0 = () => Date.now()
+const step = (label, start) => { if (PROFILE) console.log(`    [profile] ${label}: ${Date.now() - start}ms`) }
+
+export async function captureGolden(page, { goldenPath, route, name, width = 1440, scale = 2, stage = 'final', errors = [], root, buildDir, diffDir, fast = false }) {
+  const tStart = t0()
   const thresholds = STAGE_THRESHOLDS[stage]
   if (stage !== 'baseline' && !thresholds) throw new Error(`неизвестный stage: ${stage} (baseline|home-1|home-2|final)`)
   if (!existsSync(goldenPath)) throw new Error(`нет golden PNG: ${goldenPath}`)
@@ -28,6 +45,7 @@ export async function captureGolden(page, { goldenPath, route, name, width = 144
 
   const VIEWPORT_CSS = 2000
   await page.evaluate(() => window.scrollTo(0, 0))
+  const tSetup = t0()
   await page.setViewportSize({ width, height: VIEWPORT_CSS })
   const cssSize = await page.evaluate(() => {
     const root = document.getElementById('root')
@@ -37,25 +55,31 @@ export async function captureGolden(page, { goldenPath, route, name, width = 144
       height: Math.max(1, Math.ceil(rect ? rect.bottom + window.scrollY : document.documentElement.scrollHeight)),
     }
   })
+  step('setup viewport/size', tSetup)
   const buildPng = join(buildDir, `${name}@${scale}x.png`)
   mkdirSync(dirname(buildPng), { recursive: true })
   const maxScroll = await page.evaluate(() => Math.max(0, document.documentElement.scrollHeight - window.innerHeight))
   const tiles = []
+  const tTiles = t0()
   for (let y = 0; y < cssSize.height; y += VIEWPORT_CSS) {
     const target = Math.min(y, maxScroll)
     await page.evaluate((top) => window.scrollTo(0, top), target)
     await page.evaluate(() => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))))
-    const tile = PNG.sync.read(await page.screenshot())
+    const tile = await decodeRgba(await page.screenshot())
     const offset = Math.round((y - target) * scale)
     const height = Math.min(Math.min(VIEWPORT_CSS, cssSize.height - y) * scale, tile.height - offset)
-    const cropped = new PNG({ width: tile.width, height })
+    const cropped = { width: tile.width, height, data: Buffer.alloc(tile.width * height * 4) }
     for (let row = 0; row < height; row += 1) {
       const source = (offset + row) * tile.width * 4
       tile.data.copy(cropped.data, row * tile.width * 4, source, source + tile.width * 4)
     }
     tiles.push(cropped)
   }
-  const stitched = new PNG({ width: width * scale, height: tiles.reduce((sum, tile) => sum + tile.height, 0) })
+  const stitched = {
+    width: width * scale,
+    height: tiles.reduce((sum, tile) => sum + tile.height, 0),
+    data: Buffer.alloc(width * scale * tiles.reduce((sum, tile) => sum + tile.height, 0) * 4),
+  }
   let offset = 0
   for (const tile of tiles) {
     for (let row = 0; row < tile.height; row += 1) {
@@ -63,10 +87,16 @@ export async function captureGolden(page, { goldenPath, route, name, width = 144
     }
     offset += tile.height
   }
-  writeFileSync(buildPng, PNG.sync.write(stitched))
+  // Сравнение идёт по сырым пикселям stitched (без encode/decode всего полотна);
+  // PNG на диск пишем только когда нужен артефакт (не fast).
+  step(`скриншоты ${tiles.length} плиток`, tTiles)
+  const tStitch = t0()
+  if (!fast) writeFileSync(buildPng, await encodePng(stitched))
+  step('stitch+write build png', tStitch)
 
-  const golden = PNG.sync.read(readFileSync(goldenPath))
-  const build = PNG.sync.read(readFileSync(buildPng))
+  const tCompare = t0()
+  const golden = await decodeRgba(readFileSync(goldenPath))
+  const build = stitched
   const compareWidth = Math.min(golden.width, build.width)
   const compareHeight = Math.min(golden.height, build.height)
   if (compareWidth < 10 || compareHeight < 10) throw new Error(`несовместимые размеры: golden ${golden.width}x${golden.height}, build ${build.width}x${build.height}`)
@@ -79,7 +109,10 @@ export async function captureGolden(page, { goldenPath, route, name, width = 144
   const goldenData = crop(golden, compareWidth, compareHeight)
   const buildData = crop(build, compareWidth, compareHeight)
   const diff = new PNG({ width: compareWidth, height: compareHeight })
+  step('decode golden', tCompare)
+  const tPm = t0()
   const diffPixels = pixelmatch(goldenData, buildData, diff.data, compareWidth, compareHeight, { threshold: 0.1, includeAA: false, alpha: 0.1 })
+  step('pixelmatch', tPm)
   let absSum = 0
   for (let i = 0; i < compareWidth * compareHeight; i += 1) {
     const base = i * 4
@@ -99,13 +132,14 @@ export async function captureGolden(page, { goldenPath, route, name, width = 144
     mkdirSync(dirname(diffFile), { recursive: true })
     writeFileSync(diffFile, PNG.sync.write(diff))
   }
+  step('TOTAL', tStart)
   return {
     route,
     name,
     stage,
     createdAt: new Date().toISOString(),
     golden: { file: goldenPath.replace(`${root}/`, ''), width: golden.width, height: golden.height },
-    build: { file: buildPng.replace(`${root}/`, ''), width: build.width, height: build.height, css: cssSize },
+    build: { file: fast ? null : buildPng.replace(`${root}/`, ''), width: build.width, height: build.height, css: cssSize },
     compared: { width: compareWidth, height: compareHeight, heightDelta: build.height - golden.height, widthDelta: build.width - golden.width },
     pixelOver24Pct: Number(over24Pct.toFixed(2)),
     meanAbs: Number(meanAbs.toFixed(2)),

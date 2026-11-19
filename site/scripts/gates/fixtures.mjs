@@ -33,6 +33,9 @@ const argOf = (name, fallback = null) => {
 }
 const STAGE = argOf('stage', 'final')
 const FILTER = argOf('filter', '')
+// fixtures.html — тяжёлая страница (рендерит все 116 компонентов), лишние вкладки не ускоряют:
+// по умолчанию 1; параллельность включается явно (--jobs N) при большом числе фикстур.
+const JOBS = Math.max(1, Number(argOf('jobs', '1')))
 const JSON_OUT = argOf('json')
 const REFERENCE = process.env.M2_REFERENCE || argOf('reference')
 if (!REFERENCE || !existsSync(REFERENCE)) {
@@ -111,17 +114,31 @@ const flatten = (png) => {
   return out
 }
 
+const pages = [page]
+for (let i = 1; i < JOBS; i += 1) {
+  const extra = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 })
+  extra.on('pageerror', (error) => pageErrors.push(String(error).slice(0, 200)))
+  await extra.goto(`${BASE}fixtures.html`, { waitUntil: 'networkidle', timeout: 180000 })
+  await extra.evaluate(() => document.fonts.ready)
+  await extra.addStyleTag({ content: 'html, body { background: transparent !important; }' })
+  await extra.waitForFunction(() => document.querySelectorAll('[data-fixture]').length >= 100, { timeout: 180000 })
+  pages.push(extra)
+}
 const results = []
-for (const fixture of META) {
-  if (FILTER && fixture.kind !== FILTER) continue
+const tasks = META.filter((fixture) => !FILTER || fixture.kind === FILTER)
+await Promise.all(pages.map(async (tab) => {
+  while (tasks.length) await measureFixture(tab, tasks.shift())
+}))
+async function measureFixture(page, fixture) {
   const row = { component: fixture.component, kind: fixture.kind, page: fixture.page, name: fixture.name, golden: fixture.golden }
+  const push = (r) => results.push(r)
   const goldenPath = join(REFERENCE, 'golden', fixture.golden)
-  if (!existsSync(goldenPath)) { row.error = 'нет гольдена'; results.push(row); continue }
+  if (!existsSync(goldenPath)) { row.error = 'нет гольдена'; push(row); return }
   const locator = page.locator(`[data-fixture="${fixture.component}"]`)
   let shot
   try {
     shot = flatten(PNG.sync.read(await locator.screenshot({ animations: 'disabled', omitBackground: true })))
-  } catch (error) { row.error = String(error).slice(0, 160); results.push(row); continue }
+  } catch (error) { row.error = String(error).slice(0, 160); push(row); return }
   const golden = flatten(PNG.sync.read(readFileSync(goldenPath)))
   row.buildSize = { width: shot.width, height: shot.height }
   row.goldenSize = { width: golden.width, height: golden.height }
@@ -158,7 +175,7 @@ for (const fixture of META) {
   if (!row.pass && STAGE === 'final') {
     try { writeFileSync(join(DIFF_DIR, `${fixture.component}.png`), PNG.sync.write(diff)) } catch { /* ignore */ }
   }
-  results.push(row)
+  push(row)
   if (!row.pass) console.log(`FAIL ${fixture.kind.padEnd(13)} ${String(fixture.name).padEnd(26)} over24 ${row.over24}% mean ${row.mean}${row.sizeMismatch ? ` SIZE ${shot.width}x${shot.height} vs ${golden.width}x${golden.height}` : ''}`)
 }
 await browser.close()
