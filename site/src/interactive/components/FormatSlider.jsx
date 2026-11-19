@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { hrefFor } from '../links.jsx'
 import { FORMATS } from '../content/formats.js'
 
@@ -11,20 +11,50 @@ function Number({ value }) {
 
 export function FormatSlider({ route = '/' }) {
   const [selected, setSelected] = useState(0)
+  const dragStart = useRef(null)
   const go = (next) => setSelected((next + FORMATS.length) % FORMATS.length)
+  const onKeyDown = (event) => {
+    if (event.key === 'ArrowRight') { event.preventDefault(); go(selected + 1) }
+    if (event.key === 'ArrowLeft') { event.preventDefault(); go(selected - 1) }
+  }
+  const onPointerDown = (event) => {
+    // не перехватываем клики по кнопкам/ссылкам
+    if (event.target.closest('a,button')) return
+    dragStart.current = { x: event.clientX, id: event.pointerId }
+  }
+  const onPointerUp = (event) => {
+    const start = dragStart.current
+    dragStart.current = null
+    if (!start || start.id !== event.pointerId) return
+    const dx = event.clientX - start.x
+    if (Math.abs(dx) >= 40) go(selected + (dx < 0 ? 1 : -1))
+  }
+  const onPointerCancel = () => { dragStart.current = null }
   return (
-    <div className="self-stretch w-full flex flex-col gap-2" role="group" aria-label="Форматы работы">
-      <div className="self-stretch w-full max-w-[1264px] min-h-[420px] flex flex-row justify-between items-center rounded-m [background:url(/assets/img-ccc7781894.png)_-0.05px_-143.18px_/_1264px_705.49px] relative [overflow:hidden]">
+    <div className="self-stretch w-full flex flex-col gap-2" role="group" aria-label="Форматы работы" onKeyDown={onKeyDown}>
+      <div
+        className="self-stretch w-full max-w-[1264px] min-h-[420px] flex flex-row justify-between items-center rounded-m [background:url(/assets/img-ccc7781894.png)_-0.05px_-143.18px_/_1264px_705.49px] relative [overflow:hidden] [touch-action:pan-y] cursor-grab active:cursor-grabbing"
+        onPointerDown={onPointerDown}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerCancel}
+      >
         <div className="absolute left-[608px] top-[359px] w-[47px] min-h-[36px] flex flex-row py-space-xs px-space-s justify-center items-end rounded-full bg-bg-glass-strong"><p className="text-accent font-['Lora'] text-[20px] italic leading-[28px]" aria-live="polite" aria-atomic="true">{selected + 1}/5<span className="sr-only"> — выбран формат: {FORMATS[selected].title}</span></p></div>
-        <button type="button" aria-label="Предыдущий формат"  onClick={() => go(selected - 1)} className="absolute top-1/2 -translate-y-1/2 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 left-6"><img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" /></button>
-        <button type="button" aria-label="Следующий формат" onClick={() => go(selected + 1)} className="absolute top-1/2 -translate-y-1/2 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 right-6"><img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" style={{ transform: 'scaleX(-1)' }} /></button>
+        <button type="button" aria-label="Предыдущий формат"  onClick={() => go(selected - 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 cursor-pointer left-6"><img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" /></button>
+        <button type="button" aria-label="Следующий формат" onClick={() => go(selected + 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 cursor-pointer right-6"><img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" style={{ transform: 'scaleX(-1)' }} /></button>
         <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#FFFFFF]" />
       </div>
       <div className="self-stretch w-full max-w-[1264px] flex flex-row items-start relative [overflow:hidden]">
         {FORMATS.map((item, index) => {
           const active = selected === index
           return (
-            <div key={item.number} className={`${cardBase} ${active ? 'w-[335px] bg-bg-glass' : 'flex-1 max-w-[232.25px]'}`} data-format-index={index} onClick={() => setSelected(index)}>
+            <div
+              key={item.number}
+              className={`${cardBase} ${active ? 'w-[335px] bg-bg-glass' : 'flex-1 max-w-[232.25px] hover:bg-bg-glass'} cursor-pointer`}
+              data-format-index={index}
+              onClick={() => setSelected(index)}
+              onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelected(index) } }}
+              role="presentation"
+            >
               <div className={`w-full ${active ? 'min-h-[56px]' : 'min-h-[50px]'} flex flex-row gap-2 items-start`}>
                 <Number value={item.number} />
                 <p className={`${title} ${active ? 'text-[22px]' : 'text-[20px] leading-[25px]'}`}>{item.title}</p>
