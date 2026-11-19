@@ -36,6 +36,27 @@ npm run deploy         # build (vite + SSG + ворота) + publish в коре
 Публикация проверяет, что все ссылки на ассеты существуют, и что в опубликованных файлах нет
 корневых URL (кроме `404.html`, где пути абсолютные `/syntonia-site/...`).
 
+## Приёмка против эталона m2 (golden reference + Figma)
+
+Гейты воспроизводят методику конвейера m2 и сверяются с immutable-эталоном
+`studio-pipeline-v2/artifacts/reference/179a800f9fbf` через `M2_REFERENCE`:
+
+```bash
+cd site
+M2_REFERENCE=/abs/path/artifacts/reference/179a800f9fbf npm run gate            # все три ворот
+M2_REFERENCE=… npm run gate:golden      # golden 24/24: 1440@2x, pixelmatch Δ>24 ≤2 %, mean ≤5/255
+M2_REFERENCE=… npm run gate:contract    # contract 24/24: DOM-геометрия/типографика против live-nodes
+M2_REFERENCE=… node scripts/gates/fixtures.mjs   # fixtures 116/116: 54 состояния + 62 DS-компонента
+M2_REFERENCE=… node scripts/gates/live.mjs       # live-приёмка опубликованного GitHub Pages
+```
+
+Текущее состояние (v0.11.0): golden 24/24 (Δh = 0; home mean 2.53/255 против baseline 2.80),
+contract 24/24 — **0 нарушений** геометрии/типографики, fixtures 116/116
+(state mean 1.4 %, design-system 1.47 %), live-приёмка 24/24 PASS без ошибок страницы.
+
+`src/generated/fixtures/**` и `FixturesPage.jsx` — эталонные QA-компоненты для fixtures-ворот:
+из патч-слоя исключены, в публикуемую сборку не попадают (lazy-чанк только для `/fixtures.html`).
+
 Публикация Pages: закоммитить `main` → GitHub Pages (source `main` / root) пересобирает сам.
 `.nojekyll`, `404.html`, `robots.txt`, `sitemap.xml` не удалять.
 
