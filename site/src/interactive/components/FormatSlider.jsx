@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { hrefFor } from '../links.jsx'
 import { FORMATS } from '../content/formats.js'
 
@@ -21,6 +21,29 @@ function Number({ value }) {
 
 export function FormatSlider({ route = '/' }) {
   const [selected, setSelected] = useState(0)
+  // грузим фото только когда нужно: 1-е — сразу (как было в весе страницы), остальные —
+  // по клику/свайпу и «в простое» после загрузки, чтобы не тянуть 5 тяжёлых фото на старте.
+  const [ready, setReady] = useState(() => SLIDE_MEDIA.map((_, index) => index === 0))
+  const loadedRef = useRef(new Set([0]))
+  const draggingRef = useRef(false)
+  const preload = (index) => {
+    if (loadedRef.current.has(index)) return
+    loadedRef.current.add(index)
+    const image = new Image()
+    image.onload = () => setReady((prev) => (prev[index] ? prev : prev.map((value, i) => (i === index ? true : value))))
+    image.src = hrefFor(route, SLIDE_MEDIA[index].url)
+  }
+  useEffect(() => { preload(selected) }, [selected])
+  useEffect(() => {
+    const idle = typeof window !== 'undefined' && window.requestIdleCallback
+      ? window.requestIdleCallback(() => preload((selected + 1) % SLIDE_MEDIA.length), { timeout: 3000 })
+      : setTimeout(() => preload((selected + 1) % SLIDE_MEDIA.length), 2500)
+    return () => {
+      if (typeof window !== 'undefined' && window.cancelIdleCallback && typeof idle === 'number') window.cancelIdleCallback(idle)
+      else clearTimeout(idle)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   const dragStart = useRef(null)
   const go = (next) => setSelected((next + FORMATS.length) % FORMATS.length)
   const onKeyDown = (event) => {
@@ -54,11 +77,11 @@ export function FormatSlider({ route = '/' }) {
               key={media.url}
               className="format-photo absolute [inset:0] rounded-[inherit] transition-opacity duration-[700ms] ease-in-out"
               style={{
-                backgroundImage: `url(${hrefFor(route, media.url)})`,
+                backgroundImage: ready[index] ? `url(${hrefFor(route, media.url)})` : 'none',
                 backgroundPosition: media.position,
                 backgroundSize: media.size,
                 backgroundRepeat: 'no-repeat',
-                opacity: selected === index ? 1 : 0,
+                opacity: selected === index && ready[index] ? 1 : 0,
               }}
             />
           ))}
