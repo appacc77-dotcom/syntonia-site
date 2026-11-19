@@ -1,10 +1,11 @@
 {
- "_note": "Канал доставки заявок формы booking. endpoint: URL, принимающий POST JSON ({name,email,phone,comment,format,page,_subject}). Подходит Formspree/Getform/Apps Script/Cloudflare Worker — любой сервис с JSON-приёмом. Пока endpoint=null, форма валидирует ввод, но заявки не отправляет. fallbackEmail: пока endpoint=null, форма открывает почтовый клиент с готовым письмом на этот адрес (временный канал до согласования).",
+ "_note": "Канал доставки заявок booking согласован с владельцем сайта 2026-11-19: mailto (fallbackEmail). Форма валидирует ввод, затем открывает почтовый клиент с готовым письмом; в интерфейсе есть ссылки «Открыть письмо / написать». Смена на POST-канал (Formspree/Getform, Telegram-бот через Worker, Apps Script, свой endpoint) — вписать endpoint; код отправки уже готов.",
  "endpoint": null,
  "method": "POST",
  "format": "",
  "successRoute": "/thanks-booking.html",
  "unavailableText": "Форма временно недоступна — напишите нам, и мы свяжемся с вами.",
  "formatNode": "8325",
- "fallbackEmail": "hello@syntonia.com"
+ "fallbackEmail": "hello@syntonia.com",
+ "channel": "mailto"
 }

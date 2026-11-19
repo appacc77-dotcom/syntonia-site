@@ -54,8 +54,11 @@ legal-consent 0.75 / 1.12, checkout-confirm 1.05 / 1.15.
 - **Семантика**: h1 по одному на страницу, h2/h3 и порядок заголовков, `role="img"`/`aria-hidden`
   для декоративных изображений, JSON-LD (`@graph`: Organization/WebSite/WebPage/BreadcrumbList)
   на 24/24, `robots`/`noindex` для приватных страниц и 404, `lang`, `main`, skip-link.
-- **Форма booking**: семантические поля, валидация, honeypot, `role="status"`; канал доставки —
-  `site/data/form-config.json` (`endpoint` POST JSON либо `fallbackEmail` mailto до согласования).
+- **Форма booking**: семантические поля, валидация, honeypot, `role="status"`, формат заявки из
+  блока «Выбранный формат». Канал доставки **согласован владельцем (2026-11-19): mailto** на
+  `hello@syntonia.com` — форма открывает почтовый клиент с готовым письмом и дублирует ссылки в
+  статусе. Смена на POST-канал — одна строка `endpoint` в `site/data/form-config.json`
+  (Formspree/Getform, Telegram-бот через Worker, Apps Script или свой сервис), код отправки готов.
 
 ## Качество изображений (пункт 0 DoD)
 
