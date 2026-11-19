@@ -13,7 +13,7 @@ const SLIDE_MEDIA = [
 ]
 
 const cardBase = 'format-card min-h-[296px] flex flex-col p-4 items-start rounded-[12px] relative overflow-hidden transition-[width,background-color,outline-color] duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)]'
-const title = 'text-text-heading font-[\'Literata\'] font-light leading-[28px] text-center transition-[font-size,line-height] duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)]'
+const title = 'text-text-heading font-[\'Literata\'] font-light leading-[28px] text-center'
 
 function Number({ value }) {
   return <span className="w-[32px] h-[32px] shrink-0 flex items-center justify-center rounded-full [outline:1px_solid_var(--color-accent,_#5A5A36)] [outline-offset:-1px]"><span className="text-accent font-['Lora'] text-[13px] italic leading-[20px] text-center">{value}</span></span>
@@ -91,39 +91,42 @@ export function FormatSlider({ route = '/' }) {
         <button type="button" aria-label="Следующий формат" onClick={() => go(selected + 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 cursor-pointer right-6"><img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" style={{ transform: 'scaleX(-1)' }} /></button>
         <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#FFFFFF]" />
       </div>
-      <div className="self-stretch w-full max-w-[1264px] flex flex-row items-start relative [overflow:hidden]">
-        {FORMATS.map((item, index) => {
-          const active = selected === index
-          return (
-            <div
-              key={item.number}
-              className={`${cardBase} ${active ? 'w-[335px] bg-bg-glass' : 'w-[232.25px] hover:bg-bg-glass'} cursor-pointer`}
-              data-format-index={index}
-              onClick={() => setSelected(index)}
-              onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelected(index) } }}
-              role="presentation"
-            >
-              <div className={`w-full ${active ? 'min-h-[56px]' : 'min-h-[50px]'} flex flex-row gap-2 items-start`}>
-                <Number value={item.number} />
-                <p className={`${title} ${active ? 'text-[22px]' : 'text-[20px] leading-[25px]'}`}>{item.title}</p>
-              </div>
-              <div className={`format-collapse grid w-full transition-[grid-template-rows,opacity] duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${active ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`} inert={!active}>
-                <div className="overflow-hidden min-h-0">
-                  <p className="w-full max-w-[303px] pt-1 text-text-primary font-['Golos_Text'] text-[14px] leading-[19px]">{item.description}</p>
+      {/* Табы: каждое состояние — готовый слой карточек, переключаем кроссфейдом.
+          Текст внутри слоя не переразбивается на строки при переходе (нет «набора по буквам»). */}
+      <div className="self-stretch w-full max-w-[1264px] h-[296px] relative [overflow:hidden]">
+        {FORMATS.map((_, stateIndex) => (
+          <div
+            key={stateIndex}
+            className="absolute [inset:0] flex flex-row items-start transition-opacity duration-[500ms] ease-in-out"
+            style={{ opacity: selected === stateIndex ? 1 : 0, zIndex: selected === stateIndex ? 10 : 0 }}
+            inert={selected !== stateIndex}
+          >
+            {FORMATS.map((item, index) => {
+              const active = stateIndex === index
+              return (
+                <div
+                  key={item.number}
+                  className={`${cardBase} ${active ? 'w-[335px] bg-bg-glass' : 'w-[232.25px] hover:bg-bg-glass'} cursor-pointer`}
+                  data-format-index={index}
+                  onClick={() => setSelected(index)}
+                  onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelected(index) } }}
+                  role="presentation"
+                >
+                  <div className={`w-full ${active ? 'min-h-[56px]' : 'min-h-[50px]'} flex flex-row gap-2 items-start`}>
+                    <Number value={item.number} />
+                    <p className={`${title} ${active ? 'text-[22px]' : 'text-[20px] leading-[25px]'}`}>{item.title}</p>
+                  </div>
+                  {active && <p className="w-full max-w-[303px] pt-1 text-text-primary font-['Golos_Text'] text-[14px] leading-[19px]">{item.description}</p>}
+                  <div className="mt-auto flex flex-row gap-2 items-center rounded-full">
+                    <span className="inline-flex px-2 py-1 rounded-full bg-bg-glass [outline:1px_solid_var(--color-accent-muted,_#8A8560)] [outline-offset:-1px] text-text-primary font-['Golos_Text'] text-[13px] leading-[20px]">{item.duration}</span>
+                    <span className="text-text-primary font-['Golos_Text'] text-[13px] leading-[20px]">{item.price}</span>
+                  </div>
+                  {active && <a href={hrefFor(route, '/booking.html')} tabIndex={0} className="mt-2 w-[211px] min-h-[45px] flex flex-row gap-2 py-2 px-4 justify-center items-center rounded-[4px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] text-text-on-image font-['Golos_Text'] text-[17px] leading-[29px] tracking-[0.03em] no-underline">Перейти к записи <span>›</span></a>}
                 </div>
-              </div>
-              <div className="mt-auto flex flex-row gap-2 items-center rounded-full">
-                <span className="inline-flex px-2 py-1 rounded-full bg-bg-glass [outline:1px_solid_var(--color-accent-muted,_#8A8560)] [outline-offset:-1px] text-text-primary font-['Golos_Text'] text-[13px] leading-[20px]">{item.duration}</span>
-                <span className="text-text-primary font-['Golos_Text'] text-[13px] leading-[20px]">{item.price}</span>
-              </div>
-              <div className={`format-collapse grid w-full transition-[grid-template-rows,opacity] duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${active ? 'mt-2 grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`} inert={!active}>
-                <div className="overflow-hidden min-h-0">
-                  <a href={hrefFor(route, '/booking.html')} tabIndex={active ? 0 : -1} className="w-[211px] min-h-[45px] flex flex-row gap-2 py-2 px-4 justify-center items-center rounded-[4px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] text-text-on-image font-['Golos_Text'] text-[17px] leading-[29px] tracking-[0.03em] no-underline [pointer-events:auto]">Перейти к записи <span>›</span></a>
-                </div>
-              </div>
-            </div>
-          )
-        })}
+              )
+            })}
+          </div>
+        ))}
       </div>
     </div>
   )
