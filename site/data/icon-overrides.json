@@ -1874,5 +1874,33 @@
   "color": "#645144",
   "w": null,
   "h": null
+ },
+ {
+  "node": "964",
+  "asset": "play-home",
+  "w": 47.24,
+  "h": 46.73,
+  "rotate": 0
+ },
+ {
+  "node": "2708",
+  "asset": "play-home",
+  "w": 47.24,
+  "h": 46.73,
+  "rotate": 0
+ },
+ {
+  "node": "2792",
+  "asset": "play-home",
+  "w": 47.24,
+  "h": 46.73,
+  "rotate": 0
+ },
+ {
+  "node": "2813",
+  "asset": "play-home",
+  "w": 47.24,
+  "h": 46.73,
+  "rotate": 0
  }
 ]
