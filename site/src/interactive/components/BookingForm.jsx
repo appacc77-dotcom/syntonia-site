@@ -70,7 +70,21 @@ export function BookingForm() {
       return
     }
     if (!formConfig.endpoint) {
-      setStatus({ kind: 'error', text: formConfig.unavailableText || 'Форма временно недоступна — попробуйте позже' })
+      // временный канал до согласования: готовое письмо в почтовом клиенте
+      const email = formConfig.fallbackEmail || ''
+      const subject = encodeURIComponent('Заявка с сайта Syntonia — booking')
+      const body = encodeURIComponent([
+        `Имя: ${values.name.trim()}`,
+        `Email: ${values.email.trim()}`,
+        `Телефон: ${values.phone.trim() || '—'}`,
+        `Формат: ${selectedFormat() || formConfig.format || '—'}`,
+        `Комментарий: ${values.comment.trim() || '—'}`,
+        '',
+        'Отправлено с формы booking сайта Syntonia.',
+      ].join('\n'))
+      const mailto = `mailto:${email}?subject=${subject}&body=${body}`
+      setStatus({ kind: 'mailto', text: `Открываем почтовый клиент — письмо на ${email}`, mailto, email })
+      window.location.href = mailto
       return
     }
     setStatus({ kind: 'sending', text: 'Отправляем…' })
@@ -103,7 +117,7 @@ export function BookingForm() {
       className="self-stretch min-h-[814px] w-full max-w-[607.5px] flex flex-col gap-6 items-start relative" data-node="8337"
       data-m3-form="booking">
       {/* honeypot */}
-      <div className="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden" aria-hidden="true">
+      <div className="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden">
         <label>Не заполняйте это поле <input name="company" type="text" tabIndex={-1} autoComplete="off" /></label>
       </div>
 
@@ -116,7 +130,7 @@ export function BookingForm() {
           <input id="booking-name" name="name" type="text" autoComplete="name" required maxLength={80}
             aria-label="Имя — как к вам обращаться" className={FIELD_OVERLAY}
             value={values.name} onChange={set('name')} {...invalid('name')} />
-          <p className={`${HINT} ${values.name ? 'invisible' : ''}`} data-node="8344" aria-hidden="true">Как к вам обращаться</p>
+          <p className={`${HINT} ${values.name ? 'invisible' : ''}`} data-node="8344" aria-hidden="true" data-a11y-dup="1">Как к вам обращаться</p>
           {errors.name ? <span id="err-name" className={ERROR} role="alert">{errors.name}</span> : null}
           <div className={FRAME}></div>
         </div>
@@ -131,7 +145,7 @@ export function BookingForm() {
           <input id="booking-email" name="email" type="email" autoComplete="email" required maxLength={120}
             aria-label="Email" className={FIELD_OVERLAY}
             value={values.email} onChange={set('email')} {...invalid('email')} />
-          <p className={`${HINT} ${values.email ? 'invisible' : ''}`} data-node="8351" aria-hidden="true">ваш@email.com</p>
+          <p className={`${HINT} ${values.email ? 'invisible' : ''}`} data-node="8351" aria-hidden="true" data-a11y-dup="1">ваш@email.com</p>
           {errors.email ? <span id="err-email" className={ERROR} role="alert">{errors.email}</span> : null}
           <div className={FRAME}></div>
         </div>
@@ -146,7 +160,7 @@ export function BookingForm() {
           <input id="booking-phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" maxLength={25}
             aria-label="Телефон" className={FIELD_OVERLAY}
             value={values.phone} onChange={set('phone')} {...invalid('phone')} />
-          <p className={`${HINT} ${values.phone ? 'invisible' : ''}`} data-node="8358" aria-hidden="true">+1 (___) ___ ___ ___</p>
+          <p className={`${HINT} ${values.phone ? 'invisible' : ''}`} data-node="8358" aria-hidden="true" data-a11y-dup="1">+1 (___) ___ ___ ___</p>
           {errors.phone ? <span id="err-phone" className={ERROR} role="alert">{errors.phone}</span> : null}
           <div className={FRAME}></div>
         </div>
@@ -161,7 +175,7 @@ export function BookingForm() {
           <textarea id="booking-comment" name="comment" rows={2} maxLength={2000}
             aria-label="Комментарий — что важно знать заранее" className={`${FIELD_OVERLAY} resize-none`}
             value={values.comment} onChange={set('comment')} {...invalid('comment')} />
-          <p className={`${HINT} ${values.comment ? 'invisible' : ''}`} data-node="8365" aria-hidden="true">Что важно знать заранее, ваш запрос или вопросы...</p>
+          <p className={`${HINT} ${values.comment ? 'invisible' : ''}`} data-node="8365" aria-hidden="true" data-a11y-dup="1">Что важно знать заранее, ваш запрос или вопросы...</p>
           {errors.comment ? <span id="err-comment" className={ERROR} role="alert">{errors.comment}</span> : null}
           <div className={FRAME}></div>
         </div>
@@ -178,7 +192,15 @@ export function BookingForm() {
             </button>
           </div>
           <p className="self-stretch w-full max-w-[607.5px] text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] text-center" data-node="8370">Нажимая “Отправить заявку”, вы соглашаетесь с условиями обработки данных.</p>
-          <p role="status" aria-live="polite" className={`self-stretch w-full max-w-[607.5px] text-[13px] leading-[20px] ${status.kind === 'error' ? 'text-[#9B3B2E]' : 'text-text-secondary'} ${status.text ? '' : 'sr-only'}`}>{status.text}</p>
+          <p role="status" aria-live="polite" className={`self-stretch w-full max-w-[607.5px] text-[13px] leading-[20px] ${status.kind === 'error' ? 'text-[#9B3B2E]' : 'text-text-primary'} ${status.text ? '' : 'sr-only'}`}>
+            {status.text}
+            {status.kind === 'mailto' ? (
+              <> {' '}
+                <a className="underline" href={status.mailto}>Открыть письмо</a>
+                {' '}или напишите на <a className="underline" href={`mailto:${status.email}`}>{status.email}</a>
+              </>
+            ) : null}
+          </p>
         </div>
         <div className="self-stretch min-h-[190px] w-full max-w-[607.5px] flex flex-col p-[1px] items-start rounded-(--radius-s) relative [overflow:hidden]" data-node="8371">
           <div className="self-stretch min-h-[52px] w-full max-w-[605.5px] flex flex-row p-space-m items-start bg-bg-surface relative [overflow:hidden]" data-node="8372">

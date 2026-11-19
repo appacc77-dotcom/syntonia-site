@@ -43,7 +43,23 @@
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
 
-## v0.11.3 — рабочая форма booking (ожидает канал доставки)
+## v0.11.3 — форма booking + a11y-ворота
+- **Форма booking работает** (временный канал): семантические поля, валидация, honeypot,
+  при отсутствии endpoint открывает почтовый клиент с готовым письмом на `fallbackEmail`
+  (hello@syntonia.com) и показывает ссылки «Открыть письмо / написать»; после согласования канала
+  достаточно вписать `endpoint` в `site/data/form-config.json` (POST JSON) — код уже готов.
+- **Новые a11y-ворота** (`scripts/gates/a11y.mjs`, входят в `npm run gate`): 24/24 PASS, 0 нарушений —
+  проверяют aria-hidden с фокусом/текстом, вложенную интерактивность, alt у img, доступные имена
+  кнопок/полей, h1 и порядок заголовков, lang/main/skip-link.
+- Исправлено по a11y: вложенная интерактивность в слайдере форматов (role=radio с ссылкой внутри →
+  role=group + aria-live у счётчика), ошибочный aria-hidden на контейнере quiz (внутри компонент),
+  пропуски уровней заголовков (h1→h3) на masters/booking/thanks-booking, label у honeypot-поля.
+- axe-core (WCAG 2.1 AA): остаётся только `color-contrast` (118 узлов) — цвета текста заданы макетом
+  Figma, изменение нарушит пиксельную сверку; зафиксировано как дизайн-решение.
+- Ворота: golden 24/24 (Δh=0), contract 24/24 (0 нарушений), fixtures 116/116, a11y 24/24,
+  0 console-ошибок на 24 страницах.
+
+## v0.11.2 — иконки
 - Статический блок кодогена (data-node 8337…8380) заменён интерактивной `BookingForm`:
   настоящие `input`/`textarea` (Имя, Email, Телефон, Комментарий), семантические `label`,
   `aria-invalid`/`aria-describedby`, `role="status"` для статусов, honeypot-поле.

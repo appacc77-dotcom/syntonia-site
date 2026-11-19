@@ -416,16 +416,19 @@ function applyImageSemantics(text) {
     const end = findElementEnd(next, openEnd, m[1])
     if (!end) continue
     const inner = next.slice(openEnd, end.closeStart)
-    const textLen = inner.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().length
+    // JSX-компоненты внутри (например <QuizWizard />) в статике не видны: такие контейнеры
+    // нельзя помечать aria-hidden — внутри может быть весь интерактивный контент.
+    const hasComponents = /<[A-Z]/.test(inner)
+    const textLen = inner.replace(/<[^>]*>/g, '').replace(/\{[^{}]*\}/g, '').replace(/\s+/g, ' ').trim().length
     const node = /data-node="(\d+)"/.exec(attrs)
     const nodeId = node ? node[1] : null
-    hits.push({ index: m.index, tag: m[0], openEnd, end: end.closeEnd, textLen, nodeId })
+    hits.push({ index: m.index, tag: m[0], openEnd, end: end.closeEnd, textLen, hasComponents, nodeId })
   }
   for (const hit of hits.reverse()) {
     const label = hit.nodeId ? IMAGE_LABELS[hit.nodeId] : null
     let insertion
-    if (label && hit.textLen < 40) insertion = ` role="img" aria-label="${label.replace(/"/g, '&quot;')}"`
-    else if (hit.textLen === 0) insertion = ' aria-hidden="true"'
+    if (label && hit.textLen < 40 && !hit.hasComponents) insertion = ` role="img" aria-label="${label.replace(/"/g, '&quot;')}"`
+    else if (hit.textLen === 0 && !hit.hasComponents) insertion = ' aria-hidden="true"'
     else continue
     const tag = hit.tag.replace(/>$/, `${insertion}>`)
     next = next.slice(0, hit.index) + tag + next.slice(hit.index + hit.tag.length)
@@ -488,6 +491,54 @@ function applyBookingForm(text, file) {
     out = lines.join('\n')
   }
   return { text: out, changed: true }
+}
+
+
+/** Снять ошибочные aria-hidden="true" с контейнеров, внутри которых JSX-компоненты или текст
+ * (старая версия патча помечала такие элементы декоративными — внутри мог быть интерактив). */
+function stripWrongAriaHidden(text) {
+  let next = text
+  let changed = 0
+  const re = /<(div|section|header|footer|span)((?:[^>"]|"[^"]*")*?)( aria-hidden="true")((?:[^>"]|"[^"]*")*)>/g
+  const hits = []
+  let m
+  while ((m = re.exec(next))) {
+    const openEnd = m.index + m[0].length
+    const end = findElementEnd(next, openEnd, m[1])
+    if (!end) continue
+    const inner = next.slice(openEnd, end.closeStart)
+    const hasComponents = /<[A-Z]/.test(inner)
+    const textLen = inner.replace(/<[^>]*>/g, '').replace(/\{[^{}]*\}/g, '').replace(/\s+/g, ' ').trim().length
+    if (hasComponents || textLen > 0) hits.push({ start: m.index, end: openEnd, tag: m[0] })
+  }
+  for (const hit of hits.reverse()) {
+    const cleaned = hit.tag.replace(' aria-hidden="true"', '')
+    next = next.slice(0, hit.start) + cleaned + next.slice(hit.end)
+    changed += 1
+  }
+  return { text: next, changed }
+}
+
+
+/** Убрать пропуски уровней заголовков: если после h1 идёт сразу h3/h4 — повысить его до h2.
+ *  Работает по JSX-файлу (после всех промоушенов), максимум один апгрейд на файл. */
+function fixHeadingOrder(text) {
+  const openRe = /<(h[1-6])\b((?:[^>"]|"[^"]*")*)>/g
+  const heads = []
+  let m
+  while ((m = openRe.exec(text))) heads.push({ level: Number(m[1][1]), index: m.index, tag: m[1], attrs: m[2], openEnd: m.index + m[0].length })
+  let seen = 1
+  for (const h of heads) {
+    if (h.level > seen + 1) {
+      const end = findElementEnd(text, h.openEnd, h.tag)
+      if (!end) return { text, changed: false }
+      const inner = text.slice(h.openEnd, end.closeStart)
+      const promoted = text.slice(0, h.index) + `<h2${h.attrs}>` + inner + '</h2>' + text.slice(end.closeEnd)
+      return { text: promoted, changed: true }
+    }
+    if (h.level > seen) seen = h.level
+  }
+  return { text, changed: false }
 }
 
 // ---------- обход файлов
@@ -611,6 +662,14 @@ for (const file of files) {
   if (deduped.changed || boxed.changed) write(file, boxed.text)
 }
 
+// ---------- снять ошибочные aria-hidden
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const cleaned = stripWrongAriaHidden(t)
+  if (cleaned.changed) { write(file, cleaned.text); stat.ariaCleanup = (stat.ariaCleanup || 0) + cleaned.changed }
+}
+
 // ---------- семантика изображений
 for (const file of files) {
   if (!/\.jsx$/.test(file)) continue
@@ -624,7 +683,9 @@ for (const file of files) {
   if (!/\.jsx$/.test(file)) continue
   const t = read(file)
   const heads = applyHeadingTags(t)
-  if (heads.changed) write(file, heads.text)
+  const fixed = fixHeadingOrder(heads.text)
+  if (heads.changed || fixed.changed) write(file, fixed.text)
+  if (fixed.changed) stat.headingOrder = (stat.headingOrder || 0) + 1
 }
 
 // ---------- форма booking
@@ -720,4 +781,4 @@ for (const file of files) {
 
 console.log(`patches: links=${stat.links} (шапок ${stat.headerFiles}, подвалов ${stat.footerFiles}), ` +
   `landmarks=${stat.landmarks}, h1=${stat.h1}, скрытых h1=${stat.hiddenH1}, якоря=${stat.anchors}, ` +
-  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, mixed-font=${stat.richRuns || 0}, booking-form=${stat.bookingForm || 0}`)
+  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, aria-очистка=${stat.ariaCleanup || 0}, heading-order=${stat.headingOrder || 0}, mixed-font=${stat.richRuns || 0}, booking-form=${stat.bookingForm || 0}`)

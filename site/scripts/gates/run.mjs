@@ -10,7 +10,7 @@
  *
  * Usage:
  *   M2_REFERENCE=/abs/path/artifacts/reference/179a800f9fbf \
- *     node scripts/gates/run.mjs [--only golden|contract|fixtures|all] [--route /practice.html]
+ *     node scripts/gates/run.mjs [--only golden|contract|fixtures|a11y|all] [--route /practice.html]
  *        [--dir .] [--json gates.json]
  *
  * fixtures прогоняются отдельным процессом (scripts/gates/fixtures.mjs): им нужен QA-билд
@@ -45,6 +45,7 @@ if (!REFERENCE || !existsSync(REFERENCE)) fail('задай M2_REFERENCE=/abs/pat
 const goldenManifest = join(REFERENCE, 'golden/figma/manifest.json')
 if (!existsSync(goldenManifest)) fail(`нет ${goldenManifest}`)
 const useFixtures = ONLY === 'all' || ONLY === 'fixtures'
+const useA11y = ONLY === 'all' || ONLY === 'a11y'
 const useGolden = ONLY === 'all' || ONLY === 'golden'
 const useContract = ONLY === 'all' || ONLY === 'contract'
 if ((useGolden || useContract) && !existsSync(join(OUT_DIR, 'index.html'))) fail(`нет ${join(OUT_DIR, 'index.html')} — сначала npm run deploy`)
@@ -104,6 +105,17 @@ const launch = async () => {
 }
 const browser = await launch()
 const results = { golden: [], contract: [], fixtures: null, startedAt: new Date().toISOString(), reference: REFERENCE, out: OUT_DIR }
+
+// --- a11y: статическая проверка опубликованной сборки
+if (useA11y) {
+  const { spawnSync } = await import('node:child_process')
+  const a11yReport = join(SITE, '.gates/reports/a11y.json')
+  const run = spawnSync(process.execPath, [join(SITE, 'scripts/gates/a11y.mjs'), '--dir', OUT_DIR, '--json', a11yReport], { env: process.env, encoding: 'utf8', timeout: 900000 })
+  if (run.stdout) process.stdout.write(run.stdout)
+  if (run.stderr) process.stderr.write(run.stderr)
+  try { results.a11y = JSON.parse(readFileSync(a11yReport, 'utf8')) } catch { results.a11y = { error: 'нет отчёта a11y' } }
+  results.a11yOk = run.status === 0
+}
 
 // --- fixtures: отдельный QA-билд site/dist (см. scripts/gates/fixtures.mjs)
 if (useFixtures) {
@@ -187,6 +199,11 @@ if (useContract) {
   const bad = results.contract.filter((r) => r.error || r.pass === false)
   console.log(`contract: ${results.contract.length - bad.length}/${results.contract.length} PASS`)
   if (bad.length) { failed = true; for (const r of bad) console.error(`  - ${r.route}: ${r.error || `geo ${r.geometry?.ratio} typo ${r.typography?.ratio}`}`) }
+}
+if (useA11y) {
+  const a = results.a11y || {}
+  console.log(`a11y: ${(a.summary && (a.summary.pages - a.summary.failed)) || 0}/${(a.summary && a.summary.pages) || 0} PASS`)
+  if (!results.a11yOk) { failed = true; console.error('  - a11y: есть нарушения (см. отчёт)') }
 }
 if (useFixtures) {
   const f = results.fixtures || {}

@@ -39,7 +39,7 @@ export function Section01() {
               <div className="self-stretch min-h-[29px] w-full max-w-[452px] flex flex-row gap-[10px] justify-between items-center relative" data-node="2718">
                 <div className="w-47 min-h-[29px] flex flex-row gap-2 items-center relative" data-node="2719">
                   <div className="w-[3px] h-6 bg-accent-muted" data-node="2720"></div>
-                  <h3 className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2721">Видеть глубже</h3>
+                  <h2 className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2721">Видеть глубже</h2>
                 </div>
                 <p style={{ width: '21px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right flex flex-col justify-center [text-box:trim-both_cap_alphabetic]" data-node="2722">01</p>
               </div>

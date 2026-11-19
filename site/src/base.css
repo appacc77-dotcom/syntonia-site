@@ -57,3 +57,17 @@ button:focus-visible,
   outline: 2px solid var(--color-accent, #5a5a36);
   outline-offset: 2px;
 }
+
+/* sr-only: скрытый от глаз, но доступный скринридерам текст (Tailwind-класс недоступен
+   в детях, если родитель не в утилитарном слое — задаём явно). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

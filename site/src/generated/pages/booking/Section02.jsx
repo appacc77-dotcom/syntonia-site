@@ -15,7 +15,7 @@ export function Section02() {
               <p className="w-full max-w-[60px] text-accent font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="8245">01</p>
               <div className="flex-1 min-h-[145px] w-full max-w-[475.5px] flex flex-row gap-4 items-center relative" data-node="8246">
                 <div className="flex-1 min-h-[145px] w-full max-w-[420.5px] flex flex-col gap-space-m justify-center items-start relative" data-node="8247">
-                  <h3 className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8248">Точка входа</h3>
+                  <h2 className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8248">Точка входа</h2>
                   <p className="self-stretch w-full max-w-[420.5px] text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[27px]" data-node="8249">Короткая встреча для прояснения запроса и понимания направления.</p>
                   <div className="w-[102px] min-h-[20px] flex flex-row gap-space-s justify-center items-center relative" data-node="8250">
                     <p className="text-text-deep font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8251">30 минут</p>

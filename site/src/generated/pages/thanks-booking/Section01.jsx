@@ -22,7 +22,7 @@ export function Section01() {
           <div className="self-stretch min-h-[50px] w-full max-w-[640px] flex flex-row gap-space-m items-start relative" data-node="9577">
             <p className="text-accent font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="9578">01</p>
             <div className="flex-1 min-h-[50px] w-full max-w-[602px] flex flex-col gap-space-xs items-start relative" data-node="9579">
-              <h3 className="self-stretch w-full max-w-[602px] text-text-heading font-['Golos_Text'] text-[20px] font-normal leading-[27px] [white-space:nowrap]" data-node="9580">Согласуем время</h3>
+              <h2 className="self-stretch w-full max-w-[602px] text-text-heading font-['Golos_Text'] text-[20px] font-normal leading-[27px] [white-space:nowrap]" data-node="9580">Согласуем время</h2>
               <p className="self-stretch w-full max-w-[602px] text-text-secondary font-['Golos_Text'] text-[14px] font-normal leading-[19px] [white-space:nowrap]" data-node="9581">Напишем на email или позвоним по телефону из заявки.</p>
             </div>
           </div>
