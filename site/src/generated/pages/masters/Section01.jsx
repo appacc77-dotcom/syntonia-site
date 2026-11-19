@@ -2,7 +2,7 @@
 export function Section01() {
   return (
     <div className="relative w-full min-h-[839px] flex flex-row items-center bg-bg-muted" data-node="2693">
-      <div className="flex-1 self-stretch w-full max-w-[876px] min-h-[839px] flex flex-col pb-space-2xl justify-end items-start [background:linear-gradient(0deg,_rgba(0,_0,_0,_0.12),_rgba(0,_0,_0,_0.12)),_url(/assets/img-7925419b51.png)_center_/_cover] relative [overflow:hidden]" data-node="2694">
+      <div className="flex-1 self-stretch w-full min-h-[839px] flex flex-col pb-space-2xl justify-end items-start [background:linear-gradient(0deg,_rgba(0,_0,_0,_0.12),_rgba(0,_0,_0,_0.12)),_url(/assets/img-7925419b51.png)_center_/_cover] relative [overflow:hidden]" data-node="2694">
         <div className="min-h-[559.73px] w-full max-w-[478px] flex flex-col gap-space-xl px-space-2xl justify-center items-start relative" data-node="2695">
           <div className="self-stretch min-h-[324px] w-full max-w-[382px] flex flex-col gap-space-xl items-start relative" data-node="2696">
             <h1 className="self-stretch w-full max-w-[382px] text-text-on-image font-['Literata'] text-[64px] font-light leading-[64px]" data-node="2697">Екатерина Лебедева</h1>

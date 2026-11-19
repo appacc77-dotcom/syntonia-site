@@ -5,7 +5,7 @@ export function Section03() {
   const route = useRoute()
   return (
     <div className="relative w-full min-h-[550px] flex flex-row items-start bg-[#FFFFFF] [overflow:hidden]" data-node="5154">
-      <div className="flex-1 self-stretch w-full min-h-[550px] flex flex-row px-space-5xl items-center [background:url(/assets/img-0d49458ee5.jpg)_-0.01px_-0.21px_/_1440px_630.88px] relative [overflow:hidden]" data-node="5155">
+      <div className="wide-bg flex-1 self-stretch w-full min-h-[550px] flex flex-row px-space-5xl items-center [background:url(/assets/img-0d49458ee5.jpg)_-0.01px_-0.21px_/_1440px_630.88px] relative [overflow:hidden]" data-node="5155">
         <div className="w-[701px] min-h-[298px] flex flex-col gap-space-xl items-start relative [overflow:hidden]" data-node="5156">
           <div className="w-[701px] min-h-[144px] flex flex-col gap-space-m items-start relative" data-node="5157">
             <h2 className="text-[#FFFFFF] font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="5158">Не знаешь, с чего начать?</h2>

@@ -2,7 +2,7 @@
 export function Section05() {
   return (
     <div className="relative w-full min-h-[550px] flex flex-row items-start [overflow:hidden]" data-node="1021">
-      <div className="flex-1 self-stretch w-full min-h-[550px] flex flex-row px-6 justify-center items-center [background:url(/assets/img-0d49458ee5.jpg)_-0.01px_-0.21px_/_1440px_630.88px] relative [overflow:hidden]" data-node="1022">
+      <div className="wide-bg flex-1 self-stretch w-full min-h-[550px] flex flex-row px-6 justify-center items-center [background:url(/assets/img-0d49458ee5.jpg)_-0.01px_-0.21px_/_1440px_630.88px] relative [overflow:hidden]" data-node="1022">
         <div className="flex-1 min-h-[265px] w-full max-w-[1280px] flex flex-col gap-[10px] items-start relative" data-node="1023">
           <div className="self-stretch min-h-[265px] w-full max-w-[1280px] flex flex-col gap-space-xl items-start relative [overflow:hidden]" data-node="1024">
             <h2 className="text-text-on-image font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="1025">Диагностика состояния</h2>

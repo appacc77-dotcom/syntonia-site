@@ -194,3 +194,12 @@ button:focus-visible,
     padding-right: 12px;
   }
 }
+
+/* Фоны, свёрстанные под 1440 px: на широких экранах растягиваем на всю ширину по центру
+   (иначе справа остаётся полоса). На 1440 включено только исходное поведение. */
+@media (min-width: 1441px) {
+  .wide-bg {
+    background-size: cover;
+    background-position: center;
+  }
+}
