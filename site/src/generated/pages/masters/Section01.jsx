@@ -1,3 +1,4 @@
+import { FounderAccordion } from '../../../interactive/components/FounderAccordion.jsx'
 // founder-hero as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section01() {
   return (
@@ -34,59 +35,7 @@ export function Section01() {
       </div>
       <div className="self-stretch w-[564px] min-h-[839px] flex flex-col pt-space-5xl pr-space-l pb-space-l pl-space-l justify-end items-center bg-bg-dark backdrop-blur-[5px] relative" data-node="2714">
         <div className="w-[516px] min-h-[687px] flex flex-col gap-space-2xl p-space-xl justify-end items-start rounded-m [background:url(/assets/img-483c9b0016.jpg)_0.25px_-51.81px_/_516px_791.01px] relative [overflow:hidden]" data-node="2715">
-          <div className="w-[452px] min-h-[530px] flex flex-col gap-6 items-start relative" data-node="2716">
-            <div className="min-h-[218px] w-full max-w-[452px] flex flex-col gap-4 items-start relative" data-node="2717">
-              <div className="self-stretch min-h-[29px] w-full max-w-[452px] flex flex-row gap-[10px] justify-between items-center relative" data-node="2718">
-                <div className="w-47 min-h-[29px] flex flex-row gap-2 items-center relative" data-node="2719">
-                  <div className="w-[3px] h-6 bg-accent-muted" data-node="2720"></div>
-                  <h2 className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2721">Видеть глубже</h2>
-                </div>
-                <p style={{ width: '21px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right flex flex-col justify-center [text-box:trim-both_cap_alphabetic]" data-node="2722">01</p>
-              </div>
-              <div className="self-stretch w-full max-w-[452px] text-text-on-image font-['Golos_Text'] text-[14px] font-normal leading-[20px]" data-node="2723" style={{ boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '452px' }} style={{ width: '452px', boxSizing: 'border-box' }}><p style={{ margin: 0, marginTop: '0px' }}>{"Меня всегда интересовала глубина человеческой природы: как в одной личности переплетаются сила и уязвимость, осознанность и запутанность, желание жить и при этом разрушать себя."}</p><p style={{ margin: 0, marginTop: '16px' }}>{"Почему человек может искренне хотеть перемен, стараться, искать, пробовать — и всё равно снова упираться в ту же невозможность что-то изменить."}</p></div>
-              <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2724"></div>
-            </div>
-            <div className="min-h-[46px] w-full max-w-[452px] flex flex-col gap-4 items-start relative" data-node="2725">
-              <div className="self-stretch min-h-[29px] w-full max-w-[452px] flex flex-row gap-[10px] justify-between items-center relative" data-node="2726">
-                <div className="w-[235px] min-h-[29px] flex flex-row gap-2 items-center relative" data-node="2727">
-                  <div className="w-[3px] h-6 bg-accent-muted" data-node="2728"></div>
-                  <h3 className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2729">Путь в профессию</h3>
-                </div>
-                <p style={{ width: '23px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2730">02</p>
-              </div>
-              <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2732"></div>
-            </div>
-            <div className="min-h-[46px] w-full max-w-[452px] flex flex-col gap-4 items-start relative" data-node="2733">
-              <div className="self-stretch min-h-[29px] w-full max-w-[452px] flex flex-row gap-[10px] justify-between items-center relative" data-node="2734">
-                <div className="w-[243px] min-h-[29px] flex flex-row gap-2 items-center relative" data-node="2735">
-                  <div className="w-[3px] h-6 bg-accent-muted" data-node="2736"></div>
-                  <h3 className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2737">Суть моего взгляда</h3>
-                </div>
-                <p style={{ width: '23px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2738">03</p>
-              </div>
-              <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2740"></div>
-            </div>
-            <div className="min-h-[46px] w-full max-w-[452px] flex flex-col gap-4 items-start relative" data-node="2741">
-              <div className="self-stretch min-h-[29px] w-full max-w-[452px] flex flex-row gap-[10px] justify-between items-center relative" data-node="2742">
-                <div className="w-[191px] min-h-[29px] flex flex-row gap-2 items-center relative" data-node="2743">
-                  <div className="w-[3px] h-6 bg-accent-muted" data-node="2744"></div>
-                  <h3 className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2745">Ясность рядом</h3>
-                </div>
-                <p style={{ width: '24px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2746">04</p>
-              </div>
-              <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2748"></div>
-            </div>
-            <div className="min-h-[46px] w-full max-w-[452px] flex flex-col gap-4 items-start relative" data-node="2749">
-              <div className="self-stretch min-h-[29px] w-full max-w-[452px] flex flex-row gap-[10px] justify-between items-center relative" data-node="2750">
-                <div className="w-[294px] min-h-[29px] flex flex-row gap-2 items-center relative" data-node="2751">
-                  <div className="w-[3px] h-6 bg-accent-muted" data-node="2752"></div>
-                  <h3 className="text-text-on-image font-['Literata'] text-[25px] font-light leading-[29px] [white-space:nowrap]" data-node="2753">Пространство Syntonia</h3>
-                </div>
-                <p style={{ width: '23px', height: '20px' }} className="text-text-on-image font-['Great_Vibes'] text-[27px] font-normal leading-[32px] [white-space:nowrap] text-right [text-box:trim-both_cap_alphabetic]" data-node="2754">05</p>
-              </div>
-              <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2756"></div>
-            </div>
-          </div>
+          <FounderAccordion />
           <div className="w-[207px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-414x90.webp)_center_/_cover] relative" data-node="2757">
             <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em] uppercase" data-node="2758">с чего начать</p>
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="2759">
