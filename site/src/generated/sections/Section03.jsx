@@ -8,7 +8,7 @@ export function Section03() {
           <p className="w-full max-w-[473px] text-text-secondary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="975">Если в отношениях снова больно, в выборе нет опоры, внутри тяжело, а энергии всё меньше — причина внутри, и это можно изменить</p>
           <div className="w-[362px] min-h-[71px] flex flex-row gap-6 items-start relative" data-node="976">
             <p className="text-text-primary font-['Great_Vibes'] text-[42px] font-normal leading-[71px] [white-space:nowrap] tracking-[0.03em]" data-node="977">Начни</p>
-            <div className="w-[214px] min-h-[61px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="978">
+            <div className="w-[214px] min-h-[61px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-426x122.webp)_center_/_cover] relative" data-node="978">
               <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em] uppercase" data-node="979">с точки входа</p>
               <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="980">
                 <div className="w-[11.88px] h-[9.65px] relative" data-node="981">

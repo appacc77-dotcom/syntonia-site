@@ -22,7 +22,7 @@ export function Section01() {
           </div>
         </div>
         <div className="self-stretch min-h-[61px] w-full max-w-[640px] flex flex-row gap-space-l justify-center items-center relative" data-node="9770">
-          <a className="w-62 min-h-[61px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="9771" data-m3-link href={href('/practice.html')} aria-current={isCurrent(route, '/practice.html') ? 'page' : undefined}>
+          <a className="w-62 min-h-[61px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-496x122.webp)_center_/_cover] relative" data-node="9771" data-m3-link href={href('/practice.html')} aria-current={isCurrent(route, '/practice.html') ? 'page' : undefined}>
             <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="9772">Перейти к практике</p>
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="9773">
               <div className="w-[11.88px] h-[9.65px] relative" data-node="9774">

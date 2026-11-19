@@ -16,7 +16,7 @@ export function Section08() {
             <p className="text-text-secondary font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="1095">30 минут</p>
           </div>
           <div className="w-[431px] min-h-[45px] flex flex-row gap-space-s items-start relative" data-node="1096">
-            <div className="w-[241px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="1097">
+            <div className="w-[241px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-482x90.webp)_center_/_cover] relative" data-node="1097">
               <a className="block no-underline text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="1098" data-m3-link href="booking.html">Начать с точки входа</a>
               <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="1099">
                 <div className="w-[11.88px] h-[9.65px] relative" data-node="1100">

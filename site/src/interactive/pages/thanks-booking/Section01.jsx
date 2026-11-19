@@ -42,7 +42,7 @@ export function Section01() {
           </div>
         </div>
         <div className="self-stretch min-h-[61px] w-full max-w-[640px] flex flex-row gap-space-l justify-center items-center relative" data-node="9592">
-          <a className="w-[171px] min-h-[61px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="9593" data-m3-link href={href('/')} aria-current={isCurrent(route, '/') ? 'page' : undefined}>
+          <a className="w-[171px] min-h-[61px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-342x122.webp)_center_/_cover] relative" data-node="9593" data-m3-link href={href('/')} aria-current={isCurrent(route, '/') ? 'page' : undefined}>
             <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="9594">На главную</p>
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="9595">
               <div className="w-[11.88px] h-[9.65px] relative" data-node="9596">

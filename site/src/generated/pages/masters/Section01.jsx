@@ -9,7 +9,7 @@ export function Section01() {
             <p className="self-stretch w-full max-w-[382px] text-text-on-image font-['Golos_Text'] text-[24px] font-normal leading-[32px]" data-node="2698">Психолог. Основатель Syntonia. Автор метода</p>
             <p className="self-stretch w-full max-w-[382px] text-text-on-image font-['Lora'] text-[24px] font-normal italic leading-[34px]" data-node="2699">Я не работаю вокруг проблемы. Я веду к её источнику.</p>
           </div>
-          <div className="w-[195px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="2700">
+          <div className="w-[195px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-390x90.webp)_center_/_cover] relative" data-node="2700">
             <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="2701">Услышать голос</p>
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="2702">
               <div className="w-[11.88px] h-[9.65px] rotate-[90deg] origin-top-left relative" data-node="2703">
@@ -87,7 +87,7 @@ export function Section01() {
               <div className="self-stretch w-[452px] h-[1px] bg-border" data-node="2756"></div>
             </div>
           </div>
-          <div className="w-[207px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="2757">
+          <div className="w-[207px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-414x90.webp)_center_/_cover] relative" data-node="2757">
             <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em] uppercase" data-node="2758">с чего начать</p>
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="2759">
               <div className="w-[11.88px] h-[9.65px] relative" data-node="2760">

@@ -7,7 +7,7 @@ export function Section03() {
           <h2 className="self-stretch w-full max-w-[491px] text-text-heading font-['Literata'] text-[38px] font-light leading-[48px]" data-node="9049">Глубинные изменения начинаются с одного шага</h2>
           <p className="self-stretch w-full max-w-[491px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="9050">Выберите точку входа, которая подходит вам прямо сейчас, и начните путь к ясности, внутренней опоре и подлинной жизни.</p>
           <div className="w-[387px] min-h-[45px] flex flex-row gap-space-s items-start relative" data-node="9051">
-            <div className="w-[219px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="9052">
+            <div className="w-[219px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-438x90.webp)_center_/_cover] relative" data-node="9052">
               <a className="block no-underline text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="9053" data-m3-link href="booking.html">Начать с точки входа</a>
             </div>
             <div className="w-40 min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [outline:1px_solid_var(--color-accent,_#5A5A36)] [outline-offset:-1px] relative" data-node="9058">

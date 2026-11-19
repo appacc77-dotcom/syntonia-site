@@ -15,7 +15,7 @@ export function Section01() {
           <p className="self-stretch w-full max-w-[640px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px] text-center" data-node="9853">Возможно, ссылка устарела или в адресе опечатка. Начните с главной или загляните в библиотеку.</p>
         </div>
         <div className="self-stretch min-h-[61px] w-full max-w-[640px] flex flex-row gap-space-l justify-center items-center relative" data-node="9854">
-          <a className="w-[171px] min-h-[61px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="9855" data-m3-link href={href('/')} aria-current={isCurrent(route, '/') ? 'page' : undefined}>
+          <a className="w-[171px] min-h-[61px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-342x122.webp)_center_/_cover] relative" data-node="9855" data-m3-link href={href('/')} aria-current={isCurrent(route, '/') ? 'page' : undefined}>
             <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="9856">На главную</p>
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="9857">
               <div className="w-[11.88px] h-[9.65px] relative" data-node="9858">

@@ -18,7 +18,7 @@ export function Section13() {
             </div>
             <p className="self-stretch w-full max-w-[397px] text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[34px] flex flex-col justify-end" data-node="1281">О том, как внутренняя работа начинает менять состояние и саму жизнь</p>
           </div>
-          <a className="block no-underline w-[182px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="1282" data-m3-link href={href('/booking.html')}>
+          <a className="block no-underline w-[182px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-364x90.webp)_center_/_cover] relative" data-node="1282" data-m3-link href={href('/booking.html')}>
             <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="1283">Задать вопрос</p>
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="1284">
               <div className="w-[11.88px] h-[9.65px] relative" data-node="1285">

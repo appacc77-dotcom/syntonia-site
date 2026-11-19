@@ -28,7 +28,7 @@ export function Section02() {
                       <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="5062">Бесплатно</p>
                     </div>
                   </div>
-                  <div className="self-stretch min-h-[32.72px] w-full max-w-[182.55px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5063">
+                  <div className="self-stretch min-h-[32.72px] w-full max-w-[182.55px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-366x66.webp)_center_/_cover] relative" data-node="5063">
                     <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5064">Прослушать практику</p>
                     <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5065">
                       <div className="w-[8.7px] h-[7.07px] relative" data-node="5066">
@@ -59,7 +59,7 @@ export function Section02() {
                       <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="5082">Бесплатно</p>
                     </div>
                   </div>
-                  <div className="self-stretch min-h-[32.72px] w-full max-w-[182.55px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5083">
+                  <div className="self-stretch min-h-[32.72px] w-full max-w-[182.55px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-366x66.webp)_center_/_cover] relative" data-node="5083">
                     <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5084">Прослушать практику</p>
                     <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5085">
                       <div className="w-[8.7px] h-[7.07px] relative" data-node="5086">
@@ -90,7 +90,7 @@ export function Section02() {
                       <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="5102">Бесплатно</p>
                     </div>
                   </div>
-                  <div className="self-stretch min-h-[32.72px] w-full max-w-[182.55px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5103">
+                  <div className="self-stretch min-h-[32.72px] w-full max-w-[182.55px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-366x66.webp)_center_/_cover] relative" data-node="5103">
                     <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5104">Прослушать практику</p>
                     <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5105">
                       <div className="w-[8.7px] h-[7.07px] relative" data-node="5106">
@@ -121,7 +121,7 @@ export function Section02() {
                       <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="5122">Бесплатно</p>
                     </div>
                   </div>
-                  <div className="self-stretch min-h-[32.72px] w-full max-w-[182.55px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="5123">
+                  <div className="self-stretch min-h-[32.72px] w-full max-w-[182.55px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-366x66.webp)_center_/_cover] relative" data-node="5123">
                     <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5124">Прослушать практику</p>
                     <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5125">
                       <div className="w-[8.7px] h-[7.07px] relative" data-node="5126">

@@ -597,6 +597,27 @@ function ensureBulletAria(text) {
   return { text: next, changed: next !== text }
 }
 
+
+// ---------- подмена крупных фоновых ассетов на 2x-варианты для мелких показов
+const ASSET_VARIANTS = existsSync(join(SITE, 'data/asset-variants.json')) ? JSON.parse(read(join(SITE, 'data/asset-variants.json'))) : []
+
+function applyAssetVariants(text) {
+  let next = text
+  let changed = 0
+  for (const fix of ASSET_VARIANTS) {
+    const openRe = new RegExp(`(className="[^"]*")((?:[^>"]|"[^"]*")*?data-node="${fix.node}")`)
+    const m = openRe.exec(next)
+    if (!m) continue
+    if (m[1].includes(fix.to)) continue
+    if (!m[1].includes(fix.from)) continue
+    const cls = m[1].split(fix.from).join(fix.to)
+    next = next.slice(0, m.index) + cls + m[2] + next.slice(m.index + m[0].length)
+    changed += 1
+    stat.assetVariants = (stat.assetVariants || 0) + 1
+  }
+  return { text: next, changed }
+}
+
 // ---------- обход файлов
 const walk = (dir) => {
   const out = []
@@ -776,6 +797,14 @@ for (const file of files) {
   if (fixed.changed) { write(file, fixed.text); stat.bulletAria = (stat.bulletAria || 0) + 1 }
 }
 
+// ---------- 2x-варианты фоновых ассетов
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const fixed = applyAssetVariants(t)
+  if (fixed.changed) write(file, fixed.text)
+}
+
 // ---------- mixed-font runs
 for (const file of files) {
   if (!/\.jsx$/.test(file)) continue
@@ -861,4 +890,4 @@ for (const file of files) {
 
 console.log(`patches: links=${stat.links} (шапок ${stat.headerFiles}, подвалов ${stat.footerFiles}), ` +
   `landmarks=${stat.landmarks}, h1=${stat.h1}, скрытых h1=${stat.hiddenH1}, якоря=${stat.anchors}, ` +
-  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, aria-очистка=${stat.ariaCleanup || 0}, heading-order=${stat.headingOrder || 0}, mixed-font=${stat.richRuns || 0}, booking-form=${stat.bookingForm || 0}, geom-fixes=${stat.geometryFixes || 0}, text-breaks=${stat.textBreaks || 0}, bullet-aria=${stat.bulletAria || 0}`)
+  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, aria-очистка=${stat.ariaCleanup || 0}, heading-order=${stat.headingOrder || 0}, mixed-font=${stat.richRuns || 0}, booking-form=${stat.bookingForm || 0}, geom-fixes=${stat.geometryFixes || 0}, text-breaks=${stat.textBreaks || 0}, bullet-aria=${stat.bulletAria || 0}, asset-variants=${stat.assetVariants || 0}`)
