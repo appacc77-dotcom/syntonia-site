@@ -1,4 +1,5 @@
 import { isCurrent, useHref, useRoute } from '../../../interactive/links.jsx'
+import { HeaderDropdown } from '../../../interactive/components/HeaderDropdown.jsx'
 // header as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section03() {
   const href = useHref()
@@ -7,15 +8,7 @@ export function Section03() {
     <header className="relative min-h-[92px] w-full flex flex-row justify-center items-center rounded-(--radius-l) [overflow:hidden]" data-node="10260">
       <div className="flex-1 min-h-[92px] w-full flex flex-row gap-0 py-space-m px-space-xl justify-between items-center bg-bg-header backdrop-blur-[5px] relative" data-node="10261">
         <div className="flex-1 min-h-[34px] w-full max-w-[596.17px] flex flex-row gap-space-l items-center relative" data-node="10262">
-          <div className="w-[119px] min-h-[34px] flex flex-row gap-space-xs items-center relative" data-node="10263">
-            <a className="text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="10264" data-m3-link href={href('/')} aria-current={isCurrent(route, '/') ? 'page' : undefined}>О проекте</a>
-            <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="10265">
-              <div className="w-[11.88px] h-[9.65px] rotate-[90deg] origin-top-left relative" data-node="10266">
-                <div className="absolute left-0 top-[3.34px] w-[5.54px] h-[2.96px] border-[1.5px] border-text-on-image" data-node="10267"></div>
-                <div className="absolute left-[6.97px] top-0 w-[4.91px] h-[9.65px] rounded-[0.71px] border-[3px] border-text-on-image" data-node="10268"></div>
-              </div>
-            </div>
-          </div>
+          <HeaderDropdown route={route} nodes={['10263', '10264', '10265', '10266', '10267', '10268']} />
           <a className="text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="10269" data-m3-link href={href('/quiz.html')} aria-current={isCurrent(route, '/quiz.html') ? 'page' : undefined}>Понять себя</a>
           <a className="text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="10270" data-m3-link href={href('/practice.html')} aria-current={isCurrent(route, '/practice.html') ? 'page' : undefined}>Пространство практики</a>
         </div>

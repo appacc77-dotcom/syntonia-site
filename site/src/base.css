@@ -90,3 +90,27 @@ button:focus-visible,
     transition: none !important;
   }
 }
+
+/* Выпадающее меню шапки: мягкое появление сверху (принцип из прежней версии сайта) */
+@keyframes motion-rise {
+  0% { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 1; transform: none; }
+}
+.dropdown-rise { animation: motion-rise 260ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-rise { animation: none; }
+}
+
+/* banner-founder: на 1440 — точный кроп из макета; на широких экранах фото
+   растягивается на всю ширину и центрируется (иначе справа остаётся полоса). */
+.banner-founder-bg {
+  background-repeat: no-repeat;
+  background-position: -0.48px -65.89px;
+  background-size: 1440px 810px;
+}
+@media (min-width: 1441px) {
+  .banner-founder-bg {
+    background-position: center -65.89px;
+    background-size: cover;
+  }
+}
