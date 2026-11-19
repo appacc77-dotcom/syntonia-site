@@ -1,0 +1,9 @@
+{
+ "_note": "Канал доставки заявок формы booking. endpoint: URL, принимающий POST JSON ({name,email,phone,comment,format,page,_subject}). Подходит Formspree/Getform/Apps Script/Cloudflare Worker — любой сервис с JSON-приёмом. Пока endpoint=null, форма валидирует ввод, но заявки не отправляет.",
+ "endpoint": null,
+ "method": "POST",
+ "format": "",
+ "successRoute": "/thanks-booking.html",
+ "unavailableText": "Форма временно недоступна — напишите нам, и мы свяжемся с вами.",
+ "formatNode": "8325"
+}

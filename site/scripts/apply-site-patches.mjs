@@ -464,6 +464,32 @@ function applyRichTextRuns(text) {
   return { text: next, changed }
 }
 
+
+// ---------- форма booking: статический блок кодогена → интерактивная BookingForm
+// Разметка и data-node сохраняются 1:1 (пиксели не меняются), поля становятся настоящими
+// input/textarea с валидацией и отправкой в канал из data/form-config.json.
+function applyBookingForm(text, file) {
+  if (!text.includes('data-node="8337"')) return { text, changed: false }
+  // обёртка блока — <div ... data-node="8337">…</div>; заменяем весь блок на <BookingForm />
+  const openRe = /<(div)((?:[^>"]|"[^"]*")*data-node="8337"(?:[^>"]|"[^"]*")*)>/
+  const m = openRe.exec(text)
+  if (!m) return { text, changed: false }
+  const openEnd = m.index + m[0].length
+  const end = findElementEnd(text, openEnd, m[1])
+  if (!end) return { text, changed: false }
+  let out = text.slice(0, m.index) + '<BookingForm />' + text.slice(end.closeEnd)
+  if (!out.includes('BookingForm.jsx')) {
+    const rel = relative(dirname(file), join(SRC, 'interactive/components/BookingForm.jsx')).replace(/\\/g, '/')
+    const spec = rel.startsWith('.') ? rel : `./${rel}`
+    const lines = out.split('\n')
+    let insertAt = 0
+    while (insertAt < lines.length && /^\s*(\/\/|\/\*)/.test(lines[insertAt])) insertAt += 1
+    lines.splice(insertAt, 0, `import { BookingForm } from '${spec}'`)
+    out = lines.join('\n')
+  }
+  return { text: out, changed: true }
+}
+
 // ---------- обход файлов
 const walk = (dir) => {
   const out = []
@@ -601,6 +627,14 @@ for (const file of files) {
   if (heads.changed) write(file, heads.text)
 }
 
+// ---------- форма booking
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const form = applyBookingForm(t, file)
+  if (form.changed) { write(file, form.text); stat.bookingForm = (stat.bookingForm || 0) + 1 }
+}
+
 // ---------- mixed-font runs
 for (const file of files) {
   if (!/\.jsx$/.test(file)) continue
@@ -686,4 +720,4 @@ for (const file of files) {
 
 console.log(`patches: links=${stat.links} (шапок ${stat.headerFiles}, подвалов ${stat.footerFiles}), ` +
   `landmarks=${stat.landmarks}, h1=${stat.h1}, скрытых h1=${stat.hiddenH1}, якоря=${stat.anchors}, ` +
-  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, mixed-font=${stat.richRuns || 0}`)
+  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, mixed-font=${stat.richRuns || 0}, booking-form=${stat.bookingForm || 0}`)

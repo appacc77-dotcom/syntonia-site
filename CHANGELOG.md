@@ -43,6 +43,22 @@
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
 
+## v0.11.3 — рабочая форма booking (ожидает канал доставки)
+- Статический блок кодогена (data-node 8337…8380) заменён интерактивной `BookingForm`:
+  настоящие `input`/`textarea` (Имя, Email, Телефон, Комментарий), семантические `label`,
+  `aria-invalid`/`aria-describedby`, `role="status"` для статусов, honeypot-поле.
+- Клиентская валидация: имя ≥2 символа, email по regex, телефон по формату (если заполнен),
+  комментарий ≤2000; фокус на первом невалидном поле.
+- Отправка: POST JSON (`name,email,phone,comment,format,page,_subject`) на канал из
+  `site/data/form-config.json`; формат берётся из выбранного на странице («Выбранный формат»);
+  при успехе — переход на `/thanks-booking.html`; ошибки сети показываются в `role="status"`.
+- **Тест end-to-end пройден** (mock-endpoint 127.0.0.1): пустая отправка → ошибки; валидная →
+  POST получен и редирект на thanks-booking; honeypot → POST не уходит.
+- Пиксели и контракт не изменились: golden 24/24 (booking Δh=0, mean 1.48), contract 24/24
+  (0 нарушений), fixtures 116/116.
+- **Не опубликовано**: `form-config.endpoint = null` — ждёт решения по каналу доставки
+  (Formspree/Getform, Telegram-бот через Worker, Google Apps Script или свой эндпоинт).
+
 ## v0.11.2 — иконки: 97 узлов переведены на SVG из Figma по сверке с golden
 - Автоматический подбор иконки по golden (`560+ узлов проверено`): для узлов с плоским фоном
   перебирались варианты экспорта из Figma (цвет × поворот), сравнивались с эталоном; принимались

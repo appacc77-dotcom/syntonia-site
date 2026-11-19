@@ -1,4 +1,5 @@
 // booking-formats as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
+import { BookingForm } from '../../components/BookingForm.jsx'
 export function Section02() {
   return (
     <div className="relative min-h-[1546px] w-full flex flex-row px-6 justify-center items-start bg-bg-page [overflow:hidden]" data-node="8236">
@@ -125,71 +126,7 @@ export function Section02() {
               </div>
             </div>
             <div className="self-stretch w-[607.5px] h-[1px] bg-border" data-node="8336"></div>
-            <div className="self-stretch min-h-[814px] w-full max-w-[607.5px] flex flex-col gap-6 items-start relative" data-node="8337">
-              <div className="self-stretch min-h-[90px] w-full max-w-[607.5px] flex flex-col gap-space-m items-start relative" data-node="8338">
-                <div className="w-[46px] min-h-[20px] flex flex-row gap-space-s items-start relative" data-node="8339">
-                  <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="8340">Имя</p>
-                  <div className="w-[3px] h-[3px] rounded-full bg-text-heading" data-node="8341"></div>
-                </div>
-                <div className="self-stretch min-h-[54px] w-full max-w-[607.5px] flex flex-row p-[17px] items-start rounded-(--radius-s) relative [overflow:hidden]" data-node="8343">
-                  <p className="text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8344">Как к вам обращаться</p>
-                  <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#8A8560]"></div>
-                </div>
-              </div>
-              <div className="self-stretch min-h-[90px] w-full max-w-[607.5px] flex flex-col gap-space-m items-start relative" data-node="8345">
-                <div className="w-[59px] min-h-[20px] flex flex-row gap-space-s items-start relative" data-node="8346">
-                  <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="8347">Email</p>
-                  <div className="w-[3px] h-[3px] rounded-full bg-text-heading" data-node="8348"></div>
-                </div>
-                <div className="self-stretch min-h-[54px] w-full max-w-[607.5px] flex flex-row p-[17px] items-start rounded-(--radius-s) relative [overflow:hidden]" data-node="8350">
-                  <p className="text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8351">ваш@email.com</p>
-                  <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#8A8560]"></div>
-                </div>
-              </div>
-              <div className="self-stretch min-h-[90px] w-full max-w-[607.5px] flex flex-col gap-space-m items-start relative" data-node="8352">
-                <div className="w-22 min-h-[20px] flex flex-row gap-space-s items-start relative" data-node="8353">
-                  <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="8354">Телефон</p>
-                  <div className="w-[3px] h-[3px] rounded-full bg-text-heading" data-node="8355"></div>
-                </div>
-                <div className="self-stretch min-h-[54px] w-full max-w-[607.5px] flex flex-row p-[17px] items-start rounded-(--radius-s) relative [overflow:hidden]" data-node="8357">
-                  <p className="text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8358">+1 (___) ___ ___ ___</p>
-                  <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#8A8560]"></div>
-                </div>
-              </div>
-              <div className="self-stretch min-h-[122px] w-full max-w-[607.5px] flex flex-col gap-space-m items-start relative" data-node="8359">
-                <div className="w-[237px] min-h-[20px] flex flex-row gap-space-s items-start relative" data-node="8360">
-                  <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="8361">комментарий</p>
-                  <p className="text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8363">ОПЦИОНАЛЬНО</p>
-                </div>
-                <div className="self-stretch min-h-[86px] w-full max-w-[607.5px] flex flex-row pt-[17px] pr-[17px] pb-[49px] pl-[17px] items-start rounded-(--radius-s) relative [overflow:hidden]" data-node="8364">
-                  <p className="text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8365">Что важно знать заранее, ваш запрос или вопросы...</p>
-                  <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#8A8560]"></div>
-                </div>
-              </div>
-              <div className="self-stretch min-h-[326px] w-full max-w-[607.5px] flex flex-col gap-space-2xl items-start relative" data-node="8366">
-                <div className="self-stretch min-h-[88px] w-full max-w-[607.5px] flex flex-col gap-space-s items-start relative" data-node="8367">
-                  <div className="self-stretch min-h-[60px] w-full max-w-[607.5px] flex flex-row py-4 justify-center items-center rounded-[4px] bg-accent relative [overflow:hidden]" data-node="8368">
-                    <p className="flex-1 w-full max-w-[607.5px] text-text-on-image font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap] text-center" data-node="8369">Отправить заявку</p>
-                  </div>
-                  <p className="self-stretch w-full max-w-[607.5px] text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] text-center" data-node="8370">Нажимая “Отправить заявку”, вы соглашаетесь с условиями обработки данных.</p>
-                </div>
-                <div className="self-stretch min-h-[190px] w-full max-w-[607.5px] flex flex-col p-[1px] items-start rounded-(--radius-s) relative [overflow:hidden]" data-node="8371">
-                  <div className="self-stretch min-h-[52px] w-full max-w-[605.5px] flex flex-row p-space-m items-start bg-bg-surface relative [overflow:hidden]" data-node="8372">
-                    <h2 className="text-accent font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="8373">Правовая информация</h2>
-                  </div>
-                  <div className="self-stretch min-h-[136px] w-full max-w-[605.5px] flex flex-col gap-space-m p-space-m items-start relative [overflow:hidden]" data-node="8374">
-                    <p className="self-stretch w-full max-w-[573.5px] text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px]" data-node="8375">Материалы и сессии носят консультативный характер и не являются медицинской услугой.</p>
-                    <div className="self-stretch min-h-[48px] w-full max-w-[573.5px] flex flex-row flex-wrap gap-space-s items-start content-start relative" data-node="8376">
-                      <p className="text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8377">Условия использования и продажи</p>
-                      <p className="text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8378">Политика конфиденциальности</p>
-                      <p className="text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8379">Политика возвратов</p>
-                      <p className="text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8380">Согласия</p>
-                    </div>
-                  </div>
-                  <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#8A8560]"></div>
-                </div>
-              </div>
-            </div>
+            <BookingForm />
           </div>
         </div>
       </div>
