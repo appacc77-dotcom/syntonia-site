@@ -1805,7 +1805,7 @@
  },
  {
   "node": "5144",
-  "asset": "slider-arrow-right",
+  "asset": "slider-arrow-right-strong",
   "w": 48,
   "h": 48,
   "rotate": 0,
@@ -1813,7 +1813,7 @@
  },
  {
   "node": "5149",
-  "asset": "slider-arrow-right",
+  "asset": "slider-arrow-right-strong",
   "w": 48,
   "h": 48,
   "rotate": 0,
@@ -1850,5 +1850,29 @@
   "h": 14.0,
   "rotate": 0,
   "page": "Quiz"
+ },
+ {
+  "node": "1036",
+  "color": "#EEE6DC",
+  "w": null,
+  "h": null
+ },
+ {
+  "node": "1050",
+  "color": "#928B81",
+  "w": null,
+  "h": null
+ },
+ {
+  "node": "1094",
+  "color": "#98948C",
+  "w": null,
+  "h": null
+ },
+ {
+  "node": "8328",
+  "color": "#645144",
+  "w": null,
+  "h": null
  }
 ]

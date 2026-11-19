@@ -23,6 +23,11 @@ const entries = JSON.parse(readFileSync(DATA, 'utf8'))
 const css = ['/* vector-extra: SVG-иконки из Figma для узлов без override в codegen-слепке */']
 const copied = new Set()
 for (const e of entries) {
+  // color-режим: сплошная заливка (точки/маркеры) — правильный цвет из golden
+  if (e.color) {
+    css.push(`[data-node="${e.node}"]{background-image:none!important;background-color:${e.color}!important;border-radius:9999px!important;outline:0!important;box-shadow:none!important;border:0!important}`)
+    continue
+  }
   const src = join(SITE, 'public/icons/vec', `${e.asset}.svg`)
   if (!existsSync(src)) continue
   const assetFile = `vec-${e.asset}.svg`
