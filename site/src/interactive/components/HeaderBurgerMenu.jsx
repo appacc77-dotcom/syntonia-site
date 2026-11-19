@@ -8,7 +8,6 @@ const GROUPS = [
   {
     title: 'о проекте',
     items: [
-      { href: '/', label: 'Главная' },
       { href: '/masters.html', label: 'Мастера' },
       { href: '/method.html', label: 'Метод' },
       { href: '/library.html', label: 'Библиотека' },
