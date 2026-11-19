@@ -35,7 +35,7 @@ export function Section01() {
         <div className="min-h-[9584px] w-full max-w-[680px] flex flex-col gap-space-2xl items-start relative" data-node="10316">
           <div className="self-stretch min-h-[192px] w-full max-w-[680px] flex flex-col gap-space-m items-start relative" data-node="10317">
             <p className="self-stretch w-full max-w-[680px] text-accent font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="10318">правовая информация</p>
-            <h1 className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="10319">Политика возвратов, отмены и переноса Syntonia</h1>
+            <h1 className="self-stretch w-full max-w-[680px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="10319">Политика возвратов, <br/>отмены и переноса Syntonia</h1>
             <p className="self-stretch w-full max-w-[680px] text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="10320">Дата вступления в силу: [ДАТА ПУБЛИКАЦИИ] · Редакция: [НОМЕР РЕДАКЦИИ]</p>
           </div>
           <div className="self-stretch min-h-[9344px] w-full max-w-[680px] flex flex-col gap-space-xl items-start relative" data-node="10321">

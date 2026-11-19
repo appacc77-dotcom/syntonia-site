@@ -563,6 +563,29 @@ function applyGeometryFixes(text) {
   return { text: next, changed }
 }
 
+
+// ---------- переносы строк в заголовках по макету (кодоген склеивает \n в пробел)
+const TEXT_BREAKS = existsSync(join(SITE, 'data/text-breaks.json')) ? JSON.parse(read(join(SITE, 'data/text-breaks.json'))) : []
+
+function applyTextBreaks(text) {
+  let next = text
+  let changed = 0
+  for (const fix of TEXT_BREAKS) {
+    const openRe = new RegExp(`<(h[1-6]|p|div|span)\\b((?:[^>"]|"[^"]*")*data-node="${fix.node}"(?:[^>"]|"[^"]*")*)>`)
+    const m = openRe.exec(next)
+    if (!m) continue
+    const end = findElementEnd(next, m.index + m[0].length, m[1])
+    if (!end) continue
+    const inner = next.slice(m.index + m[0].length, end.closeStart)
+    if (!inner.includes(fix.before) || inner.includes(fix.insert + fix.before)) continue
+    const replaced = inner.replace(fix.before, fix.insert + fix.before)
+    next = next.slice(0, m.index + m[0].length) + replaced + next.slice(end.closeStart)
+    changed += 1
+    stat.textBreaks = (stat.textBreaks || 0) + 1
+  }
+  return { text: next, changed }
+}
+
 // ---------- обход файлов
 const walk = (dir) => {
   const out = []
@@ -726,6 +749,14 @@ for (const file of files) {
   if (fixed.changed) write(file, fixed.text)
 }
 
+// ---------- переносы строк в заголовках
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const fixed = applyTextBreaks(t)
+  if (fixed.changed) write(file, fixed.text)
+}
+
 // ---------- mixed-font runs
 for (const file of files) {
   if (!/\.jsx$/.test(file)) continue
@@ -811,4 +842,4 @@ for (const file of files) {
 
 console.log(`patches: links=${stat.links} (шапок ${stat.headerFiles}, подвалов ${stat.footerFiles}), ` +
   `landmarks=${stat.landmarks}, h1=${stat.h1}, скрытых h1=${stat.hiddenH1}, якоря=${stat.anchors}, ` +
-  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, aria-очистка=${stat.ariaCleanup || 0}, heading-order=${stat.headingOrder || 0}, mixed-font=${stat.richRuns || 0}, booking-form=${stat.bookingForm || 0}, geom-fixes=${stat.geometryFixes || 0}`)
+  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, aria-очистка=${stat.ariaCleanup || 0}, heading-order=${stat.headingOrder || 0}, mixed-font=${stat.richRuns || 0}, booking-form=${stat.bookingForm || 0}, geom-fixes=${stat.geometryFixes || 0}, text-breaks=${stat.textBreaks || 0}`)
