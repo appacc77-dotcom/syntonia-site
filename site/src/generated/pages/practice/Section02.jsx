@@ -159,7 +159,7 @@ export function Section02() {
           </div>
         </div>
       </div>
-      <div className="absolute left-26 top-[428px] rotate-[-180deg] origin-top-left w-12 min-h-[48px] flex flex-row py-[17.98px] px-[7.85px] items-center rounded-full rotate-[-180deg] origin-top-left bg-[rgba(255,_255,_255,_0.75)]" data-node="5144">
+      <div className="absolute left-26 top-[476px] rotate-[-180deg] origin-top-left w-12 min-h-[48px] flex flex-row py-[17.98px] px-[7.85px] items-center rounded-full rotate-[-180deg] origin-top-left bg-[rgba(255,_255,_255,_0.75)]" data-node="5144">
         <div className="w-[32.3px] min-h-[10.45px] flex flex-row items-center relative" data-node="5145">
           <div className="w-[27.29px] h-[3.39px] rounded-[0.51px] border-[2px] border-accent" data-node="5146"></div>
           <div className="w-[5px] h-[10.45px] rounded-[0.51px] border-[2px] border-accent" data-node="5147"></div>

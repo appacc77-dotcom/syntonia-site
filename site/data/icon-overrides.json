@@ -1802,5 +1802,53 @@
    0,
    0
   ]
+ },
+ {
+  "node": "5144",
+  "asset": "slider-arrow-right",
+  "w": 48,
+  "h": 48,
+  "rotate": 0,
+  "page": "Practice"
+ },
+ {
+  "node": "5149",
+  "asset": "slider-arrow-right",
+  "w": 48,
+  "h": 48,
+  "rotate": 0,
+  "page": "Practice"
+ },
+ {
+  "node": "5963",
+  "asset": "accordeon",
+  "w": 17.6,
+  "h": 8,
+  "rotate": 0,
+  "page": "Quiz"
+ },
+ {
+  "node": "5964",
+  "asset": "accordeon",
+  "w": 17.6,
+  "h": 8,
+  "rotate": 0,
+  "page": "Quiz"
+ },
+ {
+  "node": "5967",
+  "asset": "gift",
+  "w": 14.23,
+  "h": 14.0,
+  "rotate": 0,
+  "page": "Quiz"
+ },
+ {
+  "node": "5968",
+  "asset": "gift",
+  "w": 14.23,
+  "h": 14.0,
+  "rotate": 0,
+  "page": "Quiz"
  }
 ]

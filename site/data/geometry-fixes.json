@@ -1,0 +1,7 @@
+[
+  {
+    "node": "5144",
+    "why": "slider-arrow (левая): кодоген компенсировал left под rotate-[-180deg] origin-top-left, но не top — иконка визуально на 48 px выше эталона",
+    "replace": [["top-[428px]", "top-[476px]"]]
+  }
+]
