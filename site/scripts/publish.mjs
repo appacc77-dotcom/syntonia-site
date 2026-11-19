@@ -159,8 +159,9 @@ for (const route of routes) {
   html = html.replace(
     /<link rel="icon" href="data:," \/>/,
     [
-      '<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />',
-      '<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />',
+      // абсолютные URL: страницы бывают на глубине /library/…, относительный путь там ломается
+      `<link rel="icon" type="image/png" sizes="32x32" href="${SITE_URL}/icons/favicon-32.png" />`,
+      `<link rel="apple-touch-icon" sizes="180x180" href="${SITE_URL}/icons/apple-touch-icon.png" />`,
       '<meta name="theme-color" content="#3A3223" />',
     ].join('\n    '),
   )
