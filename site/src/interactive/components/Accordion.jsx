@@ -4,7 +4,7 @@ import { useHref } from '../links.jsx'
 
 const QUESTION = "flex-1 w-full max-w-[766px] text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] text-left"
 const ANSWER = "self-stretch w-full max-w-[787px] text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[34px]"
-const ITEM = 'self-stretch w-full max-w-[835px] flex flex-col gap-0 py-4 px-space-l items-start rounded-m relative [overflow:hidden]'
+const ITEM = 'self-stretch w-full max-w-[835px] flex flex-col gap-0 py-4 px-space-l items-start rounded-m relative [overflow:hidden] transition-colors duration-300 ease-out'
 
 // Стрелка — настоящий SVG-вектор из Figma (arrow-quiet), повёрнутый как в макете:
 // закрытый пункт — вниз (90°), открытый — вверх (−90°). Раньше здесь была аппроксимация
@@ -18,7 +18,7 @@ function Arrow({ open }) {
         alt=""
         width={14.47}
         height={14.47}
-        className={`w-[14.47px] h-[14.47px] ${open ? 'rotate-[-90deg]' : 'rotate-[90deg]'} transition-transform`}
+        className={`w-[14.47px] h-[14.47px] ${open ? 'rotate-[-90deg]' : 'rotate-[90deg]'} transition-transform duration-300 ease-out`}
       />
     </span>
   )
@@ -34,7 +34,7 @@ export function Accordion({ items }) {
     const panelId = `${baseId}-panel-${index}`
     const buttonId = `${baseId}-button-${index}`
     return (
-      <div key={item.id} className={`${ITEM} ${open ? 'min-h-[163px] bg-bg-glass' : 'min-h-[71px]'}`}>
+      <div key={item.id} className={`${ITEM} ${open ? 'bg-bg-glass' : 'bg-transparent'}`}>
         <button
           type="button"
           id={buttonId}
@@ -50,11 +50,14 @@ export function Accordion({ items }) {
           id={panelId}
           role="region"
           aria-labelledby={buttonId}
-          className={`grid w-full transition-[grid-template-rows] duration-300 ease-out ${open ? 'pt-space-l' : ''}`}
+          inert={!open}
+          className="grid w-full transition-[grid-template-rows] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
           style={{ gridTemplateRows: open ? '1fr' : '0fr' }}
         >
           <div className="overflow-hidden">
-            <p className={ANSWER}>{item.answer}</p>
+            <div className="pt-space-l">
+              <p className={`${ANSWER} transition-[opacity,transform] duration-[400ms] ease-out ${open ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}>{item.answer}</p>
+            </div>
           </div>
         </div>
         <span className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#5A5A36]" />
