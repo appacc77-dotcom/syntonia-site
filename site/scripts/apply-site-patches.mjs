@@ -271,7 +271,8 @@ function renderList(items, entry) {
     const body = hardLines
       ? parts.map((line) => `<span style={{ whiteSpace: 'nowrap' }}>${line}</span>`).join('<br />')
       : parts.join('<br />')
-    return `<li style={{ position: 'relative', paddingLeft: '${textIndent}px' }}><span style={{ position: 'absolute', left: '${bulletLeft}px' }}>•</span>${body}</li>`
+    // «•» — декоративный маркер (в макете отдельный вектор), скринридер его читать не должен
+    return `<li style={{ position: 'relative', paddingLeft: '${textIndent}px' }}><span aria-hidden="true" style={{ position: 'absolute', left: '${bulletLeft}px' }}>•</span>${body}</li>`
   }).join('')
   return `<ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>${li}</ul>`
 }
@@ -586,6 +587,16 @@ function applyTextBreaks(text) {
   return { text: next, changed }
 }
 
+
+/** Декоративные «•» в списках помечаем aria-hidden (в макете это отдельный вектор,
+ *  скринридер не должен читать маркер как текст). Идемпотентно. */
+function ensureBulletAria(text) {
+  if (!text.includes('>•</span>')) return { text, changed: false }
+  const next = text.replace(/<span style=\{\{ position: 'absolute', left: '([\d.]+)px' \}\}>•<\/span>/g,
+    `<span aria-hidden="true" style={{ position: 'absolute', left: '$1px' }}>•</span>`)
+  return { text: next, changed: next !== text }
+}
+
 // ---------- обход файлов
 const walk = (dir) => {
   const out = []
@@ -757,6 +768,14 @@ for (const file of files) {
   if (fixed.changed) write(file, fixed.text)
 }
 
+// ---------- декоративные маркеры списков
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const fixed = ensureBulletAria(t)
+  if (fixed.changed) { write(file, fixed.text); stat.bulletAria = (stat.bulletAria || 0) + 1 }
+}
+
 // ---------- mixed-font runs
 for (const file of files) {
   if (!/\.jsx$/.test(file)) continue
@@ -842,4 +861,4 @@ for (const file of files) {
 
 console.log(`patches: links=${stat.links} (шапок ${stat.headerFiles}, подвалов ${stat.footerFiles}), ` +
   `landmarks=${stat.landmarks}, h1=${stat.h1}, скрытых h1=${stat.hiddenH1}, якоря=${stat.anchors}, ` +
-  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, aria-очистка=${stat.ariaCleanup || 0}, heading-order=${stat.headingOrder || 0}, mixed-font=${stat.richRuns || 0}, booking-form=${stat.bookingForm || 0}, geom-fixes=${stat.geometryFixes || 0}, text-breaks=${stat.textBreaks || 0}`)
+  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, aria-очистка=${stat.ariaCleanup || 0}, heading-order=${stat.headingOrder || 0}, mixed-font=${stat.richRuns || 0}, booking-form=${stat.bookingForm || 0}, geom-fixes=${stat.geometryFixes || 0}, text-breaks=${stat.textBreaks || 0}, bullet-aria=${stat.bulletAria || 0}`)
