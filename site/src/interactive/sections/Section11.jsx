@@ -13,7 +13,7 @@ export function Section11() {
             </div>
           </div>
           <div className="self-stretch min-h-[288px] w-full max-w-[493px] flex flex-col gap-8 items-start relative" data-node="1263">
-            <p className="self-stretch w-full max-w-[493px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="1264">Где для внутреннего находятся слова</p>
+            <h2 className="self-stretch w-full max-w-[493px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="1264">Где для внутреннего находятся слова</h2>
             <p className="self-stretch w-full max-w-[493px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="1265">Книга и выпуски журнала Syntonia собраны в одном пространстве — чтобы читать медленно, возвращаться по состоянию и находить слова для того, что происходит внутри.</p>
           </div>
           <div className="w-[209.86px] min-h-[29px] flex flex-row gap-space-s justify-center items-center relative" data-node="1266">

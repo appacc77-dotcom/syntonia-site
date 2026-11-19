@@ -4,13 +4,13 @@ export function Section02() {
     <div className="relative min-h-[915.56px] w-full flex flex-row justify-center items-start bg-bg-practice" data-node="5042">
       <div className="flex-1 min-h-[915.56px] w-full max-w-[1280px] flex flex-col gap-space-3xl py-space-4xl items-center relative [overflow:hidden]" data-node="5043">
         <div className="self-stretch min-h-[163px] w-full max-w-[1280px] flex flex-col gap-4 py-space-m items-center relative" data-node="5044">
-          <p className="text-text-primary font-['Literata'] text-[65px] font-light leading-[81px] [white-space:nowrap]" data-node="5045">Практики для мягкого входа</p>
+          <h2 className="text-text-primary font-['Literata'] text-[65px] font-light leading-[81px] [white-space:nowrap]" data-node="5045">Практики для мягкого входа</h2>
           <p className="text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="5046">Для бережной самостоятельной настройки состояния. </p>
         </div>
         <div className="self-stretch min-h-[496.56px] w-full max-w-[1280px] flex flex-col gap-space-l items-center relative" data-node="5047">
           <div className="self-stretch min-h-[470.72px] w-full max-w-[1280px] flex flex-row gap-space-xl items-start relative [overflow:hidden]" data-node="5048">
             <div className="flex-1 min-h-[470.72px] w-full max-w-[296px] flex flex-col items-start rounded-(--radius-l) bg-[linear-gradient(233.07deg,_rgba(251,_248,_241,_1)_-3.84%,_rgba(251,_248,_241,_1)_4.6%,_rgba(251,_248,_241,_1)_13.03%,_rgba(251,_248,_241,_1)_21.46%,_rgba(251,_248,_241,_1)_29.9%,_rgba(251,_248,_241,_1)_38.33%,_rgba(249,_246,_238,_1)_46.77%,_rgba(247,_243,_235,_1)_55.2%,_rgba(245,_241,_233,_1)_63.64%,_rgba(244,_239,_230,_1)_72.07%,_rgba(242,_237,_228,_1)_80.51%,_rgba(240,_235,_225,_1)_88.94%,_rgba(238,_233,_222,_1)_97.37%,_rgba(236,_230,_220,_1)_105.81%,_rgba(235,_228,_217,_1)_114.24%,_rgba(233,_226,_215,_1)_122.68%,_rgba(231,_224,_212,_1)_131.11%)] relative [overflow:hidden]" data-node="5049">
-              <div className="self-stretch w-full max-w-[296px] min-h-[256px] flex flex-row px-[10px] items-start rounded-(--radius-l) [background:url(/assets/img-810105aa32.jpg)_-324px_-20px_/_620px_620px] [overflow:hidden]" data-node="5050"></div>
+              <div className="self-stretch w-full max-w-[296px] min-h-[256px] flex flex-row px-[10px] items-start rounded-(--radius-l) [background:url(/assets/img-810105aa32.jpg)_-324px_-20px_/_620px_620px] [overflow:hidden]" data-node="5050" role="img" aria-label="Практика Syntonia"></div>
               <div className="self-stretch min-h-[214.72px] w-full max-w-[296px] flex flex-col gap-space-m p-space-l items-start relative [overflow:hidden]" data-node="5051">
                 <div className="w-58 min-h-[88px] flex flex-col gap-space-s items-start relative" data-node="5052">
                   <p className="text-text-primary font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="5053">Освобождение <br />от чужого и лишнего.</p>
@@ -41,7 +41,7 @@ export function Section02() {
               </div>
             </div>
             <div className="flex-1 min-h-[466.72px] w-full max-w-[296px] flex flex-col items-start rounded-(--radius-l) bg-[linear-gradient(233.3deg,_rgba(251,_248,_241,_1)_-4.11%,_rgba(251,_248,_241,_1)_4.35%,_rgba(251,_248,_241,_1)_12.81%,_rgba(251,_248,_241,_1)_21.27%,_rgba(251,_248,_241,_1)_29.73%,_rgba(251,_248,_241,_1)_38.19%,_rgba(249,_246,_238,_1)_46.65%,_rgba(247,_243,_235,_1)_55.12%,_rgba(245,_241,_233,_1)_63.58%,_rgba(244,_239,_230,_1)_72.04%,_rgba(242,_237,_228,_1)_80.5%,_rgba(240,_235,_225,_1)_88.96%,_rgba(238,_233,_222,_1)_97.42%,_rgba(236,_230,_220,_1)_105.88%,_rgba(235,_228,_217,_1)_114.34%,_rgba(233,_226,_215,_1)_122.8%,_rgba(231,_224,_212,_1)_131.26%)] relative [overflow:hidden]" data-node="5069">
-              <div className="self-stretch w-full max-w-[296px] min-h-[256px] flex flex-row px-[10px] items-start rounded-(--radius-l) [background:url(/assets/img-666aae85bc.png)_-186.09px_-46.26px_/_618.91px_348.32px] [overflow:hidden]" data-node="5070"></div>
+              <div className="self-stretch w-full max-w-[296px] min-h-[256px] flex flex-row px-[10px] items-start rounded-(--radius-l) [background:url(/assets/img-666aae85bc.png)_-186.09px_-46.26px_/_618.91px_348.32px] [overflow:hidden]" data-node="5070" role="img" aria-label="Практика Syntonia"></div>
               <div className="w-[267px] min-h-[210.72px] flex flex-col gap-space-m p-space-l items-start relative [overflow:hidden]" data-node="5071">
                 <div className="w-[219px] min-h-[84px] flex flex-col gap-space-s items-start relative" data-node="5072">
                   <p className="text-text-primary font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="5073">Когда тревожно</p>
@@ -72,7 +72,7 @@ export function Section02() {
               </div>
             </div>
             <div className="flex-1 min-h-[470.72px] w-full max-w-[296px] flex flex-col items-start rounded-(--radius-l) bg-[linear-gradient(233.07deg,_rgba(251,_248,_241,_1)_-3.84%,_rgba(251,_248,_241,_1)_4.6%,_rgba(251,_248,_241,_1)_13.03%,_rgba(251,_248,_241,_1)_21.46%,_rgba(251,_248,_241,_1)_29.9%,_rgba(251,_248,_241,_1)_38.33%,_rgba(249,_246,_238,_1)_46.77%,_rgba(247,_243,_235,_1)_55.2%,_rgba(245,_241,_233,_1)_63.64%,_rgba(244,_239,_230,_1)_72.07%,_rgba(242,_237,_228,_1)_80.51%,_rgba(240,_235,_225,_1)_88.94%,_rgba(238,_233,_222,_1)_97.37%,_rgba(236,_230,_220,_1)_105.81%,_rgba(235,_228,_217,_1)_114.24%,_rgba(233,_226,_215,_1)_122.68%,_rgba(231,_224,_212,_1)_131.11%)] relative [overflow:hidden]" data-node="5089">
-              <div className="self-stretch w-full max-w-[296px] min-h-[256px] flex flex-row px-[10px] items-start rounded-(--radius-l) [background:url(/assets/img-ae60a7f14c.png)_center_/_cover] [overflow:hidden]" data-node="5090"></div>
+              <div className="self-stretch w-full max-w-[296px] min-h-[256px] flex flex-row px-[10px] items-start rounded-(--radius-l) [background:url(/assets/img-ae60a7f14c.png)_center_/_cover] [overflow:hidden]" data-node="5090" role="img" aria-label="Практика Syntonia"></div>
               <div className="w-[238px] min-h-[214.72px] flex flex-col gap-space-m p-space-l items-start relative [overflow:hidden]" data-node="5091">
                 <div className="w-[190px] min-h-[88px] flex flex-col gap-space-s items-start relative" data-node="5092">
                   <p className="text-text-primary font-['Literata'] text-[22px] font-light leading-[28px]" data-node="5093">Отпустить <br />напряжение</p>
@@ -103,7 +103,7 @@ export function Section02() {
               </div>
             </div>
             <div className="flex-1 min-h-[466.72px] w-full max-w-[296px] flex flex-col items-start rounded-(--radius-l) bg-[linear-gradient(233.3deg,_rgba(251,_248,_241,_1)_-4.11%,_rgba(251,_248,_241,_1)_4.35%,_rgba(251,_248,_241,_1)_12.81%,_rgba(251,_248,_241,_1)_21.27%,_rgba(251,_248,_241,_1)_29.73%,_rgba(251,_248,_241,_1)_38.19%,_rgba(249,_246,_238,_1)_46.65%,_rgba(247,_243,_235,_1)_55.12%,_rgba(245,_241,_233,_1)_63.58%,_rgba(244,_239,_230,_1)_72.04%,_rgba(242,_237,_228,_1)_80.5%,_rgba(240,_235,_225,_1)_88.96%,_rgba(238,_233,_222,_1)_97.42%,_rgba(236,_230,_220,_1)_105.88%,_rgba(235,_228,_217,_1)_114.34%,_rgba(233,_226,_215,_1)_122.8%,_rgba(231,_224,_212,_1)_131.26%)] relative [overflow:hidden]" data-node="5109">
-              <div className="self-stretch w-full max-w-[296px] min-h-[256px] flex flex-row px-[10px] items-start rounded-(--radius-l) [background:url(/assets/img-72e7b0b1b6.png)_center_/_cover] [overflow:hidden]" data-node="5110"></div>
+              <div className="self-stretch w-full max-w-[296px] min-h-[256px] flex flex-row px-[10px] items-start rounded-(--radius-l) [background:url(/assets/img-72e7b0b1b6.png)_center_/_cover] [overflow:hidden]" data-node="5110" role="img" aria-label="Практика Syntonia"></div>
               <div className="w-[263px] min-h-[210.72px] flex flex-col gap-space-m p-space-l items-start relative [overflow:hidden]" data-node="5111">
                 <div className="w-[215px] min-h-[84px] flex flex-col gap-space-s items-start relative" data-node="5112">
                   <p className="text-text-primary font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="5113">Вернуть себе силы</p>

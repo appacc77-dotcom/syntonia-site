@@ -12,7 +12,7 @@ export function Section04() {
         </div>
         <div className="self-stretch min-h-[177px] w-full max-w-[1280px] flex flex-col gap-space-m items-end relative" data-node="1012">
           <div className="w-[467px] min-h-[177px] flex flex-col gap-4 items-start relative" data-node="1013">
-            <p className="w-full max-w-[467px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="1014" style={{ boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '467px' }}>Там, где начинается новый выбор</p>
+            <h2 className="w-full max-w-[467px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="1014" style={{ boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '467px' }}>Там, где начинается новый выбор</h2>
             <div className="w-[239.86px] min-h-[41px] flex flex-row gap-space-s justify-center items-center shadow-[inset_0_-1px_0_0_var(--color-accent,_#5A5A36)] relative" data-node="1015">
               <p className="text-accent font-['Golos_Text'] text-[24px] font-normal leading-[41px] [white-space:nowrap] tracking-[0.03em] flex flex-col justify-end" data-node="1016">Как это работает</p>
               <div className="w-full max-w-[18.86px] min-h-[18.86px] flex flex-row gap-[1.93px] justify-end items-center relative" data-node="1017">

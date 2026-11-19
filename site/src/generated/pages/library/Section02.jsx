@@ -6,11 +6,11 @@ export function Section02() {
   return (
     <div className="relative min-h-[882px] w-full flex flex-row py-space-5xl px-6 justify-center items-start bg-bg-page [overflow:hidden]" data-node="3210">
       <div className="flex-1 min-h-[626px] w-full max-w-[1280px] flex flex-row gap-space-3xl items-start relative [overflow:hidden]" data-node="3211">
-        <div className="flex-1 self-stretch w-full max-w-[662px] min-h-[626px] flex flex-row items-start rounded-m [background:url(/assets/img-f8de616252.jpg)_-90.73px_1.24px_/_787.82px_626px] [overflow:hidden]" data-node="3212"></div>
+        <div className="flex-1 self-stretch w-full max-w-[662px] min-h-[626px] flex flex-row items-start rounded-m [background:url(/assets/img-f8de616252.jpg)_-90.73px_1.24px_/_787.82px_626px] [overflow:hidden]" data-node="3212" role="img" aria-label="Обложка книги «Коды построения реальности»"></div>
         <div className="self-stretch w-full max-w-[554px] min-h-[626px] flex flex-col gap-space-xl items-start relative [overflow:hidden]" data-node="3213">
           <p className="text-accent-muted font-['Golos_Text'] text-[20px] font-normal leading-[30px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="3214">авторская книга</p>
           <div className="self-stretch min-h-[235px] w-full max-w-[554px] flex flex-col gap-4 items-start relative" data-node="3215">
-            <p className="self-stretch w-full max-w-[554px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="3216">Коды построения реальности. 7 состояний жизни</p>
+            <h2 className="self-stretch w-full max-w-[554px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="3216">Коды построения реальности. 7 состояний жизни</h2>
             <p className="text-text-heading font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="3217">Екатерина Лебедева</p>
           </div>
           <p className="self-stretch w-full max-w-[554px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="3218">Книга о семи состояниях, которые формируют внутренние сценарии человека и влияют на выбор, отношения и ход жизни. Внутри — авторская система, соединяющая психологию, научные опоры, тонкий план и бережные практики для самостоятельной внутренней работы.</p>

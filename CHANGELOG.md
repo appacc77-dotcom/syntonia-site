@@ -43,6 +43,18 @@
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
 
+## v0.10.5 — семантика: h1/h2/h3, JSON-LD, robots, alt-семантика CSS-фонов
+- **Заголовки:** 136 узлов повышены до h2/h3 по карте Figma-имён и найденным заголовкам секций
+  (`site/data/heading-tags.json`): теперь на страницах 1 h1 + осмысленная иерархия (83 h2 всего,
+  юридические разделы legal-h2 → h2, карточки/опции → h3). Пиксели не изменились (Tailwind preflight).
+- **JSON-LD** в каждом HTML (кроме 404): Organization + WebSite + WebPage + BreadcrumbList
+  (для /library/* — с уровнем «Библиотека»), вставляется публикационным слоем.
+- **robots:** login/account-*/checkout-confirm/thanks-* → `noindex, follow`; 404.html → noindex.
+- **CSS-фоны:** информативные изображения получили `role="img" aria-label` (герой, основатель,
+  фото авторов Наталья Уолс/Ангелина Гебо, обложки, практики), декоративные текстуры —
+  `aria-hidden="true"` (`site/data/image-labels.json`, 34 узла).
+- Ворота: contract 24/24 PASS (0 нарушений), golden 24/24 PASS без изменения чисел.
+
 ## v0.10.4 — иконки: восстановлены 483 SVG-слепка, vector-extra для стрелок
 - **Восстановлены 431 отсутствовавших** snapshot-SVG иконок (`assets/snap-*.svg`) — в репозитории
   лежало только 52 из 483, из-за чего часть иконок в CSS-override не отрисовывалась.

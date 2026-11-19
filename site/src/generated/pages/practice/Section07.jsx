@@ -3,7 +3,7 @@ export function Section07() {
   return (
     <div className="relative min-h-[952px] w-full flex flex-col gap-space-2xl py-space-3xl items-center [background:url(/assets/img-2ccc5d8c32.png)_-2653.63px_-106.3px_/_4184.36px_1406.95px] [overflow:hidden]" data-node="5790">
       <div className="min-h-[197px] w-full max-w-[1280px] flex flex-col gap-4 py-space-m items-center relative" data-node="5791">
-        <p className="text-bg-inverse font-['Literata'] text-[65px] font-light leading-[81px] [white-space:nowrap]" data-node="5792">Бережная практика</p>
+        <h2 className="text-bg-inverse font-['Literata'] text-[65px] font-light leading-[81px] [white-space:nowrap]" data-node="5792">Бережная практика</h2>
         <p className="text-bg-inverse font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="5793">Перед началом уделите минуту своему состоянию. Практику можно остановить в любой момент — ориентируйтесь <br />на своё самочувствие и не продолжайте через сильное напряжение.</p>
       </div>
       <div className="self-stretch mx-auto min-h-[579px] w-full max-w-[1280px] flex flex-col p-[1px] items-start rounded-(--radius-s) relative [overflow:hidden]" data-node="5794">

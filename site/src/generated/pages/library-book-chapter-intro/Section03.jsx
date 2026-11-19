@@ -24,7 +24,7 @@ export function Section03() {
           <p className="self-stretch w-full max-w-[680px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="4535">Я опиралась не только на теорию, но и на реальную жизнь — сессии, судьбы, боль и свет людей.</p>
           <p className="self-stretch w-full max-w-[680px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="4536">Так появилась живая система внутренней навигации, раскрытая в этой книге — понятная, прикладная и при этом глубинная. Я создала её, чтобы каждый мог распутать внутренние петли, выйти из замкнутых сценариев и вернуть себе право на осознанную жизнь. Эта система стала инструментом не только понимания, но и трансформации. Потому что видеть — мало. Важно УМЕТЬ ИЗМЕНИТЬ.</p>
           <p className="self-stretch w-full max-w-[680px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="4537">Путь начинается сейчас.</p>
-          <div className="self-stretch w-full max-w-[680px] min-h-[400px] flex flex-row justify-center items-center rounded-[4px] [background:url(/assets/img-36282baaba.png)_center_/_cover]" data-node="4538"></div>
+          <div className="self-stretch w-full max-w-[680px] min-h-[400px] flex flex-row justify-center items-center rounded-[4px] [background:url(/assets/img-36282baaba.png)_center_/_cover]" data-node="4538" aria-hidden="true"></div>
         </div>
       </div>
     </div>

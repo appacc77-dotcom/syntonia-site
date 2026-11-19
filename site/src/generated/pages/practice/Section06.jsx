@@ -4,7 +4,7 @@ export function Section06() {
     <div className="relative min-h-[1533px] w-full flex flex-row pb-space-3xl justify-center items-start [background:url(/assets/img-acf48f09f2.png)_-672.25px_-124.08px_/_2999.75px_1699.34px]" data-node="5671">
       <div className="flex-1 min-h-[1469px] w-full max-w-[1280px] flex flex-col gap-space-3xl py-space-3xl items-start relative [overflow:hidden]" data-node="5672">
         <div className="self-stretch min-h-[163px] w-full max-w-[1280px] flex flex-col gap-4 py-space-m items-center relative" data-node="5673">
-          <p className="text-bg-inverse font-['Literata'] text-[65px] font-light leading-[81px] [white-space:nowrap]" data-node="5674">Пакеты</p>
+          <h2 className="text-bg-inverse font-['Literata'] text-[65px] font-light leading-[81px] [white-space:nowrap]" data-node="5674">Пакеты</h2>
           <p className="text-bg-inverse font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="5675">Тщательно подобранные варианты доступа к практикам и состояниям, чтобы вы могли выбрать свой ритм и глубину.</p>
         </div>
         <div className="self-stretch min-h-[1114px] w-full max-w-[1280px] flex flex-row gap-space-xl items-start relative [overflow:hidden]" data-node="5676">

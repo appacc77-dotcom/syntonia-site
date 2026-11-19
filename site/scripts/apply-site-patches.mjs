@@ -317,7 +317,8 @@ function applyBoxFixes(text) {
     const m = openRe.exec(next)
     if (!m) continue
     if (/style=\{\{/.test(m[2])) {
-      // уже есть inline-стиль — дополняем шириной/высотой, если их нет
+      // идемпотентность: если ширина/высота уже заданы — не дублируем
+      if (/width:\s*'/.test(m[2]) && /height:\s*'/.test(m[2])) continue
       const tag = m[0]
       const patched = tag.replace(/style=\{\{/, `style={{ width: '${fix.width}px', height: '${fix.height}px', `)
       next = next.slice(0, m.index) + patched + next.slice(m.index + tag.length)
@@ -331,6 +332,108 @@ function applyBoxFixes(text) {
   return { text: next, changed }
 }
 
+
+
+// ---------- семантика: h2/h3 из карты Figma-имён и найденных заголовков секций
+const HEADING_TAGS = existsSync(join(SITE, 'data/heading-tags.json')) ? JSON.parse(read(join(SITE, 'data/heading-tags.json'))) : []
+
+function applyHeadingTags(text) {
+  let next = text
+  let changed = 0
+  for (const entry of HEADING_TAGS) {
+    const tag = entry.tag === 'h3' ? 'h3' : 'h2'
+    const openRe = new RegExp(`<(p|div)((?:[^>"]|"[^"]*")*data-node="${entry.node}"(?:[^>"]|"[^"]*")*)>`)
+    const m = openRe.exec(next)
+    if (!m) continue
+    const openEnd = m.index + m[0].length
+    const end = findElementEnd(next, openEnd, m[1])
+    if (!end) continue
+    const inner = next.slice(openEnd, end.closeStart)
+    if (/<h[12]/.test(inner)) continue // уже заголовок внутри
+    next = next.slice(0, m.index) + `<${tag}${m[2]}>` + inner + `</${tag}>` + next.slice(end.closeEnd)
+    changed += 1
+    stat.headingTags = (stat.headingTags || 0) + 1
+  }
+  return { text: next, changed }
+}
+
+
+function findElementEnd(text, openEnd, tagName) {
+  const re = new RegExp(`<${tagName}\\b|</${tagName}>`, 'g')
+  re.lastIndex = openEnd
+  let depth = 1
+  let m
+  while ((m = re.exec(text))) {
+    if (m[0].startsWith(`<${tagName}`)) depth += 1
+    else depth -= 1
+    if (depth === 0) return { closeStart: m.index, closeEnd: m.index + m[0].length }
+  }
+  return null
+}
+
+/** Убрать накопленные дубли width/height в inline-стиле фикс-боксов (старые прогоны не были
+ * идемпотентны). Идемпотентно: повторный запуск ничего не меняет. */
+function dedupeBoxFixStyles(text) {
+  let changed = 0
+  const out = text.replace(/style=\{\{([^}]*)\}\}/g, (all, body) => {
+    const pairs = body.match(/(?:width|height):\s*'[^']*'/g) || []
+    if (pairs.length < 2) return all
+    const last = new Map()
+    for (const p of pairs) last.set(p.split(':')[0].trim(), p)
+    if (last.get('width') === undefined || last.get('height') === undefined) return all
+    let rest = body
+    for (const p of pairs) rest = rest.replace(p, '')
+    // чистим осиротевшие запятые
+    rest = rest.replace(/\s*,\s*,/g, ',').replace(/^\s*,\s*/, '').replace(/\s*,\s*$/, '').replace(/\s{2,}/g, ' ').trim()
+    const w = /'([^']*)'/.exec(last.get('width'))[1]
+    const h = /'([^']*)'/.exec(last.get('height'))[1]
+    const nextBody = [`width: '${w}'`, `height: '${h}'`, rest].filter(Boolean).join(', ')
+    const outStyle = `style={{ ${nextBody} }}`
+    if (outStyle === all) return all
+    changed += 1
+    return outStyle
+  })
+  return { text: out, changed }
+}
+
+
+// ---------- семантика изображений: CSS-фоны → role="img" + aria-label или aria-hidden
+const IMAGE_LABELS = existsSync(join(SITE, 'data/image-labels.json')) ? JSON.parse(read(join(SITE, 'data/image-labels.json'))) : {}
+
+/** Элемент с CSS-фоном: информативный → role="img"/aria-label, декоративный → aria-hidden.
+ *  Не трогаем элементы, внутри которых есть текст (иначе скроем контент). */
+function applyImageSemantics(text) {
+  let next = text
+  let changed = 0
+  const re = /<(div|section|header|footer|span)((?:[^>"]|"[^"]*")*)>/g
+  const hits = []
+  let m
+  while ((m = re.exec(next))) {
+    const attrs = m[2]
+    if (!/\]\[background:url\(\(?\/assets\//.test(attrs) && !attrs.includes('[background:url(/assets/')) continue
+    if (/role=|aria-hidden=/.test(attrs)) continue
+    const openEnd = m.index + m[0].length
+    const end = findElementEnd(next, openEnd, m[1])
+    if (!end) continue
+    const inner = next.slice(openEnd, end.closeStart)
+    const textLen = inner.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().length
+    const node = /data-node="(\d+)"/.exec(attrs)
+    const nodeId = node ? node[1] : null
+    hits.push({ index: m.index, tag: m[0], openEnd, end: end.closeEnd, textLen, nodeId })
+  }
+  for (const hit of hits.reverse()) {
+    const label = hit.nodeId ? IMAGE_LABELS[hit.nodeId] : null
+    let insertion
+    if (label && hit.textLen < 40) insertion = ` role="img" aria-label="${label.replace(/"/g, '&quot;')}"`
+    else if (hit.textLen === 0) insertion = ' aria-hidden="true"'
+    else continue
+    const tag = hit.tag.replace(/>$/, `${insertion}>`)
+    next = next.slice(0, hit.index) + tag + next.slice(hit.index + hit.tag.length)
+    changed += 1
+    stat.imageSemantics = (stat.imageSemantics || 0) + 1
+  }
+  return { text: next, changed }
+}
 
 // ---------- обход файлов
 const walk = (dir) => {
@@ -428,16 +531,42 @@ for (const file of files) {
 for (const file of files) {
   if (!/\.jsx$/.test(file)) continue
   const t = read(file)
-  const boxed = applyBoxFixes(t)
-  if (boxed.changed) write(file, boxed.text)
+  const deduped = dedupeBoxFixStyles(t)
+  const boxed = applyBoxFixes(deduped.text)
+  if (deduped.changed || boxed.changed) write(file, boxed.text)
+}
+
+// ---------- очистка накопленных дублей в inline-стилях
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const d = dedupeBoxFixStyles(t)
+  if (d.changed) write(file, d.text)
 }
 
 // ---------- фикс-боксы текста (Figma textAutoResize=NONE)
 for (const file of files) {
   if (!/\.jsx$/.test(file)) continue
   const t = read(file)
-  const boxed = applyBoxFixes(t)
-  if (boxed.changed) write(file, boxed.text)
+  const deduped = dedupeBoxFixStyles(t)
+  const boxed = applyBoxFixes(deduped.text)
+  if (deduped.changed || boxed.changed) write(file, boxed.text)
+}
+
+// ---------- семантика изображений
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const imgs = applyImageSemantics(t)
+  if (imgs.changed) write(file, imgs.text)
+}
+
+// ---------- семантика: h2/h3
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const heads = applyHeadingTags(t)
+  if (heads.changed) write(file, heads.text)
 }
 
 // ---------- rich text: списки и абзацные интервалы
@@ -517,4 +646,4 @@ for (const file of files) {
 
 console.log(`patches: links=${stat.links} (шапок ${stat.headerFiles}, подвалов ${stat.footerFiles}), ` +
   `landmarks=${stat.landmarks}, h1=${stat.h1}, скрытых h1=${stat.hiddenH1}, якоря=${stat.anchors}, ` +
-  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}`)
+  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}`)

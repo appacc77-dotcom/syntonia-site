@@ -5,7 +5,7 @@ export function Section05() {
       <div className="flex-1 self-stretch w-full min-h-[550px] flex flex-row px-6 justify-center items-center [background:url(/assets/img-0d49458ee5.jpg)_-0.01px_-0.21px_/_1440px_630.88px] relative [overflow:hidden]" data-node="1022">
         <div className="flex-1 min-h-[265px] w-full max-w-[1280px] flex flex-col gap-[10px] items-start relative" data-node="1023">
           <div className="self-stretch min-h-[265px] w-full max-w-[1280px] flex flex-col gap-space-xl items-start relative [overflow:hidden]" data-node="1024">
-            <p className="text-text-on-image font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="1025">Диагностика состояния</p>
+            <h2 className="text-text-on-image font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="1025">Диагностика состояния</h2>
             <p className="w-full max-w-[520px] text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="1026" style={{ boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '520px' }}>Тест поможет увидеть, что сейчас управляет твоим состоянием и жизнью</p>
             <div className="w-[354px] min-h-[45px] flex flex-row gap-space-l justify-center items-center relative" data-node="1027">
               <div className="w-45 min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) bg-accent-muted [outline:1px_solid_var(--color-thread,_#C9BEA4)] [outline-offset:-1px] relative" data-node="1028">

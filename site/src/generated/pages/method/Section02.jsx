@@ -7,21 +7,21 @@ export function Section02() {
           <div className="self-stretch min-h-[275px] w-full max-w-[783px] flex flex-col gap-8 items-start relative" data-node="9031">
             <div className="w-[534px] min-h-[73px] flex flex-row gap-8 items-baseline relative" data-node="9032">
               <p className="text-accent-muted font-['Great_Vibes'] text-[55px] font-normal leading-[69px] [white-space:nowrap]" data-node="9033">01</p>
-              <p className="text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="9034">Глубинный уровень</p>
+              <h2 className="text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="9034">Глубинный уровень</h2>
             </div>
             <p className="self-stretch w-full max-w-[783px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="9035">В основе метода лежит работа с устойчивыми метапрограммами, состояниями и внутренними кодами, которые закрепляются в психике, теле, восприятии, энергетическом поле, генетической памяти и во внутреннем устройстве человека. Именно этот глубинный уровень влияет на чувства, реакции, выбор, отношения и повторяющиеся сценарии.</p>
           </div>
           <div className="self-stretch min-h-[275px] w-full max-w-[783px] flex flex-col gap-8 items-start relative" data-node="9036">
             <div className="w-[520px] min-h-[73px] flex flex-row gap-8 items-baseline relative" data-node="9037">
               <p className="text-accent-muted font-['Great_Vibes'] text-[55px] font-normal leading-[69px] [white-space:nowrap]" data-node="9038">02</p>
-              <p className="text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="9039">Целостный подход</p>
+              <h2 className="text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="9039">Целостный подход</h2>
             </div>
             <p className="self-stretch w-full max-w-[783px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="9040">Syntonia соединяет психологическую точность, коучинговую направленность, работу с эмоциональным и телесным опытом, внимание к подсознательным причинам, тонкому плану и внутренней духовной природе человека. Такой подход позволяет работать не только с тем, что проявлено на поверхности, но и с той внутренней структурой, из которой это возникает.</p>
           </div>
           <div className="self-stretch min-h-[207px] w-full max-w-[783px] flex flex-col gap-8 items-start relative" data-node="9041">
             <div className="w-[657px] min-h-[73px] flex flex-row gap-8 items-baseline relative" data-node="9042">
               <p className="text-accent-muted font-['Great_Vibes'] text-[55px] font-normal leading-[69px] [white-space:nowrap]" data-node="9043">03</p>
-              <p className="text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="9044">Практический результат</p>
+              <h2 className="text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="9044">Практический результат</h2>
             </div>
             <p className="self-stretch w-full max-w-[783px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="9045">В практике это означает не только понимание причины, но и постепенную перенастройку глубинного внутреннего устройства человека, включая слои подсознания, которые лежат в основе восприятия, выбора и жизненного пути.</p>
           </div>

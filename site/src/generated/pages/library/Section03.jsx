@@ -5,7 +5,7 @@ export function Section03() {
       <div className="self-stretch mx-auto min-h-[442px] w-full max-w-[1280px] flex flex-row gap-space-3xl items-start relative [overflow:hidden]" data-node="3226">
         <div className="w-full max-w-[493px] min-h-[442px] flex flex-col gap-space-xl items-start relative [overflow:hidden]" data-node="3227">
           <p className="text-accent-muted font-['Golos_Text'] text-[20px] font-normal leading-[30px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="3228">журнал</p>
-          <p className="self-stretch w-full max-w-[493px] text-thread font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="3229">Syntonia.Life</p>
+          <h2 className="self-stretch w-full max-w-[493px] text-thread font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="3229">Syntonia.Life</h2>
           <p className="self-stretch w-full max-w-[493px] text-text-on-dark font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="3230">Выпуски, собранные вокруг того, что действительно волнует и сопровождает жизнь: внутренние состояния, отношения, выбор, опора, перемены, практика и смысл.</p>
         </div>
         <div className="flex-1 w-full max-w-[723px] min-h-[442px] flex flex-row items-end rounded-m [background:url(/assets/img-c8d2f1f321.jpg)_center_/_cover] relative [overflow:hidden]" data-node="3231">

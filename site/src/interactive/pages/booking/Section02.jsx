@@ -14,7 +14,7 @@ export function Section02() {
               <p className="w-full max-w-[60px] text-accent font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="8245">01</p>
               <div className="flex-1 min-h-[145px] w-full max-w-[475.5px] flex flex-row gap-4 items-center relative" data-node="8246">
                 <div className="flex-1 min-h-[145px] w-full max-w-[420.5px] flex flex-col gap-space-m justify-center items-start relative" data-node="8247">
-                  <p className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8248">Точка входа</p>
+                  <h3 className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8248">Точка входа</h3>
                   <p className="self-stretch w-full max-w-[420.5px] text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[27px]" data-node="8249">Короткая встреча для прояснения запроса и понимания направления.</p>
                   <div className="w-[102px] min-h-[20px] flex flex-row gap-space-s justify-center items-center relative" data-node="8250">
                     <p className="text-text-deep font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8251">30 минут</p>
@@ -31,7 +31,7 @@ export function Section02() {
               <p className="w-full max-w-[60px] text-accent font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="8258">02</p>
               <div className="flex-1 min-h-[145px] w-full max-w-[475.5px] flex flex-row gap-4 items-center relative" data-node="8259">
                 <div className="flex-1 min-h-[145px] w-full max-w-[475.5px] flex flex-col gap-space-m justify-center items-start relative" data-node="8260">
-                  <p className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8261">Индивидуальная мастер-сессия</p>
+                  <h3 className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8261">Индивидуальная мастер-сессия</h3>
                   <p className="self-stretch w-full max-w-[475.5px] text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[27px]" data-node="8262">Глубокая индивидуальная работа с одним запросом или конкретной темой.</p>
                   <div className="w-[91px] min-h-[20px] flex flex-row gap-space-s justify-center items-center relative" data-node="8263">
                     <p className="text-text-deep font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8264">2 часа</p>
@@ -45,7 +45,7 @@ export function Section02() {
               <p className="w-full max-w-[60px] text-accent font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="8271">03</p>
               <div className="flex-1 min-h-[145px] w-full max-w-[475.5px] flex flex-row gap-4 items-center relative" data-node="8272">
                 <div className="flex-1 min-h-[145px] w-full max-w-[475.5px] flex flex-col gap-space-m justify-center items-start relative" data-node="8273">
-                  <p className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8274">Программа 3 встречи</p>
+                  <h3 className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8274">Программа 3 встречи</h3>
                   <p className="self-stretch w-full max-w-[475.5px] text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[27px]" data-node="8275">Последовательная работа с запросом в трёх индивидуальных встречах.</p>
                   <div className="w-[113px] min-h-[20px] flex flex-row gap-space-s justify-center items-center relative" data-node="8276">
                     <p className="text-text-deep font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8277">3 × 2 часа</p>
@@ -60,7 +60,7 @@ export function Section02() {
               <p className="w-full max-w-[60px] text-accent font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="8284">04</p>
               <div className="flex-1 min-h-[145px] w-full max-w-[475.5px] flex flex-row gap-4 items-center relative" data-node="8285">
                 <div className="flex-1 min-h-[145px] w-full max-w-[475.5px] flex flex-col gap-space-m justify-center items-start relative" data-node="8286">
-                  <p className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8287">Программа 5 встреч</p>
+                  <h3 className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8287">Программа 5 встреч</h3>
                   <p className="self-stretch w-full max-w-[475.5px] text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[27px]" data-node="8288">Более глубокий цикл для системной работы и интеграции изменений.</p>
                   <div className="w-[119px] min-h-[20px] flex flex-row gap-space-s justify-center items-center relative" data-node="8289">
                     <p className="text-text-deep font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8290">5 × 2 часа</p>
@@ -75,7 +75,7 @@ export function Section02() {
               <p className="w-full max-w-[60px] text-accent font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="8297">05</p>
               <div className="flex-1 min-h-[145px] w-full max-w-[475.5px] flex flex-row gap-4 items-center relative" data-node="8298">
                 <div className="flex-1 min-h-[145px] w-full max-w-[475.5px] flex flex-col gap-space-m justify-center items-start relative" data-node="8299">
-                  <p className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8300">Сопровождение</p>
+                  <h3 className="text-text-primary font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8300">Сопровождение</h3>
                   <p className="self-stretch w-full max-w-[475.5px] text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[27px]" data-node="8301">Поддерживающая встреча для продолжения процесса и текущих изменений.</p>
                   <div className="w-[107px] min-h-[20px] flex flex-row gap-space-s justify-center items-center relative" data-node="8302">
                     <p className="text-text-deep font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="8303">60 минут</p>
@@ -108,7 +108,7 @@ export function Section02() {
               <div className="self-stretch min-h-[93px] w-full max-w-[607.5px] flex flex-col gap-6 items-start relative" data-node="8322">
                 <p className="text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[30px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="8323">Выбранный формат</p>
                 <div className="self-stretch min-h-[39px] w-full max-w-[607.5px] flex flex-row flex-wrap gap-space-s items-center content-center relative" data-node="8324">
-                  <p className="text-text-heading font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8325">Точка входа</p>
+                  <h3 className="text-text-heading font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8325">Точка входа</h3>
                   <div className="w-[5px] h-[5px] rounded-full bg-text-heading" data-node="8326"></div>
                   <p className="text-text-heading font-['Literata'] text-[29px] font-light leading-[39px] [white-space:nowrap]" data-node="8327">30 минут</p>
                   <div className="w-[5px] h-[5px] rounded-full bg-text-heading" data-node="8328"></div>
@@ -175,7 +175,7 @@ export function Section02() {
                 </div>
                 <div className="self-stretch min-h-[190px] w-full max-w-[607.5px] flex flex-col p-[1px] items-start rounded-(--radius-s) relative [overflow:hidden]" data-node="8371">
                   <div className="self-stretch min-h-[52px] w-full max-w-[605.5px] flex flex-row p-space-m items-start bg-bg-surface relative [overflow:hidden]" data-node="8372">
-                    <p className="text-accent font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="8373">Правовая информация</p>
+                    <h2 className="text-accent font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="8373">Правовая информация</h2>
                   </div>
                   <div className="self-stretch min-h-[136px] w-full max-w-[605.5px] flex flex-col gap-space-m p-space-m items-start relative [overflow:hidden]" data-node="8374">
                     <p className="self-stretch w-full max-w-[573.5px] text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px]" data-node="8375">Материалы и сессии носят консультативный характер и не являются медицинской услугой.</p>

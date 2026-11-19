@@ -9,15 +9,15 @@ export function Section13() {
     <div id="faq" className="relative w-full min-h-[807px] flex flex-col py-space-5xl px-6 items-center [background:url(/assets/filt-b0fb60371c-0371c61-4d7e86b1.png)_center_/_cover] [overflow:hidden]" data-node="1273">
       <div className="self-stretch mx-auto min-h-[511px] w-full max-w-[1280px] flex flex-row gap-space-2xl items-start relative" data-node="1274">
         <div className="self-stretch w-full max-w-[397px] min-h-[511px] flex flex-col gap-16 items-start relative" data-node="1275">
-          <div className="self-stretch min-h-[402px] w-full max-w-[397px] flex flex-col gap-12 items-start relative" data-node="1276">
-            <div className="w-84 min-h-[286px] flex flex-col items-start relative" data-node="1277">
-              <p className="w-full max-w-[208px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] flex flex-col justify-end" data-node="1278">То, что важно ПОНЯТЬ</p>
-              <div className="w-84 min-h-[106px] flex flex-row pl-40 items-center relative" data-node="1279">
-                <p className="w-full max-w-[176px] text-text-heading font-['Literata'] text-[42px] font-light leading-[53px] flex flex-col justify-end" data-node="1280">перед началом</p>
-              </div>
-            </div>
+          <h2 className="self-stretch min-h-[402px] w-full max-w-[397px] flex flex-col gap-12 items-start relative" data-node="1276">
+            <h2 className="w-84 min-h-[286px] flex flex-col items-start relative" data-node="1277">
+              <h2 className="w-full max-w-[208px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] flex flex-col justify-end" data-node="1278">То, что важно ПОНЯТЬ</h2>
+              <h2 className="w-84 min-h-[106px] flex flex-row pl-40 items-center relative" data-node="1279">
+                <h2 className="w-full max-w-[176px] text-text-heading font-['Literata'] text-[42px] font-light leading-[53px] flex flex-col justify-end" data-node="1280">перед началом</h2>
+              </h2>
+            </h2>
             <p className="self-stretch w-full max-w-[397px] text-text-deep font-['Golos_Text'] text-[20px] font-normal leading-[34px] flex flex-col justify-end" data-node="1281">О том, как внутренняя работа начинает менять состояние и саму жизнь</p>
-          </div>
+          </h2>
           <a className="block no-underline w-[182px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="1282" data-m3-link href={href('/booking.html')}>
             <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="1283">Задать вопрос</p>
             <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="1284">

@@ -11,7 +11,7 @@ export function Section01() {
         </div>
         <div className="self-stretch min-h-[180px] w-full max-w-[640px] flex flex-col gap-space-m items-center relative" data-node="9850">
           <p className="self-stretch w-full max-w-[640px] text-accent font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] text-center uppercase" data-node="9851">ошибка 404</p>
-          <p className="self-stretch w-full max-w-[640px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap] text-center" data-node="9852">Такой страницы нет</p>
+          <h2 className="self-stretch w-full max-w-[640px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap] text-center" data-node="9852">Такой страницы нет</h2>
           <p className="self-stretch w-full max-w-[640px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px] text-center" data-node="9853">Возможно, ссылка устарела или в адресе опечатка. Начните с главной или загляните в библиотеку.</p>
         </div>
         <div className="self-stretch min-h-[61px] w-full max-w-[640px] flex flex-row gap-space-l justify-center items-center relative" data-node="9854">

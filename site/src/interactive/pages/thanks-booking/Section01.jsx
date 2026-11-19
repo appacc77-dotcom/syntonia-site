@@ -8,7 +8,7 @@ export function Section01() {
       <div className="min-h-[707px] w-full max-w-[640px] flex flex-col gap-space-xl items-center relative" data-node="9566">
         <div className="self-stretch min-h-[180px] w-full max-w-[640px] flex flex-col gap-space-m items-center relative" data-node="9567">
           <p className="self-stretch w-full max-w-[640px] text-accent font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] text-center uppercase" data-node="9568">заявка отправлена</p>
-          <p className="self-stretch w-full max-w-[640px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap] text-center" data-node="9569">Спасибо, заявка принята</p>
+          <h2 className="self-stretch w-full max-w-[640px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap] text-center" data-node="9569">Спасибо, заявка принята</h2>
           <p className="self-stretch w-full max-w-[640px] text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px] text-center" data-node="9570">Мы получили вашу заявку и скоро свяжемся с вами, чтобы согласовать удобное время встречи.</p>
         </div>
         <div className="self-stretch min-h-[100px] w-full max-w-[640px] flex flex-col gap-space-m p-space-l items-start rounded-m bg-bg-surface relative" data-node="9571">
@@ -22,21 +22,21 @@ export function Section01() {
           <div className="self-stretch min-h-[50px] w-full max-w-[640px] flex flex-row gap-space-m items-start relative" data-node="9577">
             <p className="text-accent font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="9578">01</p>
             <div className="flex-1 min-h-[50px] w-full max-w-[602px] flex flex-col gap-space-xs items-start relative" data-node="9579">
-              <p className="self-stretch w-full max-w-[602px] text-text-heading font-['Golos_Text'] text-[20px] font-normal leading-[27px] [white-space:nowrap]" data-node="9580">Согласуем время</p>
+              <h3 className="self-stretch w-full max-w-[602px] text-text-heading font-['Golos_Text'] text-[20px] font-normal leading-[27px] [white-space:nowrap]" data-node="9580">Согласуем время</h3>
               <p className="self-stretch w-full max-w-[602px] text-text-secondary font-['Golos_Text'] text-[14px] font-normal leading-[19px] [white-space:nowrap]" data-node="9581">Напишем на email или позвоним по телефону из заявки.</p>
             </div>
           </div>
           <div className="self-stretch min-h-[50px] w-full max-w-[640px] flex flex-row gap-space-m items-start relative" data-node="9582">
             <p className="text-accent font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="9583">02</p>
             <div className="flex-1 min-h-[50px] w-full max-w-[600px] flex flex-col gap-space-xs items-start relative" data-node="9584">
-              <p className="self-stretch w-full max-w-[600px] text-text-heading font-['Golos_Text'] text-[20px] font-normal leading-[27px] [white-space:nowrap]" data-node="9585">Оплата</p>
+              <h3 className="self-stretch w-full max-w-[600px] text-text-heading font-['Golos_Text'] text-[20px] font-normal leading-[27px] [white-space:nowrap]" data-node="9585">Оплата</h3>
               <p className="self-stretch w-full max-w-[600px] text-text-secondary font-['Golos_Text'] text-[14px] font-normal leading-[19px] [white-space:nowrap]" data-node="9586">После согласования пришлём ссылку на оплату.</p>
             </div>
           </div>
           <div className="self-stretch min-h-[50px] w-full max-w-[640px] flex flex-row gap-space-m items-start relative" data-node="9587">
             <p className="text-accent font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="9588">03</p>
             <div className="flex-1 min-h-[50px] w-full max-w-[600px] flex flex-col gap-space-xs items-start relative" data-node="9589">
-              <p className="self-stretch w-full max-w-[600px] text-text-heading font-['Golos_Text'] text-[20px] font-normal leading-[27px] [white-space:nowrap]" data-node="9590">Встреча</p>
+              <h3 className="self-stretch w-full max-w-[600px] text-text-heading font-['Golos_Text'] text-[20px] font-normal leading-[27px] [white-space:nowrap]" data-node="9590">Встреча</h3>
               <p className="self-stretch w-full max-w-[600px] text-text-secondary font-['Golos_Text'] text-[14px] font-normal leading-[19px] [white-space:nowrap]" data-node="9591">Подтверждение и детали встречи придут на email.</p>
             </div>
           </div>

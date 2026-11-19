@@ -54,14 +54,66 @@ function rewriteCssLinks(text) {
     .replace(/url\(\s*(["']?)\/fonts\//g, 'url($1../fonts/')
 }
 
+/** JSON-LD: Organization + WebSite + WebPage (+ BreadcrumbList для подстраниц). */
+function jsonLd(route, ogImage) {
+  const info = seo.routes[route] || {}
+  const path = route === '/' ? '/' : `/${route.replace(/^\//, '')}`
+  const url = `${SITE_URL}${path}`
+  const orgId = `${SITE_URL}/#organization`
+  const siteId = `${SITE_URL}/#website`
+  const graph = [
+    {
+      '@type': 'Organization',
+      '@id': orgId,
+      name: seo.site.name,
+      url: `${SITE_URL}/`,
+      logo: `${SITE_URL}/${ogImage}`,
+      description: (seo.routes['/'] || {}).description,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': siteId,
+      url: `${SITE_URL}/`,
+      name: seo.site.name,
+      inLanguage: seo.site.locale.replace('_', '-'),
+      publisher: { '@id': orgId },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${url}#webpage`,
+      url,
+      name: info.title,
+      description: info.description,
+      inLanguage: seo.site.locale.replace('_', '-'),
+      isPartOf: { '@id': siteId },
+      about: { '@id': orgId },
+    },
+  ]
+  if (route !== '/') {
+    const items = [{ name: 'Главная', item: `${SITE_URL}/` }]
+    if (route.startsWith('/library/')) items.push({ name: 'Библиотека', item: `${SITE_URL}/library.html` })
+    items.push({ name: info.title || route, item: url })
+    graph.push({
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: items.map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it.name, item: it.item })),
+    })
+  }
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
+}
+
+const NOINDEX = /^\/(login|account-[a-z]+|checkout-confirm|thanks-[a-z]+)\.html$/
+
 function seoHead(route, ogImage) {
   const path = route === '/' ? '/' : `/${route.replace(/^\//, '')}`
   const canonical = `${SITE_URL}${path}`
+  const robots = NOINDEX.test(route) ? 'noindex, follow' : 'index, follow'
   return [
     `    <link rel="canonical" href="${canonical}" />`,
     `    <meta property="og:url" content="${canonical}" />`,
     `    <meta property="og:image" content="${SITE_URL}/${ogImage}" />`,
-    `    <meta name="robots" content="index, follow" />`,
+    `    <meta name="robots" content="${robots}" />`,
+    `    <script type="application/ld+json">${jsonLd(route, ogImage)}</script>`,
   ].join('\n')
 }
 
@@ -108,9 +160,10 @@ for (const route of routes) {
     .replace(/(\bstyle="[^"]*url\()\/assets\//g, `$1${BASE_PATH}/assets/`)
     .replace(/(\bstyle="[^"]*url\()\/fonts\//g, `$1${BASE_PATH}/fonts/`)
     .replace(/\n {6}<link rel="canonical"[^\n]*\n/, '\n')
+    .replace(/(<meta name="robots" content=")[^"]*(")/, '$1noindex, follow$2')
     .replace(/\n {4}<meta property="og:url"[^\n]*\n/, '\n')
     .replace(/\n {4}<meta property="og:image"[^\n]*\n/, '\n')
-  if (!html.includes('name="robots"')) html = html.replace('</head>', '    <meta name="robots" content="index, follow" />\n  </head>')
+  if (!html.includes('name="robots"')) html = html.replace('</head>', '    <meta name="robots" content="noindex, follow" />\n  </head>')
   write(join(OUT, '404.html'), html)
 }
 
