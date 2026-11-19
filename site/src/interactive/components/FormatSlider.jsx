@@ -2,6 +2,16 @@ import { useRef, useState } from 'react'
 import { hrefFor } from '../links.jsx'
 import { FORMATS } from '../content/formats.js'
 
+// Фото слайдера по выбранному формату — из состояний макета (Figma 719:301/376/450/524),
+// кропы и размеры — как в сгенерированных состояниях (background-size/position различаются).
+const SLIDE_MEDIA = [
+  { url: '/assets/img-ccc7781894.png', position: '-0.05px -143.18px', size: '1264px 705.49px' },
+  { url: '/assets/img-b37f4f2e43.png', position: '-0.05px -143.15px', size: '1264px 705.49px' },
+  { url: '/assets/img-3c72472e87.png', position: 'center', size: 'cover' },
+  { url: '/assets/img-6c523e95b4.png', position: 'center', size: 'cover' },
+  { url: '/assets/img-17bdfd9317.png', position: 'center', size: 'cover' },
+]
+
 const cardBase = 'format-card min-h-[296px] flex flex-col p-4 items-start rounded-[12px] relative overflow-hidden transition-[width,background-color,outline-color] duration-300 ease-out'
 const title = 'text-text-heading font-[\'Literata\'] font-light leading-[28px] text-center'
 
@@ -33,7 +43,14 @@ export function FormatSlider({ route = '/' }) {
   return (
     <div className="self-stretch w-full flex flex-col gap-2" role="group" aria-label="Форматы работы" onKeyDown={onKeyDown}>
       <div
-        className="self-stretch w-full max-w-[1264px] min-h-[420px] flex flex-row justify-between items-center rounded-m [background:url(/assets/img-ccc7781894.png)_-0.05px_-143.18px_/_1264px_705.49px] relative [overflow:hidden] [touch-action:pan-y] cursor-grab active:cursor-grabbing"
+        className="self-stretch w-full max-w-[1264px] min-h-[420px] flex flex-row justify-between items-center rounded-m relative [overflow:hidden] [touch-action:pan-y] cursor-grab active:cursor-grabbing"
+        style={{
+          backgroundImage: `url(${hrefFor(route, SLIDE_MEDIA[selected].url)})`,
+          backgroundPosition: SLIDE_MEDIA[selected].position,
+          backgroundSize: SLIDE_MEDIA[selected].size,
+          backgroundRepeat: 'no-repeat',
+          transition: 'background-image 300ms ease-out',
+        }}
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerCancel}
