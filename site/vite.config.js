@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url'
 
 const root = fileURLToPath(new URL('.', import.meta.url))
 const { routes } = JSON.parse(readFileSync(resolve(root, 'data/routes.json'), 'utf8'))
-const pages = routes.map((route) => (route.route === '/' ? 'index.html' : route.route.replace(/^\//, '')))
+const pages = [...routes.map((route) => (route.route === '/' ? 'index.html' : route.route.replace(/^\//, ''))), 'fixtures.html']
 
 export default defineConfig({
   base: './',

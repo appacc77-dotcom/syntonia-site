@@ -1,11 +1,17 @@
-import { Suspense, useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { ROUTES as PAGE_ROUTES } from './generated/router.jsx'
 import { RouteContext } from './interactive/links.jsx'
 import { PageReveal } from './interactive/components/PageReveal.jsx'
 
+// QA-страница fixtures (116 изолированных состояний/DS-компонентов) грузится отдельным
+// чанком только при открытии /fixtures.html — в основной бандл не попадает.
+const FixturesPage = lazy(() =>
+  import('./generated/FixturesPage.jsx').then((module) => ({ default: module.FixturesPage })),
+)
+
 // Все продуктовые страницы целиком сгенерированы FigCraft; маршрут выбирается
 // по pathname статической HTML-страницы. router.jsx генерируется build-pages.mjs.
-const ROUTES = { ...PAGE_ROUTES }
+const ROUTES = { ...PAGE_ROUTES, '/fixtures.html': FixturesPage }
 
 // Якорные ссылки на fixtures (#FixtureNNN): контент рендерится React-ом после загрузки,
 // поэтому браузерный автоскролл по hash срабатывает раньше цели — докручиваем вручную.

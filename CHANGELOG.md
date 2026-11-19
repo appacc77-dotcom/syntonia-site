@@ -43,6 +43,21 @@
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
 
+## v0.11.0 — fixtures 116/116, три ворот в одном `npm run gate`
+- **Fixtures-гейт m2 портирован в репозиторий**: 116 изолированных fixtures (54 состояния +
+  62 DS-компонента) рендерятся на QA-странице `/fixtures.html` (отдельный lazy-чанк, в публикацию
+  не попадает) и сверяются с golden PNG @1x pixelmatch'ем.
+  Результат: **state 54/54 PASS (mean 1.4 %), design-system 62/62 PASS (mean 1.47 %)**, пороги m2
+  (state ≤4 %/6, DS ≤6 %/8) — `site/data/gates/fixtures-thresholds.json`.
+- `npm run gate` теперь гоняет **все три ворот** m2-методики: golden 24/24, contract 24/24
+  (0 нарушений), fixtures 116/116; отчёт — `.gates/reports/gates-*.json`.
+- QA-исходники fixtures (`src/generated/fixtures/`, `FixturesPage.jsx`, `fixtures.html`) исключены
+  из патч-слоя — эталонные компоненты остаются чистой кодогенерацией.
+- Восстановлены 12 ассетов, на которые ссылаются правила CSS из fixtures-фикстур (в публикуемый
+  бандл попадают только как мёртвые правила; на страницах не используются).
+- **Итog приёмки:** golden 24/24 (Δh = 0, mean лучше базлайна m2 на home/masters/legal/practice),
+  contract 24/24 (0 нарушений), fixtures 116/116.
+
 ## v0.10.5 — семантика: h1/h2/h3, JSON-LD, robots, alt-семантика CSS-фонов
 - **Заголовки:** 136 узлов повышены до h2/h3 по карте Figma-имён и найденным заголовкам секций
   (`site/data/heading-tags.json`): теперь на страницах 1 h1 + осмысленная иерархия (83 h2 всего,

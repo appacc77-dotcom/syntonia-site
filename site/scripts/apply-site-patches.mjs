@@ -440,7 +440,10 @@ const walk = (dir) => {
   const out = []
   for (const entry of readdirSyncSafe(dir)) {
     const p = join(dir, entry.name)
-    if (entry.isDirectory()) out.push(...walk(p))
+    if (entry.isDirectory()) {
+      if (entry.name === 'fixtures') continue // QA-эталоны: только чистая кодогенерация
+      out.push(...walk(p))
+    } else if (entry.name === 'FixturesPage.jsx') continue
     else if (entry.name.endsWith('.jsx') || entry.name.endsWith('.js')) out.push(p)
   }
   return out

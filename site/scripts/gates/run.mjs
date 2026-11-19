@@ -10,8 +10,11 @@
  *
  * Usage:
  *   M2_REFERENCE=/abs/path/artifacts/reference/179a800f9fbf \
- *     node scripts/gates/run.mjs [--only golden|contract|all] [--route /practice.html]
+ *     node scripts/gates/run.mjs [--only golden|contract|fixtures|all] [--route /practice.html]
  *        [--dir .] [--json gates.json]
+ *
+ * fixtures прогоняются отдельным процессом (scripts/gates/fixtures.mjs): им нужен QA-билд
+ * site/dist/fixtures.html, а golden/contract меряют опубликованную сборку.
  *
  * Exit: 0 PASS, 1 FAIL (регрессии), 2 ERROR (нет эталона/страниц/данных).
  */
@@ -41,7 +44,10 @@ const fail = (message) => { console.error(`gates: ERROR — ${message}`); proces
 if (!REFERENCE || !existsSync(REFERENCE)) fail('задай M2_REFERENCE=/abs/path/artifacts/reference/<figSha>')
 const goldenManifest = join(REFERENCE, 'golden/figma/manifest.json')
 if (!existsSync(goldenManifest)) fail(`нет ${goldenManifest}`)
-if (!existsSync(join(OUT_DIR, 'index.html'))) fail(`нет ${join(OUT_DIR, 'index.html')} — сначала npm run deploy`)
+const useFixtures = ONLY === 'all' || ONLY === 'fixtures'
+const useGolden = ONLY === 'all' || ONLY === 'golden'
+const useContract = ONLY === 'all' || ONLY === 'contract'
+if ((useGolden || useContract) && !existsSync(join(OUT_DIR, 'index.html'))) fail(`нет ${join(OUT_DIR, 'index.html')} — сначала npm run deploy`)
 if (!STAGE_THRESHOLDS[STAGE]) fail(`неизвестный stage: ${STAGE}`)
 
 const routeEntries = JSON.parse(readFileSync(join(SITE, 'data/routes.json'), 'utf8')).routes
@@ -59,8 +65,6 @@ const G = {
   CONFIG: join(SITE, 'data/gates'),
   ROUTES: routeEntries,
 }
-const useContract = ONLY === 'all' || ONLY === 'contract'
-const useGolden = ONLY === 'all' || ONLY === 'golden'
 
 // --- статический сервер опубликованной сборки
 const MIME = {
@@ -99,9 +103,24 @@ const launch = async () => {
   try { return await chromium.launch() } catch { return await chromium.launch({ channel: 'chrome' }) }
 }
 const browser = await launch()
-const results = { golden: [], contract: [], startedAt: new Date().toISOString(), reference: REFERENCE, out: OUT_DIR }
+const results = { golden: [], contract: [], fixtures: null, startedAt: new Date().toISOString(), reference: REFERENCE, out: OUT_DIR }
 
-for (const route of routeEntries) {
+// --- fixtures: отдельный QA-билд site/dist (см. scripts/gates/fixtures.mjs)
+if (useFixtures) {
+  const { spawnSync } = await import('node:child_process')
+  const fixturesReport = join(SITE, '.gates/reports/fixtures.json')
+  const run = spawnSync(process.execPath, [join(SITE, 'scripts/gates/fixtures.mjs'), '--stage', STAGE, '--json', fixturesReport], {
+    env: process.env,
+    encoding: 'utf8',
+    timeout: 1800000,
+  })
+  if (run.stdout) process.stdout.write(run.stdout)
+  if (run.stderr) process.stderr.write(run.stderr)
+  try { results.fixtures = JSON.parse(readFileSync(fixturesReport, 'utf8')) } catch { results.fixtures = { error: 'нет отчёта fixtures' } }
+  results.fixturesOk = run.status === 0
+}
+
+for (const route of useGolden || useContract ? routeEntries : []) {
   const path = route.route
   const file = path === '/' ? 'index.html' : path.replace(/^\//, '')
   const pageErrors = []
@@ -168,6 +187,15 @@ if (useContract) {
   const bad = results.contract.filter((r) => r.error || r.pass === false)
   console.log(`contract: ${results.contract.length - bad.length}/${results.contract.length} PASS`)
   if (bad.length) { failed = true; for (const r of bad) console.error(`  - ${r.route}: ${r.error || `geo ${r.geometry?.ratio} typo ${r.typography?.ratio}`}`) }
+}
+if (useFixtures) {
+  const f = results.fixtures || {}
+  const sum = f.summary || {}
+  for (const kind of ['state', 'design-system']) {
+    const row = sum[kind]
+    if (row) console.log(`fixtures ${kind}: ${row.passed}/${row.total} PASS, mean ${row.mean}%`)
+  }
+  if (!results.fixturesOk) { failed = true; console.error('  - fixtures: есть непрошедшие fixtures') }
 }
 const reportFile = JSON_OUT ? resolve(JSON_OUT) : join(reportDir, `gates-${STAGE}-${new Date().toISOString().replace(/[:.]/g, '-')}.json`)
 mkdirSync(dirname(reportFile), { recursive: true })
