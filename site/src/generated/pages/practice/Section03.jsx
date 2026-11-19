@@ -12,7 +12,7 @@ export function Section03() {
             <p className="text-[#FFFFFF] font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="5159">Пройди короткий тест и узнай свой код — состояние, которое сильнее <br />всего влияет на твою жизнь сейчас.</p>
           </div>
           <div className="w-[427px] min-h-[122px] flex flex-col gap-space-m items-start relative" data-node="5160">
-            <p className="text-[#FFFFFF] font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="5161" style={{ boxSizing: 'border-box', minWidth: 0, flexShrink: 0, flex: '0 0 auto', width: '427px' }}>Практика  по твоему коду — в подарок.</p>
+            <div className="text-[#FFFFFF] font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="5161" style={{ width: '427px', whiteSpace: 'pre-wrap' }}><span className="font-['Great_Vibes'] text-[36px] leading-[61.2px]">{"Практика"}</span><span className="font-['Golos_Text'] text-[20px] leading-[34px]">{"  по твоему коду — в подарок."}</span></div>
             <div className="w-84 min-h-[45px] flex flex-row gap-space-l justify-center items-center relative" data-node="5162">
               <a className="w-[162px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) bg-accent-muted [outline:0.45px_solid_var(--color-thread,_#C9BEA4)] [outline-offset:-0.45px] relative" data-node="5163" data-m3-link href={href('/quiz.html')} aria-current={isCurrent(route, '/quiz.html') ? 'page' : undefined}>
                 <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="5164">Пройти тест</p>

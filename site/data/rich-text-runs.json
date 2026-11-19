@@ -1,0 +1,43 @@
+[
+ {
+  "node": "1026",
+  "width": 520,
+  "height": 96,
+  "align": "LEFT",
+  "runs": [
+   {
+    "text": "Тест ",
+    "font": "Great Vibes",
+    "size": 48,
+    "lineHeightPx": 61.2,
+    "offsetTopPx": 11
+   },
+   {
+    "text": "поможет увидеть, что сейчас управляет твоим состоянием и жизнью",
+    "font": "Golos Text",
+    "size": 20,
+    "lineHeightPx": 34
+   }
+  ]
+ },
+ {
+  "node": "5161",
+  "width": 427,
+  "height": 61,
+  "align": "LEFT",
+  "runs": [
+   {
+    "text": "Практика",
+    "font": "Great Vibes",
+    "size": 36,
+    "lineHeightPx": 61.2
+   },
+   {
+    "text": "  по твоему коду — в подарок.",
+    "font": "Golos Text",
+    "size": 20,
+    "lineHeightPx": 34
+   }
+  ]
+ }
+]

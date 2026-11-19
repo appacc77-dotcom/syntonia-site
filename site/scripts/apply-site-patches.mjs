@@ -435,6 +435,35 @@ function applyImageSemantics(text) {
   return { text: next, changed }
 }
 
+
+// ---------- mixed-font строки (m2: «Практика» Great Vibes 36 + Golos 20 и др.)
+// Кодоген берёт первый сегмент на весь текст — вторая часть рендерится чужим шрифтом.
+// data/rich-text-runs.json описывает сегменты из Figma (шрифт/размер/line-height).
+const RICH_RUNS = existsSync(join(SITE, 'data/rich-text-runs.json')) ? JSON.parse(read(join(SITE, 'data/rich-text-runs.json'))) : []
+const FONT_CLASS = { 'Great Vibes': "font-['Great_Vibes']", 'Golos Text': "font-['Golos_Text']", 'Lora': "font-['Lora']", 'Literata': "font-['Literata']" }
+
+function applyRichTextRuns(text) {
+  let next = text
+  let changed = 0
+  for (const entry of RICH_RUNS) {
+    const found = findTextElement(next, entry.node)
+    if (!found) continue
+    const spans = entry.runs.map((run) => {
+      const font = FONT_CLASS[run.font] || ''
+      // сдвиг по вертикали — relative top: vertical-align на инлайн-боксе с большим line-height
+      // в Chromium не сдвигает глифы так, как это делает Figma
+      const va = run.offsetTopPx ? ` style={{ position: 'relative', top: '${run.offsetTopPx}px' }}` : ''
+      return `<span className="${font} text-[${run.size}px] leading-[${run.lineHeightPx}px]"${va}>${jsxStr(run.text)}</span>`
+    }).join('')
+    const cleanAttrs = found.attrs.replace(/\s*style=\{\{[^}]*\}\}/, '')
+    const replacement = `<div${cleanAttrs} style={{ width: '${entry.width}px', whiteSpace: 'pre-wrap' }}>${spans}</div>`
+    next = next.slice(0, found.openStart) + replacement + next.slice(found.contentEnd + 4)
+    changed += 1
+    stat.richRuns = (stat.richRuns || 0) + 1
+  }
+  return { text: next, changed }
+}
+
 // ---------- обход файлов
 const walk = (dir) => {
   const out = []
@@ -572,6 +601,14 @@ for (const file of files) {
   if (heads.changed) write(file, heads.text)
 }
 
+// ---------- mixed-font runs
+for (const file of files) {
+  if (!/\.jsx$/.test(file)) continue
+  const t = read(file)
+  const runs = applyRichTextRuns(t)
+  if (runs.changed) write(file, runs.text)
+}
+
 // ---------- rich text: списки и абзацные интервалы
 for (const file of files) {
   if (!/\.jsx$/.test(file)) continue
@@ -649,4 +686,4 @@ for (const file of files) {
 
 console.log(`patches: links=${stat.links} (шапок ${stat.headerFiles}, подвалов ${stat.footerFiles}), ` +
   `landmarks=${stat.landmarks}, h1=${stat.h1}, скрытых h1=${stat.hiddenH1}, якоря=${stat.anchors}, ` +
-  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}`)
+  `gap-фиксов в шапке=${stat.gapFixes || 0}, компенсаций убрано=${stat.compFixes || 0}, huge-gap=${stat.hugeGaps || 0}, rich-text=${stat.richText || 0}, box-fixes=${stat.boxFixes || 0}, heading-tags=${stat.headingTags || 0}, image-семантика=${stat.imageSemantics || 0}, mixed-font=${stat.richRuns || 0}`)

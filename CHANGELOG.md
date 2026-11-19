@@ -43,6 +43,16 @@
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
 
+## v0.11.1 — mixed-font строки (Great Vibes + Golos) как в Figma
+- 2 узла со смешанными шрифтами теперь рендерятся сегментами, а не одним шрифтом:
+  home quiz-lead («Тест» Great Vibes 48 + Golos 20) и practice «Практика по твоему коду»
+  (Great Vibes 36 + Golos 20); данные сегментов — `site/data/rich-text-runs.json` (из Figma).
+- home: блок вырос с 68 до 95.2 px (как в Figma 96) — именно эти **+28 px** фигурировали в
+  старом отчёте как «quiz +28px»; вертикальная позиция script-слова выровнена по golden
+  (relative top +11 px, инк-боксы совпадают ±1 px).
+- golden: **home Δ>24 0.58 % / mean 2.47** (было 0.64 / 2.53), **practice 1.12 % / 2.77**
+  (было 1.16 / 2.80); Δh=0; contract 24/24 (0 нарушений), fixtures 116/116.
+
 ## v0.11.0 — fixtures 116/116, три ворот в одном `npm run gate`
 - **Fixtures-гейт m2 портирован в репозиторий**: 116 изолированных fixtures (54 состояния +
   62 DS-компонента) рендерятся на QA-странице `/fixtures.html` (отдельный lazy-чанк, в публикацию
