@@ -31,37 +31,7 @@ const GROUPS = [
       { href: '/library/book-chapter-story.html', label: 'История' },
     ],
   },
-  {
-    title: 'личное',
-    items: [
-      { href: '/login.html', label: 'Вход' },
-      { href: '/account-practices.html', label: 'Мои практики' },
-      { href: '/account-history.html', label: 'История' },
-      { href: '/account-profile.html', label: 'Профиль' },
-    ],
-  },
-  {
-    title: 'запись и оплата',
-    items: [
-      { href: '/thanks-booking.html', label: 'Спасибо за запись' },
-      { href: '/thanks-purchase.html', label: 'Спасибо за покупку' },
-      { href: '/checkout-confirm.html', label: 'Подтверждение оплаты' },
-    ],
-  },
-  {
-    title: 'документы',
-    items: [
-      { href: '/legal-terms.html', label: 'Условия' },
-      { href: '/legal-privacy.html', label: 'Конфиденциальность' },
-      { href: '/legal-refund.html', label: 'Возврат' },
-      { href: '/legal-consent.html', label: 'Согласие' },
-      { href: '/not-found.html', label: 'Страница не найдена' },
-    ],
-  },
 ]
-
-const LINK = 'block py-1 px-2 rounded-[2px] text-text-on-image font-[\'Golos_Text\'] text-[14px] font-normal leading-[19px] [white-space:nowrap] no-underline hover:bg-line-on-dark'
-const HEAD = "text-accent-muted font-['Golos_Text'] text-[13px] font-normal leading-[20px] tracking-[0.16em] uppercase"
 
 /** Бургер-меню в шапке: открывает список всех страниц сайта (принцип — от прежней версии, оформление — наше). */
 export function HeaderBurgerMenu({ nodes = [] }) {
