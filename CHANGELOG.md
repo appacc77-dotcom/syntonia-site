@@ -43,6 +43,16 @@
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
 
+## v0.11.8 — SEO-полировка: og:image на маршрут, twitter:image, реальный favicon
+- **og:image стал уникальным для каждого маршрута** (`social/og-*.jpg`, 1200×630, cover-crop
+  из ключевого изображения страницы) + `og:image:width/height/alt` и `twitter:image`;
+  раньше все страницы отдавали футер-фото.
+- **Favicon**: вместо заглушки `href="data:,"` — брендовая иконка (золотая Literata «S» на
+  тёмном фоне): `icons/favicon-32.png`, `icons/apple-touch-icon.png`, `icons/favicon-512.png`;
+  добавлен `theme-color` (#3A3223); JSON-LD Organization.logo указывает на favicon-512.
+- publish валидирует наличие og-картинок и иконок; соц-превью копируются в `social/`.
+- Ворота не затронуты: golden 24/24 (home 0.55/2.44, booking 0.43/1.48), a11y 24/24 (0).
+
 ## v0.11.7 — сверка текстов с эталоном: аудит контента, семантика маркеров списков
 - Проведён полный аудит текста против Figma-спеки (`live-nodes.json`): 1510 узлов сверены
   по содержанию, кеглю, интерлиньяжу, трекингу и ширине бокса. Реальных расхождений вёрстки

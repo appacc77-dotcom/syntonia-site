@@ -48,6 +48,13 @@ function rewriteNames(text) {
   return out
 }
 
+/** og:image маршрута: social/… как есть, assets/… через карту имён, иначе глобальный fallback. */
+function routeOgImage(route) {
+  const routeImage = (seo.routes[route] || {}).ogImage
+  if (routeImage) return routeImage.startsWith('assets/') ? (map[routeImage] || routeImage) : routeImage
+  return map[seo.site.ogImage] || seo.site.ogImage
+}
+
 function rewriteCssLinks(text) {
   return text
     .replace(/url\(\s*(["']?)\/assets\//g, 'url($1../assets/')
@@ -67,7 +74,7 @@ function jsonLd(route, ogImage) {
       '@id': orgId,
       name: seo.site.name,
       url: `${SITE_URL}/`,
-      logo: `${SITE_URL}/${ogImage}`,
+      logo: `${SITE_URL}/icons/favicon-512.png`,
       description: (seo.routes['/'] || {}).description,
     },
     {
@@ -108,10 +115,16 @@ function seoHead(route, ogImage) {
   const path = route === '/' ? '/' : `/${route.replace(/^\//, '')}`
   const canonical = `${SITE_URL}${path}`
   const robots = NOINDEX.test(route) ? 'noindex, follow' : 'index, follow'
+  const title = (seo.routes[route] || {}).title || seo.site.name
+  const imageUrl = `${SITE_URL}/${ogImage}`
   return [
     `    <link rel="canonical" href="${canonical}" />`,
     `    <meta property="og:url" content="${canonical}" />`,
-    `    <meta property="og:image" content="${SITE_URL}/${ogImage}" />`,
+    `    <meta property="og:image" content="${imageUrl}" />`,
+    `    <meta property="og:image:width" content="1200" />`,
+    `    <meta property="og:image:height" content="630" />`,
+    `    <meta property="og:image:alt" content="${title.replace(/"/g, '&quot;')}" />`,
+    `    <meta name="twitter:image" content="${imageUrl}" />`,
     `    <meta name="robots" content="${robots}" />`,
     `    <script type="application/ld+json">${jsonLd(route, ogImage)}</script>`,
   ].join('\n')
@@ -141,7 +154,16 @@ for (const route of routes) {
   if (!existsSync(src)) fail(`в dist нет ${file}`)
   let html = readFileSync(src, 'utf8')
   html = rewriteNames(html)
-  const ogImage = map[seo.site.ogImage] || seo.site.ogImage
+  const ogImage = routeOgImage(route)
+  // фавикон/theme-color: заменяем заглушку <link rel="icon" href="data:," />
+  html = html.replace(
+    /<link rel="icon" href="data:," \/>/,
+    [
+      '<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />',
+      '<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />',
+      '<meta name="theme-color" content="#3A3223" />',
+    ].join('\n    '),
+  )
   if (!html.includes('rel="canonical"')) {
     if (!html.includes('</head>')) fail(`${file}: нет </head>`)
     html = html.replace('</head>', `${seoHead(route, ogImage)}\n  </head>`)
@@ -191,6 +213,18 @@ if (existsSync(distIcons)) {
   }
 }
 
+// ---------- 3c. Соц-превью (public/social → social/)
+const distSocial = join(DIST, 'social')
+let copiedSocial = 0
+if (existsSync(distSocial)) {
+  for (const abs of walk(distSocial)) {
+    const rel = relative(DIST, abs)
+    const dst = join(OUT, rel)
+    const same = existsSync(dst) && statSync(dst).size === statSync(abs) && readFileSync(dst).equals(readFileSync(abs))
+    if (!same) { write(dst, readFileSync(abs)); copiedSocial += 1 }
+  }
+}
+
 // ---------- 4. Шрифты (копируем, только если отличаются)
 const distFonts = join(DIST, 'fonts')
 let copiedFonts = 0
@@ -212,6 +246,15 @@ if (!DRY) {
     rmSync(join(OUT, 'assets', name), { force: true })
     removed.push(`assets/${name}`)
   }
+}
+
+// ---------- 5b. Проверка: og-картинки и фавиконы на месте
+for (const route of routes) {
+  const image = routeOgImage(route)
+  if (!existsSync(join(OUT, image))) fail(`нет og-картинки для ${route}: ${image}`)
+}
+for (const icon of ['icons/favicon-32.png', 'icons/apple-touch-icon.png', 'icons/favicon-512.png']) {
+  if (!existsSync(join(OUT, icon))) fail(`нет иконки ${icon}`)
 }
 
 // ---------- 6. Проверка: все ссылки на ассеты существуют
@@ -274,3 +317,4 @@ if (removed.length) console.log(`publish: удалены старые бандл
 if (copiedFonts) console.log(`publish: обновлены шрифты: ${copiedFonts} файлов`)
 if (copiedIcons) console.log(`publish: обновлены иконки: ${copiedIcons} файлов`)
 console.log(`publish: файлов записано: ${written.length}, целевой каталог: ${OUT}`)
+if (copiedIcons || copiedSocial) console.log(`publish: иконок ${copiedIcons}, соц-превью ${copiedSocial}`)

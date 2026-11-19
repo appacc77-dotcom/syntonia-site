@@ -1,132 +1,157 @@
 {
-  "note": "SEO-тексты маршрутов m2. siteUrl намеренно null: абсолютные canonical/og:url/og:image добавляет публикационный слой m3 (staging → https://appacc77-dotcom.github.io/syntonia-site).",
-  "site": {
-    "name": "Syntonia",
-    "locale": "ru_RU",
-    "siteUrl": null,
-    "ogImage": "assets/img-8bc9d6245a.jpg",
-    "twitterCard": "summary_large_image"
+ "note": "SEO-тексты маршрутов m2. siteUrl намеренно null: абсолютные canonical/og:url/og:image добавляет публикационный слой m3 (staging → https://appacc77-dotcom.github.io/syntonia-site).",
+ "site": {
+  "name": "Syntonia",
+  "locale": "ru_RU",
+  "siteUrl": null,
+  "ogImage": "assets/img-8bc9d6245a.jpg",
+  "twitterCard": "summary_large_image",
+  "ogImageFallback": "social/og-home.jpg"
+ },
+ "routes": {
+  "/": {
+   "title": "Syntonia — состояние, из которого строится жизнь",
+   "description": "Глубинный метод работы с человеком как с целостной системой: личные встречи, практики и библиотека Syntonia.",
+   "ogType": "website",
+   "ogImage": "social/og-home.jpg"
   },
-  "routes": {
-    "/": {
-      "title": "Syntonia — состояние, из которого строится жизнь",
-      "description": "Глубинный метод работы с человеком как с целостной системой: личные встречи, практики и библиотека Syntonia.",
-      "ogType": "website"
-    },
-    "/masters.html": {
-      "title": "Екатерина Лебедева — основатель Syntonia",
-      "description": "Психолог и автор метода Syntonia: о подходе, опыте и работе с источником внутреннего состояния.",
-      "ogType": "profile"
-    },
-    "/library.html": {
-      "title": "Библиотека Syntonia",
-      "description": "Авторская книга «Коды построения реальности», истории и техники для самостоятельной внутренней работы.",
-      "ogType": "website"
-    },
-    "/library/book-chapter.html": {
-      "title": "Код 1. Боль — Коды построения реальности",
-      "description": "Первая глава книги Syntonia: как читать код боли, техника самостоятельной работы и история Анны.",
-      "ogType": "article"
-    },
-    "/library/book-chapter-intro.html": {
-      "title": "Введение — Коды построения реальности",
-      "description": "За внешним разнообразием судеб проступает закономерность: с чего начинается книга и как устроены коды.",
-      "ogType": "article"
-    },
-    "/library/book-chapter-technique.html": {
-      "title": "Техника работы с кодом Боли — Syntonia",
-      "description": "Пошаговая практика: встретиться с внутренним узлом боли и увидеть, что за ним стоит.",
-      "ogType": "article"
-    },
-    "/library/book-chapter-story.html": {
-      "title": "История Анны — Код 1",
-      "description": "Разбор истории из практики: как код боли проявляется в жизни и что меняется, когда его видно.",
-      "ogType": "article"
-    },
-    "/practice.html": {
-      "title": "Практики Syntonia",
-      "description": "Самостоятельные практики для восстановления состояния, мягкого входа и бережного движения в глубину.",
-      "ogType": "website"
-    },
-    "/quiz.html": {
-      "title": "Тест состояния — Syntonia",
-      "description": "9 вопросов за 3 минуты: какой код сейчас управляет вашей жизнью и какая практика подойдёт.",
-      "ogType": "website"
-    },
-    "/booking.html": {
-      "title": "Форматы работы — Syntonia",
-      "description": "Личная встреча, глубокое сопровождение и другие форматы: выберите глубину запроса.",
-      "ogType": "website"
-    },
-    "/method.html": {
-      "title": "Метод Syntonia",
-      "description": "Наука, психологическая точность и тонкое видение внутренней природы — метод работы с человеком как с целостной системой.",
-      "ogType": "article"
-    },
-    "/login.html": {
-      "title": "Вход — Syntonia",
-      "description": "Вход в личный кабинет Syntonia: доступ к купленным практикам, истории и профилю.",
-      "ogType": "website"
-    },
-    "/account-practices.html": {
-      "title": "Мои практики — Syntonia",
-      "description": "Личный кабинет Syntonia: практики, доступные вам сейчас.",
-      "ogType": "website"
-    },
-    "/account-history.html": {
-      "title": "История — Syntonia",
-      "description": "Личный кабинет Syntonia: история покупок и прослушиваний.",
-      "ogType": "website"
-    },
-    "/account-profile.html": {
-      "title": "Профиль — Syntonia",
-      "description": "Личный кабинет Syntonia: данные профиля и настройки.",
-      "ogType": "website"
-    },
-    "/practice-detail.html": {
-      "title": "Практика — Syntonia",
-      "description": "Страница практики Syntonia: описание, доступ и материалы.",
-      "ogType": "website"
-    },
-    "/thanks-booking.html": {
-      "title": "Заявка принята — Syntonia",
-      "description": "Спасибо за заявку: мы свяжемся, чтобы согласовать удобное время встречи.",
-      "ogType": "website"
-    },
-    "/thanks-purchase.html": {
-      "title": "Спасибо за покупку — Syntonia",
-      "description": "Практика уже в личном кабинете: доступ и материалы.",
-      "ogType": "website"
-    },
-    "/not-found.html": {
-      "title": "Страница не найдена — Syntonia",
-      "description": "Такой страницы нет: возможно, ссылка устарела или в адресе опечатка.",
-      "ogType": "website"
-    },
-    "/legal-terms.html": {
-      "title": "Условия использования и продажи — Syntonia",
-      "description": "Стороны и содержание договора, характер работы и её границы, оплата и доступ к цифровым практикам.",
-      "ogType": "article"
-    },
-    "/legal-privacy.html": {
-      "title": "Политика конфиденциальности — Syntonia",
-      "description": "Какие данные Syntonia получает, для чего использует и как защищает.",
-      "ogType": "article"
-    },
-    "/legal-refund.html": {
-      "title": "Политика возвратов — Syntonia",
-      "description": "Возврат за цифровые практики, отмена и перенос встречи, опоздание и технический сбой.",
-      "ogType": "article"
-    },
-    "/legal-consent.html": {
-      "title": "Согласия на обработку данных — Syntonia",
-      "description": "Согласие на обработку данных, email- и SMS-рассылку, участие в квизе и запись встречи.",
-      "ogType": "article"
-    },
-    "/checkout-confirm.html": {
-      "title": "Оформление покупки — Syntonia",
-      "description": "Проверка заказа и оплата практики «Код Боли. Возвращение к себе».",
-      "ogType": "website"
-    }
+  "/masters.html": {
+   "title": "Екатерина Лебедева — основатель Syntonia",
+   "description": "Психолог и автор метода Syntonia: о подходе, опыте и работе с источником внутреннего состояния.",
+   "ogType": "profile",
+   "ogImage": "social/og-masters.jpg"
+  },
+  "/library.html": {
+   "title": "Библиотека Syntonia",
+   "description": "Авторская книга «Коды построения реальности», истории и техники для самостоятельной внутренней работы.",
+   "ogType": "website",
+   "ogImage": "social/og-library.jpg"
+  },
+  "/library/book-chapter.html": {
+   "title": "Код 1. Боль — Коды построения реальности",
+   "description": "Первая глава книги Syntonia: как читать код боли, техника самостоятельной работы и история Анны.",
+   "ogType": "article",
+   "ogImage": "social/og-library-book-chapter.jpg"
+  },
+  "/library/book-chapter-intro.html": {
+   "title": "Введение — Коды построения реальности",
+   "description": "За внешним разнообразием судеб проступает закономерность: с чего начинается книга и как устроены коды.",
+   "ogType": "article",
+   "ogImage": "social/og-library-book-chapter-intro.jpg"
+  },
+  "/library/book-chapter-technique.html": {
+   "title": "Техника работы с кодом Боли — Syntonia",
+   "description": "Пошаговая практика: встретиться с внутренним узлом боли и увидеть, что за ним стоит.",
+   "ogType": "article",
+   "ogImage": "social/og-library-book-chapter-technique.jpg"
+  },
+  "/library/book-chapter-story.html": {
+   "title": "История Анны — Код 1",
+   "description": "Разбор истории из практики: как код боли проявляется в жизни и что меняется, когда его видно.",
+   "ogType": "article",
+   "ogImage": "social/og-library-book-chapter-story.jpg"
+  },
+  "/practice.html": {
+   "title": "Практики Syntonia",
+   "description": "Самостоятельные практики для восстановления состояния, мягкого входа и бережного движения в глубину.",
+   "ogType": "website",
+   "ogImage": "social/og-practice.jpg"
+  },
+  "/quiz.html": {
+   "title": "Тест состояния — Syntonia",
+   "description": "9 вопросов за 3 минуты: какой код сейчас управляет вашей жизнью и какая практика подойдёт.",
+   "ogType": "website",
+   "ogImage": "social/og-quiz.jpg"
+  },
+  "/booking.html": {
+   "title": "Форматы работы — Syntonia",
+   "description": "Личная встреча, глубокое сопровождение и другие форматы: выберите глубину запроса.",
+   "ogType": "website",
+   "ogImage": "social/og-booking.jpg"
+  },
+  "/method.html": {
+   "title": "Метод Syntonia",
+   "description": "Наука, психологическая точность и тонкое видение внутренней природы — метод работы с человеком как с целостной системой.",
+   "ogType": "article",
+   "ogImage": "social/og-method.jpg"
+  },
+  "/login.html": {
+   "title": "Вход — Syntonia",
+   "description": "Вход в личный кабинет Syntonia: доступ к купленным практикам, истории и профилю.",
+   "ogType": "website",
+   "ogImage": "social/og-login.jpg"
+  },
+  "/account-practices.html": {
+   "title": "Мои практики — Syntonia",
+   "description": "Личный кабинет Syntonia: практики, доступные вам сейчас.",
+   "ogType": "website",
+   "ogImage": "social/og-account-practices.jpg"
+  },
+  "/account-history.html": {
+   "title": "История — Syntonia",
+   "description": "Личный кабинет Syntonia: история покупок и прослушиваний.",
+   "ogType": "website",
+   "ogImage": "social/og-account-history.jpg"
+  },
+  "/account-profile.html": {
+   "title": "Профиль — Syntonia",
+   "description": "Личный кабинет Syntonia: данные профиля и настройки.",
+   "ogType": "website",
+   "ogImage": "social/og-account-profile.jpg"
+  },
+  "/practice-detail.html": {
+   "title": "Практика — Syntonia",
+   "description": "Страница практики Syntonia: описание, доступ и материалы.",
+   "ogType": "website",
+   "ogImage": "social/og-practice-detail.jpg"
+  },
+  "/thanks-booking.html": {
+   "title": "Заявка принята — Syntonia",
+   "description": "Спасибо за заявку: мы свяжемся, чтобы согласовать удобное время встречи.",
+   "ogType": "website",
+   "ogImage": "social/og-thanks-booking.jpg"
+  },
+  "/thanks-purchase.html": {
+   "title": "Спасибо за покупку — Syntonia",
+   "description": "Практика уже в личном кабинете: доступ и материалы.",
+   "ogType": "website",
+   "ogImage": "social/og-thanks-purchase.jpg"
+  },
+  "/not-found.html": {
+   "title": "Страница не найдена — Syntonia",
+   "description": "Такой страницы нет: возможно, ссылка устарела или в адресе опечатка.",
+   "ogType": "website",
+   "ogImage": "social/og-not-found.jpg"
+  },
+  "/legal-terms.html": {
+   "title": "Условия использования и продажи — Syntonia",
+   "description": "Стороны и содержание договора, характер работы и её границы, оплата и доступ к цифровым практикам.",
+   "ogType": "article",
+   "ogImage": "social/og-legal-terms.jpg"
+  },
+  "/legal-privacy.html": {
+   "title": "Политика конфиденциальности — Syntonia",
+   "description": "Какие данные Syntonia получает, для чего использует и как защищает.",
+   "ogType": "article",
+   "ogImage": "social/og-legal-privacy.jpg"
+  },
+  "/legal-refund.html": {
+   "title": "Политика возвратов — Syntonia",
+   "description": "Возврат за цифровые практики, отмена и перенос встречи, опоздание и технический сбой.",
+   "ogType": "article",
+   "ogImage": "social/og-legal-refund.jpg"
+  },
+  "/legal-consent.html": {
+   "title": "Согласия на обработку данных — Syntonia",
+   "description": "Согласие на обработку данных, email- и SMS-рассылку, участие в квизе и запись встречи.",
+   "ogType": "article",
+   "ogImage": "social/og-legal-consent.jpg"
+  },
+  "/checkout-confirm.html": {
+   "title": "Оформление покупки — Syntonia",
+   "description": "Проверка заказа и оплата практики «Код Боли. Возвращение к себе».",
+   "ogType": "website",
+   "ogImage": "social/og-checkout-confirm.jpg"
   }
+ }
 }
