@@ -12,11 +12,57 @@ const SLIDE_MEDIA = [
   { url: '/assets/img-17bdfd9317.png', position: 'center', size: 'cover' },
 ]
 
-const cardBase = 'format-card min-h-[296px] flex flex-col p-4 items-start rounded-[12px] relative overflow-hidden transition-[width,background-color,outline-color] duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)]'
-const title = 'text-text-heading font-[\'Literata\'] font-light leading-[28px] text-center'
+const CARD_ACTIVE = 'w-[335px] min-h-[296px] flex flex-col gap-4 p-4 items-start rounded-[12px] bg-bg-glass [outline:1px_solid_var(--color-accent,_#5A5A36)] [outline-offset:-1px] relative cursor-pointer'
+const CARD_IDLE = 'w-[232.25px] self-stretch min-h-[296px] flex flex-col gap-12 py-4 px-2 justify-between items-start relative [overflow:hidden] cursor-pointer'
 
 function Number({ value }) {
-  return <span className="w-[32px] h-[32px] shrink-0 flex items-center justify-center rounded-full [outline:1px_solid_var(--color-accent,_#5A5A36)] [outline-offset:-1px]"><span className="text-accent font-['Lora'] text-[13px] italic leading-[20px] text-center">{value}</span></span>
+  return (
+    <div className="w-[32px] min-h-[32px] shrink-0 flex flex-col justify-end items-center rounded-full [outline:1px_solid_var(--color-accent,_#5A5A36)] [outline-offset:-1px] relative">
+      <p className="self-stretch w-full max-w-[32px] h-8 text-accent font-['Lora'] text-[13px] font-normal italic leading-[20px] text-center flex flex-col justify-center">{value}</p>
+    </div>
+  )
+}
+
+/** Карточка формата в конкретном состоянии — классы/размеры из макета (format-tab). */
+function FormatCard({ item, route, active, index, onSelect }) {
+  const onKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onSelect(index) }
+  }
+  if (!active) {
+    return (
+      <div className={CARD_IDLE} data-format-index={index} onClick={() => onSelect(index)} onKeyDown={onKeyDown} role="presentation">
+        <div className="tab-divider absolute left-0 top-[10px] w-px bg-thread" style={{ bottom: '-10px' }} aria-hidden="true" />
+        <div className="self-stretch min-h-[32px] w-full max-w-[216.25px] flex flex-row gap-2 items-start relative [overflow:hidden]">
+          <Number value={item.number} />
+          <p className="flex-1 w-full max-w-[176.25px] text-text-heading font-['Literata'] text-[20px] font-light leading-[25px]">{item.title}</p>
+        </div>
+        <div className="w-full min-h-[28px] flex flex-row gap-4 items-center rounded-full">
+          <div className="min-h-[28px] flex flex-row py-1 px-2 justify-center items-center rounded-full bg-bg-glass [outline:1px_solid_var(--color-accent-muted,_#8A8560)] [outline-offset:-1px] relative">
+            <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[19.5px] [white-space:nowrap] flex flex-col justify-center">{item.duration}</p>
+          </div>
+          <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[19.5px] [white-space:nowrap]">{item.price}</p>
+        </div>
+      </div>
+    )
+  }
+  return (
+    <div className={CARD_ACTIVE} data-format-index={index} onClick={() => onSelect(index)} onKeyDown={onKeyDown} role="presentation">
+      <div className="self-stretch h-[56px] w-full max-w-[303px] flex flex-row gap-2 items-start relative [overflow:hidden]">
+        <Number value={item.number} />
+        <p className="flex-1 w-full max-w-[263px] text-text-heading font-['Literata'] text-[22px] font-light leading-[27.5px]">{item.title}</p>
+      </div>
+      <div className="w-full max-w-[303px] h-[95px] [overflow:hidden]"><p className="text-text-primary font-['Golos_Text'] text-[14px] font-normal leading-[18.9px]">{item.description}</p></div>
+      <div className="h-[20px] flex flex-row gap-2 justify-center items-center rounded-full relative">
+        <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[19.5px] [white-space:nowrap] flex flex-col justify-center">{item.durationActive || item.duration}</p>
+        <div className="w-[2px] h-[2px] rounded-full bg-text-primary" />
+        <p className="text-text-primary font-['Golos_Text'] text-[13px] font-normal leading-[19.5px] [white-space:nowrap]">{item.price}</p>
+      </div>
+      <a href={hrefFor(route, '/booking.html')} tabIndex={0} className="w-[211px] h-[45px] flex flex-row gap-2 py-2 px-4 justify-center items-center rounded-[4px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative no-underline">
+        <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[28.9px] [white-space:nowrap] tracking-[0.51px]">Перейти к записи</p>
+        <img src={hrefFor(route, '/icons/vec/cta-arrow.svg')} alt="" aria-hidden="true" className="w-[14px] h-[14px] block" />
+      </a>
+    </div>
+  )
 }
 
 export function FormatSlider({ route = '/' }) {
@@ -25,7 +71,6 @@ export function FormatSlider({ route = '/' }) {
   // по клику/свайпу и «в простое» после загрузки, чтобы не тянуть 5 тяжёлых фото на старте.
   const [ready, setReady] = useState(() => SLIDE_MEDIA.map((_, index) => index === 0))
   const loadedRef = useRef(new Set([0]))
-  const draggingRef = useRef(false)
   const preload = (index) => {
     if (loadedRef.current.has(index)) return
     loadedRef.current.add(index)
@@ -51,7 +96,6 @@ export function FormatSlider({ route = '/' }) {
     if (event.key === 'ArrowLeft') { event.preventDefault(); go(selected - 1) }
   }
   const onPointerDown = (event) => {
-    // не перехватываем клики по кнопкам/ссылкам
     if (event.target.closest('a,button')) return
     dragStart.current = { x: event.clientX, id: event.pointerId }
   }
@@ -86,9 +130,17 @@ export function FormatSlider({ route = '/' }) {
             />
           ))}
         </div>
-        <div className="absolute left-[608px] top-[359px] w-[47px] min-h-[36px] flex flex-row py-space-xs px-space-s justify-center items-end rounded-full bg-bg-glass-strong"><p key={selected} className="fade-up text-accent font-['Lora'] text-[20px] italic leading-[28px]" aria-live="polite" aria-atomic="true">{selected + 1}/5<span className="sr-only"> — выбран формат: {FORMATS[selected].title}</span></p></div>
-        <button type="button" aria-label="Предыдущий формат"  onClick={() => go(selected - 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 cursor-pointer left-6"><img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" /></button>
-        <button type="button" aria-label="Следующий формат" onClick={() => go(selected + 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 cursor-pointer right-6"><img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" style={{ transform: 'scaleX(-1)' }} /></button>
+        <div className="absolute left-[608px] top-[359px] w-[47px] min-h-[36px] flex flex-row py-space-xs px-space-s justify-center items-end rounded-full bg-bg-glass-strong">
+          <p key={selected} className="fade-up text-accent font-['Lora'] text-[20px] italic leading-[28px]" aria-live="polite" aria-atomic="true">
+            {selected + 1}/5<span className="sr-only"> — выбран формат: {FORMATS[selected].title}</span>
+          </p>
+        </div>
+        <button type="button" aria-label="Предыдущий формат" onClick={() => go(selected - 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 cursor-pointer left-6">
+          <img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" />
+        </button>
+        <button type="button" aria-label="Следующий формат" onClick={() => go(selected + 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 cursor-pointer right-6">
+          <img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" style={{ transform: 'scaleX(-1)' }} />
+        </button>
         <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#FFFFFF]" />
       </div>
       {/* Табы: каждое состояние — готовый слой карточек, переключаем кроссфейдом.
@@ -101,30 +153,9 @@ export function FormatSlider({ route = '/' }) {
             style={{ opacity: selected === stateIndex ? 1 : 0, zIndex: selected === stateIndex ? 10 : 0 }}
             inert={selected !== stateIndex}
           >
-            {FORMATS.map((item, index) => {
-              const active = stateIndex === index
-              return (
-                <div
-                  key={item.number}
-                  className={`${cardBase} ${active ? 'w-[335px] bg-bg-glass' : 'w-[232.25px] hover:bg-bg-glass'} cursor-pointer`}
-                  data-format-index={index}
-                  onClick={() => setSelected(index)}
-                  onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelected(index) } }}
-                  role="presentation"
-                >
-                  <div className={`w-full ${active ? 'min-h-[56px]' : 'min-h-[50px]'} flex flex-row gap-2 items-start`}>
-                    <Number value={item.number} />
-                    <p className={`${title} ${active ? 'text-[22px]' : 'text-[20px] leading-[25px]'}`}>{item.title}</p>
-                  </div>
-                  {active && <p className="w-full max-w-[303px] pt-1 text-text-primary font-['Golos_Text'] text-[14px] leading-[19px]">{item.description}</p>}
-                  <div className="mt-auto flex flex-row gap-2 items-center rounded-full">
-                    <span className="inline-flex px-2 py-1 rounded-full bg-bg-glass [outline:1px_solid_var(--color-accent-muted,_#8A8560)] [outline-offset:-1px] text-text-primary font-['Golos_Text'] text-[13px] leading-[20px]">{item.duration}</span>
-                    <span className="text-text-primary font-['Golos_Text'] text-[13px] leading-[20px]">{item.price}</span>
-                  </div>
-                  {active && <a href={hrefFor(route, '/booking.html')} tabIndex={0} className="mt-2 w-[211px] min-h-[45px] flex flex-row gap-2 py-2 px-4 justify-center items-center rounded-[4px] [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] text-text-on-image font-['Golos_Text'] text-[17px] leading-[29px] tracking-[0.03em] no-underline">Перейти к записи <span>›</span></a>}
-                </div>
-              )
-            })}
+            {FORMATS.map((item, index) => (
+              <FormatCard key={item.number} item={item} route={route} active={stateIndex === index} index={index} onSelect={setSelected} />
+            ))}
           </div>
         ))}
       </div>
