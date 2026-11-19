@@ -43,6 +43,12 @@
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
 
+## v0.11.9 — фикс: favicon по абсолютному URL
+- На страницах глубины 2 (`/library/book-chapter*.html`) относительная ссылка
+  `icons/favicon-32.png` резолвилась в `/library/icons/...` → 404 (найдено live-приёмкой).
+  Ссылки на иконки теперь абсолютные (как canonical/og:url); live-проверка вложенных страниц —
+  0 ошибок.
+
 ## v0.11.8 — SEO-полировка: og:image на маршрут, twitter:image, реальный favicon
 - **og:image стал уникальным для каждого маршрута** (`social/og-*.jpg`, 1200×630, cover-crop
   из ключевого изображения страницы) + `og:image:width/height/alt` и `twitter:image`;
