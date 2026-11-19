@@ -1,5 +1,7 @@
+import { useHref } from '../../../interactive/links.jsx'
 // masters-team as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section02() {
+  const href = useHref()
   return (
     <div className="relative min-h-[2066.46px] w-full flex flex-col px-6 items-center bg-bg-dark shadow-[inset_0_1px_0_0_var(--color-thread,_#C9BEA4)] [overflow:hidden]" data-node="2763">
       <div className="self-stretch mx-auto min-h-[2066.46px] w-full max-w-[1280px] flex flex-col gap-space-4xl py-space-3xl items-start relative" data-node="2764">
@@ -27,7 +29,7 @@ export function Section02() {
                   <p className="text-thread font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="2782">Мастер Syntonia</p>
                 </div>
                 <p className="self-stretch w-full max-w-[614px] h-[170px] text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="2783">Мне близка практическая сторона перемен: как от понимания перейти к действию. Я помогаю увидеть, что мешает двигаться дальше, собрать ясный план и пройти этот путь до результата в своём темпе.</p>
-                <div className="w-[195px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-390x90.webp)_center_/_cover] relative" data-node="2784">
+                <a className="w-[195px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-390x90.webp)_center_/_cover] relative no-underline" data-node="2784" href={href('/#voices')}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="2785">Услышать голос</p>
                   <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="2786">
                     <div className="w-[11.88px] h-[9.65px] rotate-[90deg] origin-top-left relative" data-node="2787">
@@ -35,7 +37,7 @@ export function Section02() {
                       <div className="absolute left-[6.97px] top-0 w-[4.91px] h-[9.65px] rounded-[0.71px] border-[3px] border-text-on-image" data-node="2789"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="min-h-[126.73px] w-full max-w-[342.56px] flex flex-col gap-space-s p-space-m justify-center items-start rounded-m bg-bg-glass-dark backdrop-blur-[5px] relative [overflow:hidden]" data-node="2790">
                   <div className="w-[310.56px] min-h-[46.73px] flex flex-row gap-2 items-center relative" data-node="2791">
                     <div className="w-[47.24px] h-[46.73px] relative" data-node="2792">
@@ -58,7 +60,7 @@ export function Section02() {
                   <p className="text-thread font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="2803">Мастер Syntonia</p>
                 </div>
                 <p className="self-stretch w-full max-w-[614px] h-[170px] text-text-on-image font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="2804">Я помогаю справиться с душевными переживаниями и внутренними противоречиями, выстроить отношения с собой и телом. Вместе мы распутываем то, что стало сложным, и яснее видим связь между внутренним состоянием и тем, что происходит в жизни.</p>
-                <div className="w-[195px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-390x90.webp)_center_/_cover] relative" data-node="2805">
+                <a className="w-[195px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-390x90.webp)_center_/_cover] relative no-underline" data-node="2805" href={href('/#voices')}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="2806">Услышать голос</p>
                   <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="2807">
                     <div className="w-[11.88px] h-[9.65px] rotate-[90deg] origin-top-left relative" data-node="2808">
@@ -66,7 +68,7 @@ export function Section02() {
                       <div className="absolute left-[6.97px] top-0 w-[4.91px] h-[9.65px] rounded-[0.71px] border-[3px] border-text-on-image" data-node="2810"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="min-h-[126.73px] w-full max-w-[342.56px] flex flex-col gap-space-s p-space-m justify-center items-start rounded-m bg-bg-glass-dark backdrop-blur-[5px] relative [overflow:hidden]" data-node="2811">
                   <div className="w-[310.56px] min-h-[46.73px] flex flex-row gap-2 items-center relative" data-node="2812">
                     <div className="w-[47.24px] h-[46.73px] relative" data-node="2813">

@@ -1,5 +1,7 @@
+import { useHref } from '../../../interactive/links.jsx'
 // kody-practice-pay as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section05() {
+  const href = useHref()
   return (
     <div className="relative min-h-[2077.98px] w-full flex flex-row justify-center items-start bg-bg-practice" data-node="5422">
       <div className="flex-1 min-h-[2077.98px] w-full max-w-[1280px] flex flex-col gap-space-3xl pt-space-4xl items-start relative [overflow:hidden]" data-node="5423">
@@ -33,7 +35,7 @@ export function Section05() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5444">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative" data-node="5445">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative no-underline" data-node="5445" href={href('/checkout-confirm.html')}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5446">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5447">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5448">
@@ -41,7 +43,7 @@ export function Section05() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5450"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5451">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5452">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5453">
@@ -80,7 +82,7 @@ export function Section05() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5474">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative" data-node="5475">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative no-underline" data-node="5475" href={href('/checkout-confirm.html')}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5476">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5477">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5478">
@@ -88,7 +90,7 @@ export function Section05() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5480"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5481">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5482">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5483">
@@ -129,7 +131,7 @@ export function Section05() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5505">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative" data-node="5506">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative no-underline" data-node="5506" href={href('/checkout-confirm.html')}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5507">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5508">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5509">
@@ -137,7 +139,7 @@ export function Section05() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5511"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5512">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5513">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5514">
@@ -176,7 +178,7 @@ export function Section05() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5535">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative" data-node="5536">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative no-underline" data-node="5536" href={href('/checkout-confirm.html')}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5537">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5538">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5539">
@@ -184,7 +186,7 @@ export function Section05() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5541"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5542">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5543">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5544">
@@ -225,7 +227,7 @@ export function Section05() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5566">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative" data-node="5567">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative no-underline" data-node="5567" href={href('/checkout-confirm.html')}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5568">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5569">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5570">
@@ -233,7 +235,7 @@ export function Section05() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5572"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5573">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5574">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5575">
@@ -272,7 +274,7 @@ export function Section05() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5596">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative" data-node="5597">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative no-underline" data-node="5597" href={href('/checkout-confirm.html')}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5598">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5599">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5600">
@@ -280,7 +282,7 @@ export function Section05() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5602"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5603">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5604">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5605">
@@ -321,7 +323,7 @@ export function Section05() {
                 </div>
               </div>
               <div className="w-[265.71px] min-h-[32.72px] flex flex-row gap-space-xl items-center relative" data-node="5627">
-                <div className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative" data-node="5628">
+                <a className="w-[84.55px] min-h-[32.72px] flex flex-row gap-[5.86px] py-[5.86px] px-[11.72px] justify-center items-center rounded-[2.93px] [background:url(/assets/img-dcecf0bcc4-170x66.webp)_center_/_cover] relative no-underline" data-node="5628" href={href('/checkout-confirm.html')}>
                   <p className="text-text-on-image font-['Golos_Text'] text-[12.45px] font-normal leading-[21px] [white-space:nowrap] tracking-[0.03em]" data-node="5629">Купить</p>
                   <div className="w-full max-w-[10.25px] min-h-[10.25px] flex flex-row gap-[1.05px] justify-center items-center relative" data-node="5630">
                     <div className="w-[8.7px] h-[7.07px] relative" data-node="5631">
@@ -329,7 +331,7 @@ export function Section05() {
                       <div className="absolute left-[5.1px] top-0 w-[3.6px] h-[7.07px] rounded-[0.52px] border-[2.2px] border-text-on-image" data-node="5633"></div>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div className="w-[149.16px] min-h-[24px] flex flex-row gap-space-s justify-center items-center relative" data-node="5634">
                   <div className="w-[100.16px] min-h-[24px] flex flex-row gap-space-xs items-center relative" data-node="5635">
                     <div className="w-[13.16px] h-[14px] relative" data-node="5636">

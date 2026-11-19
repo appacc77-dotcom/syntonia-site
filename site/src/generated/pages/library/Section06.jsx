@@ -20,7 +20,7 @@ export function Section06() {
         <div className="site-header-actions flex-1 min-h-[45px] w-full max-w-[596.17px] flex flex-row gap-space-m justify-end items-center relative" data-node="3351">
           <div className="site-header-tools w-67 min-h-[45px] flex flex-row gap-space-s items-center relative" data-node="3352">
             <a className="site-header-cta w-[215px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4-430x90.webp)_center_/_cover] relative no-underline" data-node="3353" href={href('/booking.html')}>
-              <span className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em] uppercase" data-node="3354" data-m3-link href={href('/booking.html')} aria-current={isCurrent(route, '/booking.html') ? 'page' : undefined}>ЛИЧНАЯ ВСТРЕЧА</span>
+              <span className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em] uppercase" data-node="3354" data-m3-link>ЛИЧНАЯ ВСТРЕЧА</span>
               <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-center items-center relative" data-node="3355">
                 <div className="w-[11.88px] h-[9.65px] relative" data-node="3356">
                   <div className="absolute left-0 top-[3.34px] w-[5.54px] h-[2.96px] border-[1.5px] border-text-on-image" data-node="3357"></div>

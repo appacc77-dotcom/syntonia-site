@@ -1,5 +1,7 @@
+import { useHref } from '../../../interactive/links.jsx'
 // checkout-modal as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section03() {
+  const href = useHref()
   return (
     <div className="relative min-h-[672px] w-full flex flex-col gap-space-l py-space-2xl px-space-xl items-start rounded-(--radius-l) bg-bg-page [overflow:hidden]" data-node="10641">
       <div className="self-stretch min-h-[67px] w-full max-w-[456px] flex flex-col gap-space-s items-start relative [overflow:hidden]" data-node="10642">
@@ -31,9 +33,9 @@ export function Section03() {
         </div>
         <p className="flex-1 w-full max-w-[440px] h-[15px] text-text-secondary font-['Golos_Text'] text-[10px] font-normal leading-[15px] [white-space:nowrap]" data-node="10662">Как мы обрабатываем данные — в Политике конфиденциальности.</p>
       </div>
-      <div className="self-stretch min-h-[61px] w-full max-w-[456px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative" data-node="10663">
+      <a className="self-stretch min-h-[61px] w-full max-w-[456px] flex flex-row gap-space-s py-space-m px-space-l justify-center items-center rounded-(--radius-s) [background:url(/assets/img-dcecf0bcc4.png)_center_/_cover] relative no-underline" data-node="10663" href={href('/not-found.html')}>
         <p className="text-text-on-image font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="10664">Перейти к оплате</p>
-      </div>
+      </a>
       <p className="self-stretch w-full max-w-[456px] text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px]" data-node="10669">Оплата проходит в защищённом окне Stripe. Кнопка активна после отметки о согласии с Условиями.</p>
       <div className="absolute left-[464px] top-6 w-8 h-[25px]" data-node="10670">
         <div className="absolute left-0 top-0 w-8 h-[25px] border-[1.73px] border-accent-muted" data-node="10671"></div>
