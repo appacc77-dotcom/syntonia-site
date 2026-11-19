@@ -24,7 +24,7 @@ const ERROR = 'absolute left-0 -bottom-[21px] text-[12px] leading-[16px] text-[#
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 const PHONE_RE = /^[+()\d\s-]{7,25}$/
 
-export function BookingForm() {
+export function BookingForm({ formatOverride } = {}) {
   const href = useHref()
   const [values, setValues] = useState({ name: '', email: '', phone: '', comment: '' })
   const [errors, setErrors] = useState({})
@@ -46,8 +46,9 @@ export function BookingForm() {
     return next
   }
 
-  // выбранный на странице формат (узел «Выбранный формат» меняется карточками/слайдером)
+  // выбранный на странице формат: сначала prop (интерактивные карточки), затем узел в DOM
   const selectedFormat = () => {
+    if (formatOverride) return formatOverride
     if (!formConfig.formatNode) return ''
     const node = document.querySelector(`[data-node="${formConfig.formatNode}"]`)
     return node ? node.textContent.trim() : ''
