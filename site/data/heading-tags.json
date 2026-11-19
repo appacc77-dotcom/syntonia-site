@@ -248,20 +248,10 @@
   "why": "legal-h2"
  },
  {
-  "node": "1060",
-  "tag": "h2",
-  "why": "heading-block"
- },
- {
   "node": "1061",
   "tag": "h2",
   "why": "section-title",
   "route": "index.html"
- },
- {
-  "node": "1085",
-  "tag": "h2",
-  "why": "heading-block"
  },
  {
   "node": "1086",
@@ -270,20 +260,10 @@
   "route": "index.html"
  },
  {
-  "node": "1108",
-  "tag": "h2",
-  "why": "heading-block"
- },
- {
   "node": "1109",
   "tag": "h2",
   "why": "section-title",
   "route": "index.html"
- },
- {
-  "node": "1186",
-  "tag": "h2",
-  "why": "voices-heading"
  },
  {
   "node": "1187",
@@ -298,25 +278,10 @@
   "route": "index.html"
  },
  {
-  "node": "1276",
-  "tag": "h2",
-  "why": "faq-heading"
- },
- {
-  "node": "1277",
-  "tag": "h2",
-  "why": "faq-title"
- },
- {
   "node": "1278",
   "tag": "h2",
   "why": "section-title",
   "route": "index.html"
- },
- {
-  "node": "1279",
-  "tag": "h2",
-  "why": "faq-title-indent"
  },
  {
   "node": "1280",

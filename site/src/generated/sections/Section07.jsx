@@ -2,9 +2,9 @@
 export function Section07() {
   return (
     <div className="relative min-h-[1429px] w-full flex flex-col gap-space-3xl py-space-4xl px-6 items-center bg-bg-illustration" data-node="1059">
-      <h2 className="w-[510px] min-h-[60px] flex flex-row justify-center items-start relative [overflow:hidden]" data-node="1060">
+      <div className="w-[510px] min-h-[60px] flex flex-row justify-center items-start relative [overflow:hidden]" data-node="1060">
         <h2 className="text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="1061">Как проходит работа?</h2>
-      </h2>
+      </div>
       <div className="self-stretch mx-auto min-h-[1113px] w-full max-w-[1280px] flex flex-col gap-space-2xl items-center relative [overflow:hidden]" data-node="1062">
         <div className="self-stretch mx-auto min-h-[339px] w-full max-w-[1080px] flex flex-row gap-space-xl px-space-2xl justify-center items-center relative [overflow:hidden]" data-node="1063">
           <div className="w-[407px] min-h-[277px] flex flex-col gap-6 items-start relative" data-node="1064">

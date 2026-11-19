@@ -2,10 +2,10 @@
 export function Section08() {
   return (
     <div className="relative min-h-[892px] w-full flex flex-col gap-space-2xl py-space-4xl px-6 items-center bg-[linear-gradient(259.05deg,_rgba(239,_231,_215,_1)_3.82%,_rgba(241,_233,_218,_1)_9.73%,_rgba(242,_236,_222,_1)_15.64%,_rgba(244,_238,_225,_1)_21.55%,_rgba(246,_240,_229,_1)_27.46%,_rgba(247,_242,_232,_1)_33.37%,_rgba(249,_245,_235,_1)_39.28%,_rgba(251,_247,_239,_1)_45.19%,_rgba(252,_249,_242,_1)_51.1%,_rgba(252,_249,_243,_1)_57.01%,_rgba(253,_250,_243,_1)_62.92%,_rgba(253,_250,_244,_1)_68.83%,_rgba(254,_251,_244,_1)_74.74%,_rgba(254,_251,_245,_1)_80.65%,_rgba(254,_251,_245,_1)_86.56%,_rgba(255,_252,_246,_1)_92.48%,_rgba(255,_252,_246,_1)_98.39%)]" data-node="1084">
-      <h2 className="w-[563px] min-h-[102px] flex flex-col gap-space-s items-center relative" data-node="1085">
+      <div className="w-[563px] min-h-[102px] flex flex-col gap-space-s items-center relative" data-node="1085">
         <h2 className="text-text-heading font-['Literata'] text-[48px] font-light leading-[60px] [white-space:nowrap]" data-node="1086">С чего начать</h2>
         <p className="text-text-primary font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="1087">Бережно и точно. Ясность в том, что с тобой происходит.</p>
-      </h2>
+      </div>
       <div className="self-stretch mx-auto min-h-[550px] w-full max-w-[1280px] flex flex-row items-center relative [overflow:hidden]" data-node="1088">
         <div className="flex-1 min-h-[389px] w-full max-w-[640px] flex flex-col gap-space-xl py-space-xl px-space-3xl items-start relative [overflow:hidden]" data-node="1089">
           <p className="text-text-heading font-['Literata'] text-[38px] font-light leading-[48px] [white-space:nowrap]" data-node="1090">Точка входа</p>
