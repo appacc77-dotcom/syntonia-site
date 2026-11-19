@@ -1,18 +1,13 @@
 import { useRef, useState } from 'react'
+import { hrefFor, useRoute } from '../links.jsx'
 
 const CARD_WIDTH = 672
 const GAP = 48
 const STEP = CARD_WIDTH + GAP
 
-function Arrow({ direction }) {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <path d={direction === 'prev' ? 'M10 3L5 8l5 5' : 'M6 3l5 5-5 5'} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
 export function VoiceSlider({ items }) {
+  const route = useRoute()
+  const asset = (path) => hrefFor(route, path)
   const [index, setIndex] = useState(0)
   const touch = useRef(null)
   const slides = [...items, items[0]]
@@ -25,7 +20,7 @@ export function VoiceSlider({ items }) {
           <p className="text-accent-muted font-['Golos_Text'] text-[15px] font-medium leading-[23px] tracking-[0.16em] uppercase">{item.label}</p>
           <p className="text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px]">{item.source}</p>
         </div>
-        <div className="w-[18.44px] h-6 relative"><div className="absolute left-0 top-0 w-[18.44px] h-6 bg-accent-muted" /></div>
+        <img src={asset('/icons/vec/quote-mark.svg')} alt="" aria-hidden="true" className="w-[18.44px] h-6 block" />
         <p className="self-stretch w-full max-w-[576px] text-text-primary font-['Lora'] text-[20px] font-normal italic leading-[28px]">{item.quote}</p>
       </div>
       <p className="text-text-deep font-['Golos_Text'] text-[14px] font-normal leading-[19px]">{item.author}</p>
@@ -33,7 +28,7 @@ export function VoiceSlider({ items }) {
     </article>
   )
   return (
-    <div className="w-[1392px] max-w-full flex flex-col gap-8 items-start" role="region" aria-roledescription="carousel" aria-label="Голоса">
+    <div className="w-[1392px] max-w-full flex flex-col gap-12 items-start" role="region" aria-roledescription="carousel" aria-label="Голоса">
       <div
         className="w-[1392px] max-w-full overflow-hidden"
         onTouchStart={(event) => { touch.current = event.touches[0]?.clientX ?? null }}
@@ -48,12 +43,14 @@ export function VoiceSlider({ items }) {
       <div className="w-full flex flex-row items-center justify-between gap-8">
         <div className="flex flex-row gap-1 items-center" role="tablist" aria-label="Слайды отзывов">
           {items.map((item, i) => (
-            <button key={item.author + i} type="button" role="tab" aria-selected={i === index} aria-label={`Отзыв ${i + 1}`} onClick={() => go(i)} className={`w-[21px] h-[15px] rounded-full transition-colors ${i === index ? 'bg-accent' : 'bg-accent-muted/40 hover:bg-accent-muted/70'}`} />
+            <button key={item.author + i} type="button" role="tab" aria-selected={i === index} aria-label={`Отзыв ${i + 1}`} onClick={() => go(i)} className="w-[21px] h-[15px] transition-opacity hover:opacity-80">
+              <img src={asset(i === index ? '/icons/vec/dot-leaf-active.svg' : '/icons/vec/dot-leaf-idle.svg')} alt="" aria-hidden="true" className="w-[21px] h-[15px] block" />
+            </button>
           ))}
         </div>
         <div className="flex flex-row gap-4 items-center">
-          <button type="button" onClick={() => go(index - 1)} aria-label="Предыдущий отзыв" className="w-12 h-12 flex items-center justify-center rounded-full bg-bg-glass-strong text-accent hover:bg-bg-glass transition-colors"><Arrow direction="prev" /></button>
-          <button type="button" onClick={() => go(index + 1)} aria-label="Следующий отзыв" className="w-12 h-12 flex items-center justify-center rounded-full bg-bg-glass-strong text-accent hover:bg-bg-glass transition-colors"><Arrow direction="next" /></button>
+          <button type="button" onClick={() => go(index - 1)} aria-label="Предыдущий отзыв" className="w-12 h-12 flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"><img src={asset('/icons/vec/voice-arrow-prev.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" /></button>
+          <button type="button" onClick={() => go(index + 1)} aria-label="Следующий отзыв" className="w-12 h-12 flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"><img src={asset('/icons/vec/voice-arrow-next.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" /></button>
         </div>
       </div>
     </div>
