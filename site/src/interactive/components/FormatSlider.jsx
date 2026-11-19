@@ -135,11 +135,11 @@ export function FormatSlider({ route = '/' }) {
             {selected + 1}/5<span className="sr-only"> — выбран формат: {FORMATS[selected].title}</span>
           </p>
         </div>
-        <button type="button" aria-label="Предыдущий формат" onClick={() => go(selected - 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 cursor-pointer left-6">
-          <img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" />
+        <button type="button" aria-label="Предыдущий формат" onClick={() => go(selected - 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 block rounded-full transition-opacity hover:opacity-90 cursor-pointer left-6">
+          <img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="absolute block w-[49px] h-[49px] max-w-none left-[-0.215px] top-[-0.15px]" />
         </button>
-        <button type="button" aria-label="Следующий формат" onClick={() => go(selected + 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 min-h-[48px] flex items-center justify-center rounded-full transition-opacity hover:opacity-90 cursor-pointer right-6">
-          <img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" style={{ transform: 'scaleX(-1)' }} />
+        <button type="button" aria-label="Следующий формат" onClick={() => go(selected + 1)} className="absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 block rounded-full transition-opacity hover:opacity-90 cursor-pointer right-6">
+          <img src={hrefFor(route, '/icons/vec/slider-arrow-strong.svg')} alt="" aria-hidden="true" className="absolute block w-[49px] h-[49px] max-w-none left-[-0.215px] top-[-0.15px]" style={{ transform: 'scaleX(-1)' }} />
         </button>
         <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#FFFFFF]" />
       </div>

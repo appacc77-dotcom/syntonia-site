@@ -49,8 +49,12 @@ export function VoiceSlider({ items }) {
           ))}
         </div>
         <div className="flex flex-row gap-4 items-center">
-          <button type="button" onClick={() => go(index - 1)} aria-label="Предыдущий отзыв" className="w-12 h-12 flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"><img src={asset('/icons/vec/voice-arrow-prev.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" /></button>
-          <button type="button" onClick={() => go(index + 1)} aria-label="Следующий отзыв" className="w-12 h-12 flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"><img src={asset('/icons/vec/voice-arrow-next.svg')} alt="" aria-hidden="true" className="w-12 h-12 block" /></button>
+          <button type="button" onClick={() => go(index - 1)} aria-label="Предыдущий отзыв" className="relative w-12 h-12 block cursor-pointer transition-opacity hover:opacity-80">
+            <img src={asset('/icons/vec/voice-arrow-prev.svg')} alt="" aria-hidden="true" className="absolute block w-[49px] h-[49px] max-w-none left-[-0.215px] top-[-0.15px]" />
+          </button>
+          <button type="button" onClick={() => go(index + 1)} aria-label="Следующий отзыв" className="relative w-12 h-12 block cursor-pointer transition-opacity hover:opacity-80">
+            <img src={asset('/icons/vec/voice-arrow-next.svg')} alt="" aria-hidden="true" className="absolute block w-[49px] h-[49px] max-w-none left-[-0.215px] top-[-0.15px]" />
+          </button>
         </div>
       </div>
     </div>
