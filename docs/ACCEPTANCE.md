@@ -57,6 +57,14 @@ legal-consent 0.75 / 1.12, checkout-confirm 1.05 / 1.15.
 - **Форма booking**: семантические поля, валидация, honeypot, `role="status"`; канал доставки —
   `site/data/form-config.json` (`endpoint` POST JSON либо `fallbackEmail` mailto до согласования).
 
+## SEO/соц-превью (v0.11.8)
+
+- `og:image` уникален для маршрута: `social/og-*.jpg` 1200×630, JPEG (соцсети не везде читают WebP);
+  плюс `og:image:width/height/alt`, `twitter:image`.
+- Favicon: `icons/favicon-32.png`, `icons/apple-touch-icon.png` (180), `icons/favicon-512.png`,
+  `theme-color` #3A3223; `Organization.logo` в JSON-LD указывает на favicon-512.
+- publish падает, если для маршрута нет og-картинки или иконок.
+
 ## Артефакты отчётов
 
 Полные JSON-отчёты ворот и live-приёмок: `_analysis/syntonia-site-audit-2026-11-18/evidence/golden/`.
