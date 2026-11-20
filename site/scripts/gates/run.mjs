@@ -30,6 +30,7 @@ import { fileURLToPath } from 'node:url'
 import { chromium } from 'playwright'
 import { captureGolden, goldenLine, STAGE_THRESHOLDS } from './lib/golden-core.mjs'
 import { loadContractContext, measureContractRoute, contractSummary } from './lib/contract-core.mjs'
+import { hiddenFor } from './manual-hidden.mjs'
 
 const SITE = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const REPO = resolve(SITE, '..')
@@ -185,9 +186,13 @@ await routePool(useGolden || useContract ? routeEntries : [], async (route) => {
   await page.goto(BASE + file, { waitUntil: 'load', timeout: 120000 })
   await page.waitForTimeout(FAST ? 500 : 1600)
 
+  const hidden = hiddenFor(path)
   if (useGolden) {
     const entry = byRoute.get(path)
-    if (!entry) {
+    if (hidden?.golden) {
+      results.golden.push({ route: path, skipped: true, note: hidden.reason })
+      console.log(`golden[${STAGE}] ${path}: SKIP — вручную скрытые блоки (${hidden.reason})`)
+    } else if (!entry) {
       results.golden.push({ route: path, error: 'нет гольдена в манифесте' })
       console.error(`golden: ERROR — нет гольдена для ${path}`)
     } else {
@@ -215,7 +220,10 @@ await routePool(useGolden || useContract ? routeEntries : [], async (route) => {
     }
   }
 
-  if (useContract && route.page) {
+  if (useContract && route.page && hidden?.contract) {
+    results.contract.push({ route: path, skipped: true, note: hidden.reason })
+    console.log(`contract ${path}: SKIP — вручную скрытые блоки (${hidden.reason})`)
+  } else if (useContract && route.page) {
     try {
       await page.evaluate(() => document.fonts.ready)
       const row = await measureContractRoute(page, context, route, pageErrors)
@@ -238,13 +246,17 @@ results.contract.sort((a, b) => (routeOrder.get(a.route) ?? 99) - (routeOrder.ge
 results.jobs = JOBS
 let failed = false
 if (useGolden) {
-  const bad = results.golden.filter((r) => r.error || r.passed === false)
-  console.log(`\ngolden[${STAGE}]: ${results.golden.length - bad.length}/${results.golden.length} PASS`)
+  const measured = results.golden.filter((r) => !r.skipped)
+  const skipped = results.golden.length - measured.length
+  const bad = measured.filter((r) => r.error || r.passed === false)
+  console.log(`\ngolden[${STAGE}]: ${measured.length - bad.length}/${measured.length} PASS${skipped ? ` (${skipped} SKIP — вручную скрытые блоки)` : ''}`)
   if (bad.length) { failed = true; for (const r of bad) console.error(`  - ${r.route}: ${r.error || `Δ>24 ${r.pixelOver24Pct}% mean ${r.meanAbs}`}`) }
 }
 if (useContract) {
-  const bad = results.contract.filter((r) => r.error || r.pass === false)
-  console.log(`contract: ${results.contract.length - bad.length}/${results.contract.length} PASS`)
+  const measured = results.contract.filter((r) => !r.skipped)
+  const skipped = results.contract.length - measured.length
+  const bad = measured.filter((r) => r.error || r.pass === false)
+  console.log(`contract: ${measured.length - bad.length}/${measured.length} PASS${skipped ? ` (${skipped} SKIP — вручную скрытые блоки)` : ''}`)
   if (bad.length) { failed = true; for (const r of bad) console.error(`  - ${r.route}: ${r.error || `geo ${r.geometry?.ratio} typo ${r.typography?.ratio}`}`) }
 }
 if (useA11y) {

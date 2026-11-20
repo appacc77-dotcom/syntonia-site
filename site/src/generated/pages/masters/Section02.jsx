@@ -1,10 +1,17 @@
 import { useHref } from '../../../interactive/links.jsx'
 // masters-team as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
+// Видимость карточек мастеров: скрытие без удаления разметки. true — показывать.
+const VISIBLE_MASTERS = {
+  natalya: false, // Наталья Уолс (узел 2777)
+  angelina: false, // Ангелина Гебо (узел 2798)
+}
+const ANY_MASTER_VISIBLE = VISIBLE_MASTERS.natalya || VISIBLE_MASTERS.angelina
+
 export function Section02() {
   const href = useHref()
   return (
-    <div className="relative min-h-[2066.46px] w-full flex flex-col px-6 items-center bg-bg-dark shadow-[inset_0_1px_0_0_var(--color-thread,_#C9BEA4)] [overflow:hidden]" data-node="2763">
-      <div className="self-stretch mx-auto min-h-[2066.46px] w-full max-w-[1280px] flex flex-col gap-space-4xl py-space-3xl items-start relative" data-node="2764">
+    <div className="relative w-full flex flex-col px-6 items-center bg-bg-dark shadow-[inset_0_1px_0_0_var(--color-thread,_#C9BEA4)] [overflow:hidden]" style={{ minHeight: ANY_MASTER_VISIBLE ? '2066.46px' : '321px' }} data-node="2763">
+      <div className="self-stretch mx-auto w-full max-w-[1280px] flex flex-col gap-space-4xl py-space-3xl items-start relative" style={{ minHeight: ANY_MASTER_VISIBLE ? '2066.46px' : '321px' }} data-node="2764">
         <div className="self-stretch min-h-[225px] w-full max-w-[1280px] flex flex-col gap-space-3xl items-start relative" data-node="2765">
           <div className="w-[1083px] min-h-[136px] flex flex-row gap-32 items-start relative" data-node="2766">
             <p className="w-full max-w-[341px] text-thread font-['Literata'] text-[48px] font-light leading-[60px]" data-node="2767">Один путь. Много голосов</p>
@@ -18,10 +25,12 @@ export function Section02() {
             <div className="flex-1 w-[611.51px] h-[1px] bg-thread" data-node="2773"></div>
           </div>
         </div>
-        <div className="self-stretch min-h-[1617.47px] w-full max-w-[1280px] flex flex-col gap-space-xl items-start relative" data-node="2774">
+        {ANY_MASTER_VISIBLE ? (
+<div className="self-stretch min-h-[1617.47px] w-full max-w-[1280px] flex flex-col gap-space-xl items-start relative" data-node="2774">
           <p className="text-thread font-['Golos_Text'] text-[20px] font-normal leading-[30px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="2775">Другие мастера Syntonia</p>
           <div className="self-stretch min-h-[1555.47px] w-full max-w-[1280px] flex flex-col gap-space-4xl items-start relative" data-node="2776">
-            <div className="self-stretch min-h-[729.73px] w-full max-w-[1280px] flex flex-row items-start rounded-m bg-[linear-gradient(90deg,_rgba(225,_214,_198,_1)_0%,_rgba(210,_199,_184,_1)_6.25%,_rgba(195,_185,_170,_1)_12.5%,_rgba(180,_170,_155,_1)_18.75%,_rgba(165,_155,_141,_1)_25%,_rgba(149,_140,_127,_1)_31.25%,_rgba(134,_126,_113,_1)_37.5%,_rgba(119,_111,_99,_1)_43.75%,_rgba(106,_98,_86,_1)_50%,_rgba(100,_92,_79,_1)_56.25%,_rgba(94,_86,_73,_1)_62.5%,_rgba(88,_80,_67,_1)_68.75%,_rgba(82,_74,_60,_1)_75%,_rgba(76,_68,_54,_1)_81.25%,_rgba(70,_62,_47,_1)_87.5%,_rgba(64,_56,_41,_1)_93.75%,_rgba(58,_51,_35,_1)_100%)] relative [overflow:hidden]" data-node="2777">
+            {VISIBLE_MASTERS.natalya ? (
+<div className="self-stretch min-h-[729.73px] w-full max-w-[1280px] flex flex-row items-start rounded-m bg-[linear-gradient(90deg,_rgba(225,_214,_198,_1)_0%,_rgba(210,_199,_184,_1)_6.25%,_rgba(195,_185,_170,_1)_12.5%,_rgba(180,_170,_155,_1)_18.75%,_rgba(165,_155,_141,_1)_25%,_rgba(149,_140,_127,_1)_31.25%,_rgba(134,_126,_113,_1)_37.5%,_rgba(119,_111,_99,_1)_43.75%,_rgba(106,_98,_86,_1)_50%,_rgba(100,_92,_79,_1)_56.25%,_rgba(94,_86,_73,_1)_62.5%,_rgba(88,_80,_67,_1)_68.75%,_rgba(82,_74,_60,_1)_75%,_rgba(76,_68,_54,_1)_81.25%,_rgba(70,_62,_47,_1)_87.5%,_rgba(64,_56,_41,_1)_93.75%,_rgba(58,_51,_35,_1)_100%)] relative [overflow:hidden]" data-node="2777">
               <div className="self-stretch w-full max-w-[570px] min-h-[729.73px] flex flex-row gap-[10px] p-[10px] items-start [background:linear-gradient(90deg,_rgba(58,_34,_20,_0.15)_0%,_rgba(61,_38,_24,_0.15)_14.44%,_rgba(64,_42,_28,_0.15)_28.87%,_rgba(67,_46,_33,_0.15)_43.31%,_rgba(70,_50,_37,_0.15)_57.74%,_rgba(73,_54,_41,_0.15)_72.18%,_rgba(76,_58,_45,_0.15)_86.61%,_rgba(79,_62,_49,_0.15)_101.05%,_rgba(83,_67,_54,_0.15)_115.48%,_rgba(86,_71,_58,_0.15)_129.92%,_rgba(89,_75,_62,_0.15)_144.35%,_rgba(92,_79,_66,_0.15)_158.79%,_rgba(95,_83,_70,_0.15)_173.22%,_rgba(98,_87,_74,_0.15)_187.66%,_rgba(101,_91,_79,_0.15)_202.09%,_rgba(104,_95,_83,_0.15)_216.53%,_rgba(107,_99,_87,_0.15)_230.96%),_url(/assets/img-abcfd5054b.png)_-591.38px_-137.21px_/_1409.53px_1057.15px] [overflow:hidden]" data-node="2778"></div>
               <div className="min-h-[729.73px] w-full max-w-[710px] flex flex-col gap-space-xl p-space-2xl items-start relative" data-node="2779">
                 <div className="min-h-[196px] w-full max-w-[397px] flex flex-col gap-space-l items-start relative" data-node="2780">
@@ -52,7 +61,10 @@ export function Section02() {
                 </div>
               </div>
             </div>
-            <div className="self-stretch min-h-[729.73px] w-full max-w-[1280px] flex flex-row items-start rounded-m bg-[linear-gradient(90deg,_rgba(225,_214,_198,_1)_0%,_rgba(210,_199,_184,_1)_6.25%,_rgba(195,_185,_170,_1)_12.5%,_rgba(180,_170,_155,_1)_18.75%,_rgba(165,_155,_141,_1)_25%,_rgba(149,_140,_127,_1)_31.25%,_rgba(134,_126,_113,_1)_37.5%,_rgba(119,_111,_99,_1)_43.75%,_rgba(106,_98,_86,_1)_50%,_rgba(100,_92,_79,_1)_56.25%,_rgba(94,_86,_73,_1)_62.5%,_rgba(88,_80,_67,_1)_68.75%,_rgba(82,_74,_60,_1)_75%,_rgba(76,_68,_54,_1)_81.25%,_rgba(70,_62,_47,_1)_87.5%,_rgba(64,_56,_41,_1)_93.75%,_rgba(58,_51,_35,_1)_100%)] relative [overflow:hidden]" data-node="2798">
+) : null}
+
+            {VISIBLE_MASTERS.angelina ? (
+<div className="self-stretch min-h-[729.73px] w-full max-w-[1280px] flex flex-row items-start rounded-m bg-[linear-gradient(90deg,_rgba(225,_214,_198,_1)_0%,_rgba(210,_199,_184,_1)_6.25%,_rgba(195,_185,_170,_1)_12.5%,_rgba(180,_170,_155,_1)_18.75%,_rgba(165,_155,_141,_1)_25%,_rgba(149,_140,_127,_1)_31.25%,_rgba(134,_126,_113,_1)_37.5%,_rgba(119,_111,_99,_1)_43.75%,_rgba(106,_98,_86,_1)_50%,_rgba(100,_92,_79,_1)_56.25%,_rgba(94,_86,_73,_1)_62.5%,_rgba(88,_80,_67,_1)_68.75%,_rgba(82,_74,_60,_1)_75%,_rgba(76,_68,_54,_1)_81.25%,_rgba(70,_62,_47,_1)_87.5%,_rgba(64,_56,_41,_1)_93.75%,_rgba(58,_51,_35,_1)_100%)] relative [overflow:hidden]" data-node="2798">
               <div className="self-stretch w-full max-w-[570px] min-h-[729.73px] flex flex-row gap-[10px] p-[10px] items-start [background:linear-gradient(90deg,_rgba(58,_34,_20,_0.15)_0%,_rgba(61,_38,_24,_0.15)_14.44%,_rgba(64,_42,_28,_0.15)_28.87%,_rgba(67,_46,_33,_0.15)_43.31%,_rgba(70,_50,_37,_0.15)_57.74%,_rgba(73,_54,_41,_0.15)_72.18%,_rgba(76,_58,_45,_0.15)_86.61%,_rgba(79,_62,_49,_0.15)_101.05%,_rgba(83,_67,_54,_0.15)_115.48%,_rgba(86,_71,_58,_0.15)_129.92%,_rgba(89,_75,_62,_0.15)_144.35%,_rgba(92,_79,_66,_0.15)_158.79%,_rgba(95,_83,_70,_0.15)_173.22%,_rgba(98,_87,_74,_0.15)_187.66%,_rgba(101,_91,_79,_0.15)_202.09%,_rgba(104,_95,_83,_0.15)_216.53%,_rgba(107,_99,_87,_0.15)_230.96%),_url(/assets/img-183625589c.png)_-27.42px_0.48px_/_597.63px_729.73px] [overflow:hidden]" data-node="2799"></div>
               <div className="min-h-[729.73px] w-full max-w-[710px] flex flex-col gap-space-xl p-space-2xl items-start relative" data-node="2800">
                 <div className="min-h-[196px] w-full max-w-[397px] flex flex-col gap-space-l items-start relative" data-node="2801">
@@ -83,8 +95,12 @@ export function Section02() {
                 </div>
               </div>
             </div>
+) : null}
+
           </div>
         </div>
+) : null}
+
       </div>
     </div>
   );

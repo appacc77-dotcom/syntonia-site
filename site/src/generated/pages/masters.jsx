@@ -7,7 +7,9 @@ import { Section05 } from './masters/Section05.jsx'
 
 export function MastersPage() {
   return (
-    <main id="main" className="relative min-h-[3886.46px] w-full flex flex-col items-start" data-node="2692" style={{ height: '3886.46435546875px' }}>
+    // Высота страницы — по контенту: секции можно скрывать флагами (см. VISIBLE_MASTERS
+// в masters/Section02.jsx), и страница не оставляет пустоту.
+    <main id="main" className="relative w-full flex flex-col items-start" data-node="2692">
       <div className="z-50" style={{ position: 'absolute', left: '8px', top: '8px', width: 'calc(100% - 16px)' }}>
         <Section05 />
       </div>
