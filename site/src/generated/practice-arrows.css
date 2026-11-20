@@ -1,0 +1,11 @@
+/* Стрелки слайдера на /practice: точный вектор Figma (instance export) вместо home-ассета.
+   Раньше vector-extra.css рисовал здесь vec-slider-arrow-right-strong.svg (вариант с главной),
+   из-за чего иконка была смещена/другого масштаба. */
+[data-node="5144"],
+[data-node="5149"] {
+  background-image: none !important;
+}
+[data-node="5144"] > img,
+[data-node="5149"] > img {
+  display: block !important;
+}
