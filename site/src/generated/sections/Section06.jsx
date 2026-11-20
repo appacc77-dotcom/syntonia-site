@@ -1,5 +1,7 @@
+import { useHref } from '../../interactive/links.jsx'
 // about-founder as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 export function Section06() {
+  const href = useHref()
   return (
     <div className="relative min-h-[757px] w-full flex flex-row py-space-4xl px-6 justify-center items-start bg-bg-page [overflow:hidden]" data-node="1038">
       <div className="flex-1 min-h-[565px] w-full max-w-[1280px] flex flex-col items-center relative" data-node="1039">
@@ -18,7 +20,7 @@ export function Section06() {
                 </div>
               </div>
               <p className="w-full max-w-[473px] text-text-primary font-['Lora'] text-[44px] font-normal italic leading-[62px]" data-node="1052">«Я не работаю вокруг проблемы. Я веду к её источнику».</p>
-              <div className="w-[305.86px] min-h-[41px] flex flex-row gap-2 justify-center items-center shadow-[inset_0_-1px_0_0_var(--color-accent,_#5A5A36)] relative" data-node="1053">
+              <a className="w-[305.86px] min-h-[41px] flex flex-row gap-2 justify-center items-center shadow-[inset_0_-1px_0_0_var(--color-accent,_#5A5A36)] relative no-underline cursor-pointer" data-node="1053" href={href('/masters.html')} aria-label="Познакомиться ближе — перейти к мастерам">
                 <p className="text-accent font-['Golos_Text'] text-[24px] font-normal leading-[41px] [white-space:nowrap] tracking-[0.03em] flex flex-col justify-end" data-node="1054">Познакомиться ближе</p>
                 <div className="w-full max-w-[18.86px] min-h-[18.86px] flex flex-row gap-[1.93px] justify-end items-center relative" data-node="1055">
                   <div className="w-[16.01px] h-[13px] relative" data-node="1056">
@@ -26,7 +28,7 @@ export function Section06() {
                     <div className="absolute left-[9.39px] top-0 w-[6.62px] h-[13px] rounded-[0.96px] border-[4.04px] border-accent" data-node="1058"></div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
