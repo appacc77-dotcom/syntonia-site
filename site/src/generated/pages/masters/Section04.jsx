@@ -19,17 +19,17 @@ export function Section04() {
               <a className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2867" data-m3-link href={href('/')} aria-current={isCurrent(route, '/') ? 'page' : undefined}>О проекте</a>
               <a className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2868" data-m3-link href={href('/practice.html')} aria-current={isCurrent(route, '/practice.html') ? 'page' : undefined}>Практики</a>
               <a className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2869" data-m3-link href={href('/library.html')} aria-current={isCurrent(route, '/library.html') ? 'page' : undefined}>Библиотека</a>
-              <a className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2870" data-m3-link href={href('/booking.html')} aria-current={isCurrent(route, '/booking.html') ? 'page' : undefined}>Форматы работы</a>
+              <a className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2870" data-m3-link href={href('/#formats')}>Форматы работы</a>
               <a className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2871" data-m3-link href={href('/#voices')} aria-current={isCurrent(route, '/#voices') ? 'page' : undefined}>Отзывы</a>
-              <a className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2872" data-m3-link href={href('/#faq')} aria-current={isCurrent(route, '/#faq') ? 'page' : undefined}>Вопросы и ответы</a>
+              <a className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2872" data-m3-link href={href('/not-found.html')}>Вопросы и ответы</a>
             </div>
           </div>
           <div className="w-[129px] min-h-[148px] flex flex-col gap-space-l items-start relative" data-node="2873">
             <p className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="2874">контакты</p>
             <div className="w-[129px] min-h-[104px] flex flex-col gap-space-s items-start relative" data-node="2875">
-              <p className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2876">Telegram</p>
-              <p className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2877">Instagram</p>
-              <p className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2878">YouTube</p>
+              <a className="block no-underline text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2876" data-m3-link href={href('/not-found.html')}>Telegram</a>
+              <a className="block no-underline text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2877" data-m3-link href={href('/not-found.html')}>Instagram</a>
+              <a className="block no-underline text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2878" data-m3-link href={href('/not-found.html')}>YouTube</a>
               <p className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2879">hello@syntonia.com</p>
             </div>
           </div>
