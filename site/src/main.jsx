@@ -6,6 +6,7 @@ import './generated/font-metrics.css'
 import './generated/vector-assets.css'
 import './generated/vector-extra.css'
 import './generated/practice-arrows.css'
+import './generated/quiz-overrides.css'
 import './base.css'
 import './interactive/styles/motion.css'
 

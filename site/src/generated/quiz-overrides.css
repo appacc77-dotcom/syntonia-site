@@ -1,0 +1,37 @@
+/* Квиз: радио-кнопки option-item. Генератор навешивал на узлы радио служебную
+   картинку extra-590@3x.png через ::after — она перекрывала нормальный кружок и давала
+   артефакт «двойного круга». Убираем картинку и возвращаем точные стили из Figma:
+   11.583px, фон #FBF8F1, тонкая обводка accent. */
+[data-node="5985"]::after,
+[data-node="5990"]::after,
+[data-node="5994"]::after,
+[data-node="5998"]::after,
+[data-node="6002"]::after,
+[data-node="6006"]::after,
+[data-node="6010"]::after {
+  content: none !important;
+  background-image: none !important;
+}
+[data-node="5985"],
+[data-node="5990"],
+[data-node="5994"],
+[data-node="5998"],
+[data-node="6002"],
+[data-node="6006"],
+[data-node="6010"] {
+  border: 0 !important;
+  outline: 0 !important;
+  /* тонкая обводка как в Figma (0.138px): inset-shadow не «снэпается» в 1px, как border */
+  box-shadow: inset 0 0 0 0.138px var(--color-accent, #5A5A36) !important;
+}
+
+/* Дети радио были скрыты служебным оверрайдом (opacity:0) — возвращаем точку */
+[data-node="5985"] > *,
+[data-node="5990"] > *,
+[data-node="5994"] > *,
+[data-node="5998"] > *,
+[data-node="6002"] > *,
+[data-node="6006"] > *,
+[data-node="6010"] > * {
+  opacity: 1 !important;
+}

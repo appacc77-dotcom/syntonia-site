@@ -6,9 +6,9 @@ import { QUIZ } from '../content/quiz.js'
 // совпадает с golden; интерактив меняет только выбранную опцию/вопрос/прогресс.
 const BUTTON_PREV = 'w-[65px] min-h-[19px] flex flex-row gap-2 items-center relative [overflow:hidden] cursor-pointer'
 const BUTTON_NEXT = 'w-[129px] min-h-[27px] flex flex-row gap-space-s py-space-xs px-space-xl items-center rounded-(--radius-s) bg-accent relative [overflow:hidden] cursor-pointer'
-const OPTION_ROW = 'self-stretch min-h-[36.5px] w-full max-w-[576px] flex flex-row p-[8.75px] items-center rounded-[4px] relative [overflow:hidden]'
+const OPTION_ROW = 'self-stretch min-h-[36.5px] w-full max-w-[576px] flex flex-row gap-space-s p-[8.75px] items-center rounded-(--radius-s) relative'
 const OPTION_INNER = 'flex-1 min-h-[19px] w-full max-w-[558.5px] flex flex-row gap-2 items-center relative'
-const DOT = 'min-h-[11.58px] flex flex-row p-[2.34px] items-center rounded-[137.76px] bg-bg-page [outline:0.14px_solid_var(--color-accent,_#5A5A36)] [outline-offset:-0.14px] relative'
+const RADIO = 'w-[11.583px] h-[11.583px] flex flex-row items-center justify-center rounded-[137.76px] bg-bg-page [border:0.138px_solid_var(--color-accent,_#5A5A36)] relative shrink-0'
 const OPTION_TEXT = "flex-1 w-full max-w-[538.92px] text-text-primary font-['Golos_Text'] text-[14px] font-normal leading-[19px] [white-space:nowrap]"
 // data-node квиз-состояния q1 из codegen (для contract-ворот)
 const IDS = {
@@ -96,12 +96,12 @@ export function QuizWizard() {
                       onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); select(index) } }}
                     >
                       <div className={OPTION_INNER} data-node={String(IDS.inner[index])}>
-                        <div className={selected ? `w-[11.58px] ${DOT}` : `w-full max-w-[11.58px] ${DOT}`} data-node={String(IDS.dots[index])}>
-                          {selected ? <div className="w-[6.89px] h-[6.89px] rounded-full bg-accent"></div> : null}
+                        <div className={RADIO} data-node={String(IDS.dots[index])}>
+                          {selected ? <div className="w-[6.895px] h-[6.895px] rounded-full bg-accent"></div> : null}
                         </div>
                         <p className={OPTION_TEXT} data-node={String(IDS.texts[index])}>{label}</p>
                       </div>
-                      <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_0.75px_#C9BEA4]"></div>
+                      <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_0.75px_var(--color-thread,_#C9BEA4)]"></div>
                     </div>
                   )
                 })}
