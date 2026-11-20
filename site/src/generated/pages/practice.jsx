@@ -10,7 +10,9 @@ import { Section08 } from './practice/Section08.jsx'
 
 export function PracticePage() {
   return (
-    <main id="main" className="relative min-h-[9290.52px] w-full flex flex-col items-start bg-[#FFFFFF]" data-node="5008" style={{ height: '9290.5205078125px' }}>
+    // Высота страницы — по контенту: разделы можно скрывать флагами (см. SHOW_SOS_ALGORITHM
+    // в practice/Section07.jsx), и страница не оставляет пустоту.
+    <main id="main" className="relative w-full flex flex-col items-start bg-[#FFFFFF]" data-node="5008">
       <Section01 />
       <Section02 />
       <Section03 />

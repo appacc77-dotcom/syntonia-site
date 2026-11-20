@@ -6,13 +6,18 @@ const VISIBLE_MASTERS = {
   angelina: false, // Ангелина Гебо (узел 2798)
 }
 const ANY_MASTER_VISIBLE = VISIBLE_MASTERS.natalya || VISIBLE_MASTERS.angelina
+// Видимость шапки секции team-head (узел 2765): false — скрыть без удаления разметки.
+const SHOW_TEAM_HEAD = false
+const HAS_TEAM_CONTENT = SHOW_TEAM_HEAD || ANY_MASTER_VISIBLE
 
 export function Section02() {
   const href = useHref()
+  if (!HAS_TEAM_CONTENT) return null
   return (
     <div className="relative w-full flex flex-col px-6 items-center bg-bg-dark shadow-[inset_0_1px_0_0_var(--color-thread,_#C9BEA4)] [overflow:hidden]" style={{ minHeight: ANY_MASTER_VISIBLE ? '2066.46px' : '321px' }} data-node="2763">
       <div className="self-stretch mx-auto w-full max-w-[1280px] flex flex-col gap-space-4xl py-space-3xl items-start relative" style={{ minHeight: ANY_MASTER_VISIBLE ? '2066.46px' : '321px' }} data-node="2764">
-        <div className="self-stretch min-h-[225px] w-full max-w-[1280px] flex flex-col gap-space-3xl items-start relative" data-node="2765">
+        {SHOW_TEAM_HEAD ? (
+<div className="self-stretch min-h-[225px] w-full max-w-[1280px] flex flex-col gap-space-3xl items-start relative" data-node="2765">
           <div className="w-[1083px] min-h-[136px] flex flex-row gap-32 items-start relative" data-node="2766">
             <p className="w-full max-w-[341px] text-thread font-['Literata'] text-[48px] font-light leading-[60px]" data-node="2767">Один путь. Много голосов</p>
             <p className="text-thread font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="2768">Syntonia – это пространство глубины и ясности.<br />Здесь работают мастера, которым можно доверять.<br />Каждый – со своей историей, опытом и способом быть рядом.<br />Выбирайте того, с кем созвучно именно вам.</p>
@@ -25,6 +30,8 @@ export function Section02() {
             <div className="flex-1 w-[611.51px] h-[1px] bg-thread" data-node="2773"></div>
           </div>
         </div>
+) : null}
+
         {ANY_MASTER_VISIBLE ? (
 <div className="self-stretch min-h-[1617.47px] w-full max-w-[1280px] flex flex-col gap-space-xl items-start relative" data-node="2774">
           <p className="text-thread font-['Golos_Text'] text-[20px] font-normal leading-[30px] [white-space:nowrap] tracking-[0.16em] uppercase" data-node="2775">Другие мастера Syntonia</p>

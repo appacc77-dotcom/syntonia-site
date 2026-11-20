@@ -1,16 +1,19 @@
 // info-section as React + Tailwind CSS v4. Theme: variable.export {format: "tailwind"}.
 import { useState } from 'react'
 
+// Видимость блока «SOS-алгоритм» (узел 5813): false — скрыть без удаления разметки.
+const SHOW_SOS_ALGORITHM = false
+
 export function Section07() {
   // «С заботой о тебе»: заголовок сворачивает/разворачивает список рекомендаций (full-list)
   const [open, setOpen] = useState(true)
   return (
-    <div className="relative min-h-[952px] w-full flex flex-col gap-space-2xl py-space-3xl items-center [background:url(/assets/img-2ccc5d8c32.png)_-2653.63px_-106.3px_/_4184.36px_1406.95px] [overflow:hidden]" data-node="5790">
+    <div className={`relative w-full flex flex-col gap-space-2xl py-space-3xl items-center [background:url(/assets/img-2ccc5d8c32.png)_-2653.63px_-106.3px_/_4184.36px_1406.95px] [overflow:hidden]`} style={{ minHeight: SHOW_SOS_ALGORITHM ? '952px' : '788px' }} data-node="5790">
       <div className="min-h-[197px] w-full max-w-[1280px] flex flex-col gap-4 py-space-m items-center relative" data-node="5791">
         <h2 className="text-bg-inverse font-['Literata'] text-[65px] font-light leading-[81px] [white-space:nowrap]" data-node="5792">Бережная практика</h2>
         <p className="text-bg-inverse font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="5793">Перед началом уделите минуту своему состоянию. Практику можно остановить в любой момент — ориентируйтесь <br />на своё самочувствие и не продолжайте через сильное напряжение.</p>
       </div>
-      <div className="self-stretch mx-auto w-full max-w-[1280px] flex flex-col p-[1px] items-start rounded-(--radius-s) relative [overflow:hidden] transition-[min-height] duration-300 ease-out motion-reduce:transition-none" style={{ minHeight: open ? '579px' : '253px' }} data-node="5794">
+      <div className="self-stretch mx-auto w-full max-w-[1280px] flex flex-col p-[1px] items-start rounded-(--radius-s) relative [overflow:hidden] transition-[min-height] duration-300 ease-out motion-reduce:transition-none" style={{ minHeight: open ? (SHOW_SOS_ALGORITHM ? '579px' : '447px') : (SHOW_SOS_ALGORITHM ? '253px' : '121px') }} data-node="5794">
         <div
           className="self-stretch min-h-[119px] w-full max-w-[1278px] flex flex-row gap-4 pt-6 pr-6 pb-[25px] pl-6 justify-between items-center bg-bg-practice shadow-[inset_0_-1px_0_0_var(--color-accent-muted,_#8A8560)] relative cursor-pointer select-none focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-accent"
           data-node="5795"
@@ -55,7 +58,8 @@ export function Section07() {
         </div>
         </div>
         </div>
-        <div className="self-stretch min-h-[132px] w-full max-w-[1278px] flex flex-row gap-4 pt-[25px] pr-6 pb-6 pl-6 justify-between items-center shadow-[inset_0_1px_0_0_var(--color-accent-muted,_#8A8560)] relative" data-node="5813">
+        {SHOW_SOS_ALGORITHM ? (
+<div className="self-stretch min-h-[132px] w-full max-w-[1278px] flex flex-row gap-4 pt-[25px] pr-6 pb-6 pl-6 justify-between items-center shadow-[inset_0_1px_0_0_var(--color-accent-muted,_#8A8560)] relative" data-node="5813">
           <div className="w-[861px] min-h-[83px] flex flex-row gap-4 items-center relative" data-node="5814">
             <p className="w-full max-w-[51px] h-[55px] text-accent font-['Great_Vibes'] text-[55px] font-normal leading-[69px] [white-space:nowrap]" data-node="5815">02</p>
             <div className="w-[1px] h-[70px] bg-accent-muted" data-node="5816"></div>
@@ -73,6 +77,8 @@ export function Section07() {
             </div>
           </div>
         </div>
+) : null}
+
         <div className="absolute [inset:0] rounded-[inherit] [pointer-events:none] shadow-[inset_0_0_0_1px_#8A8560]"></div>
       </div>
     </div>

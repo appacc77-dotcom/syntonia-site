@@ -5,7 +5,12 @@
 // Вернуть сверку = убрать маршрут отсюда после возврата блоков.
 export const MANUAL_HIDDEN = {
   '/masters.html': {
-    reason: 'скрыты карточки мастеров Наталья Уолс / Ангелина Гебо (VISIBLE_MASTERS в masters/Section02.jsx)',
+    reason: 'скрыты team-head и карточки мастеров Наталья Уолс / Ангелина Гебо (SHOW_TEAM_HEAD, VISIBLE_MASTERS в masters/Section02.jsx)',
+    golden: true,
+    contract: true,
+  },
+  '/practice.html': {
+    reason: 'скрыт блок SOS-алгоритм (SHOW_SOS_ALGORITHM в practice/Section07.jsx)',
     golden: true,
     contract: true,
   },
