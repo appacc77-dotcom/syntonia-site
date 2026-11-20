@@ -203,3 +203,12 @@ button:focus-visible,
     background-position: center;
   }
 }
+
+/* Плавное переключение слайдера практик: слои кроссфейдятся без сдвига карточек */
+@keyframes ps-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ps-fade-out { from { opacity: 1; } to { opacity: 0; } }
+.ps-fade-in { animation: ps-fade-in 500ms ease-out both; }
+.ps-fade-out { animation: ps-fade-out 500ms ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .ps-fade-in, .ps-fade-out { animation: none; }
+}
