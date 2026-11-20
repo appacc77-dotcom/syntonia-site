@@ -27,9 +27,9 @@ export function Section08() {
                 </div>
               </div>
             </a>
-            <div className="w-[182px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [outline:1px_solid_var(--color-accent,_#5A5A36)] [outline-offset:-1px] relative" data-node="1103">
+            <a className="w-[182px] min-h-[45px] flex flex-row gap-space-s py-space-s px-space-m justify-center items-center rounded-(--radius-s) [outline:1px_solid_var(--color-accent,_#5A5A36)] [outline-offset:-1px] relative no-underline cursor-pointer" data-node="1103" href="#formats" aria-label="Форматы работы — перейти к форматам на этой странице">
               <p className="text-accent font-['Golos_Text'] text-[17px] font-normal leading-[29px] [white-space:nowrap] tracking-[0.03em]" data-node="1104">Форматы работы</p>
-            </div>
+            </a>
           </div>
         </div>
         <div className="flex-1 w-full max-w-[640px] min-h-[550px] flex flex-row py-space-2xl px-space-4xl items-start rounded-[0px_var(--radius-m,_12px)_var(--radius-m,_12px)_0px] [background:linear-gradient(0deg,_rgba(0,_0,_0,_0.12),_rgba(0,_0,_0,_0.12)),_url(/assets/img-acb8703354.jpg)_center_/_cover] relative" data-node="1105">
