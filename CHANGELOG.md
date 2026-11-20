@@ -43,6 +43,13 @@
   staging-smoke 24/24. Профиль публикации: noindex (staging), basePath `/syntonia-site`.
 - Источник: pipeline v1.4.0 (`studio-pipeline-v2`), reference `31a2eb65`; предыдущая версия — v0.7.0.
 
+## v0.11.49 — masters: «Почитать глубже» ведёт в библиотеку
+- Заголовок карточки «Почитать глубже» (h3, node 2849) стал ссылкой на `/library.html`
+  (ссылка внутри заголовка, `text-inherit no-underline`, `data-m3-link`).
+- Ссылка «Открыть библиотеку» (2852) нормализована через `href('/library.html')`.
+- Клик проверен: `/masters.html` → `/library.html`; masters golden **PASS 0.58 %/1.66**,
+  contract **PASS**, a11y **0**. Полные ворота не гонял.
+
 ## v0.11.48 — practice: «С заботой о тебе» — заголовок сворачивает full-list
 - Блок info-section (accordeon-info, узлы 5794/5795/5796/5801/5806): заголовок стал кнопкой
   (`role="button"`, `aria-expanded`, `aria-controls`, Enter/Space). Клик сворачивает/разворачивает

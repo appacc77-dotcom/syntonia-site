@@ -47,10 +47,10 @@ export function Section03() {
         <div className="flex-1 self-stretch w-full max-w-[296px] min-h-[428px] flex flex-col gap-space-m pb-space-m items-start rounded-m bg-bg-page relative [overflow:hidden]" data-node="2846">
           <div className="self-stretch w-full max-w-[296px] min-h-[236px] flex flex-row justify-center items-start rounded-[var(--radius-m,_12px)_var(--radius-m,_12px)_0px_0px] [background:url(/assets/img-58cadf9b4b.jpg)_0.33px_-99.74px_/_296px_669.74px] [overflow:hidden]" data-node="2847" role="img" aria-label="Ангелина Гебо"></div>
           <div className="flex-1 self-stretch w-full max-w-[296px] min-h-[160px] flex flex-col gap-space-m px-space-m items-start relative" data-node="2848">
-            <h3 className="self-stretch w-full max-w-[264px] text-text-primary font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="2849">Почитать глубже</h3>
+            <h3 className="self-stretch w-full max-w-[264px] text-text-primary font-['Literata'] text-[22px] font-light leading-[28px] [white-space:nowrap]" data-node="2849"><a className="text-inherit no-underline cursor-pointer" data-m3-link href={href('/library.html')}>Почитать глубже</a></h3>
             <p className="flex-1 self-stretch w-full max-w-[264px] h-20 text-text-secondary font-['Golos_Text'] text-[13px] font-normal leading-[20px]" data-node="2850">Книга, журнал и тексты Syntonia — для медленного знакомства с подходом, словами и состояниями, к которым можно возвращаться.</p>
             <div className="w-[151px] min-h-[20px] flex flex-row gap-1 justify-center items-center relative" data-node="2851">
-              <a className="block no-underline text-accent font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2852" data-m3-link href="library.html">Открыть библиотеку</a>
+              <a className="block no-underline text-accent font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="2852" data-m3-link href={href('/library.html')}>Открыть библиотеку</a>
               <div className="w-full max-w-[14px] min-h-[14px] flex flex-row gap-[1.43px] justify-end items-center relative" data-node="2853">
                 <div className="w-[11.88px] h-[9.65px] relative" data-node="2854">
                   <div className="absolute left-0 top-[3.34px] w-[5.54px] h-[2.96px] border-[1.5px] border-accent" data-node="2855"></div>
