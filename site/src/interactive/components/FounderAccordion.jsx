@@ -78,7 +78,8 @@ export function FounderAccordion() {
           <div
             key={item.num}
             inert={isLayerActive ? undefined : ''}
-            className={`absolute left-0 top-0 w-full flex flex-col gap-6 items-start transition-opacity duration-500 ease-out motion-reduce:transition-none ${isLayerActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            style={{ transitionDuration: isLayerActive ? '320ms' : '200ms', transitionDelay: isLayerActive ? '60ms' : '0ms' }}
+            className={`absolute left-0 top-0 w-full flex flex-col gap-6 items-start transition-opacity ease-out motion-reduce:transition-none ${isLayerActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           >
             {ITEMS.map((row, rowIndex) => (
               <div
