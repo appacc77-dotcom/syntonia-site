@@ -30,7 +30,7 @@ export function Section02() {
               <a className="block no-underline text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="9625" data-m3-link href={href('/not-found.html')}>Telegram</a>
               <a className="block no-underline text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="9626" data-m3-link href={href('/not-found.html')}>Instagram</a>
               <a className="block no-underline text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="9627" data-m3-link href={href('/not-found.html')}>YouTube</a>
-              <p className="text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="9628">hello@syntonia.com</p>
+              <a className="block no-underline text-text-on-dark font-['Golos_Text'] text-[13px] font-normal leading-[20px] [white-space:nowrap]" data-node="9628" data-m3-link href="mailto:hello@syntonia.com">hello@syntonia.com</a>
             </div>
           </div>
         </div>
