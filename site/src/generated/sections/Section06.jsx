@@ -19,7 +19,7 @@ export function Section06() {
                   <p className="text-text-secondary font-['Golos_Text'] text-[20px] font-normal leading-[34px] [white-space:nowrap]" data-node="1051">глубже слов</p>
                 </div>
               </div>
-              <p className="w-full max-w-[473px] text-text-primary font-['Lora'] text-[44px] font-normal italic leading-[62px]" data-node="1052">«Я не работаю вокруг проблемы. Я веду к её источнику».</p>
+              <p className="w-full max-w-[473px] text-text-primary font-['Lora'] text-[44px] font-normal italic leading-[62px]" data-node="1052" data-reveal="">«Я не работаю вокруг проблемы. Я веду к её источнику».</p>
               <a className="w-[305.86px] min-h-[41px] flex flex-row gap-2 justify-center items-center shadow-[inset_0_-1px_0_0_var(--color-accent,_#5A5A36)] relative no-underline cursor-pointer" data-node="1053" href={href('/masters.html')} aria-label="Познакомиться ближе — перейти к мастерам">
                 <p className="text-accent font-['Golos_Text'] text-[24px] font-normal leading-[41px] [white-space:nowrap] tracking-[0.03em] flex flex-col justify-end" data-node="1054">Познакомиться ближе</p>
                 <div className="w-full max-w-[18.86px] min-h-[18.86px] flex flex-row gap-[1.93px] justify-end items-center relative" data-node="1055">
