@@ -5,7 +5,7 @@ export function Section03() {
   return (
     <div className="relative min-h-[707px] w-full flex flex-row px-6 justify-center items-start [background:url(/assets/filt-eb7bed48ea-d48eace-6121d2fa.png)_0.42px_-203.12px_/_2737.07px_1182.93px] [overflow:hidden]" data-node="971">
       <div className="flex-1 min-h-[707px] w-full max-w-[1280px] flex flex-row gap-space-3xl py-space-4xl items-center relative" data-node="972">
-        <div className="flex-1 min-h-[401px] w-full max-w-[608px] flex flex-col gap-space-l items-start relative" data-node="973" data-reveal="">
+        <div className="flex-1 min-h-[401px] w-full max-w-[608px] flex flex-col gap-space-l items-start relative" data-node="973">
           <p className="w-full max-w-[539px] text-text-heading font-['Literata'] text-[48px] font-light leading-[60px]" data-node="974">Когда нужен не просто разговор, а реальные перемены в жизни</p>
           <p className="w-full max-w-[473px] text-text-secondary font-['Golos_Text'] text-[20px] font-normal leading-[34px]" data-node="975">Если в отношениях снова больно, в выборе нет опоры, внутри тяжело, а энергии всё меньше — причина внутри, и это можно изменить</p>
           <div className="w-[362px] min-h-[71px] flex flex-row gap-6 items-start relative" data-node="976">
@@ -21,7 +21,7 @@ export function Section03() {
             </a>
           </div>
         </div>
-        <div className="flex-1 min-h-[515px] w-full max-w-[608px] flex flex-col gap-8 items-start relative [overflow:hidden]" data-node="984" data-reveal="">
+        <div className="flex-1 min-h-[515px] w-full max-w-[608px] flex flex-col gap-8 items-start relative [overflow:hidden]" data-node="984">
           <div className="self-stretch min-h-[95px] w-full max-w-[608px] flex flex-col gap-space-m items-start relative [overflow:hidden]" data-node="985">
             <div className="self-stretch min-h-[78px] w-full max-w-[608px] flex flex-row gap-space-l items-center relative [overflow:hidden]" data-node="986">
               <p className="text-accent-muted font-['Great_Vibes'] text-[55px] font-normal leading-[69px] [white-space:nowrap]" data-node="987">01</p>

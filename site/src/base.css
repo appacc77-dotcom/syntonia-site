@@ -213,34 +213,3 @@ button:focus-visible,
   .ps-fade-in, .ps-fade-out { animation: none; }
 }
 
-/* Lenis: плавная прокрутка страницы. Классы ставит сама библиотека на <html>. */
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-.lenis.lenis-stopped { overflow: hidden; }
-.lenis.lenis-scrolling iframe { pointer-events: none; }
-
-/* Главная: появление блоков при прокрутке (эффекты включаются классом .home-effects,
-   который ставит JS только при отсутствии prefers-reduced-motion) */
-.home-effects [data-reveal] {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.home-effects [data-reveal].is-revealed {
-  opacity: 1;
-  transform: none;
-}
-.home-effects [data-parallax] {
-  will-change: transform;
-}
-@media (prefers-reduced-motion: reduce) {
-  .home-effects [data-reveal] {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .home-effects [data-parallax] {
-    transform: none !important;
-  }
-}
