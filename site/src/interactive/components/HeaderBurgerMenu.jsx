@@ -113,6 +113,7 @@ export function HeaderBurgerMenu({ nodes = [] }) {
               aria-label="Все страницы сайта"
               style={{ position: 'fixed', top: pos.top, right: pos.right }}
               className={`dropdown-rise z-[100] w-[600px] max-w-[calc(100vw-24px)] max-h-[calc(100vh-140px)] overflow-y-auto ${MENU_SURFACE} flex flex-row gap-6 items-start`}
+              data-lenis-prevent=""
             >
               {[GROUPS.slice(0, half), GROUPS.slice(half)].map((column, index) => (
                 <div key={index} className="flex-1 flex flex-col gap-4 items-start min-w-0">

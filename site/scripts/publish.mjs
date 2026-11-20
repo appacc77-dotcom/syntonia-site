@@ -193,8 +193,12 @@ for (const route of routes) {
 // ---------- 3. CSS/JS бандлы
 const distAssets = readdirSync(join(DIST, 'assets'))
 const oldAssetFiles = existsSync(join(OUT, 'assets')) ? readdirSync(join(OUT, 'assets')) : []
-const newBundles = distAssets.filter((f) => /^main-.*\.(css|js)$/.test(f))
-const oldBundles = oldAssetFiles.filter((f) => /^main-.*\.(css|js)$/.test(f))
+// Копируем ВСЕ js/css бандлы Vite (main-* и ленивые чанки вроде lenis-* / FixturesPage-*):
+// динамические import() иначе дают 404 на опубликованном сайте.
+// QA-чанк страницы /fixtures.html не публикуем: он тянет тестовые PNG, которых нет в dist.
+const isQaChunk = (f) => /^FixturesPage-.*\.js$/.test(f)
+const newBundles = distAssets.filter((f) => /\.(css|js)$/.test(f) && !isQaChunk(f))
+const oldBundles = oldAssetFiles.filter((f) => /\.(css|js)$/.test(f))
 for (const name of newBundles) {
   let text = readFileSync(join(DIST, 'assets', name), 'utf8')
   text = rewriteNames(text)

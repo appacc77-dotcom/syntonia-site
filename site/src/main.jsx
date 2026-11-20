@@ -9,6 +9,7 @@ import './generated/practice-arrows.css'
 import './generated/quiz-overrides.css'
 import './base.css'
 import './interactive/styles/motion.css'
+import { initSmoothScroll } from './interactive/smoothScroll.js'
 
 const container = document.getElementById('root')
 // data-route ставит SSG: маршрут страницы известен из сборки, pathname нужен
@@ -20,3 +21,6 @@ const app = <App route={route} />
 // маршруты пока рендерятся на клиенте, как раньше.
 if (container.hasChildNodes()) hydrateRoot(container, app)
 else createRoot(container).render(app)
+
+// Плавная прокрутка страницы (Lenis), кроме prefers-reduced-motion
+initSmoothScroll()

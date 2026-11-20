@@ -213,3 +213,9 @@ button:focus-visible,
   .ps-fade-in, .ps-fade-out { animation: none; }
 }
 
+/* Lenis: плавная прокрутка страницы. Классы ставит сама библиотека на <html>. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
